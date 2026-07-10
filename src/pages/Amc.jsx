@@ -73,37 +73,52 @@ export default function Amc() {
   return (
     <div className="animate-fade-in">
       {/* Hero */}
-      <section className="bg-brand-navy text-white py-16 px-4 text-center hero-gradient relative">
-        <div className="max-w-4xl mx-auto space-y-4">
-          <h3 className="text-sm font-semibold uppercase tracking-wider text-brand-gold">Preventive Maintenance</h3>
-          <h2 className="font-serif text-3xl md:text-5xl font-bold">Annual Maintenance Contract Plans</h2>
+      <section className="relative bg-brand-navy text-white py-24 px-4 text-center overflow-hidden">
+        {/* Background Video */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover opacity-35 z-0"
+        >
+          <source src="lift4.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        {/* Dark overlay & radial gradient overlay for premium lighting */}
+        <div className="absolute inset-0 bg-brand-navy/70 z-[1]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(212,175,55,0.25)_0%,_transparent_70%)] z-[2]"></div>
+
+        <div className="max-w-4xl mx-auto space-y-4 relative z-10">
+          <span className="inline-block bg-brand-gold/20 border border-brand-gold/30 text-brand-gold px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest animate-pulse-ring">Preventive Maintenance</span>
+          <h2 className="font-serif text-4xl md:text-5xl font-bold animate-gold-shimmer">Annual Maintenance Contract Plans</h2>
           <p className="text-slate-300 text-sm max-w-2xl mx-auto">
             Keep your elevators running safely and efficiently with our flexible AMC plans designed for all building types.
           </p>
         </div>
       </section>
 
-      {/* Pricing Cards */}
+      {/* Pricing Cards ── */}
       <section className="py-20 px-4 md:px-8 bg-slate-50 border-b border-slate-200">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-14 space-y-2">
-            <h3 className="text-xs font-semibold uppercase tracking-widest text-brand-gold">Choose Your Plan</h3>
+          <div className="text-center mb-14 space-y-2 scroll-reveal">
+            <h3 className="text-xs font-semibold uppercase tracking-widest text-brand-gold animate-draw-line">Choose Your Plan</h3>
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-brand-navy">AMC Plan Options</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 scroll-reveal-container">
             {plans.map((plan, i) => (
               <div
                 key={i}
-                className={`relative bg-white rounded-2xl border-2 overflow-hidden flex flex-col shadow-sm card-hover transition-all duration-300 ${plan.badge ? 'border-brand-gold shadow-brand-gold/20 shadow-lg' : 'border-slate-200 hover:border-brand-gold/50'}`}
+                className={`relative bg-white rounded-2xl border-2 overflow-hidden flex flex-col shadow-sm card-hover transition-all duration-300 scroll-reveal ${plan.badge ? 'border-brand-gold shadow-brand-gold/20 shadow-lg' : 'border-slate-200 hover:border-brand-gold/50'}`}
               >
                 {plan.badge && (
-                  <div className="absolute top-0 left-0 right-0 bg-brand-gold text-brand-navy text-[10px] font-bold text-center py-1.5 uppercase tracking-widest">
+                  <div className="absolute top-0 left-0 right-0 bg-brand-gold text-brand-navy text-[10px] font-bold text-center py-1.5 uppercase tracking-widest animate-pulse-ring">
                     ⭐ {plan.badge}
                   </div>
                 )}
                 <div className={`bg-gradient-to-br ${plan.color} p-6 text-white ${plan.badge ? 'pt-9' : ''}`}>
-                  <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center mb-4 border border-white/20">
-                    <i className={`fa-solid ${plan.icon} text-brand-gold text-xl`}></i>
+                  <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center mb-4 border border-white/20 group-hover:scale-110 transition-all duration-300">
+                    <i className={`fa-solid ${plan.icon} text-brand-gold text-xl group-hover:animate-lift-ride`}></i>
                   </div>
                   <h4 className="font-serif font-bold text-lg leading-tight">{plan.name}</h4>
                   <p className="text-slate-300 text-xs mt-2 leading-relaxed">{plan.description}</p>
@@ -112,14 +127,14 @@ export default function Amc() {
                   <ul className="space-y-2.5 flex-grow">
                     {plan.includes.map((item, j) => (
                       <li key={j} className="flex items-start gap-2.5 text-xs text-slate-600">
-                        <i className="fa-solid fa-circle-check text-green-500 shrink-0 mt-0.5"></i>
+                        <i className="fa-solid fa-circle-check text-green-500 shrink-0 mt-0.5 animate-bounce-soft" style={{ animationDelay: `${j * 0.25}s` }}></i>
                         {item}
                       </li>
                     ))}
                   </ul>
                   <a
                     href="#/quote"
-                    className={`block text-center font-bold py-3 rounded-xl text-xs uppercase tracking-widest transition mt-2 ${plan.badge ? 'bg-brand-gold hover:bg-brand-gold-hover text-brand-navy shadow-lg' : 'bg-brand-navy hover:bg-slate-800 text-white'}`}
+                    className={`block text-center font-bold py-3 rounded-xl text-xs uppercase tracking-widest transition mt-2 hover:scale-[1.02] ${plan.badge ? 'bg-brand-gold hover:bg-brand-gold-hover text-brand-navy shadow-lg btn-glow' : 'bg-brand-navy hover:bg-slate-800 text-white'}`}
                   >
                     Inquire This Plan
                   </a>
@@ -130,18 +145,18 @@ export default function Amc() {
         </div>
       </section>
 
-      {/* Benefits */}
+      {/* Benefits ── */}
       <section className="py-20 px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-14 space-y-2">
-            <h3 className="text-xs font-semibold uppercase tracking-widest text-brand-gold">Why AMC Matters</h3>
+          <div className="text-center mb-14 space-y-2 scroll-reveal">
+            <h3 className="text-xs font-semibold uppercase tracking-widest text-brand-gold animate-draw-line">Why AMC Matters</h3>
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-brand-navy">Benefits of an AMC Plan</h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 scroll-reveal-container">
             {benefits.map((b, i) => (
-              <div key={i} className="bg-white p-7 rounded-2xl border border-slate-200 shadow-sm flex gap-5 items-start card-hover group hover:border-brand-gold transition-all">
-                <div className="w-12 h-12 bg-brand-gold/10 rounded-xl flex items-center justify-center text-brand-gold text-xl shrink-0 group-hover:bg-brand-navy group-hover:text-white transition-all">
-                  <i className={`fa-solid ${b.icon}`}></i>
+              <div key={i} className="bg-white p-7 rounded-2xl border border-slate-200 shadow-sm flex gap-5 items-start card-hover group hover:border-brand-gold transition-all scroll-reveal">
+                <div className="w-12 h-12 bg-brand-gold/10 rounded-xl flex items-center justify-center text-brand-gold text-xl shrink-0 group-hover:bg-brand-navy group-hover:text-white transition-all group-hover:scale-110">
+                  <i className={`fa-solid ${b.icon} group-hover:animate-lift-ride`}></i>
                 </div>
                 <div>
                   <h4 className="font-serif font-bold text-base text-brand-navy mb-1">{b.title}</h4>
@@ -153,16 +168,22 @@ export default function Amc() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-gradient-to-br from-brand-navy via-slate-800 to-brand-navy text-white py-16 px-4 border-t-4 border-brand-gold text-center">
-        <div className="max-w-3xl mx-auto space-y-6">
+      {/* CTA ── */}
+      <section className="bg-gradient-to-br from-brand-navy via-slate-800 to-brand-navy text-white py-16 px-4 border-t-4 border-brand-gold text-center relative overflow-hidden">
+        {/* Faint animated lines */}
+        <div className="absolute inset-0 opacity-5 pointer-events-none">
+          {[25, 50, 75].map(pos => (
+            <div key={pos} className="absolute top-0 bottom-0 w-px bg-brand-gold" style={{ left: `${pos}%`, animation: 'shaftGlow 3s infinite' }} />
+          ))}
+        </div>
+        <div className="max-w-3xl mx-auto space-y-6 relative z-10 scroll-reveal-scale">
           <h2 className="font-serif text-2xl md:text-3xl font-bold">Ready to Protect Your Elevator?</h2>
           <p className="text-slate-300 text-sm">Sign up for an AMC plan today and ensure your elevators run safely, reliably, and efficiently year-round.</p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <a href="#/quote" className="bg-brand-gold hover:bg-brand-gold-hover text-brand-navy font-bold px-8 py-3 rounded-xl text-xs uppercase tracking-widest transition shadow-lg">
+          <div className="flex flex-wrap justify-center gap-4 pt-2">
+            <a href="#/quote" className="bg-brand-gold hover:bg-brand-gold-hover text-brand-navy font-bold px-8 py-3 rounded-xl text-xs uppercase tracking-widest transition shadow-lg hover:scale-105 btn-glow">
               Get a Free Quote
             </a>
-            <a href="#/contact" className="border border-white hover:border-brand-gold hover:text-brand-gold text-white font-bold px-8 py-3 rounded-xl text-xs uppercase tracking-widest transition">
+            <a href="#/contact" className="border border-white hover:border-brand-gold hover:text-brand-gold text-white font-bold px-8 py-3 rounded-xl text-xs uppercase tracking-widest transition hover:scale-105">
               Talk to Our Team
             </a>
           </div>

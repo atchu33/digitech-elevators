@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 const faqs = [
   {
     q: 'How often should an elevator undergo safety inspections?',
-    a: 'Under Karnataka Lift Rules, elevators must be inspected at least once a month by licensed service technicians. An Annual Maintenance Contract (AMC) ensures this is done regularly.'
+    a: 'Under local lift safety regulations, elevators must be inspected at least once a month by licensed service technicians. An Annual Maintenance Contract (AMC) ensures this is done regularly.'
   },
   {
     q: 'What is an ARD (Automatic Rescue Device)?',
@@ -38,8 +38,8 @@ const faqs = [
     a: 'Elevator modernization involves upgrading aging components such as the controller, VVVF drive, doors, cabin interiors, and safety systems to improve performance, safety, and energy efficiency — without replacing the entire lift.'
   },
   {
-    q: 'Is Digitech Elevators a government-approved contractor?',
-    a: 'Yes. Digitech Elevators is a Government of Karnataka Enlisted Grade-A elevator contractor and an ISO 9001:2015 certified company.'
+    q: 'What credentials and safety standards does Digitech Elevators follow?',
+    a: 'Digitech Elevators is a leading elevator contractor operating under Grade-A safety standards. All our safety systems undergo rigorous multi-point checklist audits before final commissioning.'
   }
 ];
 
@@ -49,12 +49,27 @@ export default function Faq() {
   return (
     <div className="animate-fade-in bg-slate-50 min-h-screen">
       {/* ── Banner ── */}
-      <section className="bg-brand-navy text-white py-16 px-4 text-center hero-gradient relative">
-        <div className="max-w-4xl mx-auto space-y-4">
+      <section className="relative bg-brand-navy text-white py-24 px-4 text-center overflow-hidden">
+        {/* Background Video */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover opacity-35 z-0"
+        >
+          <source src="lift3.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        {/* Dark overlay & radial gradient overlay for premium lighting */}
+        <div className="absolute inset-0 bg-brand-navy/70 z-[1]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(212,175,55,0.25)_0%,_transparent_70%)] z-[2]"></div>
+
+        <div className="max-w-4xl mx-auto space-y-4 relative z-10">
           <span className="inline-block bg-brand-gold/20 border border-brand-gold/30 text-brand-gold px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest animate-pulse-ring">
             General Queries
           </span>
-          <h2 className="font-serif text-3xl md:text-5xl font-bold">Frequently Asked Questions</h2>
+          <h2 className="font-serif text-4xl md:text-5xl font-bold animate-gold-shimmer">Frequently Asked Questions</h2>
           <p className="text-slate-300 text-sm max-w-xl mx-auto leading-relaxed">
             Find answers to common questions about elevator licensing, AMC contracts, installation procedures, and safety features.
           </p>
@@ -62,19 +77,19 @@ export default function Faq() {
       </section>
 
       {/* ── FAQ Accordion ── */}
-      <section className="py-20 px-4 md:px-8 max-w-4xl mx-auto space-y-4 animate-slide-left">
-        <div className="text-center mb-10 space-y-2">
-          <h3 className="text-xs font-semibold uppercase tracking-widest text-brand-gold">Got Questions?</h3>
+      <section className="py-20 px-4 md:px-8 max-w-4xl mx-auto space-y-4">
+        <div className="text-center mb-10 space-y-2 scroll-reveal">
+          <h3 className="text-xs font-semibold uppercase tracking-widest text-brand-gold animate-draw-line">Got Questions?</h3>
           <h2 className="font-serif text-2xl md:text-3xl font-bold text-brand-navy">Helpful Answers</h2>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-4 scroll-reveal-container">
           {faqs.map((faq, i) => {
             const isOpen = openIndex === i;
             return (
               <div
                 key={i}
-                className={`bg-white rounded-2xl border transition-all duration-300 shadow-sm overflow-hidden ${
+                className={`bg-white rounded-2xl border transition-all duration-300 shadow-sm overflow-hidden scroll-reveal ${
                   isOpen ? 'border-brand-gold ring-1 ring-brand-gold/30' : 'border-slate-200 hover:border-brand-gold/50'
                 }`}
               >
@@ -110,17 +125,23 @@ export default function Faq() {
       </section>
 
       {/* ── Call to Action ── */}
-      <section className="bg-gradient-to-br from-brand-navy via-slate-800 to-brand-navy text-white py-16 px-4 text-center border-t-4 border-brand-gold">
-        <div className="max-w-3xl mx-auto space-y-6">
+      <section className="bg-gradient-to-br from-brand-navy via-slate-800 to-brand-navy text-white py-16 px-4 text-center border-t-4 border-brand-gold relative overflow-hidden">
+        {/* Vertical lines */}
+        <div className="absolute inset-0 opacity-5 pointer-events-none">
+          {[20, 50, 80].map(pos => (
+            <div key={pos} className="absolute top-0 bottom-0 w-px bg-brand-gold" style={{ left: `${pos}%`, animation: 'shaftGlow 3s infinite' }} />
+          ))}
+        </div>
+        <div className="max-w-3xl mx-auto space-y-6 relative z-10 scroll-reveal-scale">
           <h2 className="font-serif text-2xl md:text-3xl font-bold">Still Have Questions?</h2>
           <p className="text-slate-350 text-xs md:text-sm leading-relaxed max-w-xl mx-auto">
             Our technical support coordinators are available to address queries regarding elevator engineering, space specifications, pricing parameters, or AMC renewals.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <a href="#/contact" className="bg-brand-gold hover:bg-brand-gold-hover text-brand-navy font-bold px-7 py-3 rounded-xl text-xs uppercase tracking-widest transition shadow-lg">
+            <a href="#/contact" className="bg-brand-gold hover:bg-brand-gold-hover text-brand-navy font-bold px-7 py-3 rounded-xl text-xs uppercase tracking-widest transition shadow-lg hover:scale-105 btn-glow">
               Contact Us
             </a>
-            <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" className="bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold px-7 py-3 rounded-xl text-xs uppercase tracking-widest flex items-center gap-2 transition shadow-lg">
+            <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" className="bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold px-7 py-3 rounded-xl text-xs uppercase tracking-widest flex items-center gap-2 transition shadow-lg hover:scale-105 btn-glow">
               <i className="fa-brands fa-whatsapp text-sm"></i> Chat on WhatsApp
             </a>
           </div>

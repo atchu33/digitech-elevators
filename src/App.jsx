@@ -43,6 +43,54 @@ export default function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Global Scroll-Reveal Intersection Observer
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const el = entry.target;
+              if (el.classList.contains('scroll-reveal-container')) {
+                // Staggered reveal for child elements
+                const children = el.querySelectorAll('.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right, .scroll-reveal-scale');
+                children.forEach((child, i) => {
+                  setTimeout(() => {
+                    child.classList.add('revealed');
+                  }, i * 120);
+                });
+                el.classList.add('revealed');
+              } else {
+                // Individual reveal
+                el.classList.add('revealed');
+              }
+              observer.unobserve(el);
+            }
+          });
+        },
+        { threshold: 0.08, rootMargin: '0px 0px -20px 0px' }
+      );
+
+      // Select all reveal elements and containers
+      const targets = document.querySelectorAll(
+        '.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right, .scroll-reveal-scale, .scroll-reveal-container'
+      );
+
+      targets.forEach((el) => {
+        // Skip individual observation if the element is nested within a scroll-reveal-container
+        const parentContainer = el.parentElement ? el.parentElement.closest('.scroll-reveal-container') : null;
+        if (parentContainer && el !== parentContainer) {
+          return;
+        }
+        observer.observe(el);
+      });
+
+      return () => observer.disconnect();
+    }, 200); // 200ms delay to let the DOM settle after page route transitions
+
+    return () => clearTimeout(timer);
+  }, [currentHash]);
+
   // View Router Parser
   const renderView = () => {
     const cleanHash = currentHash.replace('#', '');
@@ -85,17 +133,20 @@ export default function App() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Page loading bar */}
+      {/* Page loading bar — sliding gold strip like a floor indicator */}
       {pageLoading && (
-        <div className="fixed top-0 left-0 right-0 z-[9999] h-0.5 bg-brand-gold animate-pulse" style={{ animation: 'loadBar 0.5s ease forwards' }}></div>
+        <div className="fixed top-0 left-0 right-0 z-[9999] h-1 bg-gradient-to-r from-transparent via-brand-gold to-transparent"
+             style={{ animation: 'goldShimmer 0.5s linear forwards' }} />
       )}
 
       {/* Sticky Header Navigation */}
       <Navbar currentHash={currentHash} />
 
-      {/* Main Dynamic View */}
+      {/* Main Dynamic View — animates in like elevator arriving at a new floor */}
       <main className="flex-grow">
-        {renderView()}
+        <div key={currentHash} className="animate-page-up">
+          {renderView()}
+        </div>
       </main>
 
       {/* Footer */}

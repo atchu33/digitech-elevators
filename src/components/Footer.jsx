@@ -41,7 +41,7 @@ export default function Footer() {
           </a>
 
           <p className="text-sm leading-relaxed">
-            25+ years delivering advanced vertical mobility solutions across Karnataka. ISO 9001:2015 Certified &amp; Govt. of Karnataka Enlisted Grade‑A.
+            25+ years delivering advanced vertical mobility solutions. Built on engineering excellence and robust safety benchmarks.
           </p>
 
           <div className="flex gap-2.5">
@@ -130,9 +130,9 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-6 md:px-8 py-4 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-slate-600">
           <p>&copy; {new Date().getFullYear()} <span className="text-slate-400 font-semibold">Digitech Elevators</span>. All Rights Reserved.</p>
           <div className="flex items-center gap-3">
-            <span className="flex items-center gap-1.5"><i className="fa-solid fa-stamp text-brand-gold"></i> ISO 9001:2015</span>
+            <span className="flex items-center gap-1.5"><i className="fa-solid fa-shield-halved text-brand-gold"></i> Safety First</span>
             <span className="text-slate-700">|</span>
-            <span className="flex items-center gap-1.5"><i className="fa-solid fa-landmark text-brand-gold"></i> Govt. Grade‑A</span>
+            <span className="flex items-center gap-1.5"><i className="fa-solid fa-gears text-brand-gold"></i> Premium Quality</span>
           </div>
           <div className="flex gap-4">
             <a href="#/legal/privacy" className="hover:text-brand-gold transition">Privacy Policy</a>

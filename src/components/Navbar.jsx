@@ -29,10 +29,10 @@ export default function Navbar({ currentHash }) {
       <div className="bg-brand-slate text-xs py-2 px-4 md:px-8 flex flex-wrap justify-between items-center gap-2 border-b border-slate-700">
         <div className="flex items-center gap-5 text-slate-300">
           <span className="flex items-center gap-1.5">
-            <i className="fa-solid fa-certificate text-brand-gold text-sm"></i> ISO 9001:2015 Certified
+            <i className="fa-solid fa-shield-halved text-brand-gold text-sm"></i> Grade-A Safety Standards
           </span>
           <span className="hidden sm:flex items-center gap-1.5">
-            <i className="fa-solid fa-landmark text-brand-gold text-sm"></i> Govt. of Karnataka Enlisted Grade-A
+            <i className="fa-solid fa-gears text-brand-gold text-sm"></i> Premium Engineering Solutions
           </span>
         </div>
         <div className="flex items-center gap-5 text-slate-300">
