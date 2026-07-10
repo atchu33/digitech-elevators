@@ -5,7 +5,7 @@ export const PRODUCTS_DATA = {
     bannerTitle: 'Passenger Elevators',
     bannerSubtitle: 'Safe • Comfortable • Energy Efficient',
     icon: 'fa-users',
-    image: '/passenger_lift.png',
+    image: './passenger_lift.png',
     desc: 'Digitech Passenger Elevators are designed to provide smooth, safe, and reliable vertical transportation for residential, commercial, and institutional buildings. Built with advanced technology and premium components, our elevators ensure superior ride quality, energy efficiency, and long-term performance.',
     apps: ['Apartments', 'Office Buildings', 'Shopping Malls', 'Hotels', 'Educational Institutions', 'Commercial Complexes'],
     features: ['VVVF Drive Technology', 'Automatic Rescue Device (ARD)', 'Energy-Efficient Operation', 'Smooth & Silent Performance', 'Stainless Steel Cabin', 'Automatic Doors', 'LED Lighting', 'Digital Display', 'Emergency Alarm', 'Advanced Safety System'],
@@ -33,7 +33,7 @@ export const PRODUCTS_DATA = {
     bannerTitle: 'Hospital & Stretcher Elevators',
     bannerSubtitle: 'Designed for Safe and Smooth Patient Transportation',
     icon: 'fa-bed-pulse',
-    image: '/hospital_lift.png',
+    image: './hospital_lift.png',
     desc: 'Digitech Hospital Elevators are specially engineered for hospitals and healthcare facilities. They provide vibration-free operation with spacious cabins to safely transport patients, stretchers, wheelchairs, and medical equipment.',
     apps: ['Hospitals', 'Clinics', 'Medical Colleges', 'Healthcare Centres'],
     features: ['Large Cabin Size', 'Stretcher Compatible', 'Smooth Ride', 'Automatic Doors', 'Anti-Bacterial Cabin Finish', 'Emergency Operation', 'Battery Backup', 'Silent Operation'],
@@ -59,7 +59,7 @@ export const PRODUCTS_DATA = {
     bannerTitle: 'Goods Elevators',
     bannerSubtitle: 'Heavy-Duty Material Handling Solutions',
     icon: 'fa-truck-ramp-box',
-    image: '/goods_lift.png',
+    image: './goods_lift.png',
     desc: 'Digitech Goods Elevators are designed for safe and efficient transportation of heavy goods in factories, warehouses, commercial buildings, and industrial facilities.',
     apps: ['Factories', 'Warehouses', 'Industries', 'Shopping Centres', 'Logistics Facilities'],
     features: ['Heavy Duty Construction', 'High Load Capacity', 'Durable Platform', 'Reliable Operation', 'Low Maintenance', 'Industrial Safety Features'],
@@ -85,7 +85,7 @@ export const PRODUCTS_DATA = {
     bannerTitle: 'Home Elevators',
     bannerSubtitle: 'Luxury, Comfort & Accessibility',
     icon: 'fa-house-chimney',
-    image: '/home_lift.png',
+    image: './home_lift.png',
     desc: 'Digitech Home Elevators provide a stylish, compact, and safe mobility solution for villas, duplex homes, and private residences, enhancing convenience and accessibility.',
     apps: ['Villas', 'Duplex Houses', 'Bungalows', 'Private Homes'],
     features: ['Compact Design', 'Quiet Operation', 'Elegant Interiors', 'Automatic Doors', 'Energy Efficient', 'Low Power Consumption', 'Space Saving'],
@@ -109,7 +109,7 @@ export const PRODUCTS_DATA = {
     bannerTitle: 'Hydraulic Elevators',
     bannerSubtitle: 'Powerful Performance for Low-Rise Buildings',
     icon: 'fa-oil-can',
-    image: '/hydraulic_lift.png',
+    image: './hydraulic_lift.png',
     desc: 'Digitech Hydraulic Elevators are ideal for low-rise buildings where smooth operation, reliability, and high lifting capacity are required.',
     apps: ['Villas', 'Hospitals', 'Industrial Buildings', 'Commercial Buildings'],
     features: ['Smooth Ride', 'Heavy Load Capacity', 'Quiet Operation', 'Low Maintenance', 'Compact Machine Room'],
@@ -132,7 +132,7 @@ export const PRODUCTS_DATA = {
     bannerTitle: 'Machine Room Less Elevators',
     bannerSubtitle: 'Modern Technology. Maximum Space Saving.',
     icon: 'fa-microchip',
-    image: '/mrl_lift.png',
+    image: './mrl_lift.png',
     desc: 'Digitech Machine Room Less (MRL) Elevators eliminate the need for a separate machine room, making them an ideal choice for modern buildings where space optimization and energy efficiency are priorities.',
     apps: ['Apartments', 'Office Buildings', 'Hotels', 'Commercial Buildings', 'Residential Projects'],
     features: ['No Machine Room Required', 'Gearless Traction Technology', 'Energy Efficient', 'Silent Operation', 'Compact Design', 'Low Maintenance', 'Eco-Friendly'],
@@ -155,7 +155,7 @@ export const PRODUCTS_DATA = {
     bannerTitle: 'Villa Lifts',
     bannerSubtitle: 'Luxury & Accessibility for Modern Villas',
     icon: 'fa-house-chimney-window',
-    image: '/villa_lift.png',
+    image: './villa_lift.png',
     desc: 'Digitech Villa Lifts offer the ultimate luxury and accessibility for high-end residential villas, combining premium craftsmanship with whisper-soft operations.',
     apps: ['Villas', 'Bungalows', 'Row Houses', 'Luxury Residences'],
     features: ['Quiet Hydraulic / Traction Drives', 'No Headroom / Low Pit Options', 'Custom Decorative Glass Cabins', 'Touch Panel Interfaces', 'Automatic Rescue Devices'],
@@ -179,7 +179,7 @@ export const PRODUCTS_DATA = {
     bannerTitle: 'Commercial Lifts',
     bannerSubtitle: 'High-Speed mobility for Commercial Spaces',
     icon: 'fa-building',
-    image: '/commercial_lift.png',
+    image: './commercial_lift.png',
     desc: 'Digitech Commercial Lifts are high-capacity, high-traffic vertical transit systems engineered for offices, malls, corporate buildings, and public spaces.',
     apps: ['Corporate Offices', 'Shopping Complexes', 'Hotels', 'Public Infrastructure', 'Tech Parks'],
     features: ['High-Speed Traffic Control Grouping', 'Heavy-Duty Cabin Suspensions', 'Touchless Call Registration', 'Smart Display Integration', 'Advanced Double-Door Configurations'],
@@ -203,7 +203,7 @@ export const PRODUCTS_DATA = {
     bannerTitle: 'Car Elevators',
     bannerSubtitle: 'Heavy-Duty Vehicle Mobility Solutions',
     icon: 'fa-car',
-    image: '/car_lift.png',
+    image: './car_lift.png',
     desc: 'Digitech Car Elevators are heavy-duty vehicle vertical transit systems engineered for residential apartments, showrooms, parking garages, and commercial building basements.',
     apps: ['Showrooms', 'Basement Parking', 'Residential Apartments', 'Commercial Garages', 'Villas with Basements'],
     features: ['Reinforced Platform Structure', 'Dual Cabin Control Panels (for driver convenience)', 'Microprocessor-Controlled Levelling Accuracy', 'Infrared Vehicle Position Sensors', 'Mechanical Wheel-Stoppers'],
@@ -348,23 +348,23 @@ export const PROJECTS_DATA = [
 // Gallery Data
 export const GALLERY_DATA = {
   installation: [
-    { title: 'Guide Rail Plumb Alignment', img: '/passenger_lift.png', desc: 'Precision guide rail alignment for silent travel.' },
-    { title: 'Bracket Fastening Work', img: '/goods_lift.png', desc: 'Heavy bracket fitting in concrete lift shafts.' }
+    { title: 'Guide Rail Plumb Alignment', img: './passenger_lift.png', desc: 'Precision guide rail alignment for silent travel.' },
+    { title: 'Bracket Fastening Work', img: './goods_lift.png', desc: 'Heavy bracket fitting in concrete lift shafts.' }
   ],
   machineroom: [
-    { title: 'PMSM Gearless Motor Unit', img: '/mrl_lift.png', desc: 'Modern high-efficiency gearless traction unit.' },
-    { title: 'Microprocessor Controller Panel', img: '/hydraulic_lift.png', desc: '32-Bit controller motherboard cabinet.' }
+    { title: 'PMSM Gearless Motor Unit', img: './mrl_lift.png', desc: 'Modern high-efficiency gearless traction unit.' },
+    { title: 'Microprocessor Controller Panel', img: './hydraulic_lift.png', desc: '32-Bit controller motherboard cabinet.' }
   ],
   completed: [
-    { title: 'Luxury Villa Glass Elevator', img: '/home_lift.png', desc: 'Panoramic capsule home lift.' },
-    { title: 'Emergency Hospital Stretcher Lift', img: '/hospital_lift.png', desc: 'Extra wide stretcher cabin.' }
+    { title: 'Luxury Villa Glass Elevator', img: './home_lift.png', desc: 'Panoramic capsule home lift.' },
+    { title: 'Emergency Hospital Stretcher Lift', img: './hospital_lift.png', desc: 'Extra wide stretcher cabin.' }
   ],
   modernization: [
-    { title: 'Relay-to-VVVF Upgrade', img: '/mrl_lift.png', desc: 'Retrofitting old relay logic with computer controls.' },
-    { title: 'Cabin Wall Cladding Upgrade', img: '/passenger_lift.png', desc: 'Installing gold-finish interior cabin panels.' }
+    { title: 'Relay-to-VVVF Upgrade', img: './mrl_lift.png', desc: 'Retrofitting old relay logic with computer controls.' },
+    { title: 'Cabin Wall Cladding Upgrade', img: './passenger_lift.png', desc: 'Installing gold-finish interior cabin panels.' }
   ],
   team: [
-    { title: '45-Point Safety Inspection', img: '/hospital_lift.png', desc: 'Field technicians auditing safety governors.' },
-    { title: 'Emergency Breakdowns Training', img: '/goods_lift.png', desc: 'Certified safety training runs.' }
+    { title: '45-Point Safety Inspection', img: './hospital_lift.png', desc: 'Field technicians auditing safety governors.' },
+    { title: 'Emergency Breakdowns Training', img: './goods_lift.png', desc: 'Certified safety training runs.' }
   ]
 };
