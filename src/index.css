@@ -44,6 +44,10 @@
   from { opacity: 0; transform: translateY(16px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+@keyframes fadeSimple {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
 @keyframes slideUp {
   from { opacity: 0; transform: translateY(30px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -122,8 +126,8 @@
 
 /* Page slide-up transition (elevator arriving at a floor) */
 @keyframes pageSlideUp {
-  from { opacity: 0; transform: translateY(40px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 /* Shaft glow pulse (vertical light strip) */
@@ -215,6 +219,7 @@
    ANIMATION UTILITY CLASSES
 ═══════════════════════════════════════════════ */
 
+.animate-fade-simple  { animation: fadeSimple 0.6s ease forwards; }
 .animate-fade-in      { animation: fadeIn 0.6s ease forwards; }
 .animate-slide-up     { animation: slideUp 0.5s ease forwards; }
 .animate-spin-slow    { animation: spinSlow 8s linear infinite; }
@@ -245,11 +250,15 @@
   margin-bottom: -0.15em;
 }
 
+.animate-draw-line {
+  display: inline-block;
+}
 .animate-draw-line::after {
   content: '';
   display: block;
   height: 2px;
   background: #D4AF37;
+  margin: 6px auto 0 auto;
   animation: drawLine 0.8s ease forwards;
 }
 
@@ -262,7 +271,8 @@
   transform: translateY(30px);
   transition: opacity 0.7s ease, transform 0.7s ease;
 }
-.scroll-reveal.revealed {
+.scroll-reveal.revealed,
+.scroll-reveal[data-revealed="true"] {
   opacity: 1;
   transform: translateY(0);
 }
@@ -271,7 +281,8 @@
   transform: translateX(-40px);
   transition: opacity 0.7s ease, transform 0.7s ease;
 }
-.scroll-reveal-left.revealed {
+.scroll-reveal-left.revealed,
+.scroll-reveal-left[data-revealed="true"] {
   opacity: 1;
   transform: translateX(0);
 }
@@ -280,7 +291,8 @@
   transform: translateX(40px);
   transition: opacity 0.7s ease, transform 0.7s ease;
 }
-.scroll-reveal-right.revealed {
+.scroll-reveal-right.revealed,
+.scroll-reveal-right[data-revealed="true"] {
   opacity: 1;
   transform: translateX(0);
 }
@@ -289,7 +301,8 @@
   transform: scale(0.92);
   transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.34,1.56,0.64,1);
 }
-.scroll-reveal-scale.revealed {
+.scroll-reveal-scale.revealed,
+.scroll-reveal-scale[data-revealed="true"] {
   opacity: 1;
   transform: scale(1);
 }
@@ -398,7 +411,11 @@
    MISC UTILITIES
 ═══════════════════════════════════════════════ */
 
-html { scroll-behavior: smooth; }
+html, body {
+  scroll-behavior: smooth;
+  overflow-x: clip;
+  max-width: 100%;
+}
 
 .section-title-sm {
   font-size: 0.7rem;

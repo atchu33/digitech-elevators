@@ -1,6 +1,37 @@
 import React, { useState } from 'react';
 import { SERVICES_DATA } from '../data/siteData';
 
+const SERVICE_ICONS = {
+  'Controller Replacement': 'fa-microchip',
+  'VVVF Drive Upgrade': 'fa-bolt',
+  'Automatic Door Upgrade': 'fa-arrows-left-right',
+  'COP & LOP Replacement': 'fa-square-poll-vertical',
+  'ARD Installation': 'fa-battery-three-quarters',
+  'Gearless Machine Upgrade': 'fa-gear',
+  'Cabin Interior Renovation': 'fa-brush',
+  'LED Lighting': 'fa-lightbulb',
+  'Voice Announcement System': 'fa-bullhorn',
+  'Digital Display Panels': 'fa-tv',
+};
+
+const BENEFIT_ICONS = {
+  'Reduced Breakdowns': 'fa-circle-check',
+  'Improved Safety': 'fa-shield-halved',
+  'Energy Savings': 'fa-leaf',
+  'Smoother Ride': 'fa-wave-square',
+  'Lower Maintenance Costs': 'fa-piggy-bank',
+  'Extended Elevator Life': 'fa-hourglass-half',
+};
+
+const BENEFIT_DETAILS = {
+  'Reduced Breakdowns': 'Minimizes passenger downtime and emergency breakdown call-outs.',
+  'Improved Safety': 'Integrates modern safety gear, door sensors, and automatic rescue systems.',
+  'Energy Savings': 'High-efficiency VVVF drives and LED systems reduce energy consumption by up to 40%.',
+  'Smoother Ride': 'Precision rails alignment and leveling curves eliminate vibrations and jerking.',
+  'Lower Maintenance Costs': 'Replacing legacy components reduces wear-and-tear and part replacements.',
+  'Extended Elevator Life': 'Adds another 10-15 years of reliable, code-compliant service life.'
+};
+
 export default function ServiceDetail({ serviceKey, fallbackToHome }) {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const srv = SERVICES_DATA[serviceKey];
@@ -13,7 +44,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
   const handleFormSubmit = (e) => { e.preventDefault(); setFormSubmitted(true); };
 
   return (
-    <div className="animate-fade-in">
+    <div className="animate-fade-simple">
       {/* ── Banner ── */}
       <section className="relative bg-brand-navy text-white py-16 px-4 text-center hero-gradient overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(ellipse_at_center,_#D4AF37_0%,_transparent_70%)]"></div>
@@ -47,10 +78,11 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
               </div>
               <div className="space-y-4 scroll-reveal">
                 <h3 className="font-serif font-bold text-xl text-brand-navy">Types of Elevators We Install</h3>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3.5">
                   {srv.types.map((t, i) => (
-                    <div key={i} className="bg-white p-3 rounded-xl border border-slate-200 text-center text-xs font-bold text-brand-navy hover:border-brand-gold hover:shadow-sm transition">
-                      {t}
+                    <div key={i} className="flex items-center gap-2.5 bg-slate-50/80 p-3.5 rounded-xl border border-slate-100">
+                      <span className="w-1.5 h-1.5 rounded-full bg-brand-gold shrink-0"></span>
+                      <span className="text-xs font-bold text-brand-navy">{t}</span>
                     </div>
                   ))}
                 </div>
@@ -65,10 +97,11 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
                 <h3 className="font-serif font-bold text-2xl text-brand-navy flex items-center gap-2 border-b border-slate-200 pb-3 scroll-reveal">
                   <i className="fa-solid fa-list-check text-brand-gold text-base"></i> Services Included in AMC
                 </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 scroll-reveal-container">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5 scroll-reveal-container">
                   {srv.included.map((item, i) => (
-                    <div key={i} className="flex items-center gap-2.5 text-xs text-slate-600 bg-white p-3.5 rounded-xl border border-slate-200 hover:border-brand-gold transition scroll-reveal">
-                      <i className="fa-solid fa-circle-check text-green-500 shrink-0"></i> {item}
+                    <div key={i} className="flex items-center gap-3 bg-slate-50/70 p-3.5 rounded-xl border border-slate-100 scroll-reveal">
+                      <i className="fa-solid fa-circle-check text-green-600 shrink-0 text-sm"></i>
+                      <span className="text-xs font-semibold text-slate-600 leading-normal">{item}</span>
                     </div>
                   ))}
                 </div>
@@ -97,30 +130,49 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
 
           {/* MODERNIZATION — services + benefits */}
           {serviceKey === 'modernization' && (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 scroll-reveal-container">
-              <div className="bg-white p-7 rounded-2xl border border-slate-200 shadow-sm space-y-4 scroll-reveal">
-                <h4 className="font-serif font-bold text-lg text-brand-navy flex items-center gap-2 border-b border-slate-200 pb-2">
-                  <i className="fa-solid fa-screwdriver-wrench text-brand-gold text-sm"></i> Modernization Services
-                </h4>
-                <ul className="space-y-2.5">
-                  {srv.services.map((item, i) => (
-                    <li key={i} className="flex items-center gap-2.5 text-xs text-slate-600">
-                      <i className="fa-solid fa-circle-check text-green-500 shrink-0"></i> {item}
-                    </li>
-                  ))}
-                </ul>
+            <div className="space-y-12">
+              {/* Upgrades Offered */}
+              <div className="space-y-5">
+                <h3 className="font-serif font-bold text-2xl text-brand-navy flex items-center gap-2 border-b border-slate-200 pb-3 scroll-reveal">
+                  <i className="fa-solid fa-screwdriver-wrench text-brand-gold text-base"></i> Modernization Upgrades We Offer
+                </h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 scroll-reveal-container">
+                  {srv.services.map((item, i) => {
+                    const icon = SERVICE_ICONS[item] || 'fa-screwdriver-wrench';
+                    return (
+                      <div key={i} className="flex items-center gap-3.5 bg-slate-50/70 p-4 rounded-xl border border-slate-100 scroll-reveal">
+                        <div className="w-8 h-8 rounded-lg bg-brand-navy/5 flex items-center justify-center text-brand-gold shrink-0">
+                          <i className={`fa-solid ${icon} text-sm`}></i>
+                        </div>
+                        <span className="text-xs font-bold text-brand-navy">{item}</span>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
-              <div className="bg-white p-7 rounded-2xl border border-slate-200 shadow-sm space-y-4 scroll-reveal">
-                <h4 className="font-serif font-bold text-lg text-brand-navy flex items-center gap-2 border-b border-slate-200 pb-2">
-                  <i className="fa-solid fa-circle-up text-brand-gold text-sm"></i> Key Benefits
-                </h4>
-                <ul className="space-y-2.5">
-                  {srv.benefits.map((b, i) => (
-                    <li key={i} className="flex items-center gap-2.5 text-xs text-slate-600">
-                      <i className="fa-solid fa-circle-check text-green-500 shrink-0"></i> {b}
-                    </li>
-                  ))}
-                </ul>
+
+              {/* Key Benefits */}
+              <div className="space-y-5">
+                <h3 className="font-serif font-bold text-2xl text-brand-navy flex items-center gap-2 border-b border-slate-200 pb-3 scroll-reveal">
+                  <i className="fa-solid fa-chart-line text-brand-gold text-base"></i> Key Benefits of Upgrading
+                </h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 scroll-reveal-container">
+                  {srv.benefits.map((b, i) => {
+                    const icon = BENEFIT_ICONS[b] || 'fa-circle-check';
+                    const detail = BENEFIT_DETAILS[b] || '';
+                    return (
+                      <div key={i} className="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs flex flex-col gap-3 scroll-reveal">
+                        <div className="w-9 h-9 bg-brand-gold/10 rounded-xl flex items-center justify-center text-brand-gold text-base shrink-0">
+                          <i className={`fa-solid ${icon}`}></i>
+                        </div>
+                        <div className="space-y-1">
+                          <h4 className="font-serif font-bold text-sm text-brand-navy">{b}</h4>
+                          {detail && <p className="text-[11px] text-slate-500 leading-relaxed">{detail}</p>}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             </div>
           )}
@@ -131,10 +183,11 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
               <h3 className="font-serif font-bold text-2xl text-brand-navy flex items-center gap-2 border-b border-slate-200 pb-3 scroll-reveal">
                 <i className="fa-solid fa-screwdriver-wrench text-brand-gold text-base"></i> Repair Services
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 scroll-reveal-container">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5 scroll-reveal-container">
                 {srv.services.map((item, i) => (
-                  <div key={i} className="flex items-center gap-2.5 text-xs text-slate-600 bg-white p-3.5 rounded-xl border border-slate-200 hover:border-brand-gold transition scroll-reveal">
-                    <i className="fa-solid fa-screwdriver text-brand-gold shrink-0"></i> {item}
+                  <div key={i} className="flex items-center gap-3 bg-slate-50/70 p-3.5 rounded-xl border border-slate-100 scroll-reveal">
+                    <i className="fa-solid fa-screwdriver text-brand-gold shrink-0 text-xs"></i>
+                    <span className="text-xs font-semibold text-slate-600 leading-normal">{item}</span>
                   </div>
                 ))}
               </div>
@@ -147,11 +200,30 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
               </div>
             </div>
           )}
+          {/* ── Service CTA Callout Card ── */}
+          <div className="bg-gradient-to-br from-brand-navy via-slate-800 to-brand-navy text-white p-8 rounded-2xl border-b-4 border-brand-gold text-center relative overflow-hidden shadow-xl scroll-reveal mt-12">
+            <div className="absolute inset-0 opacity-5 pointer-events-none">
+              {[20, 50, 80].map(pos => (
+                <div key={pos} className="absolute top-0 bottom-0 w-px bg-brand-gold" style={{ left: `${pos}%`, animation: 'shaftGlow 3s infinite' }} />
+              ))}
+            </div>
+            <div className="space-y-5 relative z-10">
+              <h3 className="font-serif font-bold text-xl md:text-2xl">Need Professional Elevator Solutions?</h3>
+              <p className="text-slate-355 text-xs leading-relaxed max-w-xl mx-auto">
+                Whether you require a new installation, modernization, AMC, or emergency repairs, Digitech Elevators is ready to deliver safe, reliable, and customized elevator solutions.
+              </p>
+              <div className="flex flex-wrap justify-center gap-3 pt-2">
+                <a href="#/quote"   className="bg-brand-gold hover:bg-brand-gold-hover text-brand-navy font-bold px-5 py-2.5 rounded-lg text-[10px] uppercase tracking-wider transition shadow-lg hover:scale-105 btn-glow">Free Quote</a>
+                <a href="#/quote"   className="bg-white hover:bg-slate-100 text-brand-navy font-bold px-5 py-2.5 rounded-lg text-[10px] uppercase tracking-wider transition hover:scale-105">Book Inspection</a>
+                <a href="#/contact" className="border border-white hover:border-brand-gold hover:text-brand-gold text-white font-bold px-5 py-2.5 rounded-lg text-[10px] uppercase tracking-wider transition hover:scale-105">Contact Us</a>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* ── Sidebar ── */}
-        <div className="lg:col-span-4 scroll-reveal-right">
-          <div className="bg-white p-8 rounded-2xl border border-slate-200 shadow-xl space-y-6 sticky top-28">
+        <div className="lg:col-span-4">
+          <div className="bg-white p-8 rounded-2xl border border-slate-200 shadow-xl space-y-6 sticky top-28 h-fit">
             <h3 className="font-serif font-bold text-xl text-brand-navy border-b border-slate-200 pb-3">Request Consultation</h3>
             {formSubmitted ? (
               <div className="text-center py-10">
@@ -174,27 +246,6 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
               <p className="flex items-center gap-2"><i className="fa-brands fa-whatsapp text-green-500"></i> WhatsApp Available</p>
               <p className="flex items-center gap-2"><i className="fa-solid fa-clock text-brand-gold"></i> 24/7 Emergency Response</p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Service CTA ── */}
-      <section className="bg-gradient-to-br from-brand-navy via-slate-800 to-brand-navy text-white py-16 px-4 md:px-8 border-t-4 border-brand-gold text-center relative overflow-hidden">
-        {/* Animated cables */}
-        <div className="absolute inset-0 opacity-5 pointer-events-none">
-          {[20, 50, 80].map(pos => (
-            <div key={pos} className="absolute top-0 bottom-0 w-px bg-brand-gold" style={{ left: `${pos}%`, animation: 'shaftGlow 3s infinite' }} />
-          ))}
-        </div>
-        <div className="max-w-4xl mx-auto space-y-6 relative z-10 scroll-reveal-scale">
-          <h2 className="font-serif text-3xl md:text-4xl font-bold">Need Professional Elevator Solutions?</h2>
-          <p className="text-slate-300 text-sm max-w-2xl mx-auto leading-relaxed">
-            Whether you require a new installation, modernization, AMC, or emergency repairs, Digitech Elevators is ready to deliver safe, reliable, and customized elevator solutions.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4 pt-2">
-            <a href="#/quote"   className="bg-brand-gold hover:bg-brand-gold-hover text-brand-navy font-bold px-7 py-3 rounded-xl text-xs uppercase tracking-widest transition shadow-lg hover:scale-105 btn-glow">Request a Free Quote</a>
-            <a href="#/quote"   className="bg-white hover:bg-slate-100 text-brand-navy font-bold px-7 py-3 rounded-xl text-xs uppercase tracking-widest transition hover:scale-105">Book a Site Inspection</a>
-            <a href="#/contact" className="border border-white hover:border-brand-gold hover:text-brand-gold text-white font-bold px-7 py-3 rounded-xl text-xs uppercase tracking-widest transition hover:scale-105">Contact Our Experts</a>
           </div>
         </div>
       </section>

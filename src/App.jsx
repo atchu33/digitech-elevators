@@ -57,12 +57,15 @@ export default function App() {
                 children.forEach((child, i) => {
                   setTimeout(() => {
                     child.classList.add('revealed');
+                    child.setAttribute('data-revealed', 'true');
                   }, i * 120);
                 });
                 el.classList.add('revealed');
+                el.setAttribute('data-revealed', 'true');
               } else {
                 // Individual reveal
                 el.classList.add('revealed');
+                el.setAttribute('data-revealed', 'true');
               }
               observer.unobserve(el);
             }

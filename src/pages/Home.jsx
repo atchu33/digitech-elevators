@@ -12,7 +12,10 @@ function useScrollReveal(threshold = 0.15) {
         if (entry.isIntersecting) {
           el.querySelectorAll('.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right, .scroll-reveal-scale')
             .forEach((child, i) => {
-              setTimeout(() => child.classList.add('revealed'), i * 120);
+              setTimeout(() => {
+                child.classList.add('revealed');
+                child.setAttribute('data-revealed', 'true');
+              }, i * 120);
             });
           // also reveal the container itself if it has scroll-reveal class
           if (el.classList.contains('scroll-reveal') ||
@@ -20,6 +23,7 @@ function useScrollReveal(threshold = 0.15) {
               el.classList.contains('scroll-reveal-right') ||
               el.classList.contains('scroll-reveal-scale')) {
             el.classList.add('revealed');
+            el.setAttribute('data-revealed', 'true');
           }
           observer.unobserve(el);
         }
