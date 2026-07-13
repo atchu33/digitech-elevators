@@ -22,10 +22,10 @@ export const PRODUCTS_DATA = {
     },
     whyChoose: ['Premium Quality Components', 'Safe & Reliable', 'Low Maintenance', 'Customized Design', 'Professional Installation'],
     gallery: [
-      { url: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80', caption: 'Modern Passenger Cabin Interior' },
-      { url: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=800&q=80', caption: 'Stainless Steel Cabin Finish' },
-      { url: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80', caption: 'Commercial Building Installation' },
-      { url: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?auto=format&fit=crop&w=800&q=80', caption: 'Apartment Elevator System' },
+      { url: './passenger3.png', caption: 'Modern Passenger Cabin Interior' },
+      { url: './passenger4.png', caption: 'Stainless Steel Cabin Finish' },
+      { url: './passenger5.png', caption: 'Commercial Building Installation' },
+      { url: './passenger6.png', caption: 'Apartment Elevator System' },
     ]
   },
   hospital: {
@@ -48,10 +48,10 @@ export const PRODUCTS_DATA = {
     },
     whyChoose: ['Patient Comfort', 'Safe Transportation', 'Reliable Performance', 'Easy Maintenance'],
     gallery: [
-      { url: 'https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=800&q=80', caption: 'Hospital Elevator Lobby' },
-      { url: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80', caption: 'Patient Transport System' },
-      { url: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80', caption: 'Healthcare Facility Lift' },
-      { url: 'https://images.unsplash.com/photo-1551190822-a9333d879b1f?auto=format&fit=crop&w=800&q=80', caption: 'Wide Door Stretcher Cabin' },
+      { url: './hospital4.png', caption: 'Hospital Elevator Lobby' },
+      { url: './hospital6.png', caption: 'Patient Transport System' },
+      { url: './hospital5.png', caption: 'Healthcare Facility Lift' },
+      { url: './hospital7.png', caption: 'Wide Door Stretcher Cabin' },
     ]
   },
   goods: {
@@ -74,10 +74,10 @@ export const PRODUCTS_DATA = {
     },
     whyChoose: ['High Durability', 'Efficient Material Handling', 'Long Service Life'],
     gallery: [
-      { url: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80', caption: 'Industrial Goods Elevator' },
-      { url: 'https://images.unsplash.com/photo-1565814636199-ae8133055c1c?auto=format&fit=crop&w=800&q=80', caption: 'Warehouse Freight Lift' },
-      { url: 'https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=800&q=80', caption: 'Heavy Load Platform' },
-      { url: 'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?auto=format&fit=crop&w=800&q=80', caption: 'Commercial Goods Transport' },
+      { url: './goods4.png', caption: 'Industrial Goods Elevator' },
+      { url: './goods5.png', caption: 'Warehouse Freight Lift' },
+      { url: './goods6.png', caption: 'Heavy Load Platform' },
+      { url: './goods7.png', caption: 'Commercial Goods Transport' },
     ]
   },
   home: {
@@ -98,10 +98,10 @@ export const PRODUCTS_DATA = {
     },
     whyChoose: ['Luxury Appearance', 'Easy Installation', 'Safe Operation', 'Adds Property Value'],
     gallery: [
-      { url: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80', caption: 'Luxury Villa Interior' },
-      { url: 'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=800&q=80', caption: 'Home Elevator Glass Cabin' },
-      { url: 'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=800&q=80', caption: 'Residential Lift Installation' },
-      { url: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80', caption: 'Premium Home Mobility' },
+      { url: './homelift4.png', caption: 'Luxury Villa Interior' },
+      { url: './homelift5.png', caption: 'Home Elevator Glass Cabin' },
+      { url: './homelift6.png', caption: 'Residential Lift Installation' },
+      { url: './homelift7.png', caption: 'Premium Home Mobility' },
     ]
   },
   hydraulic: {
@@ -168,10 +168,10 @@ export const PRODUCTS_DATA = {
     },
     whyChoose: ['Elegant Visual Appeal', 'Space-Saving Shaft Design', 'Whisper Quiet Operation'],
     gallery: [
-      { url: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80', caption: 'Villa Luxury Cabin' },
-      { url: 'https://images.unsplash.com/photo-1600573472592-401b489a3cdc?auto=format&fit=crop&w=800&q=80', caption: 'Panoramic Glass Villa Lift' },
-      { url: 'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=800&q=80', caption: 'High-End Residential Elevator' },
-      { url: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80', caption: 'Custom Wood Cabin Finish' },
+      { url: './villa4.png', caption: 'Villa Luxury Cabin' },
+      { url: './villa5.png', caption: 'Panoramic Glass Villa Lift' },
+      { url: './villa6.png', caption: 'High-End Residential Elevator' },
+      { url: './villa7.png', caption: 'Custom Wood Cabin Finish' },
     ]
   },
   commercial: {

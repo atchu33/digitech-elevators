@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Large video files (host externally or compress)
+public/lift6.mp4

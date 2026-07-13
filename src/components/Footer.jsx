@@ -27,8 +27,12 @@ export default function Footer() {
         {/* ─── Brand ─── */}
         <div className="space-y-5">
           <a href="#/home" className="inline-flex items-center gap-3 group">
-            <div className="w-10 h-10 bg-brand-gold rounded-lg flex items-center justify-center font-bold text-brand-navy text-sm shadow-lg">
-              DE
+            <div className="w-14 h-14 bg-white rounded-lg flex items-center justify-center p-1.5 shadow-lg">
+              <img 
+                src="./logo-removebg-preview.png" 
+                alt="Digitech Elevators Logo" 
+                className="h-full w-full object-contain"
+              />
             </div>
             <div>
               <h2 className="font-serif font-bold text-lg text-white tracking-tight leading-none">

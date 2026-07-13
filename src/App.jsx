@@ -165,6 +165,17 @@ export default function App() {
           <i className="fa-solid fa-chevron-up text-white hover:text-brand-navy text-sm"></i>
         </button>
       )}
+
+      {/* Floating WhatsApp Button */}
+      <a
+        href="https://wa.me/919876543210?text=Hi%20Digitech%20Elevators"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Chat on WhatsApp"
+        className="fixed bottom-24 right-6 z-50 w-14 h-14 bg-[#25D366] hover:bg-[#20ba5a] rounded-full flex items-center justify-center shadow-2xl transition-all hover:scale-110 animate-bounce-soft"
+      >
+        <i className="fa-brands fa-whatsapp text-white text-3xl"></i>
+      </a>
     </div>
   );
 }

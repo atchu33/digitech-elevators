@@ -12,10 +12,19 @@ export default function Contact() {
     <div className="animate-fade-in">
 
       {/* ── Hero Banner ── */}
-      <section className="bg-brand-navy text-white py-16 px-4 text-center hero-gradient relative">
-        <div className="max-w-4xl mx-auto space-y-4">
-          <h3 className="text-sm font-semibold uppercase tracking-wider text-brand-gold">Get In Touch</h3>
-          <h2 className="font-serif text-3xl md:text-5xl font-bold">Contact Our Office</h2>
+      <section className="relative bg-brand-navy text-white py-24 px-4 text-center overflow-hidden">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 w-full h-full bg-cover bg-center opacity-35 z-0"
+          style={{ backgroundImage: 'url(./contact.jpg)' }}
+        />
+        {/* Dark overlay & radial gradient overlay for premium lighting */}
+        <div className="absolute inset-0 bg-brand-navy/70 z-[1]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(212,175,55,0.25)_0%,_transparent_70%)] z-[2]"></div>
+        
+        <div className="max-w-4xl mx-auto space-y-4 relative z-10">
+          <span className="inline-block bg-brand-gold/20 border border-brand-gold/30 text-brand-gold px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest animate-pulse-ring">Get In Touch</span>
+          <h2 className="font-serif text-4xl md:text-5xl font-bold animate-gold-shimmer">Contact Our Office</h2>
         </div>
       </section>
 

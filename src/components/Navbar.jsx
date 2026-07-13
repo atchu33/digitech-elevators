@@ -50,8 +50,12 @@ export default function Navbar({ currentHash }) {
       <nav className="bg-brand-navy px-4 md:px-8 py-4 flex justify-between items-center max-w-[1440px] mx-auto">
         {/* Logo */}
         <a href="#/home" className="flex items-center gap-3 shrink-0">
-          <div className="w-10 h-10 bg-brand-gold rounded-lg flex items-center justify-center font-bold text-brand-navy text-base shadow-md">
-            DE
+          <div className="h-14 w-14 bg-white rounded-lg flex items-center justify-center p-1.5 shadow-md">
+            <img 
+              src="./logo-removebg-preview.png" 
+              alt="Digitech Elevators Logo" 
+              className="h-full w-full object-contain"
+            />
           </div>
           <div className="leading-tight">
             <h1 className="font-serif font-bold text-lg text-white tracking-tight leading-none">
