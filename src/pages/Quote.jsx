@@ -60,15 +60,15 @@ export default function Quote() {
             <div className="space-y-3.5 text-xs text-slate-600">
               <p className="flex items-center gap-3">
                 <i className="fa-solid fa-phone text-brand-gold w-4 text-center"></i> 
-                <a href="tel:+919876543210" className="hover:text-brand-gold transition font-medium">+91 98765 43210</a>
+                <a href="tel:+919845071406" className="hover:text-brand-gold transition font-medium">+91 98450 71406</a>
               </p>
               <p className="flex items-center gap-3">
                 <i className="fa-solid fa-envelope text-brand-gold w-4 text-center"></i> 
-                <a href="mailto:info@digitechelevators.com" className="hover:text-brand-gold transition font-medium">info@digitechelevators.com</a>
+                <a href="mailto:digitech.elevators@gmail.com" className="hover:text-brand-gold transition font-medium">digitech.elevators@gmail.com</a>
               </p>
               <p className="flex items-center gap-3">
                 <i className="fa-brands fa-whatsapp text-[#25D366] w-4 text-center text-sm"></i> 
-                <a href="https://wa.me/919876543210" className="hover:text-[#25D366] transition font-semibold">Chat on WhatsApp</a>
+                <a href="https://wa.me/919845926155" className="hover:text-[#25D366] transition font-semibold">Chat on WhatsApp</a>
               </p>
             </div>
           </div>

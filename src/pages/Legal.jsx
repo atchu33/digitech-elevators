@@ -382,8 +382,8 @@ export default function Legal({ type = 'privacy' }) {
                 <a href="#/contact" className="inline-flex items-center gap-2 bg-brand-navy hover:bg-slate-800 text-white px-5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition">
                   <i className="fa-solid fa-envelope"></i> Contact Us
                 </a>
-                <a href="tel:+919876543210" className="inline-flex items-center gap-2 bg-brand-gold hover:bg-brand-gold-hover text-brand-navy px-5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition">
-                  <i className="fa-solid fa-phone"></i> +91 98765 43210
+                <a href="tel:+919845071406" className="inline-flex items-center gap-2 bg-brand-gold hover:bg-brand-gold-hover text-brand-navy px-5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition">
+                  <i className="fa-solid fa-phone"></i> +91 98450 71406
                 </a>
               </div>
             </div>

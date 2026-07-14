@@ -537,7 +537,7 @@ export default function Home() {
       </section>
 
       {/* ══════════════════════════ PRODUCTS GRID ══════════════════════════ */}
-      <section ref={productsRef} className="py-24 px-4 md:px-8 bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-50 relative overflow-hidden">
+      <section ref={productsRef} className="py-24 px-4 md:px-8 bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-50 relative overflow-clip">
         {/* Decorative circles */}
         <div className="absolute top-20 right-[-10%] w-96 h-96 bg-brand-gold/5 rounded-full blur-3xl" />
         <div className="absolute bottom-20 left-[-10%] w-96 h-96 bg-blue-500/5 rounded-full blur-3xl" />
@@ -552,12 +552,16 @@ export default function Home() {
           </div>
 
           {/* Split image-content layout */}
-          <div className="space-y-6">
+          <div className="space-y-12 pb-16">
             {Object.entries(PRODUCTS_DATA).map(([key, item], i) => (
               <div
                 key={key}
-                className={`scroll-reveal group relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-slate-200 hover:border-brand-gold`}
-                style={{ transitionDelay: `${i * 0.1}s` }}
+                className={`scroll-reveal group sticky bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-slate-200 hover:border-brand-gold`}
+                style={{
+                  transitionDelay: `${i * 0.1}s`,
+                  top: '100px',
+                  zIndex: i + 1,
+                }}
               >
                 <div className={`grid grid-cols-1 lg:grid-cols-12 gap-0 ${i % 2 === 0 ? '' : 'lg:grid-flow-dense'}`}>
                   {/* Image Side */}
@@ -640,13 +644,6 @@ export default function Home() {
                 </div>
               </div>
             ))}
-          </div>
-
-          {/* Bottom CTA */}
-          <div className="text-center mt-16 scroll-reveal">
-            <a href="#/products" className="inline-flex items-center gap-2 bg-brand-navy hover:bg-brand-gold text-white hover:text-brand-navy font-bold px-8 py-4 rounded-xl transition-all hover:scale-105 shadow-lg text-sm">
-              Explore All Elevator Solutions <i className="fa-solid fa-arrow-right text-xs" />
-            </a>
           </div>
         </div>
       </section>
@@ -978,7 +975,7 @@ export default function Home() {
                 </div>
                 <div className="flex-1">
                   <p className="font-bold text-white text-sm uppercase tracking-wider mb-1">Office Address</p>
-                  <p className="text-slate-300 text-sm leading-relaxed">No. 45, Ground Floor, Yeshwanthpur, Bangalore – 560022</p>
+                  <p className="text-slate-300 text-sm leading-relaxed">61 Third floor, 1st A main Road Bhuvaneshwari nagar, Vishwanath Naganahalli Main Rd, opp. Alphonsa Forane Church, Post, RT Nagar, Bengaluru, Karnataka 560032</p>
                 </div>
               </div>
 
@@ -989,7 +986,7 @@ export default function Home() {
                 </div>
                 <div className="flex-1">
                   <p className="font-bold text-white text-sm uppercase tracking-wider mb-1">Phone Numbers</p>
-                  <p className="text-slate-300 text-sm leading-relaxed">+91 98765 43210 / +91 80 1234 5678</p>
+                  <p className="text-slate-300 text-sm leading-relaxed">+91 98450 71406 / +91 76250 80504</p>
                 </div>
               </div>
 
@@ -1000,14 +997,14 @@ export default function Home() {
                 </div>
                 <div className="flex-1">
                   <p className="font-bold text-white text-sm uppercase tracking-wider mb-1">Email Address</p>
-                  <p className="text-slate-300 text-sm leading-relaxed">info@digitechelevators.com</p>
+                  <p className="text-slate-300 text-sm leading-relaxed">digitech.elevators@gmail.com</p>
                 </div>
               </div>
             </div>
 
             {/* WhatsApp Button */}
             <div className="scroll-reveal pt-2">
-              <a href="https://wa.me/919876543210?text=Hi%20Digitech%20Elevators"
+              <a href="https://wa.me/919845926155?text=Hi%20Digitech%20Elevators"
                  target="_blank" rel="noopener noreferrer"
                  className="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold px-6 py-3 rounded-xl text-sm uppercase transition-all hover:scale-105 shadow-lg w-full justify-center">
                 <i className="fa-brands fa-whatsapp text-2xl" /> Chat on WhatsApp

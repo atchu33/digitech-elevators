@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { PRODUCTS_DATA } from '../data/siteData';
 
 const APP_ICONS = {
@@ -23,10 +23,77 @@ const APP_ICONS = {
   'Private Homes': 'fa-house'
 };
 
+// Why Choose Details Mapping
+const WHY_CHOOSE_DETAILS = {
+  'Premium Quality Components': 'We source only Grade-A certified parts to ensure safety, durability, and smooth ride comfort.',
+  'Safe & Reliable': 'Equipped with multi-tier emergency rescue systems, reliable braking, and backup power integrations.',
+  'Low Maintenance': 'Built with highly optimized mechanical components that minimize friction, wear, and overall service costs.',
+  'Customized Design': 'Custom cabin claddings, lighting, doors, and indicators to perfectly match your building architecture.',
+  'Professional Installation': 'Engineered and installed by certified, experienced lift technicians following rigorous safety protocols.',
+  'Patient Comfort': 'Designed with slow deceleration and smooth leveling to ensure vibration-free travel for sensitive medical equipment.',
+  'Safe Transportation': 'Extra-wide doors and spacious stretcher-sized cabins for seamless patient movement.',
+  'Reliable Performance': 'Engineered to handle high-frequency duty cycles in busy hospital environments 24/7.',
+  'Easy Maintenance': 'Standardized components allowing rapid servicing and minimal downtime for crucial facility operations.',
+  'High Durability': 'Reinforced steel columns, heavy-duty guide rails, and durable platforms built for intense cargo loading.',
+  'Efficient Material Handling': 'Optimized for forklifts, hand jacks, and pallet transfer in warehouses or industrial zones.',
+  'Long Service Life': 'Industrial-grade wear resistance to withstand heavy daily use over decades.',
+  'Luxury Appearance': 'Premium glass, wood paneling, and custom gold claddings designed to elevate your private residence.',
+  'Easy Installation': 'Compact pit and headroom requirements make it easy to fit into existing duplexes or villas.',
+  'Safe Operation': 'Comprehensive home safety sensors, emergency backup power, and soft-start/stop drive systems.',
+  'Adds Property Value': 'A luxurious, functional addition that enhances accessibility and increases the resale value of your home.'
+};
+
 export default function ProductDetail({ productKey, fallbackToHome }) {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [lightbox, setLightbox] = useState(null);
   const prod = PRODUCTS_DATA[productKey];
+  
+  // Local scroll-reveal observer to guarantee transitions play when switching products
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const el = entry.target;
+              if (el.classList.contains('scroll-reveal-container')) {
+                const children = el.querySelectorAll('.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right, .scroll-reveal-scale');
+                children.forEach((child, i) => {
+                  setTimeout(() => {
+                    child.classList.add('revealed');
+                    child.setAttribute('data-revealed', 'true');
+                  }, i * 80);
+                });
+                el.classList.add('revealed');
+                el.setAttribute('data-revealed', 'true');
+              } else {
+                el.classList.add('revealed');
+                el.setAttribute('data-revealed', 'true');
+              }
+              observer.unobserve(el);
+            }
+          });
+        },
+        { threshold: 0.05, rootMargin: '0px 0px -10px 0px' }
+      );
+
+      const targets = document.querySelectorAll(
+        '.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right, .scroll-reveal-scale, .scroll-reveal-container'
+      );
+      
+      targets.forEach((el) => {
+        const parentContainer = el.parentElement ? el.parentElement.closest('.scroll-reveal-container') : null;
+        if (parentContainer && el !== parentContainer) {
+          return;
+        }
+        observer.observe(el);
+      });
+
+      return () => observer.disconnect();
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, [productKey]);
 
   if (!prod) {
     if (fallbackToHome) fallbackToHome();
@@ -91,6 +158,9 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
                     productKey === 'villa' ? './villa1.png' :
                     productKey === 'hospital' ? './hospital1.png' :
                     productKey === 'goods' ? './goods1.png' :
+                    productKey === 'hydraulic' ? './hydraulic1.png' :
+                    productKey === 'mrl' ? './mrl1.png' :
+                    productKey === 'car' ? './car1.png' :
                     './passenger%20elevator.jpg'
                   }
                   alt={prod.title}
@@ -168,8 +238,8 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
                     alt={img.caption}
                     className={`w-full h-full ${img.url.includes('villa4.png') ? 'object-cover object-left' : 'object-cover'} group-hover:scale-110 transition-transform duration-700`}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/90 via-brand-navy/40 to-transparent" />
-                  <div className="absolute inset-0 flex items-end p-6">
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/95 via-brand-navy/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 flex items-end p-6 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out">
                     <div>
                       <p className="text-white font-serif font-bold text-sm mb-2">{img.caption}</p>
                     </div>
@@ -195,6 +265,10 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
                     productKey === 'villa' ? './villa2.png' :
                     productKey === 'hospital' ? './hospital1.png' :
                     productKey === 'goods' ? './goods2.png' :
+                    productKey === 'hydraulic' ? './hydraulic2.png' :
+                    productKey === 'mrl' ? './mrl2.png' :
+                    productKey === 'commercial' ? './commercial3.png' :
+                    productKey === 'car' ? './car2.png' :
                     'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80'
                   }
                   alt="Building Applications"
@@ -219,11 +293,11 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
                 {prod.apps.map((a, i) => {
                   const icon = APP_ICONS[a] || 'fa-building';
                   return (
-                    <div key={i} className="bg-white/10 backdrop-blur-md p-5 rounded-2xl border border-white/20 flex items-center gap-4 hover:bg-white/20 transition-all">
-                      <div className="w-12 h-12 bg-brand-gold/20 rounded-xl flex items-center justify-center text-brand-gold text-xl shrink-0">
+                    <div key={i} className="group bg-white/10 backdrop-blur-md p-5 rounded-2xl border border-white/20 hover:border-brand-gold/50 flex items-center gap-4 hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-lg hover:shadow-brand-gold/10">
+                      <div className="w-12 h-12 bg-brand-gold/20 rounded-xl flex items-center justify-center text-brand-gold text-xl shrink-0 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
                         <i className={`fa-solid ${icon}`} />
                       </div>
-                      <span className="text-sm font-bold">{a}</span>
+                      <span className="text-sm font-bold transition-colors group-hover:text-brand-gold">{a}</span>
                     </div>
                   );
                 })}
@@ -250,11 +324,11 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
               
               <div className="space-y-3">
                 {prod.features.map((f, i) => (
-                  <div key={i} className="flex items-center gap-4 bg-slate-50 p-4 rounded-xl border-2 border-slate-100 hover:border-brand-gold transition-all">
-                    <div className="w-8 h-8 rounded-lg bg-green-500/10 flex items-center justify-center text-green-600 shrink-0">
+                  <div key={i} className="group flex items-center gap-4 bg-slate-50 p-4 rounded-xl border-2 border-slate-100 hover:border-brand-gold hover:bg-slate-100/50 hover:pl-6 hover:shadow-md transition-all duration-300">
+                    <div className="w-8 h-8 rounded-lg bg-green-500/10 flex items-center justify-center text-green-600 shrink-0 group-hover:scale-110 group-hover:bg-green-500 group-hover:text-white transition-all duration-300">
                       <i className="fa-solid fa-circle-check" />
                     </div>
-                    <span className="text-sm font-semibold text-slate-700">{f}</span>
+                    <span className="text-sm font-semibold text-slate-700 transition-colors group-hover:text-brand-navy">{f}</span>
                   </div>
                 ))}
               </div>
@@ -271,6 +345,9 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
                     productKey === 'villa' ? './villa3.png' :
                     productKey === 'hospital' ? './hospital3.png' :
                     productKey === 'goods' ? './goodss3.png' :
+                    productKey === 'hydraulic' ? './hydraulic3.png' :
+                    productKey === 'mrl' ? './mrl3.png' :
+                    productKey === 'car' ? './car3.png' :
                     prod.image
                   }
                   alt="Features"
@@ -303,9 +380,9 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
           
           <div className="flex flex-wrap justify-center gap-4 scroll-reveal-container">
             {prod.caps.map((c, i) => (
-              <div key={i} className="bg-white p-6 rounded-2xl shadow-lg border-2 border-slate-100 hover:border-brand-gold hover:shadow-2xl transition-all scroll-reveal hover:translate-y-[-4px]">
+              <div key={i} className="group bg-white p-6 rounded-2xl shadow-lg border-2 border-slate-100 hover:border-brand-gold hover:shadow-brand-gold/15 hover:shadow-2xl transition-all duration-300 scroll-reveal hover:translate-y-[-6px] hover:scale-105">
                 <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 bg-brand-navy rounded-xl flex items-center justify-center text-brand-gold text-2xl">
+                  <div className="w-14 h-14 bg-brand-navy rounded-xl flex items-center justify-center text-brand-gold text-2xl group-hover:bg-brand-gold group-hover:text-brand-navy group-hover:rotate-12 transition-all duration-500">
                     <i className="fa-solid fa-weight-scale" />
                   </div>
                   <div className="text-left">
@@ -338,20 +415,51 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 scroll-reveal-container">
-            {prod.whyChoose.map((w, i) => (
-              <div key={i} className="bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/20 hover:bg-white/15 transition-all scroll-reveal">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-brand-gold/20 rounded-xl flex items-center justify-center text-brand-gold text-xl shrink-0">
-                    <i className="fa-solid fa-circle-check" />
+          {/* Accordion container */}
+          <div className="flex flex-col lg:flex-row gap-4 h-auto lg:h-[380px] overflow-hidden scroll-reveal-container">
+            {prod.whyChoose.map((w, i) => {
+              const desc = WHY_CHOOSE_DETAILS[w] || 'Digitech Elevators is committed to delivering safe, reliable, and premium quality vertical mobility solutions.';
+              return (
+                <div 
+                  key={i} 
+                  className="group relative bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 flex flex-col justify-between transition-all duration-500 ease-in-out cursor-pointer overflow-hidden
+                             w-full lg:flex-1 lg:hover:flex-[3] hover:border-brand-gold/50 hover:bg-white/15"
+                >
+                  {/* Header (Number and Icon) */}
+                  <div className="flex lg:flex-col items-center justify-between lg:justify-start gap-4">
+                    <div className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-xs font-mono text-slate-300 bg-white/5">
+                      {`0${i + 1}`}
+                    </div>
+                    <div className="w-12 h-12 bg-brand-gold/20 rounded-xl flex items-center justify-center text-brand-gold text-xl shrink-0 group-hover:bg-brand-gold group-hover:text-brand-navy transition-all duration-500">
+                      <i className="fa-solid fa-circle-check" />
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-serif font-bold text-lg text-white mb-2">{w}</h4>
-                    <div className="w-12 h-1 bg-brand-gold rounded-full" />
+
+                  {/* Body Content */}
+                  <div className="mt-4 lg:mt-0 flex flex-col justify-end h-full">
+                    {/* Expanded text content */}
+                    <div className="block lg:opacity-0 lg:group-hover:opacity-100 lg:h-0 lg:group-hover:h-auto overflow-hidden transition-all duration-500 ease-in-out space-y-2">
+                      <h4 className="font-serif font-bold text-xl text-white group-hover:text-brand-gold transition-colors duration-300">
+                        {w}
+                      </h4>
+                      <p className="text-xs text-slate-300 leading-relaxed max-w-sm">
+                        {desc}
+                      </p>
+                    </div>
+
+                    {/* Vertical Collapsed text content for Desktop */}
+                    <div 
+                      className="hidden lg:flex lg:group-hover:hidden select-none absolute top-32 bottom-8 left-1/2 -translate-x-1/2 items-center justify-center"
+                      style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
+                    >
+                      <span className="text-slate-400 font-serif font-semibold text-[11px] tracking-widest uppercase whitespace-nowrap">
+                        {w}
+                      </span>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>

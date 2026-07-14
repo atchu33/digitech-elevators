@@ -96,7 +96,7 @@ export default function Footer() {
                 <i className="fa-solid fa-location-dot text-sm"></i>
               </div>
               <p className="text-sm leading-relaxed mt-0.5">
-                No. 45, Ground Floor,<br/>Yeshwanthpur, Bangalore – 560022
+                61 Third floor, 1st A main Road<br/>Bhuvaneshwari nagar, RT Nagar<br/>Bengaluru, Karnataka 560032
               </p>
             </div>
 
@@ -105,8 +105,8 @@ export default function Footer() {
                 <i className="fa-solid fa-phone text-sm"></i>
               </div>
               <div className="mt-0.5">
-                <a href="tel:+919876543210" className="block text-sm hover:text-brand-gold transition">+91 98765 43210</a>
-                <a href="tel:+918012345678" className="block text-sm hover:text-brand-gold transition mt-0.5">+91 80 1234 5678</a>
+                <a href="tel:+919845071406" className="block text-sm hover:text-brand-gold transition">+91 98450 71406</a>
+                <a href="tel:+917625080504" className="block text-sm hover:text-brand-gold transition mt-0.5">+91 76250 80504</a>
               </div>
             </div>
 
@@ -114,13 +114,13 @@ export default function Footer() {
               <div className="w-9 h-9 bg-brand-gold/10 rounded-lg flex items-center justify-center text-brand-gold shrink-0 border border-brand-gold/20">
                 <i className="fa-solid fa-envelope text-sm"></i>
               </div>
-              <a href="mailto:info@digitechelevators.com"
+              <a href="mailto:digitech.elevators@gmail.com"
                  className="text-sm hover:text-brand-gold transition break-all mt-1.5">
-                info@digitechelevators.com
+                digitech.elevators@gmail.com
               </a>
             </div>
 
-            <a href="https://wa.me/919876543210?text=Hi%20Digitech%20Elevators"
+            <a href="https://wa.me/919845926155?text=Hi%20Digitech%20Elevators"
                target="_blank" rel="noopener noreferrer"
                className="flex items-center justify-center gap-2 bg-[#25D366]/10 border border-[#25D366]/30 hover:bg-[#25D366] hover:border-[#25D366] text-[#25D366] hover:text-white font-bold px-4 py-2.5 rounded-xl text-sm transition w-full mt-2">
               <i className="fa-brands fa-whatsapp text-base"></i> Chat on WhatsApp

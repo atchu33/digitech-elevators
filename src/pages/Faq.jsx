@@ -141,7 +141,7 @@ export default function Faq() {
             <a href="#/contact" className="bg-brand-gold hover:bg-brand-gold-hover text-brand-navy font-bold px-7 py-3 rounded-xl text-xs uppercase tracking-widest transition shadow-lg hover:scale-105 btn-glow">
               Contact Us
             </a>
-            <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" className="bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold px-7 py-3 rounded-xl text-xs uppercase tracking-widest flex items-center gap-2 transition shadow-lg hover:scale-105 btn-glow">
+            <a href="https://wa.me/919845926155" target="_blank" rel="noopener noreferrer" className="bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold px-7 py-3 rounded-xl text-xs uppercase tracking-widest flex items-center gap-2 transition shadow-lg hover:scale-105 btn-glow">
               <i className="fa-brands fa-whatsapp text-sm"></i> Chat on WhatsApp
             </a>
           </div>

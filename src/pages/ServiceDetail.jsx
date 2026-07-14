@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { SERVICES_DATA } from '../data/siteData';
 
 const SERVICE_ICONS = {
@@ -35,6 +35,53 @@ const BENEFIT_DETAILS = {
 export default function ServiceDetail({ serviceKey, fallbackToHome }) {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const srv = SERVICES_DATA[serviceKey];
+  
+  // Local scroll-reveal observer to guarantee transitions play when switching services
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const el = entry.target;
+              if (el.classList.contains('scroll-reveal-container')) {
+                const children = el.querySelectorAll('.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right, .scroll-reveal-scale');
+                children.forEach((child, i) => {
+                  setTimeout(() => {
+                    child.classList.add('revealed');
+                    child.setAttribute('data-revealed', 'true');
+                  }, i * 80);
+                });
+                el.classList.add('revealed');
+                el.setAttribute('data-revealed', 'true');
+              } else {
+                el.classList.add('revealed');
+                el.setAttribute('data-revealed', 'true');
+              }
+              observer.unobserve(el);
+            }
+          });
+        },
+        { threshold: 0.05, rootMargin: '0px 0px -10px 0px' }
+      );
+
+      const targets = document.querySelectorAll(
+        '.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right, .scroll-reveal-scale, .scroll-reveal-container'
+      );
+      
+      targets.forEach((el) => {
+        const parentContainer = el.parentElement ? el.parentElement.closest('.scroll-reveal-container') : null;
+        if (parentContainer && el !== parentContainer) {
+          return;
+        }
+        observer.observe(el);
+      });
+
+      return () => observer.disconnect();
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, [serviceKey]);
 
   if (!srv) {
     if (fallbackToHome) fallbackToHome();
@@ -391,7 +438,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
                   </div>
                   <div>
                     <div className="text-xs text-slate-500 font-semibold uppercase">Call Us</div>
-                    <div className="text-sm font-bold text-brand-navy">+91 98765 43210</div>
+                    <div className="text-sm font-bold text-brand-navy">+91 98450 71406</div>
                   </div>
                 </div>
                 <div className="flex items-center gap-4 bg-white p-5 rounded-xl shadow-md">

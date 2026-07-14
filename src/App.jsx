@@ -168,7 +168,7 @@ export default function App() {
 
       {/* Floating WhatsApp Button */}
       <a
-        href="https://wa.me/919876543210?text=Hi%20Digitech%20Elevators"
+        href="https://wa.me/919845926155?text=Hi%20Digitech%20Elevators"
         target="_blank"
         rel="noopener noreferrer"
         title="Chat on WhatsApp"

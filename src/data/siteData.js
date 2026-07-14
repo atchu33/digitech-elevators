@@ -121,10 +121,10 @@ export const PRODUCTS_DATA = {
     },
     whyChoose: ['Reliable Operation', 'Cost Effective', 'Long Service Life'],
     gallery: [
-      { url: 'https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?auto=format&fit=crop&w=800&q=80', caption: 'Hydraulic Lift Mechanism' },
-      { url: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80', caption: 'Low-Rise Building Lift' },
-      { url: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80', caption: 'Hydraulic System Installation' },
-      { url: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80', caption: 'Commercial Hydraulic Elevator' },
+      { url: './hydraulic4.png', caption: 'Hydraulic Lift Mechanism' },
+      { url: './hydraulic5.png', caption: 'Low-Rise Building Lift' },
+      { url: './hydraulic7.png', caption: 'Hydraulic System Installation' },
+      { url: './hydraulic6.png', caption: 'Commercial Hydraulic Elevator' },
     ]
   },
   mrl: {
@@ -144,10 +144,10 @@ export const PRODUCTS_DATA = {
     },
     whyChoose: ['Saves Building Space', 'Reduced Construction Cost', 'Lower Energy Consumption', 'Modern Appearance', 'High Performance'],
     gallery: [
-      { url: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80', caption: 'MRL Elevator Shaft Design' },
-      { url: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80', caption: 'Modern Apartment MRL Lift' },
-      { url: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?auto=format&fit=crop&w=800&q=80', caption: 'Space-Saving MRL System' },
-      { url: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80', caption: 'Energy Efficient MRL Elevator' },
+      { url: './mrl4.png', caption: 'MRL Elevator Shaft Design' },
+      { url: './mrl5.png', caption: 'Modern Apartment MRL Lift' },
+      { url: './mrl6.png', caption: 'Space-Saving MRL System' },
+      { url: './mrl7.png', caption: 'Energy Efficient MRL Elevator' },
     ]
   },
   villa: {
@@ -192,10 +192,10 @@ export const PRODUCTS_DATA = {
     },
     whyChoose: ['Handles High Peak Traffic', 'Maximum System Up-Time', 'Low Energy Footprint'],
     gallery: [
-      { url: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=800&q=80', caption: 'Corporate Office Elevator' },
-      { url: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80', caption: 'Shopping Mall Lift System' },
-      { url: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80', caption: 'High-Speed Commercial Lift' },
-      { url: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80', caption: 'Modern Commercial Tower' },
+      { url: './commercial4.png', caption: 'Corporate Office Elevator' },
+      { url: './commercial5.png', caption: 'Shopping Mall Lift System' },
+      { url: './commercial6.png', caption: 'High-Speed Commercial Lift' },
+      { url: './commercial7.png', caption: 'Modern Commercial Tower' },
     ]
   },
   car: {
@@ -216,10 +216,10 @@ export const PRODUCTS_DATA = {
     },
     whyChoose: ['High Structural Durability', 'Safe Vehicle Transport', 'Smooth Basements Access'],
     gallery: [
-      { url: 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=800&q=80', caption: 'Car Elevator Platform' },
-      { url: 'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=800&q=80', caption: 'Basement Parking Lift' },
-      { url: 'https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=800&q=80', caption: 'Showroom Vehicle Elevator' },
-      { url: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80', caption: 'Heavy Duty Car Platform' },
+      { url: './car7.png', caption: 'Car Elevator Platform' },
+      { url: './car4.png', caption: 'Basement Parking Lift' },
+      { url: './car5.png', caption: 'Showroom Vehicle Elevator' },
+      { url: './car6.png', caption: 'Heavy Duty Car Platform' },
     ]
   }
 };

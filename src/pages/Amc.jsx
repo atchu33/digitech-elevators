@@ -152,15 +152,45 @@ export default function Amc() {
             <h3 className="text-xs font-semibold uppercase tracking-widest text-brand-gold animate-draw-line">Why AMC Matters</h3>
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-brand-navy">Benefits of an AMC Plan</h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 scroll-reveal-container">
+          {/* Accordion container */}
+          <div className="flex flex-col lg:flex-row gap-4 h-auto lg:h-[420px] overflow-hidden scroll-reveal-container">
             {benefits.map((b, i) => (
-              <div key={i} className="bg-white p-7 rounded-2xl border border-slate-200 shadow-sm flex gap-5 items-start card-hover group hover:border-brand-gold transition-all scroll-reveal">
-                <div className="w-12 h-12 bg-brand-gold/10 rounded-xl flex items-center justify-center text-brand-gold text-xl shrink-0 group-hover:bg-brand-navy group-hover:text-white transition-all group-hover:scale-110">
-                  <i className={`fa-solid ${b.icon} group-hover:animate-lift-ride`}></i>
+              <div 
+                key={i} 
+                className="group relative bg-brand-navy border border-white/10 rounded-2xl p-6 flex flex-col justify-between transition-all duration-500 ease-in-out cursor-pointer overflow-hidden
+                           w-full lg:flex-1 lg:hover:flex-[3.5] bg-gradient-to-b from-brand-navy to-slate-900 hover:border-brand-gold/50"
+              >
+                {/* Header (Number and Icon) */}
+                <div className="flex lg:flex-col items-center justify-between lg:justify-start gap-4">
+                  <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-xs font-mono text-slate-400 bg-white/5">
+                    {`0${i + 1}`}
+                  </div>
+                  <div className="w-12 h-12 bg-brand-gold/10 rounded-xl flex items-center justify-center text-brand-gold text-xl shrink-0 group-hover:bg-brand-gold group-hover:text-brand-navy transition-all duration-500">
+                    <i className={`fa-solid ${b.icon}`} />
+                  </div>
                 </div>
-                <div>
-                  <h4 className="font-serif font-bold text-base text-brand-navy mb-1">{b.title}</h4>
-                  <p className="text-xs text-slate-500 leading-relaxed">{b.desc}</p>
+
+                {/* Body Content */}
+                <div className="mt-4 lg:mt-0 flex flex-col justify-end h-full">
+                  {/* Expanded text content */}
+                  <div className="block lg:opacity-0 lg:group-hover:opacity-100 lg:h-0 lg:group-hover:h-auto overflow-hidden transition-all duration-500 ease-in-out space-y-2">
+                    <h4 className="font-serif font-bold text-xl text-white group-hover:text-brand-gold transition-colors duration-300">
+                      {b.title}
+                    </h4>
+                    <p className="text-xs text-slate-400 leading-relaxed max-w-sm">
+                      {b.desc}
+                    </p>
+                  </div>
+
+                  {/* Vertical Collapsed text content for Desktop */}
+                  <div 
+                    className="hidden lg:flex lg:group-hover:hidden select-none absolute top-32 bottom-8 left-1/2 -translate-x-1/2 items-center justify-center"
+                    style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
+                  >
+                    <span className="text-slate-400 font-serif font-semibold text-[11px] tracking-widest uppercase whitespace-nowrap">
+                      {b.title}
+                    </span>
+                  </div>
                 </div>
               </div>
             ))}

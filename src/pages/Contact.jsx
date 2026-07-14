@@ -53,7 +53,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="font-semibold text-white text-xs uppercase tracking-wider mb-0.5">Office Address</p>
-                  <p className="text-slate-400 text-xs leading-relaxed">No. 45, Ground Floor, Yeshwanthpur, Bangalore – 560022</p>
+                  <p className="text-slate-400 text-xs leading-relaxed">61 Third floor, 1st A main Road Bhuvaneshwari nagar, Vishwanath Naganahalli Main Rd, opp. Alphonsa Forane Church, Post, RT Nagar, Bengaluru, Karnataka 560032</p>
                 </div>
               </div>
               <div className="flex gap-4 scroll-reveal">
@@ -61,8 +61,17 @@ export default function Contact() {
                   <i className="fa-solid fa-phone"></i>
                 </div>
                 <div>
-                  <p className="font-semibold text-white text-xs uppercase tracking-wider mb-0.5">Phone Numbers</p>
-                  <p className="text-slate-400 text-xs">+91 98765 43210 / +91 80 1234 5678</p>
+                  <p className="font-semibold text-white text-xs uppercase tracking-wider mb-0.5">Office Phone</p>
+                  <p className="text-slate-400 text-xs">+91 98450 71406 / +91 76250 80504</p>
+                </div>
+              </div>
+              <div className="flex gap-4 scroll-reveal">
+                <div className="w-10 h-10 bg-brand-gold/10 rounded-lg flex items-center justify-center text-brand-gold shrink-0 border border-brand-gold/20 hover:scale-110 transition-all duration-300">
+                  <i className="fa-solid fa-phone-volume"></i>
+                </div>
+                <div>
+                  <p className="font-semibold text-white text-xs uppercase tracking-wider mb-0.5">Complaint Numbers</p>
+                  <p className="text-slate-400 text-xs">+91 98459 26155 / +91 94480 56354</p>
                 </div>
               </div>
               <div className="flex gap-4 scroll-reveal">
@@ -71,7 +80,16 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="font-semibold text-white text-xs uppercase tracking-wider mb-0.5">Email Address</p>
-                  <p className="text-slate-400 text-xs">info@digitechelevators.com</p>
+                  <p className="text-slate-400 text-xs">digitech.elevators@gmail.com</p>
+                </div>
+              </div>
+              <div className="flex gap-4 scroll-reveal">
+                <div className="w-10 h-10 bg-brand-gold/10 rounded-lg flex items-center justify-center text-brand-gold shrink-0 border border-brand-gold/20 hover:scale-110 transition-all duration-300">
+                  <i className="fa-brands fa-instagram"></i>
+                </div>
+                <div>
+                  <p className="font-semibold text-white text-xs uppercase tracking-wider mb-0.5">Instagram</p>
+                  <p className="text-slate-400 text-xs">@digitech.elevators</p>
                 </div>
               </div>
               <div className="flex gap-4 scroll-reveal">
@@ -80,14 +98,14 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="font-semibold text-white text-xs uppercase tracking-wider mb-0.5">Business Hours</p>
-                  <p className="text-slate-400 text-xs">Mon – Sat: 9:00 AM – 6:00 PM</p>
-                  <p className="text-slate-400 text-xs">24/7 Emergency Breakdown Support</p>
+                  <p className="text-slate-400 text-xs">Mon – Sat: 8:30 AM – 10:30 PM</p>
+                  <p className="text-slate-400 text-xs">Sunday: 10:30 AM – 10:30 PM</p>
                 </div>
               </div>
             </div>
 
             <a
-              href="https://wa.me/919876543210?text=Hi%20Digitech%20Elevators"
+              href="https://wa.me/919845926155?text=Hi%20Digitech%20Elevators"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold px-6 py-3 rounded-xl text-sm uppercase transition-all hover:scale-105 shadow-lg scroll-reveal btn-glow"
