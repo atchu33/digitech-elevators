@@ -113,10 +113,16 @@ export default function Contact() {
               <i className="fa-brands fa-whatsapp text-lg"></i> Chat on WhatsApp
             </a>
 
-            {/* Map placeholder */}
-            <div className="w-full h-44 bg-slate-900/60 rounded-2xl border border-slate-700 flex flex-col items-center justify-center gap-2 scroll-reveal">
-              <i className="fa-solid fa-map-location-dot text-2xl text-brand-gold animate-float"></i>
-              <span className="text-slate-400 text-xs">Google Map Location</span>
+            {/* Map iframe */}
+            <div className="w-full h-44 rounded-2xl border border-slate-700 overflow-hidden scroll-reveal">
+              <iframe
+                title="Google Map Location"
+                src="https://maps.google.com/maps?q=61%20Third%20floor,%201st%20A%20main%20Road%20Bhuvaneshwari%20nagar,%20Vishwanath%20Naganahalli%20Main%20Rd,%20opp.%20Alphonsa%20Forane%20Church,%20RT%20Nagar,%20Bengaluru,%20Karnataka%20560032&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                className="w-full h-full border-0"
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
           </div>
 
