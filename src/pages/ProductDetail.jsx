@@ -238,8 +238,8 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
                     alt={img.caption}
                     className={`w-full h-full ${img.url.includes('villa4.png') ? 'object-cover object-left' : 'object-cover'} group-hover:scale-110 transition-transform duration-700`}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/95 via-brand-navy/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute inset-0 flex items-end p-6 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out">
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/95 via-brand-navy/30 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 flex items-end p-6 translate-y-0 md:translate-y-4 opacity-100 md:opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-100 transition-all duration-500 ease-out">
                     <div>
                       <p className="text-white font-serif font-bold text-sm mb-2">{img.caption}</p>
                     </div>
@@ -256,7 +256,7 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Image */}
-            <div className="scroll-reveal-left">
+            <div className="scroll-reveal-left order-2 lg:order-1">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <img
                   src={
@@ -279,7 +279,7 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
             </div>
 
             {/* Content */}
-            <div className="space-y-8 scroll-reveal-right">
+            <div className="space-y-8 scroll-reveal-right order-1 lg:order-2">
               <div>
                 <h3 className="text-xs font-bold uppercase tracking-widest text-brand-gold mb-3">
                   Perfect For
