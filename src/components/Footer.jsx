@@ -29,7 +29,7 @@ export default function Footer() {
         <div className="space-y-5">
           <a href="#/home" className="inline-flex items-center gap-3 group">
             <div className="w-14 h-14 bg-white rounded-lg flex items-center justify-center p-1.5 shadow-lg">
-              <img 
+              <img loading="lazy" 
                 src="./logo-removebg-preview.png" 
                 alt="Digitech Elevators Logo" 
                 className="h-full w-full object-contain"
@@ -146,7 +146,7 @@ export default function Footer() {
           <p>&copy; {new Date().getFullYear()} <span className="text-slate-400 font-semibold">Digitech Elevators</span>. All Rights Reserved.</p>
           <div className="flex items-center">
             <span className="text-slate-500 font-medium">Designed &amp; Developed by</span>
-            <img 
+            <img loading="lazy" 
               src="./vantageedge1.jpeg" 
               alt="Vantage Edge Solutions" 
               className="h-10 object-contain mix-blend-lighten -ml-1"

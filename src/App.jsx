@@ -1,22 +1,30 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import './App.css';
 
 // Components
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
-// Pages
-import Home from './pages/Home';
-import About from './pages/About';
-import ProductDetail from './pages/ProductDetail';
-import ServiceDetail from './pages/ServiceDetail';
-import Careers from './pages/Careers';
-import Projects from './pages/Projects';
-import Amc from './pages/Amc';
-import Faq from './pages/Faq';
-import Contact from './pages/Contact';
-import Quote from './pages/Quote';
-import Legal from './pages/Legal';
+// Lazy-loaded Pages
+const Home = lazy(() => import('./pages/Home'));
+const About = lazy(() => import('./pages/About'));
+const ProductDetail = lazy(() => import('./pages/ProductDetail'));
+const ServiceDetail = lazy(() => import('./pages/ServiceDetail'));
+const Careers = lazy(() => import('./pages/Careers'));
+const Projects = lazy(() => import('./pages/Projects'));
+const Amc = lazy(() => import('./pages/Amc'));
+const Faq = lazy(() => import('./pages/Faq'));
+const Contact = lazy(() => import('./pages/Contact'));
+const Quote = lazy(() => import('./pages/Quote'));
+const Legal = lazy(() => import('./pages/Legal'));
+
+// Loader component for Suspense fallback
+const PageLoader = () => (
+  <div className="flex flex-col items-center justify-center min-h-[60vh] py-20 space-y-4">
+    <div className="w-12 h-12 border-4 border-slate-200 border-t-brand-gold rounded-full animate-spin"></div>
+    <p className="text-xs uppercase tracking-widest text-slate-500 font-semibold animate-pulse">Loading...</p>
+  </div>
+);
 
 export default function App() {
   const [currentHash, setCurrentHash] = useState(window.location.hash || '#/home');
@@ -158,7 +166,9 @@ export default function App() {
       {/* Main Dynamic View — animates in like elevator arriving at a new floor */}
       <main className="flex-grow">
         <div key={currentHash} className="animate-page-up">
-          {renderView()}
+          <Suspense fallback={<PageLoader />}>
+            {renderView()}
+          </Suspense>
         </div>
       </main>
 

@@ -30,6 +30,7 @@ export default function Gallery() {
           loop
           muted
           playsInline
+          preload="none"
           className="absolute inset-0 w-full h-full object-cover opacity-35 z-0"
         >
           <source src="lift2.mp4" type="video/mp4" />

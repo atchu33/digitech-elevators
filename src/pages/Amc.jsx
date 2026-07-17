@@ -87,6 +87,7 @@ export default function Amc() {
           loop
           muted
           playsInline
+          preload="none"
           className="absolute inset-0 w-full h-full object-cover opacity-35 z-0"
         >
           <source src="lift4.mp4" type="video/mp4" />
@@ -254,7 +255,7 @@ export default function Amc() {
                 className="group relative cursor-pointer overflow-hidden rounded-2xl border-2 border-slate-200 shadow-md bg-white hover:border-brand-gold transition duration-300 max-w-md w-full"
                 onClick={() => setLightboxImage('./POSTER/WHY AMC.png')}
               >
-                <img 
+                <img loading="lazy" 
                   src="./POSTER/WHY AMC.png" 
                   alt="Why AMC Poster" 
                   className="w-full h-auto object-cover group-hover:scale-105 transition duration-500" 
@@ -283,7 +284,7 @@ export default function Amc() {
             className="max-w-4xl max-h-[85vh] w-full flex flex-col items-center justify-center"
             onClick={(e) => e.stopPropagation()}
           >
-            <img 
+            <img loading="lazy" 
               src={lightboxImage} 
               alt="Poster Full Screen" 
               className="max-h-[80vh] object-contain rounded-lg border border-slate-800 shadow-2xl"

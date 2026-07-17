@@ -53,7 +53,7 @@ export default function Faq() {
       {/* ── Banner ── */}
       <section className="relative bg-brand-navy text-white py-24 px-4 text-center overflow-hidden">
         {/* Background Image */}
-        <img
+        <img loading="lazy"
           src="faq_hero_bg.png"
           alt="FAQ background"
           className="absolute inset-0 w-full h-full object-cover opacity-35 z-0"
@@ -138,7 +138,7 @@ export default function Faq() {
               className="group relative cursor-pointer overflow-hidden rounded-2xl border border-slate-200 shadow-md max-w-md w-full bg-slate-50 hover:border-brand-gold transition duration-300"
               onClick={() => setShowSafetyModal(true)}
             >
-              <img 
+              <img loading="lazy" 
                 src="./POSTER/SAFETY TIP.png" 
                 alt="Elevator Safety Guidelines Poster" 
                 className="w-full h-auto object-cover group-hover:scale-105 transition duration-500"
@@ -166,7 +166,7 @@ export default function Faq() {
             className="max-w-4xl max-h-[85vh] w-full flex flex-col items-center justify-center"
             onClick={(e) => e.stopPropagation()}
           >
-            <img 
+            <img loading="lazy" 
               src="./POSTER/SAFETY TIP.png" 
               alt="Safety Tips Poster Full" 
               className="max-h-[80vh] object-contain rounded-lg border border-slate-800 shadow-2xl"

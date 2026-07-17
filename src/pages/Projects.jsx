@@ -25,6 +25,7 @@ export default function Projects() {
           loop
           muted
           playsInline
+          preload="none"
           className="absolute inset-0 w-full h-full object-cover opacity-35 z-0"
         >
           <source src="lift5.mp4" type="video/mp4" />

@@ -150,7 +150,7 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
           {/* Right Image Column - Full height, bleed to edge */}
           <div className="relative h-[350px] lg:h-auto group">
             <div className="absolute inset-0 overflow-hidden">
-              <img
+              <img loading="lazy"
                 src={prod.image}
                 alt={prod.title}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
@@ -178,7 +178,7 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
             {/* Large Product Image */}
             <div className="scroll-reveal-left">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-brand-gold/30 group">
-                <img
+                <img loading="lazy"
                   src={
                     productKey === 'commercial' ? './commercial1.png' :
                     productKey === 'home' ? './homelift2.png' :
@@ -260,7 +260,7 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
                   key={i}
                   className="relative rounded-2xl overflow-hidden shadow-xl group aspect-[3/4] scroll-reveal hover:translate-y-[-8px] transition-all duration-300 hover:shadow-2xl"
                 >
-                  <img
+                  <img loading="lazy"
                     src={img.url}
                     alt={img.caption}
                     className={`w-full h-full ${img.url.includes('villa4.png') ? 'object-cover object-left' : 'object-cover'} group-hover:scale-110 transition-transform duration-700`}
@@ -285,7 +285,7 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
             {/* Image */}
             <div className="scroll-reveal-left order-2 lg:order-1">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-                <img
+                <img loading="lazy"
                   src={
                     productKey === 'passenger' ? './passenger1.png' :
                     productKey === 'home' ? './homelift3.png' :
@@ -364,7 +364,7 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
             {/* Image */}
             <div className="scroll-reveal-right">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-                <img
+                <img loading="lazy"
                   src={
                     productKey === 'commercial' ? './commercial2.png' :
                     productKey === 'home' ? './homelift1.png' :

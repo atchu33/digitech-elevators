@@ -155,7 +155,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
           {/* Right Image Column - Full height, bleed to edge */}
           <div className="relative h-[280px] lg:h-full group">
             <div className="absolute inset-0 overflow-hidden">
-              <img
+              <img loading="lazy"
                 src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1200&q=80"
                 alt={srv.title}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
@@ -235,7 +235,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
                 <div className="scroll-reveal-left lg:sticky lg:top-24">
                   <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-brand-gold/30 group">
-                    <img
+                    <img loading="lazy"
                       src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1200&q=80"
                       alt="AMC Services"
                       className="w-full h-[450px] lg:h-[550px] object-cover group-hover:scale-105 transition-transform duration-700"
@@ -341,7 +341,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
 
                 <div className="scroll-reveal-right lg:sticky lg:top-24">
                   <div className="relative rounded-3xl overflow-hidden shadow-2xl group">
-                    <img
+                    <img loading="lazy"
                       src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1200&q=80"
                       alt="Modernization"
                       className="w-full h-[450px] lg:h-[550px] object-cover group-hover:scale-105 transition-transform duration-700"
