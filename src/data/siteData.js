@@ -271,7 +271,7 @@ export const SERVICES_DATA = {
     plans: [
       {
         name: 'Platinum Comprehensive',
-        desc: 'Ultimate coverage including all high-value items: VVVF controllers, ARD batteries, motor assemblies, and guaranteed VIP response time.'
+        desc: 'Our premium AMC plan offering complete protection, fastest response, and maximum reliability.'
       },
       {
         name: 'Comprehensive',
@@ -279,7 +279,7 @@ export const SERVICES_DATA = {
       },
       {
         name: 'Semi-Comprehensive',
-        desc: 'Includes monthly preventive upkeep plus coverage for minor components, switches, locks, and relays. Large items billed separate.'
+        desc: 'Includes maintenance, labor, and selected consumable spare parts.'
       },
       {
         name: 'Non-Comprehensive',
