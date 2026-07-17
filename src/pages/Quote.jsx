@@ -5,6 +5,42 @@ export default function Quote() {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
+    
+    // Get form data
+    const formData = new FormData(e.target);
+    const name = formData.get('name') || 'Customer';
+    const company = formData.get('company');
+    const mobile = formData.get('mobile') || 'Not provided';
+    const email = formData.get('email');
+    const city = formData.get('city') || 'Bangalore';
+    const buildingType = formData.get('buildingType');
+    const elevatorType = formData.get('elevatorType');
+    const floors = formData.get('floors');
+    const capacity = formData.get('capacity');
+    const service = formData.get('service');
+    const details = formData.get('details');
+    
+    // Create WhatsApp message
+    const whatsappMessage = `Hi Digitech Elevators! I need a detailed quote:\n\n` +
+                           `👤 *Contact Details:*\n` +
+                           `• Name: ${name}\n` +
+                           `• Company: ${company || 'Not specified'}\n` +
+                           `• Mobile: ${mobile}\n` +
+                           `• Email: ${email || 'Not provided'}\n` +
+                           `• City: ${city}\n\n` +
+                           `📋 *Project Specifications:*\n` +
+                           `• Building Type: ${buildingType || 'Not specified'}\n` +
+                           `• Elevator Type: ${elevatorType || 'Not specified'}\n` +
+                           `• Floors: ${floors || 'Not specified'}\n` +
+                           `• Capacity: ${capacity || 'Not specified'}\n` +
+                           `• Service Scope: ${service || 'Not specified'}\n\n` +
+                           (details ? `📝 *Additional Requirements:*\n${details}\n\n` : '') +
+                           `Please provide a comprehensive quotation.`;
+    
+    // Open WhatsApp
+    const whatsappURL = `https://wa.me/919845071406?text=${encodeURIComponent(whatsappMessage)}`;
+    window.open(whatsappURL, '_blank');
+    
     setFormSubmitted(true);
   };
 
@@ -93,33 +129,33 @@ export default function Quote() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   <div>
                     <label className="block text-xs font-semibold text-slate-500 mb-1.5">Contact Name *</label>
-                    <input type="text" placeholder="Your Full Name" className="w-full border border-slate-200 rounded-lg p-3 text-xs focus:outline-none focus:border-brand-navy focus:ring-2 focus:ring-brand-gold/20 transition-all duration-200" required />
+                    <input type="text" name="name" placeholder="Your Full Name" className="w-full border border-slate-200 rounded-lg p-3 text-xs focus:outline-none focus:border-brand-navy focus:ring-2 focus:ring-brand-gold/20 transition-all duration-200" required />
                   </div>
                   <div>
                     <label className="block text-xs font-semibold text-slate-500 mb-1.5">Company / Building Name</label>
-                    <input type="text" placeholder="Company or Property Name" className="w-full border border-slate-200 rounded-lg p-3 text-xs focus:outline-none focus:border-brand-navy focus:ring-2 focus:ring-brand-gold/20 transition-all duration-200" />
+                    <input type="text" name="company" placeholder="Company or Property Name" className="w-full border border-slate-200 rounded-lg p-3 text-xs focus:outline-none focus:border-brand-navy focus:ring-2 focus:ring-brand-gold/20 transition-all duration-200" />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   <div>
                     <label className="block text-xs font-semibold text-slate-500 mb-1.5">Phone Number *</label>
-                    <input type="tel" placeholder="Mobile Number" className="w-full border border-slate-200 rounded-lg p-3 text-xs focus:outline-none focus:border-brand-navy focus:ring-2 focus:ring-brand-gold/20 transition-all duration-200" required />
+                    <input type="tel" name="mobile" placeholder="Mobile Number" className="w-full border border-slate-200 rounded-lg p-3 text-xs focus:outline-none focus:border-brand-navy focus:ring-2 focus:ring-brand-gold/20 transition-all duration-200" required />
                   </div>
                   <div>
                     <label className="block text-xs font-semibold text-slate-500 mb-1.5">Email Address</label>
-                    <input type="email" placeholder="Email Address" className="w-full border border-slate-200 rounded-lg p-3 text-xs focus:outline-none focus:border-brand-navy focus:ring-2 focus:ring-brand-gold/20 transition-all duration-200" />
+                    <input type="email" name="email" placeholder="Email Address" className="w-full border border-slate-200 rounded-lg p-3 text-xs focus:outline-none focus:border-brand-navy focus:ring-2 focus:ring-brand-gold/20 transition-all duration-200" />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   <div>
                     <label className="block text-xs font-semibold text-slate-500 mb-1.5">City / Location *</label>
-                    <input type="text" placeholder="City" defaultValue="Bangalore" className="w-full border border-slate-200 rounded-lg p-3 text-xs focus:outline-none focus:border-brand-navy focus:ring-2 focus:ring-brand-gold/20 transition-all duration-200" required />
+                    <input type="text" name="city" placeholder="City" defaultValue="Bangalore" className="w-full border border-slate-200 rounded-lg p-3 text-xs focus:outline-none focus:border-brand-navy focus:ring-2 focus:ring-brand-gold/20 transition-all duration-200" required />
                   </div>
                   <div>
                     <label className="block text-xs font-semibold text-slate-500 mb-1.5">Building Type *</label>
-                    <select className="w-full border border-slate-200 rounded-lg p-3 text-xs text-slate-600 focus:outline-none focus:border-brand-navy focus:ring-2 focus:ring-brand-gold/20 transition-all duration-200" required>
+                    <select name="buildingType" className="w-full border border-slate-200 rounded-lg p-3 text-xs text-slate-600 focus:outline-none focus:border-brand-navy focus:ring-2 focus:ring-brand-gold/20 transition-all duration-200" required>
                       <option value="">Select Building Type</option>
                       <option>Residential Apartment</option>
                       <option>Villa / Duplex House</option>
@@ -136,7 +172,7 @@ export default function Quote() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   <div>
                     <label className="block text-xs font-semibold text-slate-500 mb-1.5">Elevator Category *</label>
-                    <select className="w-full border border-slate-200 rounded-lg p-3 text-xs text-slate-600 focus:outline-none focus:border-brand-navy focus:ring-2 focus:ring-brand-gold/20 transition-all duration-200" required>
+                    <select name="elevatorType" className="w-full border border-slate-200 rounded-lg p-3 text-xs text-slate-600 focus:outline-none focus:border-brand-navy focus:ring-2 focus:ring-brand-gold/20 transition-all duration-200" required>
                       <option value="">Select Elevator Type</option>
                       <option>Passenger Lift</option>
                       <option>Hospital Lift</option>
@@ -151,14 +187,14 @@ export default function Quote() {
                   </div>
                   <div>
                     <label className="block text-xs font-semibold text-slate-500 mb-1.5">Number of Floors (Stops)</label>
-                    <input type="number" min="2" max="50" placeholder="e.g. 5" className="w-full border border-slate-200 rounded-lg p-3 text-xs focus:outline-none focus:border-brand-navy focus:ring-2 focus:ring-brand-gold/20 transition-all duration-200" />
+                    <input type="number" name="floors" min="2" max="50" placeholder="e.g. 5" className="w-full border border-slate-200 rounded-lg p-3 text-xs focus:outline-none focus:border-brand-navy focus:ring-2 focus:ring-brand-gold/20 transition-all duration-200" />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   <div>
                     <label className="block text-xs font-semibold text-slate-500 mb-1.5">Required Capacity</label>
-                    <select className="w-full border border-slate-200 rounded-lg p-3 text-xs text-slate-600 focus:outline-none focus:border-brand-navy focus:ring-2 focus:ring-brand-gold/20 transition-all duration-200">
+                    <select name="capacity" className="w-full border border-slate-200 rounded-lg p-3 text-xs text-slate-600 focus:outline-none focus:border-brand-navy focus:ring-2 focus:ring-brand-gold/20 transition-all duration-200">
                       <option value="">Select Capacity Option</option>
                       <option>4 Passengers (320 kg)</option>
                       <option>6 Passengers (408 kg)</option>
@@ -170,7 +206,7 @@ export default function Quote() {
                   </div>
                   <div>
                     <label className="block text-xs font-semibold text-slate-500 mb-1.5">Scope of Service Required *</label>
-                    <select className="w-full border border-slate-200 rounded-lg p-3 text-xs text-slate-600 focus:outline-none focus:border-brand-navy focus:ring-2 focus:ring-brand-gold/20 transition-all duration-200" required>
+                    <select name="service" className="w-full border border-slate-200 rounded-lg p-3 text-xs text-slate-600 focus:outline-none focus:border-brand-navy focus:ring-2 focus:ring-brand-gold/20 transition-all duration-200" required>
                       <option value="">Select Scope</option>
                       <option>New Elevator Installation</option>
                       <option>Annual Maintenance Contract (AMC)</option>
@@ -183,7 +219,7 @@ export default function Quote() {
 
                 <div>
                   <label className="block text-xs font-semibold text-slate-500 mb-1.5">Detailed Layout / Shaft Requirements</label>
-                  <textarea rows="4" placeholder="Mention shaft measurements, interior choices (Glass/SS), door style, or specific timelines if any..." className="w-full border border-slate-200 rounded-lg p-3 text-xs focus:outline-none focus:border-brand-navy focus:ring-2 focus:ring-brand-gold/20 transition-all duration-200 resize-none"></textarea>
+                  <textarea rows="4" name="details" placeholder="Mention shaft measurements, interior choices (Glass/SS), door style, or specific timelines if any..." className="w-full border border-slate-200 rounded-lg p-3 text-xs focus:outline-none focus:border-brand-navy focus:ring-2 focus:ring-brand-gold/20 transition-all duration-200 resize-none"></textarea>
                 </div>
 
                 <button type="submit" className="w-full bg-brand-navy hover:bg-slate-800 text-white font-bold py-4 rounded-xl text-xs uppercase tracking-widest transition duration-300 shadow-lg hover:shadow-xl mt-2 flex items-center justify-center gap-2 hover:scale-[1.01] btn-glow">

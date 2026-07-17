@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 
+// NOTE: Get your free access key from https://web3forms.com/ and replace this placeholder.
+const WEB3FORMS_ACCESS_KEY = "YOUR_ACCESS_KEY_HERE";
+
 export default function Careers() {
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [resumeFile, setResumeFile] = useState(null);
   const [validationError, setValidationError] = useState('');
 
@@ -49,21 +53,43 @@ export default function Careers() {
     setResumeFile(file);
   };
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
     if (!resumeFile) {
       setValidationError('Please upload your resume.');
       return;
     }
     
-    // Simulate submission
-    console.log('Form Submitted successfully:', {
-      ...formData,
-      resumeName: resumeFile.name,
-      resumeSize: resumeFile.size
-    });
+    setIsSubmitting(true);
+    setValidationError('');
 
-    setFormSubmitted(true);
+    try {
+      const formDataToSend = new FormData();
+      formDataToSend.append("access_key", WEB3FORMS_ACCESS_KEY);
+      formDataToSend.append("subject", `New Job Application: ${formData.name}`);
+      formDataToSend.append("name", formData.name);
+      formDataToSend.append("phone", formData.phone);
+      formDataToSend.append("email", formData.email);
+      formDataToSend.append("message", formData.message);
+      formDataToSend.append("attachment", resumeFile);
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formDataToSend
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setFormSubmitted(true);
+      } else {
+        setValidationError(data.message || "Failed to submit application. Please try again.");
+      }
+    } catch (error) {
+      setValidationError("An error occurred. Please check your internet connection and try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -223,9 +249,16 @@ export default function Careers() {
 
               <button 
                 type="submit"
-                className="w-full bg-brand-gold hover:bg-brand-gold-hover text-brand-navy font-bold py-3.5 rounded-xl text-xs uppercase tracking-widest transition-all hover:scale-[1.01] shadow-lg hover:shadow-xl btn-glow"
+                disabled={isSubmitting}
+                className={`w-full bg-brand-gold hover:bg-brand-gold-hover text-brand-navy font-bold py-3.5 rounded-xl text-xs uppercase tracking-widest transition-all hover:scale-[1.01] shadow-lg hover:shadow-xl btn-glow flex items-center justify-center gap-2 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
               >
-                Submit Application
+                {isSubmitting ? (
+                  <>
+                    <i className="fa-solid fa-spinner animate-spin"></i> Submitting...
+                  </>
+                ) : (
+                  'Submit Application'
+                )}
               </button>
             </form>
           )}

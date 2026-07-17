@@ -88,7 +88,25 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
     return null;
   }
 
-  const handleFormSubmit = (e) => { e.preventDefault(); setFormSubmitted(true); };
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    
+    const formData = new FormData(e.target);
+    const name = formData.get('name');
+    const mobile = formData.get('mobile');
+    const message = formData.get('message');
+    
+    const whatsappMessage = `*New Service Inquiry - ${srv.title}*\n\n` +
+      `*Name:* ${name}\n` +
+      `*Mobile:* ${mobile}\n` +
+      `*Message:* ${message || 'No additional message'}\n\n` +
+      `*Service:* ${srv.title}`;
+    
+    const whatsappUrl = `https://wa.me/919845071406?text=${encodeURIComponent(whatsappMessage)}`;
+    window.open(whatsappUrl, '_blank');
+    
+    setFormSubmitted(true);
+  };
 
   return (
     <div className="animate-fade-in">
@@ -642,7 +660,8 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
                     <div>
                       <label className="block text-sm font-bold text-slate-700 mb-2">Your Name</label>
                       <input 
-                        type="text" 
+                        type="text"
+                        name="name" 
                         placeholder="Enter your name" 
                         className="w-full border-2 border-slate-200 rounded-xl p-4 text-sm focus:outline-none focus:border-brand-gold transition" 
                         required 
@@ -651,7 +670,8 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
                     <div>
                       <label className="block text-sm font-bold text-slate-700 mb-2">Mobile Number</label>
                       <input 
-                        type="tel" 
+                        type="tel"
+                        name="mobile" 
                         placeholder="Enter mobile number" 
                         className="w-full border-2 border-slate-200 rounded-xl p-4 text-sm focus:outline-none focus:border-brand-gold transition" 
                         required 
@@ -660,7 +680,8 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
                     <div>
                       <label className="block text-sm font-bold text-slate-700 mb-2">Your Message</label>
                       <textarea 
-                        rows="4" 
+                        rows="4"
+                        name="message" 
                         placeholder="Describe your building parameters..." 
                         className="w-full border-2 border-slate-200 rounded-xl p-4 text-sm focus:outline-none focus:border-brand-gold transition"
                       />

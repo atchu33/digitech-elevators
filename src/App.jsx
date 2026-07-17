@@ -27,12 +27,11 @@ export default function App() {
   useEffect(() => {
     const handleHashChange = () => {
       setPageLoading(true);
-      setTimeout(() => setPageLoading(false), 500);
+      setTimeout(() => setPageLoading(false), 300);
       const hash = window.location.hash || '#/home';
       // Normalize empty hash or root to /home
       const normalizedHash = (hash === '#' || hash === '#/') ? '#/home' : hash;
       setCurrentHash(normalizedHash);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
     window.addEventListener('hashchange', handleHashChange);
@@ -41,6 +40,11 @@ export default function App() {
     handleHashChange();
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
+
+  // Scroll to top after new route renders
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  }, [currentHash]);
 
   // Scroll-to-top visibility
   useEffect(() => {

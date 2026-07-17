@@ -195,7 +195,55 @@ export default function Home() {
     return () => clearInterval(iv);
   }, []);
 
-  const handleFormSubmit = (e) => { e.preventDefault(); setFormSubmitted(true); };
+  const handleFormSubmit = (e) => { 
+    e.preventDefault(); 
+    
+    // Get form data
+    const formData = new FormData(e.target);
+    const elevatorType = formData.get('elevatorType');
+    const floors = formData.get('floors');
+    const capacity = formData.get('capacity');
+    const mobile = formData.get('mobile') || 'Not provided';
+    const name = formData.get('name') || 'Customer';
+    const email = formData.get('email');
+    const city = formData.get('city');
+    const service = formData.get('service');
+    const company = formData.get('company');
+    const message = formData.get('message');
+    
+    // Create WhatsApp message based on form type
+    let whatsappMessage;
+    
+    if (elevatorType) {
+      // Fast Project Estimate form (Hero section)
+      whatsappMessage = `Hi Digitech Elevators! I need a quote for:\n\n` +
+                       `📋 *Project Details:*\n` +
+                       `• Elevator Type: ${elevatorType}\n` +
+                       `• Floors: ${floors}\n` +
+                       `• Capacity: ${capacity}\n` +
+                       `• Mobile: ${mobile}\n\n` +
+                       `Please provide a detailed quotation.`;
+    } else {
+      // Contact/Enquiry form
+      whatsappMessage = `Hi Digitech Elevators! I have an enquiry:\n\n` +
+                       `👤 *Contact Details:*\n` +
+                       `• Name: ${name}\n` +
+                       `• Company: ${company || 'Not specified'}\n` +
+                       `• Mobile: ${mobile}\n` +
+                       `• Email: ${email || 'Not provided'}\n` +
+                       `• City: ${city || 'Bangalore'}\n` +
+                       `• Service Required: ${service || 'General Enquiry'}\n\n` +
+                       (message ? `📝 *Message:*\n${message}\n\n` : '') +
+                       `Please contact me at your earliest convenience.`;
+    }
+    
+    // Open WhatsApp with pre-filled message
+    const whatsappURL = `https://wa.me/919845071406?text=${encodeURIComponent(whatsappMessage)}`;
+    window.open(whatsappURL, '_blank');
+    
+    // Show success message
+    setFormSubmitted(true);
+  };
 
   const serviceIcons = {
     installation: 'fa-hammer',
@@ -306,7 +354,7 @@ export default function Home() {
               <form onSubmit={handleFormSubmit} className="space-y-2.5">
                 <div>
                   <label className="block text-[10px] font-semibold text-slate-300 mb-0.5">Select Elevator Type</label>
-                  <select className="w-full bg-slate-950 border border-slate-600 rounded-lg p-2 text-xs text-white focus:outline-none focus:border-brand-gold transition-colors">
+                  <select name="elevatorType" className="w-full bg-slate-950 border border-slate-600 rounded-lg p-2 text-xs text-white focus:outline-none focus:border-brand-gold transition-colors">
                     <option>Passenger Elevator</option>
                     <option>Luxury Home Lift</option>
                     <option>Stretcher / Hospital Lift</option>
@@ -318,12 +366,12 @@ export default function Home() {
                 <div className="grid grid-cols-2 gap-2">
                   <div>
                     <label className="block text-[10px] font-semibold text-slate-300 mb-0.5">Floors (Stops)</label>
-                    <input type="number" min="2" max="40" defaultValue="4"
+                    <input type="number" name="floors" min="2" max="40" defaultValue="4"
                            className="w-full bg-slate-950 border border-slate-600 rounded-lg p-2 text-xs text-white focus:outline-none focus:border-brand-gold transition-colors" required />
                   </div>
                   <div>
                     <label className="block text-[10px] font-semibold text-slate-300 mb-0.5">Capacity</label>
-                    <select defaultValue="8 Pax (544 kg)" className="w-full bg-slate-950 border border-slate-600 rounded-lg p-2 text-xs text-white focus:outline-none focus:border-brand-gold transition-colors">
+                    <select name="capacity" defaultValue="8 Pax (544 kg)" className="w-full bg-slate-950 border border-slate-600 rounded-lg p-2 text-xs text-white focus:outline-none focus:border-brand-gold transition-colors">
                       <option>4 Pax (320 kg)</option>
                       <option>6 Pax (408 kg)</option>
                       <option>8 Pax (544 kg)</option>
@@ -333,7 +381,7 @@ export default function Home() {
                 </div>
                 <div>
                   <label className="block text-[10px] font-semibold text-slate-300 mb-0.5">Mobile Number</label>
-                  <input type="tel" placeholder="Mobile Number"
+                  <input type="tel" name="mobile" placeholder="Mobile Number"
                          className="w-full bg-slate-950 border border-slate-600 rounded-lg p-2 text-xs text-white placeholder-slate-550 focus:outline-none focus:border-brand-gold transition-colors" required />
                 </div>
                 <button type="submit"
@@ -1056,36 +1104,36 @@ export default function Home() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs font-bold text-slate-700 mb-1.5">Name *</label>
-                      <input type="text" placeholder="Your Name"
+                      <input type="text" name="name" placeholder="Your Name"
                              className="w-full border-2 border-slate-200 rounded-xl p-3 text-sm focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-all" required />
                     </div>
                     <div>
                       <label className="block text-xs font-bold text-slate-700 mb-1.5">Company</label>
-                      <input type="text" placeholder="Company / Building Name"
+                      <input type="text" name="company" placeholder="Company / Building Name"
                              className="w-full border-2 border-slate-200 rounded-xl p-3 text-sm focus:outline-none focus:border-brand-navy transition-all" />
                     </div>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs font-bold text-slate-700 mb-1.5">Phone Number *</label>
-                      <input type="tel" placeholder="Mobile Number"
+                      <input type="tel" name="mobile" placeholder="Mobile Number"
                              className="w-full border-2 border-slate-200 rounded-xl p-3 text-sm focus:outline-none focus:border-brand-gold transition-all" required />
                     </div>
                     <div>
                       <label className="block text-xs font-bold text-slate-700 mb-1.5">Email *</label>
-                      <input type="email" placeholder="Email Address"
+                      <input type="email" name="email" placeholder="Email Address"
                              className="w-full border-2 border-slate-200 rounded-xl p-3 text-sm focus:outline-none focus:border-brand-gold transition-all" required />
                     </div>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs font-bold text-slate-700 mb-1.5">City *</label>
-                      <input type="text" defaultValue="Bangalore"
+                      <input type="text" name="city" defaultValue="Bangalore"
                              className="w-full border-2 border-slate-200 rounded-xl p-3 text-sm focus:outline-none focus:border-brand-navy transition-all" required />
                     </div>
                     <div>
                       <label className="block text-xs font-bold text-slate-700 mb-1.5">Service Required *</label>
-                      <select className="w-full border-2 border-slate-200 rounded-xl p-3 text-sm text-slate-700 focus:outline-none focus:border-brand-navy transition-all" required>
+                      <select name="service" className="w-full border-2 border-slate-200 rounded-xl p-3 text-sm text-slate-700 focus:outline-none focus:border-brand-navy transition-all" required>
                         <option value="">Select Service Required</option>
                         <option>Elevator Installation</option>
                         <option>Annual Maintenance Contract (AMC)</option>
@@ -1096,7 +1144,7 @@ export default function Home() {
                   </div>
                   <div>
                     <label className="block text-xs font-bold text-slate-700 mb-1.5">Message</label>
-                    <textarea rows="3" placeholder="Describe your requirements..."
+                    <textarea rows="3" name="message" placeholder="Describe your requirements..."
                               className="w-full border-2 border-slate-200 rounded-xl p-3 text-sm focus:outline-none focus:border-brand-navy transition-all resize-none" />
                   </div>
                   <button type="submit"

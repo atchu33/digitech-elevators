@@ -5,6 +5,29 @@ export default function Contact() {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
+    
+    // Get form data
+    const formData = new FormData(e.target);
+    const name = formData.get('name') || 'Customer';
+    const email = formData.get('email');
+    const mobile = formData.get('mobile') || 'Not provided';
+    const subject = formData.get('subject');
+    const message = formData.get('message');
+    
+    // Create WhatsApp message
+    const whatsappMessage = `Hi Digitech Elevators! I have a message:\n\n` +
+                           `👤 *Contact Details:*\n` +
+                           `• Name: ${name}\n` +
+                           `• Mobile: ${mobile}\n` +
+                           `• Email: ${email || 'Not provided'}\n` +
+                           `• Subject: ${subject || 'General Inquiry'}\n\n` +
+                           (message ? `📝 *Message:*\n${message}\n\n` : '') +
+                           `Please get back to me soon.`;
+    
+    // Open WhatsApp
+    const whatsappURL = `https://wa.me/919845071406?text=${encodeURIComponent(whatsappMessage)}`;
+    window.open(whatsappURL, '_blank');
+    
     setFormSubmitted(true);
   };
 
@@ -142,36 +165,36 @@ export default function Contact() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs font-semibold text-slate-500 mb-1">Name *</label>
-                    <input type="text" placeholder="Your Name"
+                    <input type="text" name="name" placeholder="Your Name"
                       className="w-full border border-slate-200 rounded-lg p-3 text-xs focus:outline-none focus:border-brand-navy focus:ring-1 focus:ring-brand-navy/20 transition-all duration-200" required />
                   </div>
                   <div>
                     <label className="block text-xs font-semibold text-slate-500 mb-1">Company / Building</label>
-                    <input type="text" placeholder="Company / Building Name"
+                    <input type="text" name="company" placeholder="Company / Building Name"
                       className="w-full border border-slate-200 rounded-lg p-3 text-xs focus:outline-none focus:border-brand-navy transition-all duration-200" />
                   </div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs font-semibold text-slate-500 mb-1">Phone Number *</label>
-                    <input type="tel" placeholder="Mobile Number"
+                    <input type="tel" name="mobile" placeholder="Mobile Number"
                       className="w-full border border-slate-200 rounded-lg p-3 text-xs focus:outline-none focus:border-brand-navy transition-all duration-200" required />
                   </div>
                   <div>
                     <label className="block text-xs font-semibold text-slate-500 mb-1">Email *</label>
-                    <input type="email" placeholder="Email Address"
+                    <input type="email" name="email" placeholder="Email Address"
                       className="w-full border border-slate-200 rounded-lg p-3 text-xs focus:outline-none focus:border-brand-navy transition-all duration-200" required />
                   </div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs font-semibold text-slate-500 mb-1">City *</label>
-                    <input type="text" defaultValue="Bangalore"
+                    <input type="text" name="city" defaultValue="Bangalore"
                       className="w-full border border-slate-200 rounded-lg p-3 text-xs focus:outline-none focus:border-brand-navy transition-all duration-200" required />
                   </div>
                   <div>
                     <label className="block text-xs font-semibold text-slate-500 mb-1">Service Required *</label>
-                    <select className="w-full border border-slate-200 rounded-lg p-3 text-xs text-slate-600 focus:outline-none focus:border-brand-navy transition-all duration-200" required>
+                    <select name="subject" className="w-full border border-slate-200 rounded-lg p-3 text-xs text-slate-600 focus:outline-none focus:border-brand-navy transition-all duration-200" required>
                       <option value="">Select Service Required</option>
                       <option>Elevator Installation</option>
                       <option>Annual Maintenance Contract (AMC)</option>
@@ -182,7 +205,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <label className="block text-xs font-semibold text-slate-500 mb-1">Message</label>
-                  <textarea rows="4" placeholder="Describe your requirements..."
+                  <textarea rows="4" name="message" placeholder="Describe your requirements..."
                     className="w-full border border-slate-200 rounded-lg p-3 text-xs focus:outline-none focus:border-brand-navy transition-all duration-200 resize-none"></textarea>
                 </div>
                 <button type="submit"
