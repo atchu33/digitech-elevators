@@ -92,70 +92,67 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
 
   return (
     <div className="animate-fade-in">
-      {/* ── Banner ── */}
-      <section className="relative bg-brand-navy text-white py-16 px-4 text-center hero-gradient overflow-hidden">
+      {/* ── Merged Hero Banner with Image ── */}
+      <section className="relative bg-brand-navy text-white overflow-hidden hero-gradient border-b-4 border-brand-gold">
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(ellipse_at_center,_#D4AF37_0%,_transparent_70%)]"></div>
-        <div className="max-w-4xl mx-auto space-y-4 relative z-10">
-          <span className="inline-block bg-brand-gold/20 border border-brand-gold/30 text-brand-gold px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest">Our Services</span>
-          <h2 className="font-serif text-4xl md:text-5xl font-bold">{srv.title}</h2>
-          <p className="text-slate-300 text-sm max-w-2xl mx-auto leading-relaxed">{srv.desc}</p>
-        </div>
-      </section>
-
-      {/* ── SERVICE SHOWCASE - Large Image Section ── */}
-      <section className="py-20 px-4 md:px-8 bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="scroll-reveal-left">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-brand-gold/30 group">
-                <img
-                  src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1200&q=80"
-                  alt={srv.title}
-                  className="w-full h-[500px] object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/60 via-transparent to-transparent" />
-                <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-md p-6 rounded-2xl">
-                  <h3 className="font-serif font-bold text-2xl text-brand-navy mb-2">{srv.title}</h3>
-                  <p className="text-brand-gold font-bold uppercase text-sm tracking-wider flex items-center gap-2">
-                    <i className="fa-solid fa-shield-halved" />
-                    Professional Service Guaranteed
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="space-y-6 scroll-reveal-right">
-              <div>
-                <h3 className="text-xs font-bold uppercase tracking-widest text-brand-gold mb-3 flex items-center gap-3">
-                  <span className="w-16 h-px bg-brand-gold" />
-                  Excellence in Service
-                </h3>
-                <h2 className="font-serif text-4xl font-bold text-brand-navy mb-4">
-                  Professional Elevator<br />Solutions
+        
+        <div className="relative grid grid-cols-1 lg:grid-cols-2 min-h-[320px]">
+          {/* Left Text Column */}
+          <div className="relative z-10 flex items-center px-4 md:px-8 lg:pl-12 xl:pl-16 py-8 md:py-10 lg:py-12">
+            <div className="max-w-2xl space-y-3">
+              <span className="inline-block bg-brand-gold/20 border border-brand-gold/30 text-brand-gold px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest">
+                Our Services
+              </span>
+              <div className="space-y-2">
+                <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
+                  {srv.title}
                 </h2>
+                <p className="text-slate-300 text-sm md:text-base leading-relaxed">
+                  {srv.desc}
+                </p>
               </div>
-              <p className="text-slate-600 text-base leading-relaxed">
-                {srv.desc}
-              </p>
               
-              <div className="grid grid-cols-2 gap-4 pt-4">
-                <div className="bg-white p-5 rounded-2xl shadow-lg border-2 border-slate-100">
-                  <div className="text-3xl font-bold text-brand-gold font-serif mb-1">
+              {/* Stats badges */}
+              <div className="grid grid-cols-2 gap-3 pt-2">
+                <div className="bg-white/10 backdrop-blur-md border border-white/20 p-3 rounded-xl">
+                  <div className="text-xl font-bold text-brand-gold font-serif mb-0.5">
                     24/7
                   </div>
-                  <div className="text-xs text-slate-600 uppercase tracking-wider font-semibold">
+                  <div className="text-[10px] text-slate-300 uppercase tracking-wider font-semibold">
                     Support Available
                   </div>
                 </div>
-                <div className="bg-white p-5 rounded-2xl shadow-lg border-2 border-slate-100">
-                  <div className="text-3xl font-bold text-brand-gold font-serif mb-1">
+                <div className="bg-white/10 backdrop-blur-md border border-white/20 p-3 rounded-xl">
+                  <div className="text-xl font-bold text-brand-gold font-serif mb-0.5">
                     100%
                   </div>
-                  <div className="text-xs text-slate-600 uppercase tracking-wider font-semibold">
+                  <div className="text-[10px] text-slate-300 uppercase tracking-wider font-semibold">
                     Quality Assured
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+          
+          {/* Right Image Column - Full height, bleed to edge */}
+          <div className="relative h-[280px] lg:h-full group">
+            <div className="absolute inset-0 overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1200&q=80"
+                alt={srv.title}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                style={{
+                  maskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.2) 5%, rgba(0,0,0,0.5) 10%, rgba(0,0,0,0.8) 18%, black 25%)',
+                  WebkitMaskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.2) 5%, rgba(0,0,0,0.5) 10%, rgba(0,0,0,0.8) 18%, black 25%)'
+                }}
+              />
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/60 via-transparent to-transparent"></div>
+            <div className="absolute bottom-3 left-3 right-3 bg-white/10 backdrop-blur-md border border-white/20 p-3 rounded-lg flex items-center justify-between text-xs z-10">
+              <span className="font-bold text-white uppercase tracking-wider">Professional Service</span>
+              <span className="text-brand-gold font-bold flex items-center gap-2">
+                <i className="fa-solid fa-shield-halved text-xs"></i> Guaranteed
+              </span>
             </div>
           </div>
         </div>
@@ -202,7 +199,6 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                   {srv.types.map((t, i) => (
                     <div key={i} className="bg-brand-navy text-white p-6 rounded-2xl text-center shadow-lg hover:bg-slate-800 transition-all">
-                      <i className="fa-solid fa-elevator text-brand-gold text-3xl mb-3 block" />
                       <span className="text-sm font-bold">{t}</span>
                     </div>
                   ))}
@@ -216,17 +212,28 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
       {/* ── AMC SERVICES - Image Left, Content Right ── */}
       {serviceKey === 'amc' && srv.included && (
         <>
-          <section className="py-20 px-4 md:px-8 bg-gradient-to-br from-brand-navy via-slate-900 to-brand-navy text-white">
+          <section className="py-20 px-4 md:px-8 bg-white">
             <div className="max-w-7xl mx-auto">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div className="scroll-reveal-left">
-                  <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                <div className="scroll-reveal-left lg:sticky lg:top-24">
+                  <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-brand-gold/30 group">
                     <img
                       src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1200&q=80"
                       alt="AMC Services"
-                      className="w-full h-[500px] object-cover"
+                      className="w-full h-[450px] lg:h-[550px] object-cover group-hover:scale-105 transition-transform duration-700"
                     />
-                    <div className="absolute inset-0 bg-brand-gold/20" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/60 via-transparent to-transparent" />
+                    
+                    {/* Floating badge */}
+                    <div className="absolute top-6 left-6 bg-brand-gold text-brand-navy px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider shadow-lg animate-bounce-soft">
+                      24/7 Support
+                    </div>
+                    
+                    {/* Bottom info overlay */}
+                    <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-md p-5 rounded-2xl">
+                      <h4 className="font-serif font-bold text-lg text-brand-navy mb-2">Comprehensive Maintenance</h4>
+                      <p className="text-xs text-slate-600 leading-relaxed">Regular inspections and preventive care for optimal performance</p>
+                    </div>
                   </div>
                 </div>
 
@@ -235,16 +242,16 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
                     <h3 className="text-xs font-bold uppercase tracking-widest text-brand-gold mb-3">
                       Comprehensive Coverage
                     </h3>
-                    <h2 className="font-serif text-4xl font-bold mb-4">
+                    <h2 className="font-serif text-4xl font-bold mb-4 text-brand-navy">
                       Services Included in AMC
                     </h2>
                   </div>
                   
                   <div className="space-y-3">
                     {srv.included.map((item, i) => (
-                      <div key={i} className="flex items-center gap-4 bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/20">
-                        <i className="fa-solid fa-circle-check text-green-400 shrink-0 text-lg" />
-                        <span className="text-sm font-semibold">{item}</span>
+                      <div key={i} className="flex items-center gap-4 bg-slate-50 p-4 rounded-xl border-2 border-slate-100 hover:border-brand-gold transition-all">
+                        <i className="fa-solid fa-circle-check text-green-500 shrink-0 text-lg" />
+                        <span className="text-sm font-semibold text-slate-700">{item}</span>
                       </div>
                     ))}
                   </div>
@@ -253,20 +260,20 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
             </div>
           </section>
 
-          <section className="py-20 px-4 md:px-8 bg-white">
+          <section className="py-20 px-4 md:px-8 bg-gradient-to-br from-brand-navy via-slate-900 to-brand-navy">
             <div className="max-w-7xl mx-auto space-y-12">
               <div className="text-center scroll-reveal">
                 <h3 className="text-xs font-bold uppercase tracking-widest text-brand-gold mb-3">
                   Choose Your Plan
                 </h3>
-                <h2 className="font-serif text-4xl font-bold text-brand-navy">
+                <h2 className="font-serif text-4xl font-bold text-white">
                   AMC Plans
                 </h2>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 scroll-reveal-container">
                 {srv.plans.map((p, i) => (
-                  <div key={i} className="bg-gradient-to-br from-slate-50 to-white p-10 rounded-3xl shadow-2xl border-2 border-slate-100 hover:border-brand-gold transition-all scroll-reveal hover:translate-y-[-8px]">
+                  <div key={i} className="bg-white p-10 rounded-3xl shadow-2xl border-2 border-white/10 hover:border-brand-gold transition-all scroll-reveal hover:translate-y-[-8px]">
                     <div className="w-16 h-16 bg-brand-gold/10 rounded-2xl flex items-center justify-center text-brand-gold text-3xl mb-6">
                       <i className="fa-solid fa-handshake" />
                     </div>
@@ -288,7 +295,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
         <>
           <section className="py-20 px-4 md:px-8 bg-white">
             <div className="max-w-7xl mx-auto">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
                 <div className="space-y-8 scroll-reveal-left">
                   <div>
                     <h3 className="text-xs font-bold uppercase tracking-widest text-brand-gold mb-3">
@@ -314,27 +321,38 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
                   </div>
                 </div>
 
-                <div className="scroll-reveal-right">
-                  <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+                <div className="scroll-reveal-right lg:sticky lg:top-24">
+                  <div className="relative rounded-3xl overflow-hidden shadow-2xl group">
                     <img
                       src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1200&q=80"
                       alt="Modernization"
-                      className="w-full h-[600px] object-cover"
+                      className="w-full h-[450px] lg:h-[550px] object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/80 via-transparent to-transparent" />
+                    
+                    {/* Floating badge */}
+                    <div className="absolute top-6 right-6 bg-brand-gold text-brand-navy px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider shadow-lg animate-bounce-soft">
+                      Premium Service
+                    </div>
+                    
+                    {/* Bottom info overlay */}
+                    <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-md p-5 rounded-2xl">
+                      <h4 className="font-serif font-bold text-lg text-brand-navy mb-2">Advanced Technology</h4>
+                      <p className="text-xs text-slate-600 leading-relaxed">Modern components and systems for enhanced performance</p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </section>
 
-          <section className="py-20 px-4 md:px-8 bg-gradient-to-br from-amber-50 via-white to-slate-50">
+          <section className="py-20 px-4 md:px-8 bg-gradient-to-br from-brand-navy via-slate-900 to-brand-navy">
             <div className="max-w-7xl mx-auto space-y-12">
               <div className="text-center scroll-reveal">
                 <h3 className="text-xs font-bold uppercase tracking-widest text-brand-gold mb-3">
                   Why Upgrade
                 </h3>
-                <h2 className="font-serif text-4xl font-bold text-brand-navy">
+                <h2 className="font-serif text-4xl font-bold text-white">
                   Key Benefits of Upgrading
                 </h2>
               </div>
@@ -344,7 +362,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
                   const icon = BENEFIT_ICONS[b] || 'fa-circle-check';
                   const detail = BENEFIT_DETAILS[b] || '';
                   return (
-                    <div key={i} className="bg-white p-8 rounded-2xl shadow-xl border-2 border-slate-100 hover:border-brand-gold transition-all scroll-reveal hover:translate-y-[-4px]">
+                    <div key={i} className="bg-white p-8 rounded-2xl shadow-xl border-2 border-white/10 hover:border-brand-gold transition-all scroll-reveal hover:translate-y-[-4px]">
                       <div className="w-14 h-14 bg-brand-gold/10 rounded-2xl flex items-center justify-center text-brand-gold text-2xl mb-5">
                         <i className={`fa-solid ${icon}`} />
                       </div>
@@ -407,6 +425,153 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
                 <a href="#/contact" className="bg-white hover:bg-slate-100 text-red-900 font-bold px-8 py-4 rounded-2xl text-sm uppercase tracking-wider transition-all hover:scale-105 shadow-2xl">
                   <i className="fa-solid fa-phone mr-2" />
                   Emergency Call
+                </a>
+              </div>
+            </div>
+          </section>
+        </>
+      )}
+
+      {/* ── LICENSING & RENEWALS SERVICE ── */}
+      {serviceKey === 'licensing' && srv.services && (
+        <>
+          {/* Services Grid Section */}
+          <section className="py-20 px-4 md:px-8 bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-50">
+            <div className="max-w-7xl mx-auto space-y-12">
+              <div className="text-center scroll-reveal">
+                <h3 className="text-xs font-bold uppercase tracking-widest text-brand-gold mb-3">
+                  Our Services
+                </h3>
+                <h2 className="font-serif text-4xl font-bold text-brand-navy">
+                  Complete Elevator Licensing & Renewal Support
+                </h2>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 scroll-reveal-container">
+                {srv.services.map((service, i) => {
+                  const detail = srv.serviceDetails[service] || '';
+                  return (
+                    <div key={i} className="bg-white p-8 rounded-2xl border-2 border-slate-200 hover:border-brand-gold transition-all scroll-reveal hover:translate-y-[-4px] shadow-xl group">
+                      <div className="w-14 h-14 bg-brand-gold/10 rounded-2xl flex items-center justify-center text-brand-gold text-2xl mb-5 group-hover:bg-brand-gold group-hover:text-brand-navy transition-all duration-300">
+                        <i className="fa-solid fa-file-lines" />
+                      </div>
+                      <h4 className="font-serif font-bold text-xl text-brand-navy mb-3 group-hover:text-brand-gold transition-colors">{service}</h4>
+                      <p className="text-sm text-slate-600 leading-relaxed">{detail}</p>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </section>
+
+          {/* Why Choose Section */}
+          <section className="py-20 px-4 md:px-8 bg-gradient-to-br from-brand-navy via-slate-900 to-brand-navy">
+            <div className="max-w-7xl mx-auto space-y-12">
+              <div className="text-center scroll-reveal">
+                <h3 className="text-xs font-bold uppercase tracking-widest text-brand-gold mb-3">
+                  Why Choose Us
+                </h3>
+                <h2 className="font-serif text-4xl font-bold text-white">
+                  Why Choose Digitech Elevators?
+                </h2>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 scroll-reveal-container">
+                {srv.whyChoose.map((reason, i) => (
+                  <div key={i} className="bg-white p-6 rounded-2xl shadow-xl transition-all scroll-reveal hover:translate-y-[-4px] group hover:shadow-2xl">
+                    <div className="w-12 h-12 bg-brand-gold/10 rounded-xl flex items-center justify-center text-brand-gold text-xl mb-4 group-hover:bg-brand-gold group-hover:text-brand-navy transition-all duration-300">
+                      <i className="fa-solid fa-circle-check" />
+                    </div>
+                    <h4 className="font-serif font-bold text-base text-brand-navy group-hover:text-brand-gold transition-colors">{reason}</h4>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Industries We Serve */}
+          <section className="py-20 px-4 md:px-8 bg-white">
+            <div className="max-w-7xl mx-auto space-y-12">
+              <div className="text-center scroll-reveal">
+                <h3 className="text-xs font-bold uppercase tracking-widest text-brand-gold mb-3">
+                  Who We Serve
+                </h3>
+                <h2 className="font-serif text-4xl font-bold text-brand-navy">
+                  Industries We Serve
+                </h2>
+              </div>
+
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 scroll-reveal-container">
+                {srv.industries.map((industry, i) => (
+                  <div key={i} className="bg-gradient-to-br from-slate-50 to-white p-6 rounded-2xl text-center border-2 border-slate-200 hover:border-brand-gold transition-all scroll-reveal hover:shadow-lg group">
+                    <span className="text-sm font-bold text-brand-navy group-hover:text-brand-gold transition-colors">{industry}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* FAQ Section */}
+          <section className="py-20 px-4 md:px-8 bg-gradient-to-br from-brand-navy via-slate-900 to-brand-navy">
+            <div className="max-w-4xl mx-auto space-y-12">
+              <div className="text-center scroll-reveal">
+                <h3 className="text-xs font-bold uppercase tracking-widest text-brand-gold mb-3">
+                  Common Questions
+                </h3>
+                <h2 className="font-serif text-4xl font-bold text-white">
+                  Frequently Asked Questions
+                </h2>
+              </div>
+
+              <div className="space-y-4 scroll-reveal-container">
+                {srv.faqs.map((faq, i) => (
+                  <details key={i} className="bg-white p-6 rounded-2xl border-2 border-white/10 hover:border-brand-gold transition-all scroll-reveal group">
+                    <summary className="font-serif font-bold text-lg text-brand-navy cursor-pointer flex items-center justify-between group-hover:text-brand-gold transition-colors">
+                      {faq.question}
+                      <i className="fa-solid fa-chevron-down text-brand-gold group-open:rotate-180 transition-transform" />
+                    </summary>
+                    <p className="text-sm text-slate-600 leading-relaxed mt-4 pt-4 border-t border-slate-200">
+                      {faq.answer}
+                    </p>
+                  </details>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Contact CTA */}
+          <section className="relative py-20 px-4 md:px-8 overflow-hidden">
+            <div 
+              className="absolute inset-0 bg-cover bg-center opacity-20"
+              style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1920&q=80)' }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-br from-brand-navy/95 to-slate-900/90" />
+            
+            {/* Animated vertical lines */}
+            <div className="absolute inset-0 opacity-10 pointer-events-none">
+              {[20, 50, 80].map(pos => (
+                <div key={pos} className="absolute top-0 bottom-0 w-px bg-brand-gold animate-pulse" style={{ left: `${pos}%` }} />
+              ))}
+            </div>
+            
+            <div className="max-w-4xl mx-auto relative z-10 text-center space-y-6">
+              <div className="w-20 h-20 bg-brand-gold/20 rounded-full flex items-center justify-center text-brand-gold text-4xl mx-auto mb-6 animate-bounce-soft">
+                <i className="fa-solid fa-file-contract" />
+              </div>
+              <h2 className="font-serif text-4xl md:text-5xl font-bold text-white">
+                Need Assistance with Licensing or Renewal?
+              </h2>
+              <p className="text-slate-300 text-lg leading-relaxed max-w-2xl mx-auto">
+                Our experts are ready to help you with documentation, inspections, and statutory compliance. Contact Digitech Elevators today for professional Licensing & Renewal Services.
+              </p>
+              <div className="flex flex-wrap justify-center gap-4 pt-6">
+                <a href="#contact-form" className="bg-brand-gold hover:bg-yellow-600 text-brand-navy font-bold px-8 py-4 rounded-2xl text-sm uppercase tracking-wider transition-all hover:scale-105 shadow-2xl">
+                  <i className="fa-solid fa-phone mr-2" />
+                  Contact Us Now
+                </a>
+                <a href="#/quote" className="bg-white hover:bg-slate-100 text-brand-navy font-bold px-8 py-4 rounded-2xl text-sm uppercase tracking-wider transition-all hover:scale-105 shadow-2xl">
+                  <i className="fa-solid fa-calculator mr-2" />
+                  Get Free Quote
                 </a>
               </div>
             </div>

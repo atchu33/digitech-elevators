@@ -202,7 +202,7 @@ export default function Home() {
     amc:          'fa-handshake',
     modernization:'fa-arrows-spin',
     repair:       'fa-screwdriver-wrench',
-    spareparts:   'fa-gears',
+    licensing:    'fa-file-contract',
     emergency:    'fa-clock-rotate-left',
   };
 
@@ -213,17 +213,17 @@ export default function Home() {
       <section className="relative bg-brand-navy text-white min-h-[82vh] lg:min-h-[86vh] flex items-center overflow-hidden">
         {/* Background layers */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/92 to-brand-navy/55 z-10" />
           <div
-            className="w-full h-full bg-cover bg-center opacity-30"
+            className="absolute inset-0 w-full h-full bg-cover bg-center opacity-80"
             style={{
-              backgroundImage: "url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=1600')",
+              backgroundImage: "url('/digitech-elevators/hero_bg.png')",
               animation: 'floatUp 12s ease-in-out infinite',
             }}
           />
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/80 to-brand-navy/10" />
           {/* Subtle grid overlay */}
           <div
-            className="absolute inset-0 z-[2] opacity-5"
+            className="absolute inset-0 opacity-5"
             style={{
               backgroundImage: 'linear-gradient(rgba(212,175,55,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(212,175,55,0.4) 1px, transparent 1px)',
               backgroundSize: '60px 60px',
@@ -359,12 +359,12 @@ export default function Home() {
         </div>
         <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-4 xl:gap-6 text-center relative z-10 pt-8 md:pt-12">
           {[
-            { val: `${yearsVal}+`, label: 'Years of Experience', icon: 'fa-clock' },
+            { val: `${yearsVal}+`, label: 'Years of Experience', icon: 'fa-calendar-check' },
             { val: `${liftsVal}+`, label: 'Elevators Maintained', icon: 'fa-elevator' },
-            { val: `${customersVal}+`, label: 'Happy Customers',    icon: 'fa-face-smile' },
-            { val: '24/7',             label: 'Breakdown Support',  icon: 'fa-bolt-lightning' },
+            { val: `${customersVal}+`, label: 'Happy Customers',    icon: 'fa-users' },
+            { val: '24/7',             label: 'Breakdown Support',  icon: 'fa-headset' },
             { val: '100%',             label: 'Safety Record',      icon: 'fa-shield-halved' },
-            { val: 'Premium',          label: 'Spares & Support',   icon: 'fa-screwdriver-wrench' },
+            { val: 'Premium',          label: 'Spares & Support',   icon: 'fa-toolbox' },
           ].map((s, i) => (
             <div
               key={i}
@@ -514,7 +514,7 @@ export default function Home() {
                   </div>
 
                   {/* Right: Arrow */}
-                  {['installation','amc','modernization','repair'].includes(key) && (
+                  {['installation','amc','modernization','repair','licensing'].includes(key) && (
                     <a 
                       href={`#/services/${key}`}
                       className="shrink-0 w-10 h-10 bg-white/10 hover:bg-brand-gold rounded-xl flex items-center justify-center text-white hover:text-brand-navy transition-all group-hover:scale-110"
@@ -556,27 +556,19 @@ export default function Home() {
             {Object.entries(PRODUCTS_DATA).map(([key, item], i) => (
               <div
                 key={key}
-                className={`scroll-reveal group sticky bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-slate-200 hover:border-brand-gold`}
+                className={`scroll-reveal group lg:sticky bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-slate-200 hover:border-brand-gold`}
                 style={{
                   transitionDelay: `${i * 0.1}s`,
-                  top: '100px',
-                  zIndex: i + 1,
+                  ...(typeof window !== 'undefined' && window.innerWidth >= 1024 ? { top: '100px', zIndex: i + 1 } : {})
                 }}
               >
                 <div className={`grid grid-cols-1 lg:grid-cols-12 gap-0 ${i % 2 === 0 ? '' : 'lg:grid-flow-dense'}`}>
                   {/* Image Side */}
                   <div className={`lg:col-span-5 relative h-64 lg:h-auto ${i % 2 === 0 ? '' : 'lg:col-start-8'}`}>
                     <div className="absolute inset-0 bg-gradient-to-br from-brand-navy via-slate-800 to-brand-navy">
-                      <div className="absolute inset-0 bg-cover bg-center opacity-30 group-hover:scale-110 transition-all duration-700"
+                      <div className="absolute inset-0 bg-cover bg-center opacity-40 group-hover:scale-110 transition-all duration-700"
                            style={{ backgroundImage:`url('${item.image}')` }} />
                       <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/60 to-transparent" />
-                      
-                      {/* Icon overlay */}
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="w-24 h-24 bg-brand-gold/20 backdrop-blur-sm rounded-3xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 border-2 border-brand-gold/40">
-                          <i className={`fa-solid ${item.icon} text-6xl text-brand-gold`} />
-                        </div>
-                      </div>
 
                       {/* Floor lines overlay */}
                       <div className="absolute inset-0 pointer-events-none opacity-20">
@@ -661,7 +653,7 @@ export default function Home() {
                backgroundSize: '40px 40px'
              }} />
 
-        <div className="max-w-7xl mx-auto relative z-10 pt-12">
+        <div className="max-w-[1400px] mx-auto relative z-10 pt-12">
           <div className="text-center max-w-2xl mx-auto space-y-4 mb-20 scroll-reveal">
             <h3 className="text-xs font-bold uppercase tracking-widest text-brand-gold flex items-center justify-center gap-3">
               <span className="w-16 h-px bg-brand-gold" />
@@ -671,7 +663,7 @@ export default function Home() {
             <h2 className="font-serif text-4xl md:text-5xl font-bold text-white">Industries We Serve</h2>
             <p className="text-slate-300 text-sm">Trusted by leading organizations across sectors</p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 max-w-6xl mx-auto">
             {[
               { icon: 'fa-building',                label: 'Apartments' },
               { icon: 'fa-house-chimney-window',    label: 'Villas' },
@@ -867,6 +859,22 @@ export default function Home() {
           </div>
 
           <div className="scroll-reveal-scale relative">
+            {/* Navigation Arrows */}
+            <button 
+              onClick={() => setTestiIndex(p => (p === 0 ? 1 : 0))}
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white/90 hover:bg-brand-gold text-brand-navy hover:text-white rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110"
+              aria-label="Previous testimonial"
+            >
+              <i className="fa-solid fa-chevron-left" />
+            </button>
+            <button 
+              onClick={() => setTestiIndex(p => (p === 0 ? 1 : 0))}
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white/90 hover:bg-brand-gold text-brand-navy hover:text-white rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110"
+              aria-label="Next testimonial"
+            >
+              <i className="fa-solid fa-chevron-right" />
+            </button>
+
             {/* Offset card layout for visual interest */}
             <div className="relative max-w-3xl mx-auto">
               {/* Background decorative card */}
@@ -918,8 +926,12 @@ export default function Home() {
           {/* Enhanced dot indicators */}
           <div className="flex justify-center gap-3">
             {[0, 1].map(i => (
-              <button key={i} onClick={() => setTestiIndex(i)}
-                      className={`rounded-full transition-all duration-300 shadow-lg ${testiIndex === i ? 'bg-brand-navy w-12 h-4' : 'bg-white/60 hover:bg-white w-4 h-4'}`} />
+              <button 
+                key={i} 
+                onClick={() => setTestiIndex(i)}
+                aria-label={`View testimonial ${i + 1}`}
+                className={`rounded-full transition-all duration-300 shadow-lg hover:shadow-xl ${testiIndex === i ? 'bg-brand-navy w-12 h-4' : 'bg-white/60 hover:bg-white w-4 h-4 hover:w-6'}`} 
+              />
             ))}
           </div>
 
@@ -1004,7 +1016,7 @@ export default function Home() {
 
             {/* WhatsApp Button */}
             <div className="scroll-reveal pt-2">
-              <a href="https://wa.me/919845926155?text=Hi%20Digitech%20Elevators"
+              <a href="https://wa.me/919845071406?text=Hi%20Digitech%20Elevators"
                  target="_blank" rel="noopener noreferrer"
                  className="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold px-6 py-3 rounded-xl text-sm uppercase transition-all hover:scale-105 shadow-lg w-full justify-center">
                 <i className="fa-brands fa-whatsapp text-2xl" /> Chat on WhatsApp

@@ -439,3 +439,12 @@ html, body {
   font-feature-settings: 'tnum';
   letter-spacing: 0.1em;
 }
+
+/* Hero door animations */
+.hero-door-left {
+  animation: doorOpenLeft 1.4s cubic-bezier(0.7, 0, 0.3, 1) forwards;
+}
+.hero-door-right {
+  animation: doorOpenRight 1.4s cubic-bezier(0.7, 0, 0.3, 1) forwards;
+}
+

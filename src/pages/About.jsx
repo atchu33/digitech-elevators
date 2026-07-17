@@ -3,25 +3,22 @@ import React from 'react';
 export default function About() {
   return (
     <div className="animate-fade-in">
-      {/* ── Banner with Video ── */}
+      {/* ── Banner with Image ── */}
       <section className="relative bg-brand-navy text-white py-16 px-4 text-center overflow-hidden">
-        {/* Background Video */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-35 z-0"
-        >
-          <source src="lift1.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+        {/* Background Image */}
+        <div
+          className="absolute inset-0 w-full h-full bg-cover bg-center opacity-45 z-0"
+          style={{
+            backgroundImage: "url('/digitech-elevators/about_bg.png')",
+            animation: 'floatUp 16s ease-in-out infinite',
+          }}
+        />
         {/* Dark overlay & radial gradient overlay */}
-        <div className="absolute inset-0 bg-brand-navy/70 z-[1]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(212,175,55,0.25)_0%,_transparent_70%)] z-[2]"></div>
+        <div className="absolute inset-0 bg-brand-navy/60 z-[1]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(212,175,55,0.2)_0%,_transparent_70%)] z-[2]"></div>
         
         <div className="max-w-4xl mx-auto space-y-6 relative z-10">
-          <span className="inline-block bg-brand-gold/20 border-2 border-brand-gold/40 text-brand-gold px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest animate-pulse-ring">Our Legacy Since 1998</span>
+          <span className="inline-block bg-brand-gold/20 border-2 border-brand-gold/40 text-brand-gold px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest animate-pulse-ring">Our Legacy Since 1999</span>
           <h2 className="font-serif text-5xl md:text-6xl font-bold animate-gold-shimmer leading-tight">About Digitech<br />Elevators</h2>
           <p className="text-slate-300 text-base max-w-2xl mx-auto">Building trust through innovation, safety, and excellence</p>
         </div>
@@ -79,8 +76,8 @@ export default function About() {
         </div>
       </section>
 
-      {/* ── Mission & Vision - Dark Gradient ── */}
-      <section className="relative py-28 px-4 md:px-8 bg-gradient-to-br from-brand-navy via-slate-900 to-brand-navy text-white overflow-hidden">
+      {/* ── Mission & Vision with Video ── */}
+      <section className="relative px-4 md:px-8 py-16 md:py-20 bg-brand-navy text-white overflow-hidden">
         {/* Background pattern */}
         <div className="absolute inset-0 opacity-5"
              style={{
@@ -88,29 +85,54 @@ export default function About() {
                backgroundSize: '40px 40px'
              }} />
         
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center max-w-3xl mx-auto space-y-4 mb-20 scroll-reveal">
+        <div className="max-w-7xl mx-auto w-full relative z-10">
+          <div className="text-center max-w-3xl mx-auto space-y-3 mb-10 scroll-reveal">
             <h3 className="text-xs font-bold uppercase tracking-widest text-brand-gold flex items-center justify-center gap-3">
               <span className="w-16 h-px bg-brand-gold" />
               Our Purpose
               <span className="w-16 h-px bg-brand-gold" />
             </h3>
-            <h2 className="font-serif text-4xl md:text-5xl font-bold">Mission & Vision</h2>
+            <h2 className="font-serif text-3xl md:text-4xl font-bold">Mission & Vision</h2>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 scroll-reveal-container">
-            {[
-              { icon:'fa-bullseye', title:'Our Mission', text:'To provide safe, reliable, energy-efficient, and innovative elevator solutions while delivering exceptional customer service and maintaining the highest standards of quality.' },
-              { icon:'fa-eye',      title:'Our Vision',  text:'To become one of India\'s most trusted elevator companies through innovation, technical excellence, customer satisfaction, and continuous improvement.' },
-            ].map((item, i) => (
-              <div key={i} className="bg-white/10 backdrop-blur-md p-10 rounded-3xl border-2 border-white/20 space-y-6 hover:bg-white/15 hover:border-brand-gold/50 transition-all duration-300 scroll-reveal group" style={{ transitionDelay: `${i * 0.2}s` }}>
-                <div className="w-20 h-20 bg-brand-gold/20 backdrop-blur-sm rounded-2xl flex items-center justify-center text-brand-gold text-4xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 border-2 border-brand-gold/30">
-                  <i className={`fa-solid ${item.icon}`}></i>
-                </div>
-                <h3 className="font-serif font-bold text-3xl text-white">{item.title}</h3>
-                <p className="text-sm text-slate-200 leading-relaxed">{item.text}</p>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
+            {/* Mission Card */}
+            <div className="bg-white/10 backdrop-blur-md p-6 md:p-8 rounded-2xl border-2 border-white/20 space-y-4 hover:bg-white/15 hover:border-brand-gold/50 transition-all duration-300 scroll-reveal group">
+              <div className="w-14 h-14 bg-brand-gold/20 backdrop-blur-sm rounded-xl flex items-center justify-center text-brand-gold text-2xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 border-2 border-brand-gold/30">
+                <i className="fa-solid fa-bullseye"></i>
               </div>
-            ))}
+              <h3 className="font-serif font-bold text-xl md:text-2xl text-white">Our Mission</h3>
+              <p className="text-xs md:text-sm text-slate-200 leading-relaxed">To provide safe, reliable, energy-efficient, and innovative elevator solutions while delivering exceptional customer service and maintaining the highest standards of quality.</p>
+            </div>
+
+            {/* Video in Center */}
+            <div className="scroll-reveal">
+              <div className="rounded-2xl overflow-hidden shadow-2xl relative border-2 border-brand-gold/30">
+                <video 
+                  className="w-full h-auto max-h-[400px] object-cover"
+                  autoPlay 
+                  loop 
+                  muted 
+                  playsInline
+                >
+                  <source src="./WhatsApp Video 2026-07-14 at 10.36.37.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+                {/* Badge overlay */}
+                <div className="absolute bottom-3 left-3 right-3 bg-brand-navy/90 backdrop-blur-sm px-3 py-2 rounded-lg border border-brand-gold/30 text-center">
+                  <p className="text-brand-gold font-bold text-xs md:text-sm">25+ Years of Excellence</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Vision Card */}
+            <div className="bg-white/10 backdrop-blur-md p-6 md:p-8 rounded-2xl border-2 border-white/20 space-y-4 hover:bg-white/15 hover:border-brand-gold/50 transition-all duration-300 scroll-reveal group">
+              <div className="w-14 h-14 bg-brand-gold/20 backdrop-blur-sm rounded-xl flex items-center justify-center text-brand-gold text-2xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 border-2 border-brand-gold/30">
+                <i className="fa-solid fa-eye"></i>
+              </div>
+              <h3 className="font-serif font-bold text-xl md:text-2xl text-white">Our Vision</h3>
+              <p className="text-xs md:text-sm text-slate-200 leading-relaxed">To become one of India's most trusted elevator companies through innovation, technical excellence, customer satisfaction, and continuous improvement.</p>
+            </div>
           </div>
         </div>
       </section>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { createPortal } from 'react-dom';
 
 const faqs = [
   {
@@ -45,22 +46,18 @@ const faqs = [
 
 export default function Faq() {
   const [openIndex, setOpenIndex] = useState(null);
+  const [showSafetyModal, setShowSafetyModal] = useState(false);
 
   return (
     <div className="animate-fade-in bg-slate-50 min-h-screen">
       {/* ── Banner ── */}
       <section className="relative bg-brand-navy text-white py-24 px-4 text-center overflow-hidden">
-        {/* Background Video */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
+        {/* Background Image */}
+        <img
+          src="faq_hero_bg.png"
+          alt="FAQ background"
           className="absolute inset-0 w-full h-full object-cover opacity-35 z-0"
-        >
-          <source src="lift3.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+        />
         {/* Dark overlay & radial gradient overlay for premium lighting */}
         <div className="absolute inset-0 bg-brand-navy/70 z-[1]"></div>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(212,175,55,0.25)_0%,_transparent_70%)] z-[2]"></div>
@@ -124,6 +121,61 @@ export default function Faq() {
         </div>
       </section>
 
+      {/* ── Safety First Section ── */}
+      <section className="py-20 px-4 md:px-8 bg-white border-t border-slate-200">
+        <div className="max-w-4xl mx-auto text-center space-y-8">
+          <div className="space-y-2">
+            <span className="inline-block bg-brand-gold/10 border border-brand-gold/30 text-brand-gold px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider">
+              Safety First
+            </span>
+            <h2 className="font-serif text-2xl md:text-3xl font-bold text-brand-navy">Elevator Safety Guidelines</h2>
+            <p className="text-slate-600 text-xs md:text-sm max-w-xl mx-auto leading-relaxed">
+              We prioritize passenger safety above all else. Check out our official safety guidelines poster for tips on how to use elevators responsibly.
+            </p>
+          </div>
+          <div className="flex justify-center">
+            <div 
+              className="group relative cursor-pointer overflow-hidden rounded-2xl border border-slate-200 shadow-md max-w-md w-full bg-slate-50 hover:border-brand-gold transition duration-300"
+              onClick={() => setShowSafetyModal(true)}
+            >
+              <img 
+                src="./POSTER/SAFETY TIP.png" 
+                alt="Elevator Safety Guidelines Poster" 
+                className="w-full h-auto object-cover group-hover:scale-105 transition duration-500"
+              />
+              <div className="absolute inset-0 bg-brand-navy/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition duration-300">
+                <span className="bg-brand-navy/90 text-brand-gold border border-brand-gold/30 rounded-xl px-4 py-2 text-xs font-bold shadow-lg">
+                  <i className="fa-solid fa-magnifying-glass-plus mr-1"></i> View Full Poster
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Lightbox Modal for Safety Tip */}
+      {showSafetyModal && createPortal(
+        <div 
+          className="fixed inset-0 z-[9999] bg-brand-navy/60 backdrop-blur-xl flex items-center justify-center p-4 animate-fade-in"
+          onClick={() => setShowSafetyModal(false)}
+        >
+          <div className="absolute top-4 right-4 text-white text-3xl cursor-pointer hover:text-brand-gold transition duration-200">
+            <i className="fa-solid fa-xmark"></i>
+          </div>
+          <div 
+            className="max-w-4xl max-h-[85vh] w-full flex flex-col items-center justify-center"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img 
+              src="./POSTER/SAFETY TIP.png" 
+              alt="Safety Tips Poster Full" 
+              className="max-h-[80vh] object-contain rounded-lg border border-slate-800 shadow-2xl"
+            />
+          </div>
+        </div>,
+        document.body
+      )}
+
       {/* ── Call to Action ── */}
       <section className="bg-gradient-to-br from-brand-navy via-slate-800 to-brand-navy text-white py-16 px-4 text-center border-t-4 border-brand-gold relative overflow-hidden">
         {/* Vertical lines */}
@@ -141,7 +193,7 @@ export default function Faq() {
             <a href="#/contact" className="bg-brand-gold hover:bg-brand-gold-hover text-brand-navy font-bold px-7 py-3 rounded-xl text-xs uppercase tracking-widest transition shadow-lg hover:scale-105 btn-glow">
               Contact Us
             </a>
-            <a href="https://wa.me/919845926155" target="_blank" rel="noopener noreferrer" className="bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold px-7 py-3 rounded-xl text-xs uppercase tracking-widest flex items-center gap-2 transition shadow-lg hover:scale-105 btn-glow">
+            <a href="https://wa.me/919845071406" target="_blank" rel="noopener noreferrer" className="bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold px-7 py-3 rounded-xl text-xs uppercase tracking-widest flex items-center gap-2 transition shadow-lg hover:scale-105 btn-glow">
               <i className="fa-brands fa-whatsapp text-sm"></i> Chat on WhatsApp
             </a>
           </div>

@@ -106,39 +106,46 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
   return (
     <div className="animate-fade-in">
       {/* ── Premium Split Banner ── */}
-      <section className="relative bg-brand-navy text-white py-12 md:py-16 px-4 md:px-8 border-b-4 border-brand-gold overflow-hidden hero-gradient">
+      <section className="relative bg-brand-navy text-white overflow-hidden hero-gradient border-b-4 border-brand-gold">
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(ellipse_at_center,_#D4AF37_0%,_transparent_70%)]"></div>
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+        
+        <div className="relative grid grid-cols-1 lg:grid-cols-2 min-h-[320px] lg:min-h-[380px]">
           {/* Left Text Column */}
-          <div className="lg:col-span-7 space-y-6 text-left">
-            <span className="inline-block bg-brand-gold/20 border border-brand-gold/30 text-brand-gold px-4 py-1.5 rounded-full text-sm font-semibold uppercase tracking-widest animate-fade-simple">
-              Premium range
-            </span>
-            <div className="space-y-4">
-              <h2 className="font-serif text-5xl md:text-5xl lg:text-6xl font-bold leading-tight animate-slide-left">
-                {prod.bannerTitle}
-              </h2>
-              <p className="text-brand-gold font-bold text-xl md:text-xl tracking-wider uppercase flex items-center gap-2 animate-slide-right">
-                <i className="fa-solid fa-circle-check text-lg"></i> {prod.bannerSubtitle}
-              </p>
+          <div className="relative z-10 flex items-center px-4 md:px-8 lg:pl-12 xl:pl-16 py-12 md:py-16">
+            <div className="max-w-2xl space-y-6 text-left">
+              <span className="inline-block bg-brand-gold/20 border border-brand-gold/30 text-brand-gold px-4 py-1.5 rounded-full text-sm font-semibold uppercase tracking-widest animate-fade-simple">
+                Premium range
+              </span>
+              <div className="space-y-4">
+                <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold leading-tight animate-slide-left">
+                  {prod.bannerTitle}
+                </h2>
+                <p className="text-brand-gold font-bold text-xl md:text-xl tracking-wider uppercase flex items-center gap-2 animate-slide-right">
+                  <i className="fa-solid fa-circle-check text-lg"></i> {prod.bannerSubtitle}
+                </p>
+              </div>
             </div>
           </div>
           
-          {/* Right Image Column */}
-          <div className="lg:col-span-5 flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-[500px] aspect-[16/10] h-64 md:h-72 rounded-xl overflow-hidden border border-brand-gold/50 shadow-2xl shadow-black/85 group scroll-reveal-scale">
+          {/* Right Image Column - Full height, bleed to edge */}
+          <div className="relative h-[350px] lg:h-auto group">
+            <div className="absolute inset-0 overflow-hidden">
               <img
                 src={prod.image}
                 alt={prod.title}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                style={{
+                  maskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.2) 5%, rgba(0,0,0,0.5) 10%, rgba(0,0,0,0.8) 18%, black 25%)',
+                  WebkitMaskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.2) 5%, rgba(0,0,0,0.5) 10%, rgba(0,0,0,0.8) 18%, black 25%)'
+                }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/60 via-transparent to-transparent"></div>
-              <div className="absolute bottom-4 left-4 right-4 bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-lg flex items-center justify-between text-sm">
-                <span className="font-bold text-white uppercase tracking-wider">{prod.title}</span>
-                <span className="text-brand-gold font-bold flex items-center gap-2">
-                  <i className="fa-solid fa-shield-halved text-sm"></i> Certified Safety
-                </span>
-              </div>
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/60 via-transparent to-transparent"></div>
+            <div className="absolute bottom-4 left-4 right-4 bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-lg flex items-center justify-between text-sm z-10">
+              <span className="font-bold text-white uppercase tracking-wider">{prod.title}</span>
+              <span className="text-brand-gold font-bold flex items-center gap-2">
+                <i className="fa-solid fa-shield-halved text-sm"></i> Certified Safety
+              </span>
             </div>
           </div>
         </div>
@@ -396,7 +403,7 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
         </div>
       </section>
 
-      {/* ── WHY CHOOSE - Image Background with Cards ── */}
+      {/* ── WHY CHOOSE - Animated Grid Cards ── */}
       <section className="relative py-20 px-4 md:px-8 overflow-hidden">
         {/* Background Image */}
         <div 
@@ -407,56 +414,63 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
         
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center text-white space-y-4 mb-12 scroll-reveal">
-            <h3 className="text-xs font-bold uppercase tracking-widest text-brand-gold">
+            <h3 className="text-xs font-bold uppercase tracking-widest text-brand-gold flex items-center justify-center gap-3">
+              <span className="w-12 h-px bg-brand-gold"></span>
               Excellence Guaranteed
+              <span className="w-12 h-px bg-brand-gold"></span>
             </h3>
             <h2 className="font-serif text-4xl md:text-5xl font-bold">
               Why Choose Digitech for {prod.title}
             </h2>
           </div>
 
-          {/* Accordion container */}
-          <div className="flex flex-col lg:flex-row gap-4 h-auto lg:h-[380px] overflow-hidden scroll-reveal-container">
+          {/* Animated Grid Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 scroll-reveal-container">
             {prod.whyChoose.map((w, i) => {
               const desc = WHY_CHOOSE_DETAILS[w] || 'Digitech Elevators is committed to delivering safe, reliable, and premium quality vertical mobility solutions.';
+              const icons = [
+                'fa-certificate',
+                'fa-shield-halved', 
+                'fa-tools',
+                'fa-palette',
+                'fa-users-gear',
+                'fa-medal',
+                'fa-handshake',
+                'fa-star'
+              ];
               return (
                 <div 
                   key={i} 
-                  className="group relative bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 flex flex-col justify-between transition-all duration-500 ease-in-out cursor-pointer overflow-hidden
-                             w-full lg:flex-1 lg:hover:flex-[3] hover:border-brand-gold/50 hover:bg-white/15"
+                  className="group relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-md border-2 border-white/20 rounded-2xl p-8 hover:border-brand-gold hover:from-brand-gold/10 hover:to-brand-gold/5 transition-all duration-500 scroll-reveal hover:scale-105 hover:shadow-2xl overflow-hidden"
+                  style={{ transitionDelay: `${i * 0.1}s` }}
                 >
-                  {/* Header (Number and Icon) */}
-                  <div className="flex lg:flex-col items-center justify-between lg:justify-start gap-4">
-                    <div className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-xs font-mono text-slate-300 bg-white/5">
-                      {`0${i + 1}`}
-                    </div>
-                    <div className="w-12 h-12 bg-brand-gold/20 rounded-xl flex items-center justify-center text-brand-gold text-xl shrink-0 group-hover:bg-brand-gold group-hover:text-brand-navy transition-all duration-500">
-                      <i className="fa-solid fa-circle-check" />
+                  {/* Animated Background Circle */}
+                  <div className="absolute -top-10 -right-10 w-32 h-32 bg-brand-gold/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
+                  
+                  {/* Number Badge */}
+                  <div className="absolute top-4 right-4 w-10 h-10 rounded-full border-2 border-brand-gold/30 flex items-center justify-center text-xs font-bold text-brand-gold bg-brand-gold/5 group-hover:rotate-12 transition-transform duration-500">
+                    {`0${i + 1}`}
+                  </div>
+
+                  {/* Icon */}
+                  <div className="relative mb-6">
+                    <div className="w-16 h-16 bg-brand-gold/20 backdrop-blur-sm rounded-2xl flex items-center justify-center text-brand-gold text-2xl group-hover:bg-brand-gold group-hover:text-brand-navy transition-all duration-500 group-hover:rotate-6 group-hover:scale-110 border-2 border-brand-gold/30">
+                      <i className={`fa-solid ${icons[i % icons.length]}`}></i>
                     </div>
                   </div>
 
-                  {/* Body Content */}
-                  <div className="mt-4 lg:mt-0 flex flex-col justify-end h-full">
-                    {/* Expanded text content */}
-                    <div className="block lg:opacity-0 lg:group-hover:opacity-100 lg:h-0 lg:group-hover:h-auto overflow-hidden transition-all duration-500 ease-in-out space-y-2">
-                      <h4 className="font-serif font-bold text-xl text-white group-hover:text-brand-gold transition-colors duration-300">
-                        {w}
-                      </h4>
-                      <p className="text-xs text-slate-300 leading-relaxed max-w-sm">
-                        {desc}
-                      </p>
-                    </div>
-
-                    {/* Vertical Collapsed text content for Desktop */}
-                    <div 
-                      className="hidden lg:flex lg:group-hover:hidden select-none absolute top-32 bottom-8 left-1/2 -translate-x-1/2 items-center justify-center"
-                      style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
-                    >
-                      <span className="text-slate-400 font-serif font-semibold text-[11px] tracking-widest uppercase whitespace-nowrap">
-                        {w}
-                      </span>
-                    </div>
+                  {/* Content */}
+                  <div className="relative space-y-3">
+                    <h4 className="font-serif font-bold text-xl text-white group-hover:text-brand-gold transition-colors duration-300 leading-tight">
+                      {w}
+                    </h4>
+                    <p className="text-sm text-slate-300 leading-relaxed">
+                      {desc}
+                    </p>
                   </div>
+
+                  {/* Bottom Accent Line */}
+                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-brand-gold to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
               );
             })}

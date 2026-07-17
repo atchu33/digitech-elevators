@@ -6,12 +6,13 @@ export default function Footer() {
     ['amc',           'fa-handshake',          'Annual Maintenance (AMC)'],
     ['modernization', 'fa-arrows-spin',        'Modernization & Upgrades'],
     ['repair',        'fa-screwdriver-wrench', 'Repair & Breakdown'],
+    ['licensing',     'fa-file-contract',      'Licensing & Renewals'],
   ];
 
   const quickLinks = [
     ['#/about',    'About Us'],
     ['#/projects', 'Project Portfolio'],
-    ['#/gallery',  'Media Gallery'],
+    ['#/careers',  'Careers'],
     ['#/amc',      'AMC Plans'],
     ['#/faq',      'FAQs'],
     ['#/contact',  'Contact Us'],
@@ -49,12 +50,22 @@ export default function Footer() {
           </p>
 
           <div className="flex gap-2.5">
-            {['fa-facebook-f','fa-instagram','fa-linkedin-in','fa-youtube'].map(icon => (
-              <div key={icon}
-                   className="w-9 h-9 bg-slate-800 hover:bg-brand-gold rounded-lg flex items-center justify-center text-white hover:text-brand-navy transition-all cursor-pointer text-sm border border-slate-700 hover:border-brand-gold">
-                <i className={`fa-brands ${icon}`}></i>
-              </div>
-            ))}
+            <a 
+              href="https://www.instagram.com/digitech.elevators/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="w-9 h-9 bg-slate-800 hover:bg-brand-gold rounded-lg flex items-center justify-center text-white hover:text-brand-navy transition-all cursor-pointer text-sm border border-slate-700 hover:border-brand-gold"
+            >
+              <i className="fa-brands fa-instagram"></i>
+            </a>
+            <a 
+              href="https://wa.me/919845071406" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="w-9 h-9 bg-slate-800 hover:bg-brand-gold rounded-lg flex items-center justify-center text-white hover:text-brand-navy transition-all cursor-pointer text-sm border border-slate-700 hover:border-brand-gold"
+            >
+              <i className="fa-brands fa-whatsapp"></i>
+            </a>
           </div>
         </div>
 
@@ -120,7 +131,7 @@ export default function Footer() {
               </a>
             </div>
 
-            <a href="https://wa.me/919845926155?text=Hi%20Digitech%20Elevators"
+            <a href="https://wa.me/919845071406?text=Hi%20Digitech%20Elevators"
                target="_blank" rel="noopener noreferrer"
                className="flex items-center justify-center gap-2 bg-[#25D366]/10 border border-[#25D366]/30 hover:bg-[#25D366] hover:border-[#25D366] text-[#25D366] hover:text-white font-bold px-4 py-2.5 rounded-xl text-sm transition w-full mt-2">
               <i className="fa-brands fa-whatsapp text-base"></i> Chat on WhatsApp
@@ -133,10 +144,14 @@ export default function Footer() {
       <div className="border-t border-slate-800">
         <div className="max-w-7xl mx-auto px-6 md:px-8 py-4 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-slate-600">
           <p>&copy; {new Date().getFullYear()} <span className="text-slate-400 font-semibold">Digitech Elevators</span>. All Rights Reserved.</p>
-          <div className="flex items-center gap-3">
-            <span className="flex items-center gap-1.5"><i className="fa-solid fa-shield-halved text-brand-gold"></i> Safety First</span>
-            <span className="text-slate-700">|</span>
-            <span className="flex items-center gap-1.5"><i className="fa-solid fa-gears text-brand-gold"></i> Premium Quality</span>
+          <div className="flex items-center">
+            <span className="text-slate-500 font-medium">Designed &amp; Developed by</span>
+            <img 
+              src="./vantageedge1.jpeg" 
+              alt="Vantage Edge Solutions" 
+              className="h-10 object-contain mix-blend-lighten -ml-1"
+              style={{ filter: 'brightness(1.2) contrast(1.1)' }}
+            />
           </div>
           <div className="flex gap-4">
             <a href="#/legal/privacy" className="hover:text-brand-gold transition">Privacy Policy</a>

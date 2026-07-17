@@ -105,7 +105,7 @@ export default function Contact() {
             </div>
 
             <a
-              href="https://wa.me/919845926155?text=Hi%20Digitech%20Elevators"
+              href="https://wa.me/919845071406?text=Hi%20Digitech%20Elevators"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold px-6 py-3 rounded-xl text-sm uppercase transition-all hover:scale-105 shadow-lg scroll-reveal btn-glow"

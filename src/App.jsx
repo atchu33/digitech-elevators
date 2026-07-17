@@ -10,8 +10,8 @@ import Home from './pages/Home';
 import About from './pages/About';
 import ProductDetail from './pages/ProductDetail';
 import ServiceDetail from './pages/ServiceDetail';
+import Careers from './pages/Careers';
 import Projects from './pages/Projects';
-import Gallery from './pages/Gallery';
 import Amc from './pages/Amc';
 import Faq from './pages/Faq';
 import Contact from './pages/Contact';
@@ -28,11 +28,17 @@ export default function App() {
     const handleHashChange = () => {
       setPageLoading(true);
       setTimeout(() => setPageLoading(false), 500);
-      setCurrentHash(window.location.hash || '#/home');
+      const hash = window.location.hash || '#/home';
+      // Normalize empty hash or root to /home
+      const normalizedHash = (hash === '#' || hash === '#/') ? '#/home' : hash;
+      setCurrentHash(normalizedHash);
       window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
     window.addEventListener('hashchange', handleHashChange);
+    
+    // Set initial hash on mount
+    handleHashChange();
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
@@ -115,8 +121,8 @@ export default function App() {
         return <About />;
       case '/projects':
         return <Projects />;
-      case '/gallery':
-        return <Gallery />;
+      case '/careers':
+        return <Careers />;
       case '/amc':
         return <Amc />;
       case '/faq':
@@ -168,7 +174,7 @@ export default function App() {
 
       {/* Floating WhatsApp Button */}
       <a
-        href="https://wa.me/919845926155?text=Hi%20Digitech%20Elevators"
+        href="https://wa.me/919845071406?text=Hi%20Digitech%20Elevators"
         target="_blank"
         rel="noopener noreferrer"
         title="Chat on WhatsApp"

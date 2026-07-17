@@ -68,7 +68,7 @@ export default function Quote() {
               </p>
               <p className="flex items-center gap-3">
                 <i className="fa-brands fa-whatsapp text-[#25D366] w-4 text-center text-sm"></i> 
-                <a href="https://wa.me/919845926155" className="hover:text-[#25D366] transition font-semibold">Chat on WhatsApp</a>
+                <a href="https://wa.me/919845071406" className="hover:text-[#25D366] transition font-semibold">Chat on WhatsApp</a>
               </p>
             </div>
           </div>
@@ -128,6 +128,7 @@ export default function Quote() {
                       <option>Hotel / Guesthouse</option>
                       <option>Educational Institution</option>
                       <option>Industrial / Warehouse</option>
+                      <option>Others</option>
                     </select>
                   </div>
                 </div>
@@ -137,14 +138,15 @@ export default function Quote() {
                     <label className="block text-xs font-semibold text-slate-500 mb-1.5">Elevator Category *</label>
                     <select className="w-full border border-slate-200 rounded-lg p-3 text-xs text-slate-600 focus:outline-none focus:border-brand-navy focus:ring-2 focus:ring-brand-gold/20 transition-all duration-200" required>
                       <option value="">Select Elevator Type</option>
-                      <option>Passenger Elevator</option>
-                      <option>Hospital / Stretcher Elevator</option>
-                      <option>Goods / Cargo Elevator</option>
+                      <option>Passenger Lift</option>
+                      <option>Hospital Lift</option>
+                      <option>Goods Lift</option>
                       <option>Home Elevator</option>
-                      <option>Hydraulic Elevator</option>
-                      <option>Machine Room Less (MRL) Elevator</option>
-                      <option>Capsule Elevator</option>
-                      <option>Dumbwaiter</option>
+                      <option>Hydraulic Lift</option>
+                      <option>Machine Room Less Lift</option>
+                      <option>Villa Lift</option>
+                      <option>Commercial Lift</option>
+                      <option>Car Elevator</option>
                     </select>
                   </div>
                   <div>
@@ -173,7 +175,8 @@ export default function Quote() {
                       <option>New Elevator Installation</option>
                       <option>Annual Maintenance Contract (AMC)</option>
                       <option>Elevator Modernization</option>
-                      <option>Repair & breakdown repairs</option>
+                      <option>Repair & Breakdown Services</option>
+                      <option>Licensing & Renewals</option>
                     </select>
                   </div>
                 </div>

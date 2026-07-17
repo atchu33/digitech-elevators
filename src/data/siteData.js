@@ -324,9 +324,62 @@ export const SERVICES_DATA = {
     ],
     emergency: 'We provide rapid-response breakdown assistance to minimize downtime and ensure passenger safety.'
   },
-  spareparts: {
-    title: 'Spare Parts Supply',
-    desc: 'We supply original and high-quality elevator spare parts including controllers, drives, door operators, ARD systems, COP/LOP panels, motors, ropes, and safety devices.'
+  licensing: {
+    title: 'Licensing & Renewals',
+    desc: 'Digitech Elevators provides comprehensive elevator licensing and renewal services to help building owners, associations, commercial establishments, hospitals, and industries comply with statutory regulations. Our experienced team assists in obtaining new elevator licenses, renewing existing licenses, and coordinating with the relevant government authorities to ensure a smooth and hassle-free process.',
+    services: [
+      'New Elevator Licensing',
+      'Elevator License Renewal',
+      'Government Inspection Coordination',
+      'Documentation Support',
+      'Compliance Assistance',
+      'Renewal Reminders'
+    ],
+    serviceDetails: {
+      'New Elevator Licensing': 'We assist in obtaining statutory approval and operational licenses for newly installed elevators by preparing the required documentation and coordinating with the concerned authorities.',
+      'Elevator License Renewal': 'Our team manages the complete renewal process for existing elevator licenses, ensuring timely submission of documents and compliance with applicable regulations.',
+      'Government Inspection Coordination': 'We coordinate with the concerned government authorities for mandatory elevator inspections and provide technical assistance during the inspection process.',
+      'Documentation Support': 'We prepare and verify all necessary documents required for licensing and renewal, including technical details, test reports, maintenance records, and other statutory documents.',
+      'Compliance Assistance': 'Before inspection, our engineers inspect the elevator and recommend any required corrective actions to ensure compliance with applicable safety standards and regulatory requirements.',
+      'Renewal Reminders': 'To help our customers avoid delays, we provide timely reminders for upcoming license renewals and support throughout the renewal process.'
+    },
+    whyChoose: [
+      'Experienced Technical Team',
+      'Complete Documentation Assistance',
+      'Government Inspection Support',
+      'Compliance with Statutory Requirements',
+      'Timely Renewal Assistance',
+      'Reliable and Professional Service',
+      'End-to-End Licensing Support'
+    ],
+    industries: [
+      'Residential Apartments',
+      'Commercial Buildings',
+      'Hospitals',
+      'Hotels',
+      'Educational Institutions',
+      'Shopping Malls',
+      'Industrial Facilities',
+      'Government Buildings'
+    ],
+    faqs: [
+      {
+        question: 'Do you assist with new elevator licenses?',
+        answer: 'Yes. We provide complete assistance for obtaining licenses for newly installed elevators.'
+      },
+      {
+        question: 'Can you help renew expired elevator licenses?',
+        answer: 'Yes. We assist with the renewal process and provide guidance on the applicable requirements.'
+      },
+      {
+        question: 'Do you prepare the required documents?',
+        answer: 'Yes. Our team prepares, verifies, and submits all necessary documentation required for licensing and renewal.'
+      },
+      {
+        question: 'Do you provide licensing services for elevators installed by other companies?',
+        answer: 'Yes. We can assist with licensing and renewals for elevators of various makes and brands, subject to the applicable regulations and compliance requirements.'
+      }
+    ]
   },
   emergency: {
     title: '24/7 Emergency Support',
@@ -368,3 +421,4 @@ export const GALLERY_DATA = {
     { title: 'Emergency Breakdowns Training', img: './goods_lift.png', desc: 'Certified safety training runs.' }
   ]
 };
+
