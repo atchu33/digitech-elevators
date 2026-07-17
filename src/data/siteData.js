@@ -270,15 +270,19 @@ export const SERVICES_DATA = {
     ],
     plans: [
       {
-        name: 'Comprehensive AMC',
-        desc: 'Includes monthly maintenance runs, diagnostics checks, plus full cost-coverage of replacement parts, VVVF controllers, ARD batteries, and motor assemblies.'
+        name: 'Platinum Comprehensive',
+        desc: 'Ultimate coverage including all high-value items: VVVF controllers, ARD batteries, motor assemblies, and guaranteed VIP response time.'
       },
       {
-        name: 'Semi-Comprehensive AMC',
-        desc: 'Includes monthly preventive upkeep plus coverage for minor components, switches, locks, and relays. Large items (motors, cables) billed separate.'
+        name: 'Comprehensive',
+        desc: 'Includes monthly maintenance runs, diagnostics checks, plus full cost-coverage of standard replacement parts, labor, and priority routing.'
       },
       {
-        name: 'Non-Comprehensive AMC',
+        name: 'Semi-Comprehensive',
+        desc: 'Includes monthly preventive upkeep plus coverage for minor components, switches, locks, and relays. Large items billed separate.'
+      },
+      {
+        name: 'Non-Comprehensive',
         desc: 'Includes monthly inspection checks, grease applications, door adjustments, and diagnostics reports. All repair components are billed at actual cost.'
       }
     ]

@@ -46,7 +46,7 @@ export default function Footer() {
           </a>
 
           <p className="text-sm leading-relaxed">
-            25+ years delivering advanced vertical mobility solutions. Built on engineering excellence and robust safety benchmarks.
+            27+ years delivering advanced vertical mobility solutions. Built on engineering excellence and robust safety benchmarks.
           </p>
 
           <div className="flex gap-2.5">

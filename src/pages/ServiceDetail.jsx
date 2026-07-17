@@ -289,7 +289,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
                 </h2>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 scroll-reveal-container">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 scroll-reveal-container">
                 {srv.plans.map((p, i) => (
                   <div key={i} className="bg-white p-10 rounded-3xl shadow-2xl border-2 border-white/10 hover:border-brand-gold transition-all scroll-reveal hover:translate-y-[-8px]">
                     <div className="w-16 h-16 bg-brand-gold/10 rounded-2xl flex items-center justify-center text-brand-gold text-3xl mb-6">

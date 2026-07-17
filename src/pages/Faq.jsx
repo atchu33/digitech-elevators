@@ -11,8 +11,8 @@ const faqs = [
     a: 'An ARD is a battery-powered safety system that triggers automatically during a power cut to safely guide the elevator cabin to the nearest floor, allowing passengers to exit safely.'
   },
   {
-    q: 'What is the difference between a Comprehensive and Non-Comprehensive AMC?',
-    a: 'A Comprehensive AMC covers all maintenance services including spare parts, labor, and emergency breakdowns. A Non-Comprehensive AMC covers labor and routine maintenance only — spare parts are billed separately.'
+    q: 'What types of Annual Maintenance Contracts (AMC) do you offer?',
+    a: 'We offer four AMC tiers: Non-Comprehensive (covers inspections, lubrication, and basic labor), Semi-Comprehensive (adds coverage for minor parts), Comprehensive (full coverage of routine parts, labor, and breakdown calls), and Platinum Comprehensive (ultimate coverage including high-value assets like motors, controllers, and ARD batteries).'
   },
   {
     q: 'What is a VVVF Drive?',

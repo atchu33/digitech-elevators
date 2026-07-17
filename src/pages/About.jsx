@@ -38,7 +38,7 @@ export default function About() {
                 Company Overview
               </h3>
               <h2 className="font-serif text-4xl md:text-5xl font-bold text-brand-navy leading-tight">
-                <span className="bg-gradient-to-r from-brand-navy to-brand-gold bg-clip-text text-transparent">25+ Years</span> of Vertical<br />Mobility Expertise
+                <span className="bg-gradient-to-r from-brand-navy to-brand-gold bg-clip-text text-transparent">27+ Years</span> of Vertical<br />Mobility Expertise
               </h2>
             </div>
             <div className="space-y-6 text-slate-600 text-sm leading-relaxed border-l-4 border-brand-gold/30 pl-8">
@@ -52,7 +52,7 @@ export default function About() {
               </p>
               <p>
                 <strong className="text-brand-navy text-base">Industry Expertise:</strong><br />
-                With over 2500+ elevators under maintenance, our capabilities cover residential complexes, super-specialty stretcher facilities, heavy-duty goods setups, and bespoke villa lifts.
+                With over 2480+ elevators under maintenance, our capabilities cover residential complexes, super-specialty stretcher facilities, heavy-duty goods setups, and bespoke villa lifts.
               </p>
             </div>
           </div>
@@ -60,7 +60,7 @@ export default function About() {
             {[
               { icon:'fa-stamp',      title:'Quality Certified',   desc:'Fully compliant with the Bureau of Indian Standards (IS 14665) and industry safety benchmarks.' },
               { icon:'fa-users-gear', title:'Technical Team',      desc:'Experienced engineers available 24/7 for breakdown maintenance support.' },
-              { icon:'fa-building',   title:'2500+ Installations', desc:'Successfully installed and maintained over 2500 elevators across Karnataka.' },
+              { icon:'fa-building',   title:'2480+ Installations', desc:'Successfully installed and maintained over 2480 elevators across Karnataka.' },
             ].map((c, i) => (
               <div key={i} className="bg-white p-7 rounded-3xl border-2 border-slate-200 shadow-lg flex gap-5 hover:shadow-2xl hover:border-brand-gold transition-all duration-300 scroll-reveal group" style={{ transitionDelay: `${i * 0.15}s` }}>
                 <div className="w-16 h-16 bg-gradient-to-br from-brand-gold to-yellow-600 rounded-2xl flex items-center justify-center text-white text-2xl shrink-0 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 shadow-lg">
@@ -120,7 +120,7 @@ export default function About() {
                 </video>
                 {/* Badge overlay */}
                 <div className="absolute bottom-3 left-3 right-3 bg-brand-navy/90 backdrop-blur-sm px-3 py-2 rounded-lg border border-brand-gold/30 text-center">
-                  <p className="text-brand-gold font-bold text-xs md:text-sm">25+ Years of Excellence</p>
+                  <p className="text-brand-gold font-bold text-xs md:text-sm">27+ Years of Excellence</p>
                 </div>
               </div>
             </div>

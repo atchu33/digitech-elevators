@@ -162,8 +162,10 @@ export default function Legal({ type = 'privacy' }) {
                   <h4 className="font-bold text-brand-navy mb-2 text-base">3. Annual Maintenance Contracts (AMC)</h4>
                   <p className="mb-3">AMC terms include:</p>
                   <ul className="list-disc list-inside space-y-1.5 ml-4 text-slate-600">
-                    <li><strong>Comprehensive AMC:</strong> Covers all parts, labor, and emergency breakdowns</li>
-                    <li><strong>Non-Comprehensive AMC:</strong> Covers labor and routine maintenance; spare parts billed separately</li>
+                    <li><strong>Non-Comprehensive AMC:</strong> Covers labor and routine maintenance; spare parts are billed separately</li>
+                    <li><strong>Semi-Comprehensive AMC:</strong> Covers routine servicing, labor, and minor spare parts</li>
+                    <li><strong>Comprehensive AMC:</strong> Covers standard parts, labor, and breakdown services</li>
+                    <li><strong>Platinum Comprehensive AMC:</strong> Covers all major components including motors, controllers, and ARD batteries</li>
                     <li>Scheduled maintenance visits as per plan (monthly/quarterly)</li>
                     <li>24/7 emergency breakdown support for contract holders</li>
                     <li>Annual contract renewal with price revision based on inflation and component costs</li>

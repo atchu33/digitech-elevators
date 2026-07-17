@@ -173,12 +173,12 @@ export default function Home() {
           setStatsAnimated(true);
           let yr = 0, lf = 0, cs = 0;
           const iv = setInterval(() => {
-            if (yr < 25)   { yr += 1;   setYearsVal(yr); }
-            if (lf < 2500) { lf += 100; setLiftsVal(lf); }
-            if (cs < 1500) { cs += 60;  setCustomersVal(cs); }
-            if (yr >= 25 && lf >= 2500 && cs >= 1500) {
+            if (yr < 27)   { yr += 1;   setYearsVal(yr); }
+            if (lf < 2480) { lf += 80;  setLiftsVal(lf); }
+            if (cs < 1615) { cs += 85;  setCustomersVal(cs); }
+            if (yr >= 27 && lf >= 2480 && cs >= 1615) {
               clearInterval(iv);
-              setYearsVal(25); setLiftsVal(2500); setCustomersVal(1500);
+              setYearsVal(27); setLiftsVal(2480); setCustomersVal(1615);
             }
           }, 30);
         }
@@ -484,7 +484,7 @@ export default function Home() {
               </h2>
             </div>
             <div className="space-y-4 text-slate-600 text-sm leading-relaxed border-l-4 border-brand-gold/30 pl-6">
-              <p>Digitech Elevators has been delivering reliable and innovative elevator solutions for over <strong className="text-brand-navy">25 years</strong>. We specialize in designing, installing, maintaining, and modernizing elevators for apartments, hospitals, commercial buildings, industries, villas, and educational institutions.</p>
+              <p>Digitech Elevators has been delivering reliable and innovative elevator solutions for over <strong className="text-brand-navy">27 years</strong>. We specialize in designing, installing, maintaining, and modernizing elevators for apartments, hospitals, commercial buildings, industries, villas, and educational institutions.</p>
               <p>Our team of experienced engineers and technicians ensures every elevator meets the highest standards of safety, performance, and comfort. We use advanced technology and quality components to provide long-lasting, efficient elevator systems.</p>
               <p>Whether you require a new installation or modernization of an existing lift, Digitech Elevators is committed to delivering dependable solutions tailored to your requirements.</p>
             </div>
