@@ -125,49 +125,46 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
 
   return (
     <div className="animate-fade-in">
-      {/* ── Premium Split Banner ── */}
-      <section className="relative bg-brand-navy text-white overflow-hidden hero-gradient border-b-4 border-brand-gold">
+      {/* ── Premium Full-Bleed Banner ── */}
+      <section className="relative bg-brand-navy text-white overflow-hidden hero-gradient border-b-4 border-brand-gold min-h-[320px] lg:min-h-[380px]">
+        {/* Full-width background image */}
+        <div className="absolute inset-0 group">
+          <img loading="lazy"
+            src={prod.image}
+            alt={prod.title}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          />
+        </div>
+
+        {/* Left dark overlay for text legibility */}
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/85 to-brand-navy/30"></div>
+
+        {/* Subtle radial glow */}
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(ellipse_at_center,_#D4AF37_0%,_transparent_70%)]"></div>
-        
-        <div className="relative grid grid-cols-1 lg:grid-cols-2 min-h-[320px] lg:min-h-[380px]">
-          {/* Left Text Column */}
-          <div className="relative z-10 flex items-center px-4 md:px-8 lg:pl-12 xl:pl-16 py-12 md:py-16">
-            <div className="max-w-2xl space-y-6 text-left">
-              <span className="inline-block bg-brand-gold/20 border border-brand-gold/30 text-brand-gold px-4 py-1.5 rounded-full text-sm font-semibold uppercase tracking-widest animate-fade-simple">
-                Premium range
-              </span>
-              <div className="space-y-4">
-                <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold leading-tight animate-slide-left">
-                  {prod.bannerTitle}
-                </h2>
-                <p className="text-brand-gold font-bold text-xl md:text-xl tracking-wider uppercase flex items-center gap-2 animate-slide-right">
-                  <i className="fa-solid fa-circle-check text-lg"></i> {prod.bannerSubtitle}
-                </p>
-              </div>
+
+        {/* Text Content — left side only */}
+        <div className="relative z-10 flex items-center px-4 md:px-8 lg:pl-12 xl:pl-16 py-12 md:py-16 min-h-[320px] lg:min-h-[380px]">
+          <div className="max-w-xl space-y-6 text-left">
+            <span className="inline-block bg-brand-gold/20 border border-brand-gold/30 text-brand-gold px-4 py-1.5 rounded-full text-sm font-semibold uppercase tracking-widest animate-fade-simple">
+              Premium range
+            </span>
+            <div className="space-y-4">
+              <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold leading-tight animate-slide-left">
+                {prod.bannerTitle}
+              </h2>
+              <p className="text-brand-gold font-bold text-xl md:text-xl tracking-wider uppercase flex items-center gap-2 animate-slide-right">
+                <i className="fa-solid fa-circle-check text-lg"></i> {prod.bannerSubtitle}
+              </p>
             </div>
           </div>
-          
-          {/* Right Image Column - Full height, bleed to edge */}
-          <div className="relative h-[350px] lg:h-auto group">
-            <div className="absolute inset-0 overflow-hidden">
-              <img loading="lazy"
-                src={prod.image}
-                alt={prod.title}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                style={{
-                  maskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.2) 5%, rgba(0,0,0,0.5) 10%, rgba(0,0,0,0.8) 18%, black 25%)',
-                  WebkitMaskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.2) 5%, rgba(0,0,0,0.5) 10%, rgba(0,0,0,0.8) 18%, black 25%)'
-                }}
-              />
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/60 via-transparent to-transparent"></div>
-            <div className="absolute bottom-4 left-4 right-4 bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-lg flex items-center justify-between text-sm z-10">
-              <span className="font-bold text-white uppercase tracking-wider">{prod.title}</span>
-              <span className="text-brand-gold font-bold flex items-center gap-2">
-                <i className="fa-solid fa-shield-halved text-sm"></i> Certified Safety
-              </span>
-            </div>
-          </div>
+        </div>
+
+        {/* Bottom badge */}
+        <div className="absolute bottom-4 right-4 md:right-8 inline-flex items-center gap-4 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-3 rounded-lg text-sm z-10 whitespace-nowrap">
+          <span className="font-bold text-white uppercase tracking-wider whitespace-nowrap">{prod.title}</span>
+          <span className="text-brand-gold font-bold flex items-center gap-2 whitespace-nowrap">
+            <i className="fa-solid fa-shield-halved text-sm"></i> Certified Safety
+          </span>
         </div>
       </section>
 

@@ -60,7 +60,7 @@ export default function About() {
             {[
               { icon:'fa-stamp',      title:'Quality Certified',   desc:'Fully compliant with the Bureau of Indian Standards (IS 14665) and industry safety benchmarks.' },
               { icon:'fa-users-gear', title:'Technical Team',      desc:'Experienced engineers available 24/7 for breakdown maintenance support.' },
-              { icon:'fa-building',   title:'2480+ Installations', desc:'Successfully installed and maintained over 2480 elevators across Karnataka.' },
+              { icon:'fa-building',   title:'2480+ Life Maintaining', desc:'Successfully installed and maintained over 2480 elevators across Karnataka.' },
             ].map((c, i) => (
               <div key={i} className="bg-white p-7 rounded-3xl border-2 border-slate-200 shadow-lg flex gap-5 hover:shadow-2xl hover:border-brand-gold transition-all duration-300 scroll-reveal group" style={{ transitionDelay: `${i * 0.15}s` }}>
                 <div className="w-16 h-16 bg-gradient-to-br from-brand-gold to-yellow-600 rounded-2xl flex items-center justify-center text-white text-2xl shrink-0 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 shadow-lg">
@@ -206,7 +206,7 @@ export default function About() {
             <div className="bg-white/95 backdrop-blur-md p-10 rounded-3xl shadow-2xl border-2 border-white/20 space-y-6">
               <h3 className="font-serif font-bold text-2xl text-brand-navy border-b-2 border-brand-gold pb-4 flex items-center gap-3">
                 <i className="fa-solid fa-clipboard-check text-brand-gold text-3xl" />
-                45-Point Safety Checklist
+                Safety Checklist
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-slate-700 scroll-reveal-container">
                 {[
@@ -344,7 +344,6 @@ export default function About() {
                 { name: 'Aditya Group of Institutions', logo: 'ADITYA' },
                 { name: 'Hoysala Projects', logo: 'HOYSALA' },
                 { name: 'Casa Grande Royce', logo: 'CASA GRANDE' },
-                { name: 'GM Infinite', logo: 'GM INFINITE' },
                 { name: 'Embassy Olive Groups', logo: 'EMBASSY OLIVE' },
                 { name: 'Amara Courtyard', logo: 'AMARA' },
                 { name: 'Durga Saffron Square', logo: 'DURGA' },
@@ -354,7 +353,6 @@ export default function About() {
                 { name: 'Aditya Group of Institutions', logo: 'ADITYA' },
                 { name: 'Hoysala Projects', logo: 'HOYSALA' },
                 { name: 'Casa Grande Royce', logo: 'CASA GRANDE' },
-                { name: 'GM Infinite', logo: 'GM INFINITE' },
                 { name: 'Embassy Olive Groups', logo: 'EMBASSY OLIVE' },
                 { name: 'Amara Courtyard', logo: 'AMARA' },
                 { name: 'Durga Saffron Square', logo: 'DURGA' },

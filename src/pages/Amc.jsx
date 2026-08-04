@@ -65,14 +65,7 @@ const plans = [
   },
 ];
 
-const benefits = [
-  { poster: './POSTER/3rd insta Poster.png', title: 'Reduced Breakdowns', desc: 'Preventive maintenance minimizes major elevator faults and unplanned outages.' },
-  { poster: './POSTER/INSTA POST 3.png', title: 'Extended Equipment Life', desc: 'Regular calibrations ensure motors, drives, and ropes wear out slowly.' },
-  { poster: './POSTER/premium elevators.jpeg', title: 'Safety Compliance', desc: 'Adhering to local elevator rules prevents legal and liability concerns.' },
-  { poster: './POSTER/Untitled design.png', title: 'Priority Service Support', desc: 'AMC subscribers receive priority placement in breakdown technician routing.' },
-  { poster: './POSTER/1ST INSTA POST FOR DIGITECH.png', title: 'Cost Savings', desc: 'Prevent expensive emergency repairs by catching issues early through routine inspections.' },
-  { poster: './POSTER/WOOD FINISH CABIN.png', title: '24/7 Helpline', desc: 'Round-the-clock dedicated support line for all AMC contract holders.' },
-];
+
 
 export default function Amc() {
   const [lightboxImage, setLightboxImage] = useState(null);
@@ -153,67 +146,7 @@ export default function Amc() {
         </div>
       </section>
 
-      {/* Benefits ── */}
-      <section className="py-20 px-4 md:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-14 space-y-2 scroll-reveal">
-            <h3 className="text-xs font-semibold uppercase tracking-widest text-brand-gold animate-draw-line">Why AMC Matters</h3>
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-brand-navy">Benefits of an AMC Plan</h2>
-          </div>
-          {/* Accordion container */}
-          <div className="flex flex-col lg:flex-row gap-4 h-[420px] lg:h-[460px] overflow-hidden scroll-reveal-container">
-            {benefits.map((b, i) => (
-              <div 
-                key={i} 
-                className="group relative rounded-2xl p-6 flex flex-col justify-between transition-all duration-500 ease-in-out cursor-pointer overflow-hidden
-                           w-full lg:flex-1 lg:hover:flex-[3.5] border border-slate-200 hover:border-brand-gold/50 shadow-lg min-h-[300px] lg:min-h-0"
-                onClick={() => setLightboxImage(b.poster)}
-              >
-                {/* Background Image of the Poster with Overlay */}
-                <div 
-                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" 
-                  style={{ backgroundImage: `url('${b.poster}')` }}
-                />
-                {/* Dark overlay for readability */}
-                <div className="absolute inset-0 bg-brand-navy/85 group-hover:bg-brand-navy/55 transition-all duration-500" />
 
-                {/* Header (Number) */}
-                <div className="relative z-10 flex justify-between items-center w-full">
-                  <div className="w-10 h-10 rounded-full border border-brand-gold/30 flex items-center justify-center text-xs font-mono text-brand-gold bg-brand-navy/85 backdrop-blur-sm shadow-md">
-                    {`0${i + 1}`}
-                  </div>
-                  <div className="w-8 h-8 rounded-lg bg-white/10 backdrop-blur-sm border border-white/10 flex items-center justify-center text-white/70 group-hover:bg-brand-gold group-hover:text-brand-navy group-hover:border-brand-gold transition-all duration-500">
-                    <i className="fa-solid fa-expand text-[10px]" />
-                  </div>
-                </div>
-
-                {/* Body Content */}
-                <div className="relative z-10 mt-12 lg:mt-0 flex flex-col justify-end h-full">
-                  {/* Expanded text content */}
-                  <div className="block lg:opacity-0 lg:group-hover:opacity-100 lg:h-0 lg:group-hover:h-auto overflow-hidden transition-all duration-500 ease-in-out space-y-2 bg-brand-navy/90 p-4 rounded-xl border border-white/5 backdrop-blur-md">
-                    <h4 className="font-serif font-bold text-base text-brand-gold">
-                      {b.title}
-                    </h4>
-                    <p className="text-[11px] text-slate-355 leading-relaxed">
-                      {b.desc}
-                    </p>
-                  </div>
-
-                  {/* Vertical Collapsed text content for Desktop */}
-                  <div 
-                    className="hidden lg:flex lg:group-hover:hidden select-none absolute top-28 bottom-4 left-1/2 -translate-x-1/2 items-center justify-center"
-                    style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
-                  >
-                    <span className="text-white font-serif font-semibold text-[11px] tracking-widest uppercase whitespace-nowrap bg-brand-navy/85 px-3.5 py-4 rounded-full border border-white/10 backdrop-blur-sm shadow-lg">
-                      {b.title}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Why AMC Infographic Section */}
       <section className="py-20 px-4 md:px-8 bg-slate-50 border-t border-b border-slate-200">

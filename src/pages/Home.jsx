@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { PRODUCTS_DATA, SERVICES_DATA, PROJECTS_DATA } from '../data/siteData';
+import { PRODUCTS_DATA, SERVICES_DATA, PROJECTS_DATA, TESTIMONIALS_DATA } from '../data/siteData';
 
 /* ── Scroll-reveal hook ── */
 function useScrollReveal(threshold = 0.15) {
@@ -191,7 +191,7 @@ export default function Home() {
 
   /* ── Testimonials auto-rotate ── */
   useEffect(() => {
-    const iv = setInterval(() => setTestiIndex(p => (p + 1) % 2), 6000);
+    const iv = setInterval(() => setTestiIndex(p => (p + 1) % TESTIMONIALS_DATA.length), 7000);
     return () => clearInterval(iv);
   }, []);
 
@@ -465,7 +465,7 @@ export default function Home() {
                 <div className="bg-brand-gold/15 p-5 rounded-2xl border-2 border-brand-gold/30 flex gap-4 items-center scroll-reveal mt-8">
                   <i className="fa-solid fa-screwdriver-wrench text-3xl text-brand-gold animate-spin-slow shrink-0" />
                   <p className="text-sm text-brand-gold/95 leading-snug font-medium">
-                    All installations undergo a rigorous <strong className="text-brand-gold">45-point safety inspection</strong> checklist before final commissioning.
+                    All installations undergo a rigorous <strong className="text-brand-gold">safety inspection</strong> checklist before final commissioning.
                   </p>
                 </div>
               </div>
@@ -909,76 +909,63 @@ export default function Home() {
           <div className="scroll-reveal-scale relative">
             {/* Navigation Arrows */}
             <button 
-              onClick={() => setTestiIndex(p => (p === 0 ? 1 : 0))}
-              className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white/90 hover:bg-brand-gold text-brand-navy hover:text-white rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110"
+              onClick={() => setTestiIndex(p => (p === 0 ? TESTIMONIALS_DATA.length - 1 : p - 1))}
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 bg-white/90 hover:bg-brand-gold text-brand-navy hover:text-white rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110"
               aria-label="Previous testimonial"
             >
               <i className="fa-solid fa-chevron-left" />
             </button>
             <button 
-              onClick={() => setTestiIndex(p => (p === 0 ? 1 : 0))}
-              className="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white/90 hover:bg-brand-gold text-brand-navy hover:text-white rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110"
+              onClick={() => setTestiIndex(p => (p + 1) % TESTIMONIALS_DATA.length)}
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 bg-white/90 hover:bg-brand-gold text-brand-navy hover:text-white rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110"
               aria-label="Next testimonial"
             >
               <i className="fa-solid fa-chevron-right" />
             </button>
 
             {/* Offset card layout for visual interest */}
-            <div className="relative max-w-3xl mx-auto">
+            <div className="relative max-w-3xl mx-auto px-4 md:px-0">
               {/* Background decorative card */}
               <div className="absolute inset-0 bg-white/20 backdrop-blur-sm rounded-3xl transform rotate-2 scale-105" />
               <div className="absolute inset-0 bg-white/15 backdrop-blur-sm rounded-3xl transform -rotate-2 scale-105" />
               
               {/* Main testimonial card */}
-              <div className="relative bg-white/95 backdrop-blur-md p-12 md:p-16 rounded-3xl shadow-2xl min-h-[280px] flex items-center justify-center border-2 border-white">
-                <i className="fa-solid fa-quote-left absolute top-8 left-8 text-6xl text-brand-gold/20 animate-float" />
-                <i className="fa-solid fa-quote-right absolute bottom-8 right-8 text-6xl text-brand-gold/20 animate-float" style={{ animationDelay: '1s' }} />
+              <div className="relative bg-white/95 backdrop-blur-md p-8 md:p-14 rounded-3xl shadow-2xl min-h-[320px] flex items-center justify-center border-2 border-white">
+                <i className="fa-solid fa-quote-left absolute top-6 left-6 text-4xl md:text-6xl text-brand-gold/20 animate-float" />
+                <i className="fa-solid fa-quote-right absolute bottom-6 right-6 text-4xl md:text-6xl text-brand-gold/20 animate-float" style={{ animationDelay: '1s' }} />
                 
-                {testiIndex === 0 ? (
-                  <div key="t0" className="space-y-6 animate-lift-ride text-center">
-                    <p className="text-slate-700 italic text-lg md:text-xl leading-relaxed font-medium">
-                      "Digitech Elevators has provided excellent AMC service for our apartment for several years. Their technicians respond quickly and maintain the elevators professionally."
-                    </p>
-                    <div className="flex flex-col items-center pt-4 border-t-2 border-brand-gold/30">
-                      <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-brand-gold to-yellow-600 flex items-center justify-center text-white font-bold text-2xl mb-3 shadow-lg animate-pulse-ring">
-                        A
-                      </div>
-                      <h4 className="font-serif font-bold text-xl text-brand-navy">Apartment Association President</h4>
-                      <p className="text-sm text-slate-500 flex items-center gap-2 mt-1">
-                        <i className="fa-solid fa-location-dot text-brand-gold" />
-                        Bangalore
+                {(() => {
+                  const currentTesti = TESTIMONIALS_DATA[testiIndex] || TESTIMONIALS_DATA[0];
+                  return (
+                    <div key={testiIndex} className="space-y-6 animate-lift-ride text-center w-full z-10">
+                      <p className="text-slate-700 italic text-base md:text-lg leading-relaxed font-medium whitespace-pre-line max-h-[350px] overflow-y-auto px-2">
+                        "{currentTesti.quote}"
                       </p>
-                    </div>
-                  </div>
-                ) : (
-                  <div key="t1" className="space-y-6 animate-lift-ride text-center">
-                    <p className="text-slate-700 italic text-lg md:text-xl leading-relaxed font-medium">
-                      "Our hospital elevators have been operating reliably since installation. Excellent service and round-the-clock emergency support."
-                    </p>
-                    <div className="flex flex-col items-center pt-4 border-t-2 border-brand-gold/30">
-                      <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-brand-gold to-yellow-600 flex items-center justify-center text-white font-bold text-2xl mb-3 shadow-lg animate-pulse-ring">
-                        H
+                      <div className="flex flex-col items-center pt-4 border-t-2 border-brand-gold/30">
+                        <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br from-brand-gold to-yellow-600 flex items-center justify-center text-white font-bold text-xl md:text-2xl mb-2 shadow-lg animate-pulse-ring">
+                          {currentTesti.initial}
+                        </div>
+                        <h4 className="font-serif font-bold text-lg md:text-xl text-brand-navy">{currentTesti.author}</h4>
+                        <p className="text-xs md:text-sm text-slate-500 flex items-center gap-2 mt-1">
+                          <i className="fa-solid fa-location-dot text-brand-gold" />
+                          {currentTesti.location}
+                        </p>
                       </div>
-                      <h4 className="font-serif font-bold text-xl text-brand-navy">Hospital Operations Director</h4>
-                      <p className="text-sm text-slate-500 flex items-center gap-2 mt-1">
-                        <i className="fa-solid fa-location-dot text-brand-gold" />
-                        Bangalore
-                      </p>
                     </div>
-                  </div>
-                )}
+                  );
+                })()}
               </div>
             </div>
           </div>
 
           {/* Enhanced dot indicators */}
-          <div className="flex justify-center gap-3">
-            {[0, 1].map(i => (
+          <div className="flex justify-center gap-2 md:gap-3 flex-wrap max-w-md mx-auto">
+            {TESTIMONIALS_DATA.map((_, i) => (
               <button 
                 key={i} 
                 onClick={() => setTestiIndex(i)}
                 aria-label={`View testimonial ${i + 1}`}
-                className={`rounded-full transition-all duration-300 shadow-lg hover:shadow-xl ${testiIndex === i ? 'bg-brand-navy w-12 h-4' : 'bg-white/60 hover:bg-white w-4 h-4 hover:w-6'}`} 
+                className={`rounded-full transition-all duration-300 shadow-lg hover:shadow-xl ${testiIndex === i ? 'bg-brand-navy w-8 md:w-10 h-3 md:h-4' : 'bg-white/60 hover:bg-white w-3 md:w-4 h-3 md:h-4 hover:w-6'}`} 
               />
             ))}
           </div>

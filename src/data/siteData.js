@@ -393,13 +393,393 @@ export const SERVICES_DATA = {
 
 // Projects Portfolio Data
 export const PROJECTS_DATA = [
-  { name: 'Prestige Heights Apartments', category: 'Apartments', location: 'Whitefield, BLR', type: 'Passenger MRL', cap: '8 Passenger', stops: 'G + 14', year: '2024', image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80' },
-  { name: 'Sigma Tech Commercial Center', category: 'Commercial Complexes', location: 'Electronic City', type: 'Capsule Glass Lift', cap: '13 Passenger', stops: 'G + 6', year: '2023', image: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=800&q=80' },
-  { name: 'Vimal Multi-Speciality Hospital', category: 'Hospitals', location: 'Yeshwanthpur', type: 'Hospital Stretcher', cap: '15 Pax / 1020 Kg', stops: 'G + 5', year: '2024', image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80' },
-  { name: 'Duplex Villa Luxury Setup', category: 'Villas', location: 'Jayanagar, BLR', type: 'Home Hydraulic', cap: 'Glass Panoramic', stops: '3 Stops', year: '2025', image: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=800&q=80' },
-  { name: 'Karnataka Logistics Park', category: 'Industries', location: 'Nelamangala', type: 'Heavy Goods Lift', cap: '2000 Kg Capacity', stops: '4 Stops', year: '2023', image: 'https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=800&q=80' },
-  { name: 'Bangalore Metro Office Center', category: 'Educational Institutions', location: 'Majestic, BLR', type: 'Heavy Passenger', cap: '13 Passenger', stops: 'G + 8', year: '2024', image: 'https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=800&q=80' },
-  { name: 'Grand Royal Plaza', category: 'Commercial Complexes', location: 'Indiranagar, BLR', type: 'Capsule Passenger', cap: '10 Passenger', stops: 'G + 7', year: '2025', image: 'https://images.unsplash.com/photo-1464938050520-ef2270bb8ce8?auto=format&fit=crop&w=800&q=80' }
+  // ── Featured Projects ──
+  {
+    id: 1,
+    name: 'SOBHA LOTUS',
+    category: 'Residential Apartments',
+    isFeatured: true,
+    location: 'Kundalahalli, Brookefield, Bengaluru',
+    type: 'Passenger Elevator',
+    cap: '6 Passenger',
+    stops: 'G + 2 Upper Floors',
+    door: 'Automatic Centre Opening Doors',
+    system: 'Digitech MRL',
+    year: '2026',
+    image: './assets/image/01_SOBHA LOTUS.jpg'
+  },
+  {
+    id: 2,
+    name: 'SRI SAI HOSPITAL',
+    category: 'Healthcare & Institutions',
+    isFeatured: true,
+    location: 'Yadavanahalli, Attibele Hobli, Bengaluru',
+    type: 'Passenger Elevator',
+    cap: '13 Passenger',
+    stops: 'G + 5 Upper Floors',
+    door: 'Automatic Telescopic Opening Doors',
+    system: 'Digitech MRL',
+    year: '2025',
+    image: './assets/image/02_sri-sai-hospitals.avif'
+  },
+  {
+    id: 3,
+    name: 'AINZAY DESIGNS',
+    category: 'Commercial Buildings',
+    isFeatured: true,
+    location: 'Tirumenahalli, Bengaluru',
+    type: 'Passenger Elevator',
+    cap: '8 Passenger',
+    stops: 'G + 6 Upper Floors',
+    door: 'Automatic Centre Opening Doors',
+    system: 'Digitech MRL',
+    year: '2025',
+    image: './assets/image/03_AINZAY DESIGNS.png'
+  },
+  {
+    id: 4,
+    name: 'VIBHAVARI ENTERPRISE – BRIGADE CHAMPAK',
+    category: 'Commercial Buildings',
+    isFeatured: true,
+    location: 'Shivaji Nagar, Bengaluru',
+    type: 'Passenger Elevator',
+    cap: '10 Passenger',
+    stops: 'G + 4 Upper Floors',
+    door: 'Automatic Centre Opening Doors',
+    system: 'Digitech MRL',
+    year: '2026',
+    image: './assets/image/04_Vibhavari Enterprise – Brigade Champak.png'
+  },
+  {
+    id: 5,
+    name: 'CHAMPION LUXURY RESORTS PVT LTD',
+    category: 'Healthcare & Institutions',
+    isFeatured: true,
+    location: 'HSR Layout, Bengaluru',
+    type: 'Passenger Elevator',
+    cap: '10 Passenger',
+    stops: 'G + 1 Upper Floors',
+    door: 'Automatic Centre Opening Door',
+    system: 'Hydraulic Controller (Digitech)',
+    year: '2023',
+    image: './assets/image/05_CHAMPION.png'
+  },
+  {
+    id: 6,
+    name: 'DEEPAK AURA SANJAY',
+    category: 'Residential Apartments',
+    isFeatured: true,
+    location: 'Ashrama Colony, Sanjaynagar, Bengaluru',
+    type: 'Passenger Elevator',
+    cap: '6 Passenger',
+    stops: 'G + 5 Upper Floors',
+    door: 'Automatic Telescopic Opening Doors',
+    system: 'Digitech MRL',
+    year: '2025',
+    image: './assets/image/06_Deepak Aura.png'
+  },
+
+  // ── Residential Apartments ──
+  {
+    id: 7,
+    name: 'ANISHA GRANGE',
+    category: 'Residential Apartments',
+    isFeatured: false,
+    location: 'Kaggadasapura, Bengaluru',
+    type: 'Passenger Elevator',
+    cap: '6 Passenger',
+    stops: 'BG + 3 Upper Floors (B Block) / BG + 4 Upper Floors (C Block)',
+    door: 'Automatic Centre Opening Doors',
+    system: 'Digitech MR',
+    year: '2025',
+    image: './assets/image/06_Anisha-Grange.jpg'
+  },
+  {
+    id: 8,
+    name: 'LUMBINI APARTMENT',
+    category: 'Residential Apartments',
+    isFeatured: false,
+    location: 'Ashok Nagar, Bengaluru',
+    type: 'Passenger Elevator',
+    cap: '6 Passenger',
+    stops: 'G + 6 Upper Floors',
+    door: 'Automatic Centre Opening Doors',
+    system: 'Digitech MRL',
+    year: '2024',
+    noImage: true
+  },
+  {
+    id: 9,
+    name: 'MOTHERLAND',
+    category: 'Residential Apartments',
+    isFeatured: false,
+    location: 'CV Raman Nagar, Bengaluru',
+    type: 'Passenger Elevator',
+    cap: '6 Passenger',
+    stops: 'G + 4 Upper Floors',
+    door: 'Automatic Centre Opening Doors',
+    system: 'Digitech MR',
+    year: '2026',
+    image: './assets/image/09_Motherland Apartment.png'
+  },
+  {
+    id: 10,
+    name: 'PARK VIEW CLASSIC',
+    category: 'Residential Apartments',
+    isFeatured: false,
+    location: 'Kaggadasapura, Bengaluru',
+    type: 'Passenger Elevator',
+    cap: '6 Passenger',
+    stops: 'G + 4 Upper Floors',
+    door: 'Automatic Centre Opening Doors',
+    system: 'Digitech MR',
+    year: '2025',
+    image: './assets/image/10_Park View Classic.png'
+  },
+  {
+    id: 11,
+    name: 'VARS VALENCIA',
+    category: 'Residential Apartments',
+    isFeatured: false,
+    location: 'Kaggadasapura, Bengaluru',
+    type: 'Passenger Elevator',
+    cap: '6 Passenger',
+    stops: 'G + 5 Upper Floors',
+    door: 'Automatic Centre Opening Doors',
+    system: 'Digitech MR',
+    year: '2025',
+    image: './assets/image/11_Vars Valencia Apartment.png'
+  },
+  {
+    id: 12,
+    name: 'HOYSALA SRIKRISHNA',
+    category: 'Residential Apartments',
+    isFeatured: false,
+    location: 'Bhoopsandra, Bengaluru',
+    type: 'Passenger Elevator',
+    cap: '6 Passenger',
+    stops: 'BG + 3 Upper Floors',
+    door: 'Automatic Centre Opening Doors',
+    system: 'Digitech MR',
+    year: '2024',
+    image: './assets/image/12_Hoysala Srikrishna Apartments.png'
+  },
+  {
+    id: 13,
+    name: 'SHILPITHA REGALIA',
+    category: 'Residential Apartments',
+    isFeatured: false,
+    location: 'Malleshpalya, Bengaluru',
+    type: 'Passenger Elevator',
+    cap: '6 Passenger',
+    stops: 'PG + 4 Upper Floors',
+    door: 'Automatic Centre Opening Doors',
+    system: 'Digitech MR',
+    year: '2025',
+    image: './assets/image/13_Shilpitha Regalia.jpg'
+  },
+  {
+    id: 14,
+    name: 'A R KENNETH DEEPAK RAJ',
+    category: 'Residential Apartments',
+    isFeatured: false,
+    location: 'Brindavan Nagar, Thaverekere Main Road, Bengaluru',
+    type: 'Passenger Elevator',
+    cap: '13 Passenger',
+    stops: 'BG + 7 Upper Floors',
+    door: 'Automatic Telescopic Opening Doors',
+    system: 'Digitech MRL',
+    year: '2025',
+    noImage: true
+  },
+  {
+    id: 15,
+    name: 'USHA SUBRAMANYA',
+    category: 'Residential Apartments',
+    isFeatured: false,
+    location: 'Vyalikaval, Bengaluru',
+    type: 'Passenger Elevator',
+    cap: '6 Passenger',
+    stops: 'G + 4 Upper Floors',
+    door: 'Automatic Telescopic Opening Doors',
+    system: 'Digitech MRL',
+    year: '2026',
+    noImage: true
+  },
+
+  // ── Commercial Buildings ──
+  {
+    id: 16,
+    name: 'KAYA LTD',
+    category: 'Commercial Buildings',
+    isFeatured: false,
+    location: 'Indiranagar, Bengaluru',
+    type: 'Passenger Elevator',
+    cap: '6 Passenger',
+    stops: 'G + 3 Upper Floors',
+    door: 'Automatic Telescopic Opening Doors',
+    system: 'Digitech MR',
+    year: '2026',
+    image: './assets/image/16_Kaya Ltd.jpg'
+  },
+  {
+    id: 17,
+    name: 'NOAH ENTERPRISES',
+    category: 'Commercial Buildings',
+    isFeatured: false,
+    location: 'Mitganahalli, Kadusonnapanahalli, Bengaluru',
+    type: 'Passenger Elevator',
+    cap: '6 Passenger',
+    stops: '—',
+    door: 'Automatic Centre Opening Doors',
+    system: 'Digitech MRL',
+    year: '2025',
+    noImage: true
+  },
+  {
+    id: 18,
+    name: 'TMR VILLA ORCHID – GYAN ENTERPRISES',
+    category: 'Commercial Buildings',
+    isFeatured: false,
+    location: 'Sampigehalli, Bengaluru',
+    type: 'Passenger Elevator',
+    cap: '6 Passenger',
+    stops: 'G + 2 Upper Floors',
+    door: 'Automatic Telescopic Opening Doors',
+    system: 'Hydraulic',
+    year: '2025',
+    image: './assets/image/18_TMR Villa Orchid-Gyan Enterprises –.png'
+  },
+  {
+    id: 19,
+    name: 'EAST MANSION',
+    category: 'Commercial Buildings',
+    isFeatured: false,
+    location: 'Cooke Town, Bengaluru',
+    type: 'Passenger Elevator',
+    cap: '6 Passenger',
+    stops: 'G + 3 Upper Floors',
+    door: 'Automatic Centre Opening Doors',
+    system: 'Digitech MR',
+    year: '2023',
+    image: './assets/image/19_East Mansion.png'
+  },
+  {
+    id: 20,
+    name: 'VIBHAVARI ENTERPRISE – BRIGADE CHAMPAK',
+    category: 'Commercial Buildings',
+    isFeatured: false,
+    isCategoryOnly: true,
+    location: 'Shivaji Nagar, Bengaluru',
+    type: 'Passenger Elevator',
+    cap: '10 Passenger',
+    stops: 'G + 4 Upper Floors',
+    door: 'Automatic Centre Opening Doors',
+    system: 'Digitech MRL',
+    year: '2026',
+    image: './assets/image/04_Vibhavari Enterprise – Brigade Champak.png'
+  },
+  {
+    id: 21,
+    name: 'RENNIANCE JAGRUTI – CLUB HOUSE',
+    category: 'Commercial Buildings',
+    isFeatured: false,
+    location: 'Ramagondanahalli, Whitefield, Bengaluru',
+    type: 'Passenger Elevator',
+    cap: '6 Passenger',
+    stops: 'G + 2 Upper Floors',
+    door: 'Automatic Centre Opening Doors',
+    system: 'Digitech MRL',
+    year: '2025',
+    image: './assets/image/21_Renaissance Jagruti.jpg'
+  },
+
+  // ── Healthcare & Institutions ──
+  {
+    id: 22,
+    name: 'SRI SATHYA SAI INSTITUTE OF HIGHER MEDICAL SCIENCE',
+    category: 'Healthcare & Institutions',
+    isFeatured: false,
+    location: 'EPIP Area, Whitefield, Bengaluru',
+    type: 'Passenger Elevator',
+    cap: '6 Passenger',
+    stops: 'G + 3 Upper Floors',
+    door: 'Automatic Centre Opening Doors',
+    system: 'Digitech MR',
+    year: '2025',
+    image: './assets/image/22_Sri Sathya Sai Institute of Higher Medical Science.jpg'
+  },
+  {
+    id: 23,
+    name: 'SRI MAHANTIN MATH TRUST PROPERTY',
+    category: 'Healthcare & Institutions',
+    isFeatured: false,
+    location: 'Cottonpet, Chickpet, Bengaluru',
+    type: 'Passenger Elevator',
+    cap: '6 Passenger',
+    stops: 'G + 4 Upper Floors',
+    door: 'Automatic Centre Opening Doors',
+    system: 'Digitech MRL',
+    year: '2024',
+    image: './assets/image/23_SRI MAHANTIN MATH TRUST.png'
+  },
+  {
+    id: 24,
+    name: 'WORLD RENEWAL SPIRITUAL TRUST',
+    category: 'Healthcare & Institutions',
+    isFeatured: false,
+    location: 'HMT Layout, RT Nagar, Bengaluru',
+    type: 'Passenger Elevator',
+    cap: '6 Passenger',
+    stops: 'G + 4 Upper Floors',
+    door: 'Automatic Telescopic Opening Doors',
+    system: 'Digitech MRL',
+    year: '2026',
+    image: './assets/image/24_WORLD RENEWAL SPIRITUAL TRUST.png'
+  },
+  {
+    id: 25,
+    name: 'CHAMPION LUXURY RESORTS PVT LTD',
+    category: 'Healthcare & Institutions',
+    isFeatured: false,
+    isCategoryOnly: true,
+    location: 'HSR Layout, Bengaluru',
+    type: 'Passenger Elevator',
+    cap: '10 Passenger',
+    stops: 'G + 1 Upper Floors',
+    door: 'Automatic Centre Opening Door',
+    system: 'Hydraulic Controller (Digitech)',
+    year: '2023',
+    image: './assets/image/05_CHAMPION.png'
+  },
+  {
+    id: 26,
+    name: 'ABHAYAHASTA HOSPITAL',
+    category: 'Healthcare & Institutions',
+    isFeatured: false,
+    location: 'Varthur, Bengaluru',
+    type: 'Passenger Elevator',
+    cap: '15 Passenger',
+    stops: 'G + 4 Upper Floors',
+    door: 'Automatic Telescopic Opening Doors',
+    system: 'Digitech MRL',
+    year: '2025',
+    image: './assets/image/26_ABHAYAHASTA.png'
+  },
+  {
+    id: 27,
+    name: 'ANTARA HOSPITAL – MOHAMMED IMTIYAZ',
+    category: 'Healthcare & Institutions',
+    isFeatured: false,
+    location: 'Whitefield, Bengaluru',
+    type: 'Passenger Elevator',
+    cap: '16 Passenger',
+    stops: 'BG + 4 Upper Floors',
+    door: 'Automatic Telescopic Opening Doors',
+    system: 'Digitech MRL',
+    year: '2025',
+    image: './assets/image/27_Antara hospital.webp'
+  }
 ];
 
 // Gallery Data
@@ -425,4 +805,58 @@ export const GALLERY_DATA = {
     { title: 'Emergency Breakdowns Training', img: './goods_lift.png', desc: 'Certified safety training runs.' }
   ]
 };
+
+// Testimonials Configuration Data
+export const TESTIMONIALS_DATA = [
+  {
+    id: 1,
+    quote: "We got their service very good. Promptly serviced by very good and experienced technicians all the time. Their materials also are in very good. Compare to others servicing agency,their charges are too competitive and worthy. Overall experiences are really nice. Thanks.",
+    author: "Bibhas Sarkar",
+    initial: "B",
+    location: "Bangalore"
+  },
+  {
+    id: 2,
+    quote: "Our Apartment near MS Ramaiah Hospital have engaged Digiteck technologies for AMC of 8 years old Kone 4 floor lift. They have been doing excellent job and are always prompt in servicing. They concentrate on the job than money. I wish them all the best and will not hesitate for any body to hire them for LIFT AMC.",
+    author: "Dr. Srinivasan",
+    initial: "S",
+    location: "MS Ramaiah Hospital Area, Bangalore"
+  },
+  {
+    id: 3,
+    quote: "Hi this is prasad Reddy from kanakanagar\nI have installed the elevator to my residence building for five floor\nBy Digitech elevators bangalore company is good in service and on time completion.\nPositive Responsiveness and Quality",
+    author: "Prasad Reddy Kambala",
+    initial: "P",
+    location: "Kanakanagar, Bangalore"
+  },
+  {
+    id: 4,
+    quote: "We have been using Digitech services in our apartment since 5 years. They have demonstrated high levels of professionalism and quality in their work. They have excellent expertise in the domain, and they have very knowledgeable and experienced technicians.",
+    author: "Krishnadass",
+    initial: "K",
+    location: "Bangalore"
+  },
+  {
+    id: 5,
+    quote: "Digitech Elevators and Mr. Sundar and team are very helpful, they provide excellent service, on time arrival incase of any issues and good customer support. We got it installed 2 years back and liked their prompt response.",
+    author: "Gayathri Rajesh",
+    initial: "G",
+    location: "Bangalore"
+  },
+  {
+    id: 6,
+    quote: "we installed our apartment lift from Digitech Elevators. The team explained everything clearly, installation was on time, and the lift is running smoothly. We strongly recommend Digitech for quality elevators. Thank you",
+    author: "Gowtham Anand",
+    initial: "G",
+    location: "Bangalore"
+  },
+  {
+    id: 7,
+    quote: "We have been using the services of Digitech Elevators Pvt Ltd for the past several years, and they have consistently proven to be reliable and highly supportive. Their team provides 24/7 assistance for both minor issues and emergency breakdowns, ensuring minimal downtime of lift operations.\n\nIn terms of costing, they offer reasonable AMC charges and competitive pricing for spare parts and maintenance works. Compared to other lift OEM service providers, who often take longer to respond and attend complaints, Digitech Elevators Pvt Ltd typically responds within 30 to 45 minutes of complaint registration.\n\nBased on our experience, I strongly recommend Digitech Elevators Pvt Ltd for lift maintenance to ensure smooth and tension-free operations.",
+    author: "Madhu A",
+    initial: "M",
+    location: "Bangalore"
+  }
+];
+
 

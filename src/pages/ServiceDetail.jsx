@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { SERVICES_DATA } from '../data/siteData';
 
 const SERVICE_ICONS = {
@@ -32,8 +33,48 @@ const BENEFIT_DETAILS = {
   'Extended Elevator Life': 'Adds another 10-15 years of reliable, code-compliant service life.'
 };
 
+const INSTALLATION_POSTERS = [
+  {
+    image: './POSTER/3rd insta Poster.png',
+    title: 'Precision Elevator Engineering',
+    tag: 'Quality Installation',
+    desc: 'State-of-the-art shaft alignment, precision brackets, and gearless motor placement.'
+  },
+  {
+    image: './POSTER/WOOD FINISH CABIN.png',
+    title: 'Custom Wooden & Glass Cabins',
+    tag: 'Cabin Interiors',
+    desc: 'Premium decorative cabin finishes customized to complement luxury architecture.'
+  },
+  {
+    image: './POSTER/premium elevators.jpeg',
+    title: 'High-Speed Passenger Elevators',
+    tag: 'Commercial & Villa',
+    desc: 'Energy-efficient VVVF motor drives with whisper-quiet, smooth ride quality.'
+  },
+  {
+    image: './POSTER/INSTA POST 3.png',
+    title: 'Advanced Microprocessor Control',
+    tag: 'Smart Technology',
+    desc: 'Integrated 32-bit controllers, ARD safety system, and automatic levelling.'
+  },
+  {
+    image: './POSTER/Untitled design.png',
+    title: 'Turnkey Residential Installation',
+    tag: 'Home Lifts',
+    desc: 'Tailored home elevator setups designed for low pit and overhead headroom.'
+  },
+  {
+    image: './POSTER/1ST INSTA POST FOR DIGITECH.png',
+    title: 'End-to-End Execution',
+    tag: 'Complete Project Care',
+    desc: 'From initial site survey and civil preparation to government licensing and handover.'
+  }
+];
+
 export default function ServiceDetail({ serviceKey, fallbackToHome }) {
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [selectedPoster, setSelectedPoster] = useState(null);
   const srv = SERVICES_DATA[serviceKey];
   
   // Local scroll-reveal observer to guarantee transitions play when switching services
@@ -223,6 +264,78 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
                 </div>
               </div>
             )}
+          </div>
+        </section>
+      )}
+
+      {/* ── INSTALLATION GALLERY & POSTERS SHOWCASE ── */}
+      {serviceKey === 'installation' && (
+        <section className="py-24 px-4 md:px-8 bg-slate-900 text-white relative overflow-hidden border-t-4 border-brand-gold">
+          {/* Subtle glowing radial background */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(212,175,55,0.15)_0%,_transparent_70%)] pointer-events-none" />
+
+          <div className="max-w-7xl mx-auto space-y-14 relative z-10">
+            <div className="text-center space-y-3 scroll-reveal">
+              <span className="inline-flex items-center gap-2 bg-brand-gold/20 border border-brand-gold/40 text-brand-gold text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest">
+                <i className="fa-solid fa-layer-group text-brand-gold" />
+                Visual Showcase & Standards
+              </span>
+              <h2 className="font-serif text-3xl md:text-5xl font-bold text-white drop-shadow-md">
+                Installation Standards & Quality Posters
+              </h2>
+              <p className="text-slate-300 text-sm md:text-base max-w-2xl mx-auto font-medium">
+                Explore our engineering benchmarks, cabin interior options, and turnkey elevator installation standards.
+              </p>
+            </div>
+
+            {/* Poster Showcase Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 scroll-reveal-container">
+              {INSTALLATION_POSTERS.map((poster, i) => (
+                <div
+                  key={i}
+                  className="group relative bg-slate-800/80 rounded-3xl overflow-hidden border border-slate-700 hover:border-brand-gold/80 shadow-xl hover:shadow-2xl hover:shadow-brand-gold/10 transition-all duration-500 cursor-pointer flex flex-col scroll-reveal"
+                  onClick={() => setSelectedPoster(poster)}
+                >
+                  {/* Poster Image Container */}
+                  <div className="relative h-72 md:h-80 overflow-hidden bg-slate-950">
+                    <img
+                      loading="lazy"
+                      src={poster.image}
+                      alt={poster.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/30 to-transparent opacity-80 group-hover:opacity-60 transition-opacity" />
+
+                    {/* Category Tag */}
+                    <div className="absolute top-4 left-4 bg-brand-navy/90 border border-brand-gold/40 text-brand-gold text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider backdrop-blur-md shadow-md">
+                      {poster.tag}
+                    </div>
+
+                    {/* Expand / View Badge */}
+                    <div className="absolute top-4 right-4 w-9 h-9 rounded-full bg-brand-gold/90 text-brand-navy flex items-center justify-center shadow-lg transform group-hover:scale-110 group-hover:bg-brand-gold transition-all duration-300">
+                      <i className="fa-solid fa-magnifying-glass-plus text-xs" />
+                    </div>
+                  </div>
+
+                  {/* Content Container */}
+                  <div className="p-6 flex-1 flex flex-col justify-between space-y-3 bg-slate-900/90 backdrop-blur-md">
+                    <div>
+                      <h3 className="font-serif font-bold text-lg text-white group-hover:text-brand-gold transition-colors duration-300 leading-snug mb-2">
+                        {poster.title}
+                      </h3>
+                      <p className="text-slate-300 text-xs leading-relaxed">
+                        {poster.desc}
+                      </p>
+                    </div>
+
+                    <div className="pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-brand-gold font-semibold">
+                      <span>Click to view full poster</span>
+                      <i className="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
       )}
@@ -732,6 +845,66 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
           </div>
         </div>
       </section>
+
+      {/* Lightbox Modal */}
+      {selectedPoster && createPortal(
+        <div 
+          className="fixed inset-0 z-[9999] bg-brand-navy/85 backdrop-blur-xl flex items-center justify-center p-4 animate-fade-in"
+          onClick={() => setSelectedPoster(null)}
+        >
+          <button
+            className="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/10 hover:bg-brand-gold text-white hover:text-brand-navy border border-white/20 flex items-center justify-center text-xl transition-all duration-300 shadow-2xl"
+            onClick={() => setSelectedPoster(null)}
+          >
+            <i className="fa-solid fa-xmark" />
+          </button>
+          
+          <div 
+            className="max-w-4xl max-h-[90vh] w-full bg-slate-900 rounded-3xl border-2 border-brand-gold/40 shadow-2xl overflow-hidden flex flex-col md:flex-row"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="md:w-3/5 bg-black flex items-center justify-center p-4">
+              <img
+                loading="lazy"
+                src={selectedPoster.image}
+                alt={selectedPoster.title}
+                className="max-h-[75vh] w-full object-contain rounded-xl shadow-lg"
+              />
+            </div>
+
+            <div className="md:w-2/5 p-8 flex flex-col justify-between text-white space-y-6 bg-slate-900 border-t md:border-t-0 md:border-l border-slate-800">
+              <div className="space-y-4">
+                <span className="inline-block bg-brand-gold/20 border border-brand-gold/40 text-brand-gold text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                  {selectedPoster.tag}
+                </span>
+                <h3 className="font-serif font-bold text-2xl text-white leading-tight">
+                  {selectedPoster.title}
+                </h3>
+                <p className="text-slate-300 text-sm leading-relaxed">
+                  {selectedPoster.desc}
+                </p>
+              </div>
+
+              <div className="space-y-4 pt-6 border-t border-slate-800">
+                <a
+                  href="#/quote"
+                  onClick={() => setSelectedPoster(null)}
+                  className="block text-center bg-brand-gold hover:bg-brand-gold-hover text-brand-navy font-bold py-3.5 px-6 rounded-xl text-xs uppercase tracking-widest transition-all hover:scale-105 shadow-lg btn-glow"
+                >
+                  Request Installation Quote
+                </a>
+                <button
+                  onClick={() => setSelectedPoster(null)}
+                  className="w-full text-center text-xs text-slate-400 hover:text-white transition-colors"
+                >
+                  Close Preview
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>,
+        document.body
+      )}
     </div>
   );
 }

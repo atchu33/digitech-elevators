@@ -1,4 +1,4 @@
-import React, { useState, useEffect, lazy, Suspense } from 'react';
+import React, { useState, useEffect, useRef, lazy, Suspense } from 'react';
 import './App.css';
 
 // Components
@@ -30,6 +30,8 @@ export default function App() {
   const [currentHash, setCurrentHash] = useState(window.location.hash || '#/home');
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [pageLoading, setPageLoading] = useState(false);
+  const [whatsappOpen, setWhatsappOpen] = useState(false);
+  const waPopupRef = useRef(null);
 
   // Routing Handler
   useEffect(() => {
@@ -186,16 +188,79 @@ export default function App() {
         </button>
       )}
 
-      {/* Floating WhatsApp Button */}
-      <a
-        href="https://wa.me/919845071406?text=Hi%20Digitech%20Elevators"
-        target="_blank"
-        rel="noopener noreferrer"
-        title="Chat on WhatsApp"
-        className="fixed bottom-24 right-6 z-50 w-14 h-14 bg-[#25D366] hover:bg-[#20ba5a] rounded-full flex items-center justify-center shadow-2xl transition-all hover:scale-110 animate-bounce-soft"
-      >
-        <i className="fa-brands fa-whatsapp text-white text-3xl"></i>
-      </a>
+      {/* Floating WhatsApp Widget */}
+      <div className="fixed bottom-24 right-6 z-50 flex flex-col items-end gap-3">
+
+        {/* Chat Popup Card */}
+        {whatsappOpen && (
+          <div
+            ref={waPopupRef}
+            className="rounded-2xl overflow-hidden border border-brand-gold/30 animate-fade-in"
+            style={{ width: '288px', boxShadow: '0 12px 48px rgba(10,25,60,0.28)' }}
+          >
+            {/* Header — Brand Navy with gold accent */}
+            <div className="bg-brand-navy px-4 py-3.5 flex items-center justify-between border-b border-brand-gold/20">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shrink-0 overflow-hidden border-2 border-brand-gold/50 shadow-md">
+                  <img src="./logo-removebg-preview.png" alt="Digitech" className="w-8 h-8 object-contain" />
+                </div>
+                <div>
+                  <p className="font-serif font-bold text-sm leading-tight animate-gold-shimmer">Digitech Elevators</p>
+                  <span className="flex items-center gap-1.5 text-slate-400 text-[10px] mt-0.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-green-400 inline-block animate-pulse"></span>
+                    Available on WhatsApp
+                  </span>
+                </div>
+              </div>
+              <button
+                onClick={() => setWhatsappOpen(false)}
+                className="w-7 h-7 rounded-full border border-brand-gold/30 bg-white/5 hover:bg-brand-gold/20 hover:border-brand-gold flex items-center justify-center text-slate-400 hover:text-brand-gold transition-all duration-200"
+                aria-label="Close"
+              >
+                <i className="fa-solid fa-xmark text-xs" />
+              </button>
+            </div>
+
+            {/* Message area — dark slate bg */}
+            <div className="bg-slate-900 px-4 py-5">
+              <div className="bg-brand-navy rounded-xl rounded-tl-none px-4 py-3.5 border border-brand-gold/20 max-w-[92%] shadow-lg">
+                <p className="text-brand-gold font-serif font-semibold text-sm">Hi there 👋</p>
+                <p className="text-slate-300 text-xs mt-1.5 leading-relaxed">How can we help you? Our team is ready to assist with your elevator needs.</p>
+                <span className="text-[10px] text-slate-500 block mt-2 text-right font-mono">Digitech Elevators</span>
+              </div>
+            </div>
+
+            {/* CTA Button — Brand Gold */}
+            <div className="bg-brand-navy px-4 py-3 border-t border-brand-gold/20">
+              <a
+                href={`https://wa.me/919845071406?text=${encodeURIComponent('Hello\n\nI visited the website of Digitech Elevators and would like to enquire about your elevator services. Please share further details.\n\nThank you.')}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 w-full bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold py-3 rounded-xl text-xs uppercase tracking-widest transition-all hover:scale-[1.02] shadow-lg"
+                onClick={() => setWhatsappOpen(false)}
+              >
+                <i className="fa-brands fa-whatsapp text-lg" />
+                Chat on WhatsApp
+              </a>
+            </div>
+          </div>
+        )}
+
+        {/* Floating Button */}
+        <button
+          onClick={() => setWhatsappOpen(prev => !prev)}
+          title="Chat on WhatsApp"
+          className={`w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 hover:scale-110 border-2 ${
+            whatsappOpen
+              ? 'bg-brand-navy border-brand-gold hover:bg-slate-800'
+              : 'bg-[#25D366] hover:bg-[#20ba5a] border-white/30 animate-bounce-soft'
+          }`}
+        >
+          {whatsappOpen
+            ? <i className="fa-solid fa-xmark text-brand-gold text-2xl" />
+            : <i className="fa-brands fa-whatsapp text-white text-3xl" />}
+        </button>
+      </div>
     </div>
   );
 }
