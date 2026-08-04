@@ -1,0 +1,165 @@
+import React from 'react';
+
+export default function Footer() {
+  const services = [
+    ['installation',  'fa-hammer',             'Elevator Installation'],
+    ['amc',           'fa-handshake',          'Annual Maintenance (AMC)'],
+    ['modernization', 'fa-arrows-spin',        'Modernization & Upgrades'],
+    ['repair',        'fa-screwdriver-wrench', 'Repair & Breakdown'],
+    ['licensing',     'fa-file-contract',      'Licensing & Renewals'],
+  ];
+
+  const quickLinks = [
+    ['#/about',    'About Us'],
+    ['#/projects', 'Project Portfolio'],
+    ['#/careers',  'Careers'],
+    ['#/amc',      'AMC Plans'],
+    ['#/faq',      'FAQs'],
+    ['#/contact',  'Contact Us'],
+    ['#/quote',    'Get a Free Quote'],
+  ];
+
+  return (
+    <footer className="bg-brand-navy text-slate-400 border-t-4 border-brand-gold">
+
+      {/* Main Footer */}
+      <div className="max-w-7xl mx-auto px-6 md:px-8 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+
+        {/* ─── Brand ─── */}
+        <div className="space-y-5">
+          <a href="#/home" className="inline-flex items-center gap-3 group">
+            <div className="w-14 h-14 bg-white rounded-lg flex items-center justify-center p-1.5 shadow-lg">
+              <img loading="lazy" 
+                src="./logo-removebg-preview.png" 
+                alt="Digitech Elevators Logo" 
+                className="h-full w-full object-contain"
+              />
+            </div>
+            <div>
+              <h2 className="font-serif font-bold text-lg text-white tracking-tight leading-none">
+                DIGITECH <span className="text-brand-gold">ELEVATORS</span>
+              </h2>
+              <p className="text-[9px] uppercase tracking-[0.18em] text-slate-500 mt-0.5">
+                Safe &bull; Reliable &bull; Innovative
+              </p>
+            </div>
+          </a>
+
+          <p className="text-sm leading-relaxed">
+            27+ years delivering advanced vertical mobility solutions. Built on engineering excellence and robust safety benchmarks.
+          </p>
+
+          <div className="flex gap-2.5">
+            <a 
+              href="https://www.instagram.com/digitech.elevators/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="w-9 h-9 bg-slate-800 hover:bg-brand-gold rounded-lg flex items-center justify-center text-white hover:text-brand-navy transition-all cursor-pointer text-sm border border-slate-700 hover:border-brand-gold"
+            >
+              <i className="fa-brands fa-instagram"></i>
+            </a>
+            <a 
+              href="https://wa.me/919845071406" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="w-9 h-9 bg-slate-800 hover:bg-brand-gold rounded-lg flex items-center justify-center text-white hover:text-brand-navy transition-all cursor-pointer text-sm border border-slate-700 hover:border-brand-gold"
+            >
+              <i className="fa-brands fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+
+        {/* ─── Quick Links ─── */}
+        <div>
+          <h3 className="font-serif font-bold text-white text-sm border-b border-slate-700 pb-2.5 mb-5">Quick Links</h3>
+          <ul className="space-y-3">
+            {quickLinks.map(([href, label]) => (
+              <li key={href}>
+                <a href={href} className="flex items-center gap-2 text-sm hover:text-brand-gold transition">
+                  <i className="fa-solid fa-angle-right text-brand-gold text-[10px]"></i> {label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* ─── Services ─── */}
+        <div>
+          <h3 className="font-serif font-bold text-white text-sm border-b border-slate-700 pb-2.5 mb-5">Our Services</h3>
+          <ul className="space-y-3">
+            {services.map(([key, icon, label]) => (
+              <li key={key}>
+                <a href={`#/services/${key}`} className="flex items-center gap-2 text-sm hover:text-brand-gold transition">
+                  <i className="fa-solid fa-angle-right text-brand-gold text-[10px]"></i> {label}
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          </div>
+
+        {/* ─── Contact Info ─── */}
+        <div>
+          <h3 className="font-serif font-bold text-white text-sm border-b border-slate-700 pb-2.5 mb-5">Contact Info</h3>
+          <div className="space-y-4">
+            <div className="flex gap-3">
+              <div className="w-9 h-9 bg-brand-gold/10 rounded-lg flex items-center justify-center text-brand-gold shrink-0 border border-brand-gold/20">
+                <i className="fa-solid fa-location-dot text-sm"></i>
+              </div>
+              <p className="text-sm leading-relaxed mt-0.5">
+                61 Third floor, 1st A main Road<br/>Bhuvaneshwari nagar, RT Nagar<br/>Bengaluru, Karnataka 560032
+              </p>
+            </div>
+
+            <div className="flex gap-3">
+              <div className="w-9 h-9 bg-brand-gold/10 rounded-lg flex items-center justify-center text-brand-gold shrink-0 border border-brand-gold/20">
+                <i className="fa-solid fa-phone text-sm"></i>
+              </div>
+              <div className="mt-0.5">
+                <a href="tel:+919845071406" className="block text-sm hover:text-brand-gold transition">+91 98450 71406</a>
+                <a href="tel:+917625080504" className="block text-sm hover:text-brand-gold transition mt-0.5">+91 76250 80504</a>
+              </div>
+            </div>
+
+            <div className="flex gap-3">
+              <div className="w-9 h-9 bg-brand-gold/10 rounded-lg flex items-center justify-center text-brand-gold shrink-0 border border-brand-gold/20">
+                <i className="fa-solid fa-envelope text-sm"></i>
+              </div>
+              <a href="mailto:digitech.elevators@gmail.com"
+                 className="text-sm hover:text-brand-gold transition break-all mt-1.5">
+                digitech.elevators@gmail.com
+              </a>
+            </div>
+
+            <a href="https://wa.me/919845071406?text=Hi%20Digitech%20Elevators"
+               target="_blank" rel="noopener noreferrer"
+               className="flex items-center justify-center gap-2 bg-[#25D366]/10 border border-[#25D366]/30 hover:bg-[#25D366] hover:border-[#25D366] text-[#25D366] hover:text-white font-bold px-4 py-2.5 rounded-xl text-sm transition w-full mt-2">
+              <i className="fa-brands fa-whatsapp text-base"></i> Chat on WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom Bar */}
+      <div className="border-t border-slate-800">
+        <div className="max-w-7xl mx-auto px-6 md:px-8 py-4 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-slate-600">
+          <p>&copy; {new Date().getFullYear()} <span className="text-slate-400 font-semibold">Digitech Elevators</span>. All Rights Reserved.</p>
+          <div className="flex items-center">
+            <span className="text-slate-500 font-medium">Designed &amp; Developed by</span>
+            <img loading="lazy" 
+              src="./vantageedge1.jpeg" 
+              alt="Vantage Edge Solutions" 
+              className="h-10 object-contain mix-blend-lighten -ml-1"
+              style={{ filter: 'brightness(1.2) contrast(1.1)' }}
+            />
+          </div>
+          <div className="flex gap-4">
+            <a href="#/legal/privacy" className="hover:text-brand-gold transition">Privacy Policy</a>
+            <span className="text-slate-700">|</span>
+            <a href="#/legal/terms"   className="hover:text-brand-gold transition">Terms &amp; Conditions</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
