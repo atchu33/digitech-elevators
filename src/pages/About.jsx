@@ -291,7 +291,7 @@ export default function About() {
               <span className="w-16 h-px bg-brand-gold" />
             </h3>
             <h2 className="font-serif text-4xl md:text-5xl font-bold leading-tight">
-              WHY BUILDERS & CLIENTS<br />
+              WHY BUILDERS &amp; CLIENTS<br />
               TRUST <span className="text-brand-gold">DIGITECH ELEVATORS</span>
             </h2>
             <p className="text-slate-300 text-base">Proud to serve leading builders and prestigious projects across India</p>
@@ -299,75 +299,86 @@ export default function About() {
 
           {/* Scrolling Client Logos - Row 1 */}
           <div className="relative overflow-hidden">
-            <div className="flex gap-4 md:gap-8 animate-scroll-left whitespace-nowrap">
+            {/* Fade edges */}
+            <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-brand-navy to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-brand-navy to-transparent z-10 pointer-events-none" />
+            <div className="flex gap-6 animate-scroll-left" style={{ width: 'max-content' }}>
               {[
-                { name: 'Sobha Projects', logo: 'SOBHA' },
-                { name: 'Embassy Projects', logo: 'EMBASSY' },
-                { name: 'Brigade Projects', logo: 'BRIGADE' },
-                { name: 'Prestige Group', logo: 'PRESTIGE' },
-                { name: 'Jal Vayu Heights', logo: 'JAL VAYU' },
-                { name: 'Jal Vayu Towers', logo: 'JAL VAYU TOWERS' },
-                { name: 'Kia India Pvt. Ltd.', logo: 'KIA' },
-                { name: 'Pro FX Tech India', logo: 'PRO FX TECH' },
-                { name: 'G-Corp (Sky garden)', logo: 'G-CORP' },
-                { name: 'Renaissance Projects', logo: 'RENAISSANCE' },
+                { name: 'Sobha Projects',        logo: './logos/Sobha Projects.png' },
+                { name: 'Embassy Group',         logo: './logos/Embassy Group.png' },
+                { name: 'Brigade Group',         logo: './logos/brigade group.jpg' },
+                { name: 'Prestige Group',        logo: './logos/Prestige.png' },
+                { name: 'Jal Vayu Heights',      logo: './logos/Jal Vayu Heights.png' },
+                { name: 'Jal Vayu Towers',       logo: './logos/Jal Vayu Towers.png' },
+                { name: 'Kia India Pvt. Ltd.',   logo: './logos/Kia India Pvt. Ltd..jpeg' },
+                { name: 'Pro FX Tech India',     logo: './logos/Pro FX Tech India.png' },
+                { name: 'G-Corp Sky Garden',     logo: './logos/G CORP -Sky Garden.jpg' },
+                { name: 'Renaissance Projects',  logo: './logos/Renaissance Projects.png' },
               ].concat([
-                { name: 'Sobha Projects', logo: 'SOBHA' },
-                { name: 'Embassy Projects', logo: 'EMBASSY' },
-                { name: 'Brigade Projects', logo: 'BRIGADE' },
-                { name: 'Prestige Group', logo: 'PRESTIGE' },
-                { name: 'Jal Vayu Heights', logo: 'JAL VAYU' },
-                { name: 'Jal Vayu Towers', logo: 'JAL VAYU TOWERS' },
-                { name: 'Kia India Pvt. Ltd.', logo: 'KIA' },
-                { name: 'Pro FX Tech India', logo: 'PRO FX TECH' },
-                { name: 'G-Corp (Sky garden)', logo: 'G-CORP' },
-                { name: 'Renaissance Projects', logo: 'RENAISSANCE' },
+                { name: 'Sobha Projects',        logo: './logos/Sobha Projects.png' },
+                { name: 'Embassy Group',         logo: './logos/Embassy Group.png' },
+                { name: 'Brigade Group',         logo: './logos/brigade group.jpg' },
+                { name: 'Prestige Group',        logo: './logos/Prestige.png' },
+                { name: 'Jal Vayu Heights',      logo: './logos/Jal Vayu Heights.png' },
+                { name: 'Jal Vayu Towers',       logo: './logos/Jal Vayu Towers.png' },
+                { name: 'Kia India Pvt. Ltd.',   logo: './logos/Kia India Pvt. Ltd..jpeg' },
+                { name: 'Pro FX Tech India',     logo: './logos/Pro FX Tech India.png' },
+                { name: 'G-Corp Sky Garden',     logo: './logos/G CORP -Sky Garden.jpg' },
+                { name: 'Renaissance Projects',  logo: './logos/Renaissance Projects.png' },
               ]).map((client, i) => (
-                <div key={i} className="inline-flex bg-white/5 backdrop-blur-sm rounded-full md:rounded-2xl border border-white/10 hover:border-brand-gold hover:bg-white/10 transition-all duration-300 flex-shrink-0 group w-24 h-24 md:w-auto md:h-auto md:min-w-[280px] md:px-12 md:py-8 items-center justify-center p-2 md:p-0">
-                  <div className="text-center w-full">
-                    <div className="text-white/80 group-hover:text-brand-gold transition-colors font-bold text-[10px] md:text-2xl tracking-wider md:mb-3 leading-tight px-1">
-                      {client.logo}
-                    </div>
-                    <h4 className="hidden md:block text-sm font-semibold text-slate-300 group-hover:text-white transition-colors whitespace-normal">
-                      {client.name}
-                    </h4>
-                  </div>
+                <div key={i} className="flex-shrink-0 group bg-white rounded-2xl border-2 border-white/10 hover:border-brand-gold shadow-lg hover:shadow-brand-gold/20 hover:shadow-xl transition-all duration-300 overflow-hidden hover:scale-105 w-[180px] min-h-[120px] flex flex-col items-center justify-center p-4 gap-2">
+                  <img
+                    src={client.logo}
+                    alt={client.name}
+                    className="max-h-[60px] max-w-[140px] w-auto h-auto object-contain group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                    onError={(e) => { e.target.style.display='none'; e.target.nextSibling.style.display='block'; }}
+                  />
+                  <span className="hidden text-brand-navy font-bold text-xs text-center leading-tight">{client.name}</span>
+                  <p className="text-slate-500 text-[10px] font-semibold text-center leading-tight w-full whitespace-normal break-words">{client.name}</p>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Scrolling Client Logos - Row 2 (Reverse Direction) */}
+          {/* Scrolling Client Logos - Row 2 (Reverse) */}
           <div className="relative overflow-hidden">
-            <div className="flex gap-4 md:gap-8 animate-scroll-right whitespace-nowrap">
+            <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-brand-navy to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-brand-navy to-transparent z-10 pointer-events-none" />
+            <div className="flex gap-6 animate-scroll-right" style={{ width: 'max-content' }}>
               {[
-                { name: 'Aditya Group of Institutions', logo: 'ADITYA' },
-                { name: 'Hoysala Projects', logo: 'HOYSALA' },
-                { name: 'Casa Grande Royce', logo: 'CASA GRANDE' },
-                { name: 'Embassy Olive Groups', logo: 'EMBASSY OLIVE' },
-                { name: 'Amara Courtyard', logo: 'AMARA' },
-                { name: 'Durga Saffron Square', logo: 'DURGA' },
-                { name: 'Gopu Homes', logo: 'GOPU HOMES' },
-                { name: 'Fort House', logo: 'FORT HOUSE' },
+                { name: 'Aditya Group of Institutions',  logo: './logos/Aditya Group of Institutions.png' },
+                { name: 'Hoysala Projects',              logo: './logos/Hoysala Projects.png' },
+                { name: 'Casa Grande Royce',             logo: './logos/Casa Grande Royce.png' },
+                { name: 'Olive Groups',                  logo: './logos/Olive Groups.png' },
+                { name: 'Confident Canopus',             logo: './logos/Confident Canopus.webp' },
+                { name: 'MD Retail India',               logo: './logos/MD Retail India Pvt. Ltd..jpg' },
+                { name: 'Soch Apparels',                 logo: './logos/soch apparels pvt ltd.jpg' },
+                { name: 'Jus\'Trufs Chocolate',          logo: './logos/Jus\'Trufs Chocolate Shop & Cafe.jpg' },
+                { name: 'Akshaya Hospital',              logo: './logos/Akshaya Hospital.jpg' },
+                { name: 'Chaithanya Hospital',           logo: './logos/Chaithanya Hospital.jpg' },
               ].concat([
-                { name: 'Aditya Group of Institutions', logo: 'ADITYA' },
-                { name: 'Hoysala Projects', logo: 'HOYSALA' },
-                { name: 'Casa Grande Royce', logo: 'CASA GRANDE' },
-                { name: 'Embassy Olive Groups', logo: 'EMBASSY OLIVE' },
-                { name: 'Amara Courtyard', logo: 'AMARA' },
-                { name: 'Durga Saffron Square', logo: 'DURGA' },
-                { name: 'Gopu Homes', logo: 'GOPU HOMES' },
-                { name: 'Fort House', logo: 'FORT HOUSE' },
+                { name: 'Aditya Group of Institutions',  logo: './logos/Aditya Group of Institutions.png' },
+                { name: 'Hoysala Projects',              logo: './logos/Hoysala Projects.png' },
+                { name: 'Casa Grande Royce',             logo: './logos/Casa Grande Royce.png' },
+                { name: 'Olive Groups',                  logo: './logos/Olive Groups.png' },
+                { name: 'Confident Canopus',             logo: './logos/Confident Canopus.webp' },
+                { name: 'MD Retail India',               logo: './logos/MD Retail India Pvt. Ltd..jpg' },
+                { name: 'Soch Apparels',                 logo: './logos/soch apparels pvt ltd.jpg' },
+                { name: 'Jus\'Trufs Chocolate',          logo: './logos/Jus\'Trufs Chocolate Shop & Cafe.jpg' },
+                { name: 'Akshaya Hospital',              logo: './logos/Akshaya Hospital.jpg' },
+                { name: 'Chaithanya Hospital',           logo: './logos/Chaithanya Hospital.jpg' },
               ]).map((client, i) => (
-                <div key={i} className="inline-flex bg-white/5 backdrop-blur-sm rounded-full md:rounded-2xl border border-white/10 hover:border-brand-gold hover:bg-white/10 transition-all duration-300 flex-shrink-0 group w-24 h-24 md:w-auto md:h-auto md:min-w-[280px] md:px-12 md:py-8 items-center justify-center p-2 md:p-0">
-                  <div className="text-center w-full">
-                    <div className="text-white/80 group-hover:text-brand-gold transition-colors font-bold text-[10px] md:text-2xl tracking-wider md:mb-3 leading-tight px-1">
-                      {client.logo}
-                    </div>
-                    <h4 className="hidden md:block text-sm font-semibold text-slate-300 group-hover:text-white transition-colors whitespace-normal">
-                      {client.name}
-                    </h4>
-                  </div>
+                <div key={i} className="flex-shrink-0 group bg-white rounded-2xl border-2 border-white/10 hover:border-brand-gold shadow-lg hover:shadow-brand-gold/20 hover:shadow-xl transition-all duration-300 overflow-hidden hover:scale-105 w-[180px] min-h-[120px] flex flex-col items-center justify-center p-4 gap-2">
+                  <img
+                    src={client.logo}
+                    alt={client.name}
+                    className="max-h-[60px] max-w-[140px] w-auto h-auto object-contain group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                    onError={(e) => { e.target.style.display='none'; e.target.nextSibling.style.display='block'; }}
+                  />
+                  <span className="hidden text-brand-navy font-bold text-xs text-center leading-tight">{client.name}</span>
+                  <p className="text-slate-500 text-[10px] font-semibold text-center leading-tight w-full whitespace-normal break-words">{client.name}</p>
                 </div>
               ))}
             </div>

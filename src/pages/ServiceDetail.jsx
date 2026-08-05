@@ -151,69 +151,58 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
 
   return (
     <div className="animate-fade-in">
-      {/* ── Merged Hero Banner with Image ── */}
-      <section className="relative bg-brand-navy text-white overflow-hidden hero-gradient border-b-4 border-brand-gold">
+      {/* ── Full-Bleed Hero Banner with Image ── */}
+      <section className="relative bg-brand-navy text-white overflow-hidden hero-gradient border-b-4 border-brand-gold h-[420px]">
+        {/* Full-width background image */}
+        <div className="absolute inset-0 group">
+          <img loading="lazy"
+            src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1920&q=80"
+            alt={srv.title}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          />
+        </div>
+
+        {/* Left dark overlay for text legibility */}
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/85 to-brand-navy/30"></div>
+
+        {/* Subtle radial glow */}
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(ellipse_at_center,_#D4AF37_0%,_transparent_70%)]"></div>
-        
-        <div className="relative grid grid-cols-1 lg:grid-cols-2 min-h-[320px]">
-          {/* Left Text Column */}
-          <div className="relative z-10 flex items-center px-4 md:px-8 lg:pl-12 xl:pl-16 py-8 md:py-10 lg:py-12">
-            <div className="max-w-2xl space-y-3">
-              <span className="inline-block bg-brand-gold/20 border border-brand-gold/30 text-brand-gold px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest">
-                Our Services
-              </span>
-              <div className="space-y-2">
-                <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-                  {srv.title}
-                </h2>
-                <p className="text-slate-300 text-sm md:text-base leading-relaxed">
-                  {srv.desc}
-                </p>
+
+        {/* Text Content — left side only */}
+        <div className="relative z-10 flex items-center px-4 md:px-8 lg:pl-12 xl:pl-16 py-6 md:py-8 h-full">
+          <div className="max-w-2xl space-y-3 text-left">
+            <span className="inline-block bg-brand-gold/20 border border-brand-gold/30 text-brand-gold px-4 py-1.5 rounded-full text-sm font-semibold uppercase tracking-widest animate-fade-simple">
+              Our Services
+            </span>
+            <div className="space-y-2">
+              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold leading-tight animate-slide-left">
+                {srv.title}
+              </h2>
+              <p className="text-slate-300 text-xs md:text-sm leading-relaxed animate-slide-right max-w-lg">
+                {srv.desc}
+              </p>
+            </div>
+
+            {/* Stats badges */}
+            <div className="flex gap-3">
+              <div className="bg-white/10 backdrop-blur-md border border-white/20 p-3 rounded-xl">
+                <div className="text-xl font-bold text-brand-gold font-serif mb-0.5">24/7</div>
+                <div className="text-[10px] text-slate-300 uppercase tracking-wider font-semibold">Support Available</div>
               </div>
-              
-              {/* Stats badges */}
-              <div className="grid grid-cols-2 gap-3 pt-2">
-                <div className="bg-white/10 backdrop-blur-md border border-white/20 p-3 rounded-xl">
-                  <div className="text-xl font-bold text-brand-gold font-serif mb-0.5">
-                    24/7
-                  </div>
-                  <div className="text-[10px] text-slate-300 uppercase tracking-wider font-semibold">
-                    Support Available
-                  </div>
-                </div>
-                <div className="bg-white/10 backdrop-blur-md border border-white/20 p-3 rounded-xl">
-                  <div className="text-xl font-bold text-brand-gold font-serif mb-0.5">
-                    100%
-                  </div>
-                  <div className="text-[10px] text-slate-300 uppercase tracking-wider font-semibold">
-                    Quality Assured
-                  </div>
-                </div>
+              <div className="bg-white/10 backdrop-blur-md border border-white/20 p-3 rounded-xl">
+                <div className="text-xl font-bold text-brand-gold font-serif mb-0.5">100%</div>
+                <div className="text-[10px] text-slate-300 uppercase tracking-wider font-semibold">Quality Assured</div>
               </div>
             </div>
           </div>
-          
-          {/* Right Image Column - Full height, bleed to edge */}
-          <div className="relative h-[280px] lg:h-full group">
-            <div className="absolute inset-0 overflow-hidden">
-              <img loading="lazy"
-                src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1200&q=80"
-                alt={srv.title}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                style={{
-                  maskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.2) 5%, rgba(0,0,0,0.5) 10%, rgba(0,0,0,0.8) 18%, black 25%)',
-                  WebkitMaskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.2) 5%, rgba(0,0,0,0.5) 10%, rgba(0,0,0,0.8) 18%, black 25%)'
-                }}
-              />
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/60 via-transparent to-transparent"></div>
-            <div className="absolute bottom-3 left-3 right-3 bg-white/10 backdrop-blur-md border border-white/20 p-3 rounded-lg flex items-center justify-between text-xs z-10">
-              <span className="font-bold text-white uppercase tracking-wider">Professional Service</span>
-              <span className="text-brand-gold font-bold flex items-center gap-2">
-                <i className="fa-solid fa-shield-halved text-xs"></i> Guaranteed
-              </span>
-            </div>
-          </div>
+        </div>
+
+        {/* Bottom badge */}
+        <div className="absolute bottom-4 right-4 md:right-8 inline-flex items-center gap-4 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-3 rounded-lg text-sm z-10 whitespace-nowrap">
+          <span className="font-bold text-white uppercase tracking-wider whitespace-nowrap">Professional Service</span>
+          <span className="text-brand-gold font-bold flex items-center gap-2 whitespace-nowrap">
+            <i className="fa-solid fa-shield-halved text-sm"></i> Guaranteed
+          </span>
         </div>
       </section>
 

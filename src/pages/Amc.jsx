@@ -186,10 +186,10 @@ export default function Amc() {
             <div className="lg:col-span-7 flex justify-center">
               <div 
                 className="group relative cursor-pointer overflow-hidden rounded-2xl border-2 border-slate-200 shadow-md bg-white hover:border-brand-gold transition duration-300 max-w-md w-full"
-                onClick={() => setLightboxImage('./POSTER/WHY AMC.png')}
+                onClick={() => setLightboxImage('./POSTER/WhatsApp Image 2026-08-05 at 16.58.11.jpeg')}
               >
                 <img loading="lazy" 
-                  src="./POSTER/WHY AMC.png" 
+                  src="./POSTER/WhatsApp Image 2026-08-05 at 16.58.11.jpeg" 
                   alt="Why AMC Poster" 
                   className="w-full h-auto object-cover group-hover:scale-105 transition duration-500" 
                 />
