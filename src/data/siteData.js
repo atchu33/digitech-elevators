@@ -22,10 +22,10 @@ export const PRODUCTS_DATA = {
     },
     whyChoose: ['Premium Quality Components', 'Safe & Reliable', 'Low Maintenance', 'Customized Design', 'Professional Installation'],
     gallery: [
-      { url: './passenger3.png', caption: 'Modern Passenger Cabin Interior' },
-      { url: './passenger4.png', caption: 'Stainless Steel Cabin Finish' },
-      { url: './passenger5.png', caption: 'Commercial Building Installation' },
-      { url: './passenger6.png', caption: 'Apartment Elevator System' },
+      { url: './2.1_Advanced Touchscreen Control Panel.png', caption: 'Advanced Touchscreen Control Panel' },
+      { url: './2.2_Premium Door Finish.png', caption: 'Premium Door Finish' },
+      { url: './2.3_Elegant LED Ceiling Design.jpeg', caption: 'Elegant LED Ceiling Design' },
+      { url: './2.4_Automatic Centre Opening Door.png', caption: 'Automatic Centre Opening Door' },
     ]
   },
   hospital: {
@@ -87,7 +87,7 @@ export const PRODUCTS_DATA = {
     icon: 'fa-house-chimney',
     image: './home_lift.png',
     desc: 'Digitech Home Elevators provide a stylish, compact, and safe mobility solution for villas, duplex homes, and private residences, enhancing convenience and accessibility.',
-    apps: ['Villas', 'Duplex Houses', 'Bungalows', 'Private Homes'],
+    apps: ['Villas', 'Duplex Houses', 'Apartments', 'Private Homes'],
     features: ['Compact Design', 'Quiet Operation', 'Elegant Interiors', 'Automatic Doors', 'Energy Efficient', 'Low Power Consumption', 'Space Saving'],
     caps: ['2 Passenger', '4 Passenger', '6 Passenger'],
     specs: {
@@ -98,10 +98,10 @@ export const PRODUCTS_DATA = {
     },
     whyChoose: ['Luxury Appearance', 'Easy Installation', 'Safe Operation', 'Adds Property Value'],
     gallery: [
-      { url: './homelift4.png', caption: 'Luxury Villa Interior' },
-      { url: './homelift5.png', caption: 'Home Elevator Glass Cabin' },
-      { url: './homelift6.png', caption: 'Residential Lift Installation' },
-      { url: './homelift7.png', caption: 'Premium Home Mobility' },
+      { url: './2.1_Smart Landing Panel with Premium Finish.png', caption: 'Smart Landing Panel with Premium Finish' },
+      { url: './2.2_Luxury Cabin Designed for Everyday Comfort.png', caption: 'Luxury Cabin Designed for Everyday Comfort' },
+      { url: './2.3_Elegant Exterior with Modern Engineering.png', caption: 'Elegant Exterior with Modern Engineering' },
+      { url: './2.4_Modern Ceiling Design.png', caption: 'Modern Ceiling Design' },
     ]
   },
   hydraulic: {
@@ -168,10 +168,10 @@ export const PRODUCTS_DATA = {
     },
     whyChoose: ['Elegant Visual Appeal', 'Space-Saving Shaft Design', 'Whisper Quiet Operation'],
     gallery: [
-      { url: './villa4.png', caption: 'Villa Luxury Cabin' },
-      { url: './villa5.png', caption: 'Panoramic Glass Villa Lift' },
-      { url: './villa6.png', caption: 'High-End Residential Elevator' },
-      { url: './villa7.png', caption: 'Custom Wood Cabin Finish' },
+      { url: './2.1_Elegant external call panel with premium finish..jpeg', caption: 'Elegant External Call Panel with Premium Finish' },
+      { url: './2.2_Elegant Exterior with Automatic Door & Landing Panel.png', caption: 'Elegant Exterior with Automatic Door & Landing Panel' },
+      { url: './2.3_Premium ultra-thin touchscreen Car Operating Panel (COP)..jpeg', caption: 'Premium Ultra-Thin Touchscreen Car Operating Panel' },
+      { url: './2.4_Modern Ceiling Design.png', caption: 'Modern Ceiling Design' },
     ]
   },
   commercial: {
@@ -691,7 +691,7 @@ export const PROJECTS_DATA = [
     door: 'Automatic Centre Opening Doors',
     system: 'Digitech MRL',
     year: '2025',
-    image: './assets/image/21_Renaissance Jagruti.jpg'
+    image: './assets/image/21_Renaissance Jagriti.jpg'
   },
 
   // ── Healthcare & Institutions ──

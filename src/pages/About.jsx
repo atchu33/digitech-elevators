@@ -314,6 +314,7 @@ export default function About() {
                 { name: 'Pro FX Tech India',     logo: './logos/Pro FX Tech India.png' },
                 { name: 'G-Corp Sky Garden',     logo: './logos/G CORP -Sky Garden.jpg' },
                 { name: 'Renaissance Projects',  logo: './logos/Renaissance Projects.png' },
+                { name: 'Soch Apparels',         logo: './logos/soch apparels pvt ltd.jpg' },
               ].concat([
                 { name: 'Sobha Projects',        logo: './logos/Sobha Projects.png' },
                 { name: 'Embassy Group',         logo: './logos/Embassy Group.png' },
@@ -325,17 +326,17 @@ export default function About() {
                 { name: 'Pro FX Tech India',     logo: './logos/Pro FX Tech India.png' },
                 { name: 'G-Corp Sky Garden',     logo: './logos/G CORP -Sky Garden.jpg' },
                 { name: 'Renaissance Projects',  logo: './logos/Renaissance Projects.png' },
+                { name: 'Soch Apparels',         logo: './logos/soch apparels pvt ltd.jpg' },
               ]).map((client, i) => (
-                <div key={i} className="flex-shrink-0 group bg-white rounded-2xl border-2 border-white/10 hover:border-brand-gold shadow-lg hover:shadow-brand-gold/20 hover:shadow-xl transition-all duration-300 overflow-hidden hover:scale-105 w-[180px] min-h-[120px] flex flex-col items-center justify-center p-4 gap-2">
+                <div key={i} className="flex-shrink-0 group bg-white rounded-2xl border-2 border-white/10 hover:border-brand-gold shadow-lg hover:shadow-brand-gold/20 hover:shadow-xl transition-all duration-300 overflow-hidden hover:scale-105 w-[180px] min-h-[120px] flex items-center justify-center p-4">
                   <img
                     src={client.logo}
                     alt={client.name}
-                    className="max-h-[60px] max-w-[140px] w-auto h-auto object-contain group-hover:scale-105 transition-transform duration-300"
+                    className="max-h-[70px] max-w-[150px] w-auto h-auto object-contain group-hover:scale-105 transition-transform duration-300"
                     loading="lazy"
                     onError={(e) => { e.target.style.display='none'; e.target.nextSibling.style.display='block'; }}
                   />
                   <span className="hidden text-brand-navy font-bold text-xs text-center leading-tight">{client.name}</span>
-                  <p className="text-slate-500 text-[10px] font-semibold text-center leading-tight w-full whitespace-normal break-words">{client.name}</p>
                 </div>
               ))}
             </div>
@@ -353,7 +354,6 @@ export default function About() {
                 { name: 'Olive Groups',                  logo: './logos/Olive Groups.png' },
                 { name: 'Confident Canopus',             logo: './logos/Confident Canopus.webp' },
                 { name: 'MD Retail India',               logo: './logos/MD Retail India Pvt. Ltd..jpg' },
-                { name: 'Soch Apparels',                 logo: './logos/soch apparels pvt ltd.jpg' },
                 { name: 'Jus\'Trufs Chocolate',          logo: './logos/Jus\'Trufs Chocolate Shop & Cafe.jpg' },
                 { name: 'Akshaya Hospital',              logo: './logos/Akshaya Hospital.jpg' },
                 { name: 'Chaithanya Hospital',           logo: './logos/Chaithanya Hospital.jpg' },
@@ -364,21 +364,19 @@ export default function About() {
                 { name: 'Olive Groups',                  logo: './logos/Olive Groups.png' },
                 { name: 'Confident Canopus',             logo: './logos/Confident Canopus.webp' },
                 { name: 'MD Retail India',               logo: './logos/MD Retail India Pvt. Ltd..jpg' },
-                { name: 'Soch Apparels',                 logo: './logos/soch apparels pvt ltd.jpg' },
                 { name: 'Jus\'Trufs Chocolate',          logo: './logos/Jus\'Trufs Chocolate Shop & Cafe.jpg' },
                 { name: 'Akshaya Hospital',              logo: './logos/Akshaya Hospital.jpg' },
                 { name: 'Chaithanya Hospital',           logo: './logos/Chaithanya Hospital.jpg' },
               ]).map((client, i) => (
-                <div key={i} className="flex-shrink-0 group bg-white rounded-2xl border-2 border-white/10 hover:border-brand-gold shadow-lg hover:shadow-brand-gold/20 hover:shadow-xl transition-all duration-300 overflow-hidden hover:scale-105 w-[180px] min-h-[120px] flex flex-col items-center justify-center p-4 gap-2">
+                <div key={i} className="flex-shrink-0 group bg-white rounded-2xl border-2 border-white/10 hover:border-brand-gold shadow-lg hover:shadow-brand-gold/20 hover:shadow-xl transition-all duration-300 overflow-hidden hover:scale-105 w-[180px] min-h-[120px] flex items-center justify-center p-4">
                   <img
                     src={client.logo}
                     alt={client.name}
-                    className="max-h-[60px] max-w-[140px] w-auto h-auto object-contain group-hover:scale-105 transition-transform duration-300"
+                    className="max-h-[70px] max-w-[150px] w-auto h-auto object-contain group-hover:scale-105 transition-transform duration-300"
                     loading="lazy"
                     onError={(e) => { e.target.style.display='none'; e.target.nextSibling.style.display='block'; }}
                   />
                   <span className="hidden text-brand-navy font-bold text-xs text-center leading-tight">{client.name}</span>
-                  <p className="text-slate-500 text-[10px] font-semibold text-center leading-tight w-full whitespace-normal break-words">{client.name}</p>
                 </div>
               ))}
             </div>

@@ -19,6 +19,7 @@ const APP_ICONS = {
   'Logistics Facilities': 'fa-truck-moving',
   'Villas': 'fa-house-laptop',
   'Duplex Houses': 'fa-home',
+  'Apartments': 'fa-building',
   'Bungalows': 'fa-campground',
   'Private Homes': 'fa-house'
 };
@@ -178,14 +179,14 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
                 <img loading="lazy"
                   src={
                     productKey === 'commercial' ? './commercial1.png' :
-                    productKey === 'home' ? './homelift2.png' :
-                    productKey === 'villa' ? './villa1.png' :
+                    productKey === 'home' ? './1_Home Elevators Gallery.png' :
+                    productKey === 'villa' ? './1_Villa Lift.png' :
                     productKey === 'hospital' ? './hospital1.png' :
                     productKey === 'goods' ? './goods1.png' :
                     productKey === 'hydraulic' ? './hydraulic1.png' :
                     productKey === 'mrl' ? './mrl1.png' :
                     productKey === 'car' ? './car1.png' :
-                    './passenger%20elevator.jpg'
+                    './1_Passenger Elevators.png'
                   }
                   alt={prod.title}
                   className="w-full h-[500px] object-cover group-hover:scale-105 transition-transform duration-700"
@@ -281,12 +282,27 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Image */}
             <div className="scroll-reveal-left order-2 lg:order-1">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+              <div
+                className="relative rounded-3xl overflow-hidden shadow-2xl cursor-zoom-in group"
+                onClick={() => setLightbox({
+                  url: productKey === 'passenger' ? './3.png' :
+                       productKey === 'home' ? './3_Perfect For Suitability & Applications.png' :
+                       productKey === 'villa' ? './3.png' :
+                       productKey === 'hospital' ? './hospital1.png' :
+                       productKey === 'goods' ? './goods2.png' :
+                       productKey === 'hydraulic' ? './hydraulic2.png' :
+                       productKey === 'mrl' ? './mrl2.png' :
+                       productKey === 'commercial' ? './commercial3.png' :
+                       productKey === 'car' ? './car2.png' :
+                       'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80',
+                  caption: 'Suitability & Applications'
+                })}
+              >
                 <img loading="lazy"
                   src={
-                    productKey === 'passenger' ? './passenger1.png' :
-                    productKey === 'home' ? './homelift3.png' :
-                    productKey === 'villa' ? './villa2.png' :
+                    productKey === 'passenger' ? './3.png' :
+                    productKey === 'home' ? './3_Perfect For Suitability & Applications.png' :
+                    productKey === 'villa' ? './3.png' :
                     productKey === 'hospital' ? './hospital1.png' :
                     productKey === 'goods' ? './goods2.png' :
                     productKey === 'hydraulic' ? './hydraulic2.png' :
@@ -296,9 +312,15 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
                     'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80'
                   }
                   alt="Building Applications"
-                  className="w-full h-[500px] object-cover"
+                  className="w-full h-[500px] object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-brand-gold/20" />
+                <div className="absolute inset-0 bg-brand-gold/20 group-hover:bg-brand-gold/10 transition-colors duration-300" />
+                {/* Zoom hint */}
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="bg-black/50 backdrop-blur-sm text-white rounded-full w-14 h-14 flex items-center justify-center text-xl shadow-lg">
+                    <i className="fa-solid fa-magnifying-glass-plus" />
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -360,13 +382,28 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
 
             {/* Image */}
             <div className="scroll-reveal-right">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+              <div
+                className="relative rounded-3xl overflow-hidden shadow-2xl cursor-zoom-in group"
+                onClick={() => setLightbox({
+                  url: productKey === 'commercial' ? './commercial2.png' :
+                       productKey === 'home' ? './4_Home Advanced Technology.png' :
+                       productKey === 'passenger' ? './4.png' :
+                       productKey === 'villa' ? './3.1.png' :
+                       productKey === 'hospital' ? './hospital3.png' :
+                       productKey === 'goods' ? './goodss3.png' :
+                       productKey === 'hydraulic' ? './hydraulic3.png' :
+                       productKey === 'mrl' ? './mrl3.png' :
+                       productKey === 'car' ? './car3.png' :
+                       prod.image,
+                  caption: 'Advanced Technology'
+                })}
+              >
                 <img loading="lazy"
                   src={
                     productKey === 'commercial' ? './commercial2.png' :
-                    productKey === 'home' ? './homelift1.png' :
-                    productKey === 'passenger' ? './passenger2.png' :
-                    productKey === 'villa' ? './villa3.png' :
+                    productKey === 'home' ? './4_Home Advanced Technology.png' :
+                    productKey === 'passenger' ? './4.png' :
+                    productKey === 'villa' ? './3.1.png' :
                     productKey === 'hospital' ? './hospital3.png' :
                     productKey === 'goods' ? './goodss3.png' :
                     productKey === 'hydraulic' ? './hydraulic3.png' :
@@ -375,10 +412,16 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
                     prod.image
                   }
                   alt="Features"
-                  className="w-full h-[600px] object-cover"
+                  className="w-full h-[600px] object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/80 via-transparent to-transparent" />
-                <div className="absolute bottom-6 left-6 right-6">
+                {/* Zoom hint */}
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                  <div className="bg-black/50 backdrop-blur-sm text-white rounded-full w-14 h-14 flex items-center justify-center text-xl shadow-lg">
+                    <i className="fa-solid fa-magnifying-glass-plus" />
+                  </div>
+                </div>
+                <div className="absolute bottom-6 left-6 right-6 z-10">
                   <div className="bg-white/95 backdrop-blur-md p-6 rounded-2xl">
                     <h4 className="font-serif font-bold text-xl text-brand-navy mb-2">Premium Components</h4>
                     <p className="text-sm text-slate-600">Built with advanced technology and premium materials for superior performance</p>
@@ -655,6 +698,39 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
           </div>
         </div>
       </section>
+      {/* ── LIGHTBOX MODAL ── */}
+      {lightbox && (
+        <div
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/90 backdrop-blur-sm animate-fade-in"
+          onClick={() => setLightbox(null)}
+        >
+          <div
+            className="relative max-w-5xl w-full mx-4 animate-zoom-in"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close button */}
+            <button
+              onClick={() => setLightbox(null)}
+              className="absolute -top-12 right-0 text-white hover:text-brand-gold transition-colors text-3xl w-10 h-10 flex items-center justify-center z-10"
+              aria-label="Close preview"
+            >
+              <i className="fa-solid fa-xmark" />
+            </button>
+            {/* Image */}
+            <img
+              src={lightbox.url}
+              alt={lightbox.caption}
+              className="w-full max-h-[85vh] object-contain rounded-2xl shadow-2xl"
+            />
+            {/* Caption */}
+            {lightbox.caption && (
+              <p className="text-center text-white/80 text-sm mt-4 font-semibold tracking-wide">{lightbox.caption}</p>
+            )}
+          </div>
+          {/* Click outside hint */}
+          <p className="absolute bottom-6 text-white/40 text-xs tracking-widest">Click anywhere outside to close</p>
+        </div>
+      )}
     </div>
   );
 }

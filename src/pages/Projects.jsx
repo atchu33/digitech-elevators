@@ -97,7 +97,7 @@ export default function Projects() {
                     </div>
                   </div>
                 )}
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/90 via-brand-navy/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/50 via-brand-navy/10 to-transparent" />
                 
                 {/* Badges on top */}
                 <div className="absolute top-4 left-4 right-4 flex items-center justify-between z-10">

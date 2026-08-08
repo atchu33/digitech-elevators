@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 // NOTE: Get your free access key from https://web3forms.com/ and replace this placeholder.
-const WEB3FORMS_ACCESS_KEY = "YOUR_ACCESS_KEY_HERE";
+const WEB3FORMS_ACCESS_KEY = "0605ff33-a7c9-4ac2-a1dd-9e1c0c4e54b3";
 
 export default function Careers() {
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -59,7 +59,7 @@ export default function Careers() {
       setValidationError('Please upload your resume.');
       return;
     }
-    
+
     setIsSubmitting(true);
     setValidationError('');
 
@@ -111,7 +111,7 @@ export default function Careers() {
         {/* Dark overlay & radial gradient overlay for premium lighting */}
         <div className="absolute inset-0 bg-brand-navy/80 z-[1]"></div>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(212,175,55,0.25)_0%,_transparent_70%)] z-[2]"></div>
-        
+
         <div className="max-w-4xl mx-auto space-y-4 relative z-10">
           <span className="inline-block bg-brand-gold/20 border border-brand-gold/30 text-brand-gold px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest animate-pulse-ring">
             Join Our Team
@@ -130,10 +130,10 @@ export default function Careers() {
         {/* Faint animated background lines */}
         <div className="absolute inset-0 opacity-5 pointer-events-none">
           {[25, 50, 75].map(pos => (
-            <div 
-              key={pos} 
-              className="absolute top-0 bottom-0 w-px bg-brand-gold" 
-              style={{ left: `${pos}%`, animation: 'shaftGlow 2.5s infinite' }} 
+            <div
+              key={pos}
+              className="absolute top-0 bottom-0 w-px bg-brand-gold"
+              style={{ left: `${pos}%`, animation: 'shaftGlow 2.5s infinite' }}
             />
           ))}
         </div>
@@ -161,38 +161,38 @@ export default function Careers() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
                 <div>
                   <label className="block text-xs font-semibold text-slate-500 mb-1">Full Name *</label>
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
                     placeholder="Your Full Name"
-                    className="w-full border border-slate-200 rounded-lg p-3 text-xs focus:outline-none focus:border-brand-navy focus:ring-1 focus:ring-brand-navy/20 transition-all duration-200" 
-                    required 
+                    className="w-full border border-slate-200 rounded-lg p-3 text-xs focus:outline-none focus:border-brand-navy focus:ring-1 focus:ring-brand-navy/20 transition-all duration-200"
+                    required
                   />
                 </div>
                 <div>
                   <label className="block text-xs font-semibold text-slate-500 mb-1">Phone Number *</label>
-                  <input 
-                    type="tel" 
+                  <input
+                    type="tel"
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
                     placeholder="Your Phone Number"
-                    className="w-full border border-slate-200 rounded-lg p-3 text-xs focus:outline-none focus:border-brand-navy focus:ring-1 focus:ring-brand-navy/20 transition-all duration-200" 
-                    required 
+                    className="w-full border border-slate-200 rounded-lg p-3 text-xs focus:outline-none focus:border-brand-navy focus:ring-1 focus:ring-brand-navy/20 transition-all duration-200"
+                    required
                   />
                 </div>
                 <div>
                   <label className="block text-xs font-semibold text-slate-500 mb-1">Email Address *</label>
-                  <input 
-                    type="email" 
+                  <input
+                    type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
                     placeholder="Your Email Address"
-                    className="w-full border border-slate-200 rounded-lg p-3 text-xs focus:outline-none focus:border-brand-navy focus:ring-1 focus:ring-brand-navy/20 transition-all duration-200" 
-                    required 
+                    className="w-full border border-slate-200 rounded-lg p-3 text-xs focus:outline-none focus:border-brand-navy focus:ring-1 focus:ring-brand-navy/20 transition-all duration-200"
+                    required
                   />
                 </div>
               </div>
@@ -205,10 +205,10 @@ export default function Careers() {
                     <div className="flex text-xs text-slate-650 justify-center">
                       <label className="relative cursor-pointer bg-white rounded-md font-semibold text-brand-gold hover:text-brand-gold-hover focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-brand-navy">
                         <span>Upload a file</span>
-                        <input 
-                          type="file" 
+                        <input
+                          type="file"
                           accept=".pdf,.doc,.docx"
-                          className="sr-only" 
+                          className="sr-only"
                           onChange={handleFileChange}
                           required
                         />
@@ -220,8 +220,8 @@ export default function Careers() {
                       <div className="mt-2 text-xs text-slate-800 font-semibold bg-slate-100 px-3 py-1 rounded inline-flex items-center gap-1.5">
                         <i className="fa-solid fa-file-lines text-brand-navy"></i>
                         <span>{resumeFile.name}</span>
-                        <button 
-                          type="button" 
+                        <button
+                          type="button"
                           className="text-red-500 hover:text-red-700 font-bold ml-1"
                           onClick={() => {
                             setResumeFile(null);
@@ -238,17 +238,17 @@ export default function Careers() {
 
               <div>
                 <label className="block text-xs font-semibold text-slate-500 mb-1">Cover Note / Message</label>
-                <textarea 
+                <textarea
                   name="message"
                   value={formData.message}
                   onChange={handleInputChange}
-                  rows="4" 
+                  rows="4"
                   placeholder="Tell us about yourself and why you'd like to join Digitech Elevators..."
                   className="w-full border border-slate-200 rounded-lg p-3 text-xs focus:outline-none focus:border-brand-navy focus:ring-1 focus:ring-brand-navy/20 transition-all duration-200 resize-none"
                 />
               </div>
 
-              <button 
+              <button
                 type="submit"
                 disabled={isSubmitting}
                 className={`w-full bg-brand-gold hover:bg-brand-gold-hover text-brand-navy font-bold py-3.5 rounded-xl text-xs uppercase tracking-widest transition-all hover:scale-[1.01] shadow-lg hover:shadow-xl btn-glow flex items-center justify-center gap-2 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
