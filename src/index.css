@@ -215,6 +215,32 @@
   100% { transform: translateY(-100%);opacity: 0; }
 }
 
+/* Hero banner horizontal sweep line */
+@keyframes heroSweep {
+  0%   { opacity: 0; transform: scaleX(0); transform-origin: left; }
+  30%  { opacity: 1; transform: scaleX(1); transform-origin: left; }
+  70%  { opacity: 1; transform: scaleX(1); transform-origin: right; }
+  100% { opacity: 0; transform: scaleX(0); transform-origin: right; }
+}
+
+/* Elevator door slide open — left panel */
+@keyframes doorLeft {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-100%); }
+}
+
+/* Elevator door slide open — right panel */
+@keyframes doorRight {
+  from { transform: translateX(0); }
+  to   { transform: translateX(100%); }
+}
+
+/* Floating badge gentle bob */
+@keyframes floatBadge {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+
 /* ═══════════════════════════════════════════════
    ANIMATION UTILITY CLASSES
 ═══════════════════════════════════════════════ */

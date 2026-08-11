@@ -22,10 +22,10 @@ export const PRODUCTS_DATA = {
     },
     whyChoose: ['Premium Quality Components', 'Safe & Reliable', 'Low Maintenance', 'Customized Design', 'Professional Installation'],
     gallery: [
-      { url: './2.1_Advanced Touchscreen Control Panel.png', caption: 'Advanced Touchscreen Control Panel' },
-      { url: './2.2_Premium Door Finish.png', caption: 'Premium Door Finish' },
-      { url: './2.3_Elegant LED Ceiling Design.jpeg', caption: 'Elegant LED Ceiling Design' },
-      { url: './2.4_Automatic Centre Opening Door.png', caption: 'Automatic Centre Opening Door' },
+      { url: './lift image/Passenger/2.1_Advanced Touchscreen Control Panel.png', caption: 'Advanced Touchscreen Control Panel' },
+      { url: './lift image/Passenger/2.2_Premium Door Finish.png', caption: 'Premium Door Finish' },
+      { url: './lift image/Passenger/2.3_Elegant LED Ceiling Design.jpeg', caption: 'Elegant LED Ceiling Design' },
+      { url: './lift image/Passenger/2.4_Automatic Centre Opening Door.png', caption: 'Automatic Centre Opening Door' },
     ]
   },
   hospital: {
@@ -76,8 +76,8 @@ export const PRODUCTS_DATA = {
     gallery: [
       { url: './goods4.png', caption: 'Industrial Goods Elevator' },
       { url: './goods5.png', caption: 'Warehouse Freight Lift' },
-      { url: './goods6.png', caption: 'Heavy Load Platform' },
-      { url: './goods7.png', caption: 'Commercial Goods Transport' },
+      { url: './lift image/GOODS LIFT/2.3_Space-Saving Compact Control Panel for Efficient Goods Lift Operation.jpeg', caption: 'Heavy Load Platform' },
+      { url: './lift image/GOODS LIFT/2.4_Heavy-Duty Goods Lift for Safe & Reliable Material Transportation.jpeg', caption: 'Commercial Goods Transport' },
     ]
   },
   home: {
@@ -98,10 +98,10 @@ export const PRODUCTS_DATA = {
     },
     whyChoose: ['Luxury Appearance', 'Easy Installation', 'Safe Operation', 'Adds Property Value'],
     gallery: [
-      { url: './2.1_Smart Landing Panel with Premium Finish.png', caption: 'Smart Landing Panel with Premium Finish' },
-      { url: './2.2_Luxury Cabin Designed for Everyday Comfort.png', caption: 'Luxury Cabin Designed for Everyday Comfort' },
-      { url: './2.3_Elegant Exterior with Modern Engineering.png', caption: 'Elegant Exterior with Modern Engineering' },
-      { url: './2.4_Modern Ceiling Design.png', caption: 'Modern Ceiling Design' },
+      { url: './lift image/home/2.1_Smart Landing Panel with Premium Finish.png', caption: 'Smart Landing Panel with Premium Finish' },
+      { url: './lift image/home/2.2_Luxury Cabin Designed for Everyday Comfort.png', caption: 'Luxury Cabin Designed for Everyday Comfort' },
+      { url: './lift image/home/2.3_Elegant Exterior with Modern Engineering.png', caption: 'Elegant Exterior with Modern Engineering' },
+      { url: './lift image/home/2.4_Modern Ceiling Design.png', caption: 'Modern Ceiling Design' },
     ]
   },
   hydraulic: {
@@ -121,10 +121,10 @@ export const PRODUCTS_DATA = {
     },
     whyChoose: ['Reliable Operation', 'Cost Effective', 'Long Service Life'],
     gallery: [
-      { url: './hydraulic4.png', caption: 'Hydraulic Lift Mechanism' },
+      { url: './lift image/Hydraulic/2.1_Hydraulic Lift Shaft.jpeg', caption: 'Hydraulic Lift Mechanism' },
       { url: './hydraulic5.png', caption: 'Low-Rise Building Lift' },
-      { url: './hydraulic7.png', caption: 'Hydraulic System Installation' },
-      { url: './hydraulic6.png', caption: 'Commercial Hydraulic Elevator' },
+      { url: './lift image/Hydraulic/2.3_Space-Saving Hydraulic Lift Cabin with Premium Stainless Steel (SS) Finish.png', caption: 'Hydraulic System Installation' },
+      { url: './lift image/Hydraulic/2.4_Hydraulic Platform Lift with Space-Saving Design.jpeg', caption: 'Commercial Hydraulic Elevator' },
     ]
   },
   mrl: {
@@ -144,10 +144,10 @@ export const PRODUCTS_DATA = {
     },
     whyChoose: ['Saves Building Space', 'Reduced Construction Cost', 'Lower Energy Consumption', 'Modern Appearance', 'High Performance'],
     gallery: [
-      { url: './mrl4.png', caption: 'MRL Elevator Shaft Design' },
-      { url: './mrl5.png', caption: 'Modern Apartment MRL Lift' },
-      { url: './mrl6.png', caption: 'Space-Saving MRL System' },
-      { url: './mrl7.png', caption: 'Energy Efficient MRL Elevator' },
+      { url: './lift image/MRL Lift/2.1_Premium Center-Opening Gold Finish MRL Lift Door Design.png', caption: 'MRL Elevator Shaft Design' },
+      { url: './lift image/MRL Lift/2.2_Modern Stainless Steel MRL Elevator Cabin Interior Design.png', caption: 'Modern Apartment MRL Lift' },
+      { url: './lift image/MRL Lift/2.3_Designer False Ceiling with Integrated LED Lighting for MRL Lift Cabin.png', caption: 'Space-Saving MRL System' },
+      { url: './lift image/MRL Lift/2.4_Customized Machine Room-Less (MRL) Elevator Shaft Design.png', caption: 'Energy Efficient MRL Elevator' },
     ]
   },
   villa: {
@@ -168,10 +168,10 @@ export const PRODUCTS_DATA = {
     },
     whyChoose: ['Elegant Visual Appeal', 'Space-Saving Shaft Design', 'Whisper Quiet Operation'],
     gallery: [
-      { url: './2.1_Elegant external call panel with premium finish..jpeg', caption: 'Elegant External Call Panel with Premium Finish' },
-      { url: './2.2_Elegant Exterior with Automatic Door & Landing Panel.png', caption: 'Elegant Exterior with Automatic Door & Landing Panel' },
-      { url: './2.3_Premium ultra-thin touchscreen Car Operating Panel (COP)..jpeg', caption: 'Premium Ultra-Thin Touchscreen Car Operating Panel' },
-      { url: './2.4_Modern Ceiling Design.png', caption: 'Modern Ceiling Design' },
+      { url: './lift image/Villa/2.1_Elegant external call panel with premium finish..jpeg', caption: 'Elegant External Call Panel with Premium Finish' },
+      { url: './lift image/Villa/2.2_Elegant Exterior with Automatic Door & Landing Panel.png', caption: 'Elegant Exterior with Automatic Door & Landing Panel' },
+      { url: './lift image/Villa/2.3_Premium ultra-thin touchscreen Car Operating Panel (COP)..jpeg', caption: 'Premium Ultra-Thin Touchscreen Car Operating Panel' },
+      { url: './lift image/Villa/2.4_Complete cabin interior with premium finishes and modern design..jpg', caption: 'Complete Cabin Interior with Premium Finishes and Modern Design' },
     ]
   },
   commercial: {
@@ -194,8 +194,8 @@ export const PRODUCTS_DATA = {
     gallery: [
       { url: './commercial4.png', caption: 'Corporate Office Elevator' },
       { url: './commercial5.png', caption: 'Shopping Mall Lift System' },
-      { url: './commercial6.png', caption: 'High-Speed Commercial Lift' },
-      { url: './commercial7.png', caption: 'Modern Commercial Tower' },
+      { url: './lift image/Commercial/2.3_Elegant Elevator Cabin with Modern COP Touchscreen Control Panel.jpg', caption: 'High-Speed Commercial Lift' },
+      { url: './lift image/Commercial/2.4_Mirror-Finished Capsule Lift with Premium Modern Design.jpg', caption: 'Modern Commercial Tower' },
     ]
   },
   car: {

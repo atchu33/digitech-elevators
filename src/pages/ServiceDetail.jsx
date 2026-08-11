@@ -151,60 +151,140 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
 
   return (
     <div className="animate-fade-in">
-      {/* ── Full-Bleed Hero Banner with Image ── */}
-      <section className="relative bg-brand-navy text-white overflow-hidden hero-gradient border-b-4 border-brand-gold h-[420px]">
-        {/* Full-width background image */}
-        <div className="absolute inset-0 group">
-          <img loading="lazy"
-            src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1920&q=80"
-            alt={srv.title}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-          />
+      {/* ── Hero Banner ── */}
+      <section className="relative bg-brand-navy text-white overflow-hidden border-b-4 border-brand-gold" style={{minHeight:'400px'}}>
+
+        {/* Background layers */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_50%,_#1a2744_0%,_#080f1e_70%)]" />
+        <div className="absolute inset-0 opacity-25 bg-[radial-gradient(ellipse_at_75%_50%,_#D4AF37_0%,_transparent_55%)]" />
+
+        {/* Animated elevator shaft lines */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {[6, 12, 88, 94].map((pos, i) => (
+            <div key={i} className="absolute top-0 bottom-0" style={{left:`${pos}%`, width:'1px', background:'rgba(212,175,55,0.12)'}} />
+          ))}
+          <div className="absolute left-0 right-0" style={{height:'1px', background:'linear-gradient(90deg,transparent,rgba(212,175,55,0.35),transparent)', animation:'heroSweep 4s ease-in-out infinite', top:'35%'}} />
+          <div className="absolute left-0 right-0" style={{height:'1px', background:'linear-gradient(90deg,transparent,rgba(212,175,55,0.2),transparent)', animation:'heroSweep 4s ease-in-out 2s infinite', top:'70%'}} />
         </div>
 
-        {/* Left dark overlay for text legibility */}
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/85 to-brand-navy/30"></div>
+        {/* ── TWO-COLUMN LAYOUT ── */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-0" style={{minHeight:'400px'}}>
 
-        {/* Subtle radial glow */}
-        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(ellipse_at_center,_#D4AF37_0%,_transparent_70%)]"></div>
+          {/* LEFT: Text Content */}
+          <div className="flex flex-col justify-center py-8 lg:py-10 space-y-4 lg:pr-10">
 
-        {/* Text Content — left side only */}
-        <div className="relative z-10 flex items-center px-4 md:px-8 lg:pl-12 xl:pl-16 py-6 md:py-8 h-full">
-          <div className="max-w-2xl space-y-3 text-left">
-            <span className="inline-block bg-brand-gold/20 border border-brand-gold/30 text-brand-gold px-4 py-1.5 rounded-full text-sm font-semibold uppercase tracking-widest animate-fade-simple">
-              Our Services
-            </span>
-            <div className="space-y-2">
-              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold leading-tight animate-slide-left">
+            {/* Eyebrow */}
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-0.5 bg-brand-gold rounded-full" />
+              <span className="text-brand-gold text-xs font-bold uppercase tracking-[0.25em]">
+                Our Services
+              </span>
+            </div>
+
+            {/* Title & desc */}
+            <div className="space-y-3">
+              <h1 className="font-serif text-3xl md:text-4xl xl:text-5xl font-bold leading-tight animate-slide-left">
                 {srv.title}
-              </h2>
-              <p className="text-slate-300 text-xs md:text-sm leading-relaxed animate-slide-right max-w-lg">
+              </h1>
+              <p className="text-slate-300 text-sm md:text-base leading-relaxed max-w-lg">
                 {srv.desc}
               </p>
             </div>
 
-            {/* Stats badges */}
-            <div className="flex gap-3">
-              <div className="bg-white/10 backdrop-blur-md border border-white/20 p-3 rounded-xl">
-                <div className="text-xl font-bold text-brand-gold font-serif mb-0.5">24/7</div>
-                <div className="text-[10px] text-slate-300 uppercase tracking-wider font-semibold">Support Available</div>
+
+
+            {/* Stats row */}
+            <div className="grid grid-cols-3 gap-3">
+              {[
+                { value: '24/7', label: 'Support' },
+                { value: '100%', label: 'Guaranteed' },
+                { value: '27+', label: 'Years Exp.' },
+              ].map((stat, i) => (
+                <div key={i} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-4 text-center hover:border-brand-gold/40 hover:bg-white/10 transition-all duration-300">
+                  <div className="text-2xl font-bold text-brand-gold font-serif">{stat.value}</div>
+                  <div className="text-[10px] text-slate-400 uppercase tracking-wider mt-1">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+
+
+          </div>
+
+          {/* RIGHT: Elevator Visual */}
+          <div className="hidden lg:flex items-center justify-center py-6 pl-4 relative">
+            <div className="relative w-full" style={{maxWidth:'420px'}}>
+
+              {/* Shaft rails */}
+              <div className="absolute left-3 top-0 bottom-0 w-1 rounded-full" style={{background:'linear-gradient(180deg,rgba(212,175,55,0.6),rgba(212,175,55,0.15),rgba(212,175,55,0.6))'}} />
+              <div className="absolute right-3 top-0 bottom-0 w-1 rounded-full" style={{background:'linear-gradient(180deg,rgba(212,175,55,0.6),rgba(212,175,55,0.15),rgba(212,175,55,0.6))'}} />
+
+              {/* Status indicator — top */}
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 bg-brand-navy border-2 px-4 py-2 rounded-lg shadow-xl" style={{borderColor:'rgba(212,175,55,0.5)'}}>
+                <i className="fa-solid fa-screwdriver-wrench text-brand-gold text-sm" />
+                <span className="text-brand-gold font-bold text-sm font-mono tracking-widest">SERVICE ACTIVE</span>
+                <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
               </div>
-              <div className="bg-white/10 backdrop-blur-md border border-white/20 p-3 rounded-xl">
-                <div className="text-xl font-bold text-brand-gold font-serif mb-0.5">100%</div>
-                <div className="text-[10px] text-slate-300 uppercase tracking-wider font-semibold">Quality Assured</div>
+
+              {/* Main service image with door-open animation */}
+              <div className="relative mx-8 rounded-2xl overflow-hidden border-2 group"
+                style={{borderColor:'rgba(212,175,55,0.35)', boxShadow:'0 0 50px rgba(212,175,55,0.15),0 25px 50px rgba(0,0,0,0.6)'}}>
+
+                {/* Sliding door halves */}
+                <div className="absolute inset-0 z-10 flex pointer-events-none overflow-hidden">
+                  <div className="h-full bg-brand-navy/90" style={{width:'50%', animation:'doorLeft 1.4s cubic-bezier(0.4,0,0.2,1) 0.4s forwards'}} />
+                  <div className="h-full bg-brand-navy/90" style={{width:'50%', animation:'doorRight 1.4s cubic-bezier(0.4,0,0.2,1) 0.4s forwards'}} />
+                </div>
+
+                <img
+                  loading="lazy"
+                  src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=800&q=80"
+                  alt={srv.title}
+                  className="w-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  style={{height:'280px'}}
+                />
+                <div className="absolute inset-0 pointer-events-none" style={{background:'linear-gradient(to top,rgba(8,15,30,0.75),transparent 55%)'}} />
+
+                {/* Caption bar */}
+                <div className="absolute bottom-0 left-0 right-0 p-4 z-20">
+                  <div className="backdrop-blur-md rounded-xl p-3 flex items-center justify-between" style={{background:'rgba(255,255,255,0.08)', border:'1px solid rgba(255,255,255,0.15)'}}>
+                    <div>
+                      <div className="text-white font-bold text-sm">{srv.title}</div>
+                      <div className="text-brand-gold text-xs flex items-center gap-1 mt-0.5">
+                        <i className="fa-solid fa-shield-halved text-[10px]" /> Quality Guaranteed
+                      </div>
+                    </div>
+                    <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{background:'rgba(212,175,55,0.2)', border:'1px solid rgba(212,175,55,0.4)'}}>
+                      <i className={`fa-solid ${srv.icon || 'fa-gear'} text-brand-gold`} />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Floating badges */}
+              <div className="absolute -left-8 top-1/4 backdrop-blur-md rounded-xl px-3 py-2 text-xs font-bold text-white shadow-xl"
+                style={{background:'rgba(255,255,255,0.1)',border:'1px solid rgba(255,255,255,0.2)',animation:'floatBadge 3s ease-in-out infinite'}}>
+                <i className="fa-solid fa-clock text-brand-gold mr-1.5" />
+                Fast Response
+              </div>
+              <div className="absolute -right-8 top-2/3 backdrop-blur-md rounded-xl px-3 py-2 text-xs font-bold text-white shadow-xl"
+                style={{background:'rgba(255,255,255,0.1)',border:'1px solid rgba(255,255,255,0.2)',animation:'floatBadge 3s ease-in-out 1s infinite'}}>
+                <i className="fa-solid fa-star text-brand-gold mr-1.5" />
+                5-Star Service
+              </div>
+
+              {/* Bottom indicator */}
+              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 bg-brand-navy border-2 px-4 py-2 rounded-lg shadow-xl" style={{borderColor:'rgba(212,175,55,0.5)'}}>
+                <i className="fa-solid fa-circle-check text-green-400 text-xs" />
+                <span className="text-slate-400 font-mono text-xs tracking-widest">CERTIFIED</span>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Bottom badge */}
-        <div className="absolute bottom-4 right-4 md:right-8 inline-flex items-center gap-4 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-3 rounded-lg text-sm z-10 whitespace-nowrap">
-          <span className="font-bold text-white uppercase tracking-wider whitespace-nowrap">Professional Service</span>
-          <span className="text-brand-gold font-bold flex items-center gap-2 whitespace-nowrap">
-            <i className="fa-solid fa-shield-halved text-sm"></i> Guaranteed
-          </span>
-        </div>
+        {/* Bottom gold accent */}
+        <div className="absolute bottom-0 left-0 right-0 h-px" style={{background:'linear-gradient(90deg,transparent,rgba(212,175,55,0.7),transparent)'}} />
       </section>
+
 
       {/* ── INSTALLATION PROCESS - Timeline with Images ── */}
       {serviceKey === 'installation' && srv.process && (
