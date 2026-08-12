@@ -52,12 +52,12 @@ export default function Navbar({ currentHash }) {
             </span>
           </div>
           <div className="flex items-center gap-5 text-slate-300 font-semibold">
-            <a href="tel:+919845071406" className="hover:text-brand-gold transition flex items-center gap-1.5">
-              <i className="fa-solid fa-phone text-brand-gold text-sm"></i> 24/7: +91 98450 71406
+            <a href="tel:+919845071406" className="transition flex items-center gap-1.5 animate-color-blink">
+              <i className="fa-solid fa-phone text-sm"></i> 24/7: +91 98450 71406
             </a>
             <a href="https://wa.me/919845071406" target="_blank" rel="noopener noreferrer"
-               className="hidden md:flex hover:text-brand-gold transition items-center gap-1.5">
-              <i className="fa-brands fa-whatsapp text-brand-gold text-sm"></i> WhatsApp
+               className="hidden md:flex transition items-center gap-1.5 animate-color-blink">
+              <i className="fa-brands fa-whatsapp text-sm"></i> WhatsApp
             </a>
           </div>
         </div>

@@ -171,7 +171,7 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
             </div>
 
             {/* Stats row */}
-            <div className="grid grid-cols-3 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
               {[
                 { value: prod.caps.length + '+', label: 'Capacities' },
                 { value: prod.features.length + '+', label: 'Features' },
@@ -251,7 +251,7 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
                 <i className="fa-solid fa-bolt text-brand-gold mr-1.5" />
                 Energy Efficient
               </div>
-              <div className="absolute -right-8 top-2/3 backdrop-blur-md rounded-xl px-3 py-2 text-xs font-bold text-white shadow-xl"
+              <div className="absolute -right-8 top-1/2 backdrop-blur-md rounded-xl px-3 py-2 text-xs font-bold text-white shadow-xl"
                 style={{background:'rgba(255,255,255,0.1)',border:'1px solid rgba(255,255,255,0.2)',animation:'floatBadge 3s ease-in-out 1s infinite'}}>
                 <i className="fa-solid fa-certificate text-brand-gold mr-1.5" />
                 ISO Certified
@@ -319,7 +319,7 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
               </p>
               
               {/* Quick Stats */}
-              <div className="grid grid-cols-2 gap-4 pt-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
                 <div className="bg-white p-5 rounded-2xl shadow-lg border-2 border-slate-100">
                   <div className="text-3xl font-bold text-brand-gold font-serif mb-1">
                     {prod.caps.length}+
@@ -364,8 +364,8 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
                     alt={img.caption}
                     className={`w-full h-full ${img.url.includes('villa4.png') ? 'object-cover object-left' : 'object-cover'} group-hover:scale-110 transition-transform duration-700`}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/95 via-brand-navy/30 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute inset-0 flex items-end p-6 translate-y-0 md:translate-y-4 opacity-100 md:opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-100 transition-all duration-500 ease-out">
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/95 via-brand-navy/30 to-transparent opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 flex items-end p-6 opacity-100 transition-all duration-500 ease-out">
                     <div>
                       <p className="text-white font-serif font-bold text-sm mb-2">{img.caption}</p>
                     </div>
@@ -415,7 +415,7 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
                 </h2>
               </div>
               
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {prod.apps.map((a, i) => {
                   const icon = APP_ICONS[a] || 'fa-building';
                   return (

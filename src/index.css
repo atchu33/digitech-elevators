@@ -474,3 +474,15 @@ html, body {
   animation: doorOpenRight 1.4s cubic-bezier(0.7, 0, 0.3, 1) forwards;
 }
 
+@keyframes colorBlink {
+  0%, 100% { color: #D4AF37; } /* gold */
+  50% { color: #FFFFFF; } /* white */
+}
+
+.animate-color-blink {
+  animation: colorBlink 1.5s infinite;
+}
+
+.animate-color-blink i {
+  animation: inherit; /* Make the icon blink in sync */
+}
