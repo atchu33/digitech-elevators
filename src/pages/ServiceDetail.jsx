@@ -72,10 +72,184 @@ const INSTALLATION_POSTERS = [
   }
 ];
 
+const portfolioCategories = [
+  {
+    id: 'corporate',
+    title: 'Corporate & Education',
+    icon: 'fa-building-columns',
+    propertiesBadge: '25+ Properties',
+    description: 'Corporate offices, IT buildings, schools, colleges, institutions',
+    coverImage: './AMC IMAGES/Corporate & Educational/1_cp.jpg',
+    images: [
+      './AMC IMAGES/Corporate & Educational/1_cp.jpg',
+      './AMC IMAGES/Corporate & Educational/2_cp.jpg',
+      './AMC IMAGES/Corporate & Educational/3_cp.jpg',
+      './AMC IMAGES/Corporate & Educational/4_cp.jpg',
+      './AMC IMAGES/Corporate & Educational/5_cp.jpg',
+      './AMC IMAGES/Corporate & Educational/0fcd6862-822e-48d2-a284-166ee6f25376.jpg',
+      './AMC IMAGES/Corporate & Educational/12f2b0a1-8a57-4491-a5b1-5490c32dbcad.jpg',
+      './AMC IMAGES/Corporate & Educational/260e7cc1-504b-46fd-bf0c-32ac3bd232ee.jpg',
+      './AMC IMAGES/Corporate & Educational/2aa13cc0-d7e7-458f-a9a3-eaaef36cad65.jpg',
+      './AMC IMAGES/Corporate & Educational/5fffe4e2-b6b2-42e6-932a-bde42eba502d.jpg',
+      './AMC IMAGES/Corporate & Educational/608ee88b-1331-4770-9769-b2bb813de697.jpg',
+      './AMC IMAGES/Corporate & Educational/7256d8c8-93bd-4e85-b7c1-4ca92e3ca29b.jpg',
+      './AMC IMAGES/Corporate & Educational/76d824cf-7252-4b84-950a-4c585ddf4d26.jpg',
+      './AMC IMAGES/Corporate & Educational/86e28586-2efe-44bd-bfeb-1530a69dfdcd.jpg',
+      './AMC IMAGES/Corporate & Educational/8d933bf2-b638-49bc-bc4a-2110ea3eccd0.jpg',
+      './AMC IMAGES/Corporate & Educational/8f2ec489-5962-4b67-9d9b-f7c74f127ace.jpg',
+      './AMC IMAGES/Corporate & Educational/90ed39f7-e95e-4b69-b72c-aae606e39b18.jpg',
+      './AMC IMAGES/Corporate & Educational/9c0b10e1-a81b-45d8-8230-f76b4bc05af1.jpg',
+      './AMC IMAGES/Corporate & Educational/aedde61c-dc2b-478c-a34d-b8da461f2ebb.jpg',
+      './AMC IMAGES/Corporate & Educational/b0b4b52c-6468-4296-a8c1-6b9bddb348b5.jpg',
+      './AMC IMAGES/Corporate & Educational/c2ed95c3-58ab-4200-99b6-770d812e76d7.jpg',
+      './AMC IMAGES/Corporate & Educational/c46a3a29-88de-4564-bafa-fabdabdd3976.jpg',
+      './AMC IMAGES/Corporate & Educational/d18e7d24-3fc2-43c1-a2ed-4b7f943a8987.jpg',
+      './AMC IMAGES/Corporate & Educational/d29205a3-9b8e-493b-99fa-d90a661f6839.jpg',
+      './AMC IMAGES/Corporate & Educational/d6b345c0-3fac-431d-a12d-74f682ec625d.jpg',
+      './AMC IMAGES/Corporate & Educational/f3841187-fff4-4759-9922-d85c4ebe71eb.jpg',
+    ],
+  },
+  {
+    id: 'hotels',
+    title: 'Hotels & PGs',
+    icon: 'fa-hotel',
+    propertiesBadge: '20+ Properties',
+    description: 'Hotels, PGs, serviced residences, hospitality buildings',
+    coverImage: './AMC IMAGES/PGs & Hotels/716d6086-f514-4066-92a1-eb9990cc8dbf.jpg',
+    images: [
+      './AMC IMAGES/PGs & Hotels/06017ec0-d7c4-4496-be47-0e52458cad56.jpg',
+      './AMC IMAGES/PGs & Hotels/480a1495-f736-4157-968a-adf0cd6749ab.jpg',
+      './AMC IMAGES/PGs & Hotels/716d6086-f514-4066-92a1-eb9990cc8dbf.jpg',
+      './AMC IMAGES/PGs & Hotels/95d48d5c-4ab7-4b2a-ba70-4814e4bde788.jpg',
+      './AMC IMAGES/PGs & Hotels/997109a3-27b1-4006-a7c5-bd8747c80cc3.jpg',
+      './AMC IMAGES/PGs & Hotels/c2719e32-5b3c-4378-972e-ec7c45791c44.jpg',
+      './AMC IMAGES/PGs & Hotels/cfd88041-4e0b-4cd0-99a7-f01be1a76a4c.jpg',
+      './AMC IMAGES/PGs & Hotels/e2636dce-750e-4571-bbaf-886bff05faf3.jpg',
+      './AMC IMAGES/PGs & Hotels/ed0702f3-55a1-48c7-8c3e-619a0a508c93.jpg',
+    ],
+  },
+  {
+    id: 'residential',
+    title: 'Residential',
+    icon: 'fa-house-chimney',
+    propertiesBadge: '20+ Properties',
+    description: 'Villas, individual residences, independent buildings',
+    coverImage: './AMC IMAGES/Residential Properties/4112cd43-89f6-43ba-8a6e-72f071806121.jpg',
+    images: [
+      './AMC IMAGES/Residential Properties/08d5c78e-5cf1-4462-af5e-c0037a84d4a0.jpg',
+      './AMC IMAGES/Residential Properties/0f79003e-80ea-4413-aa21-ff7905537104.jpg',
+      './AMC IMAGES/Residential Properties/11c3027c-7574-45b9-bdf7-38266826d8e1.jpg',
+      './AMC IMAGES/Residential Properties/1965f8d6-6d0d-4e46-91fa-ee5022a75fe6.jpg',
+      './AMC IMAGES/Residential Properties/1d7213ec-9800-4d81-b73e-7c38320f7d2e.jpg',
+      './AMC IMAGES/Residential Properties/32d2ad78-6cf2-45b5-b4be-776bed9d6621.jpg',
+      './AMC IMAGES/Residential Properties/3afe2e1a-8df9-44dd-a0d3-7ae1c2a87c3f.jpg',
+      './AMC IMAGES/Residential Properties/4112cd43-89f6-43ba-8a6e-72f071806121.jpg',
+      './AMC IMAGES/Residential Properties/5dda6431-a042-44fd-b100-214b565c6e75.jpg',
+      './AMC IMAGES/Residential Properties/5fbdb0e3-1af6-4aba-abc3-a5d04e74cae0.jpg',
+      './AMC IMAGES/Residential Properties/61c4d01e-26d2-4df3-b704-4bbbb0c7e8ae.jpg',
+      './AMC IMAGES/Residential Properties/6d83197e-d827-458d-bade-db20a65f0e0a.jpg',
+      './AMC IMAGES/Residential Properties/6e33a452-0464-4c62-99c3-8818d672563e.jpg',
+      './AMC IMAGES/Residential Properties/7120a351-7370-43b8-b474-ff9a0333ecad.jpg',
+      './AMC IMAGES/Residential Properties/75fd54ca-2495-4b9e-906e-af68cb2ad1e5.jpg',
+      './AMC IMAGES/Residential Properties/7fe44e55-1bce-4130-bd0f-9e3d310dab87.jpg',
+      './AMC IMAGES/Residential Properties/86413a97-dc17-4361-8c4f-c9e95dac4d64.jpg',
+      './AMC IMAGES/Residential Properties/8b4d9f4b-99df-44bd-8661-fa3451a8e63a.jpg',
+      './AMC IMAGES/Residential Properties/92c087a1-682e-410e-b6fa-422352907273.jpg',
+      './AMC IMAGES/Residential Properties/9520045d-ef37-4081-9f31-6a7d9dc83b49.jpg',
+      './AMC IMAGES/Residential Properties/982af516-0b21-4986-a146-dc3769a280cf.jpg',
+      './AMC IMAGES/Residential Properties/9e09878e-a672-475e-8d6b-52fb064b1752.jpg',
+      './AMC IMAGES/Residential Properties/a177e83f-e651-4b6b-9e07-00f834aafe23.jpg',
+      './AMC IMAGES/Residential Properties/b0ca5546-6b35-4b8a-a381-d819f71002f6.jpg',
+      './AMC IMAGES/Residential Properties/b405126f-e9b0-4eba-895a-148009d377a2.jpg',
+      './AMC IMAGES/Residential Properties/ba7737e9-8c36-4a1c-983a-0c7fd4999aa3.jpg',
+      './AMC IMAGES/Residential Properties/c3464f14-863b-402e-b3de-4b45dac38645.jpg',
+      './AMC IMAGES/Residential Properties/c7ee5ee1-e89f-4888-8adc-9e990da36555.jpg',
+      './AMC IMAGES/Residential Properties/de85b788-aa01-4823-9cb8-fcd179b30f02.jpg',
+      './AMC IMAGES/Residential Properties/e594bf06-f5c8-4a82-a69c-6f0662ec9446.jpg',
+      './AMC IMAGES/Residential Properties/e94bfdad-cc37-42c8-9580-e2ef85e07780.jpg',
+      './AMC IMAGES/Residential Properties/ea220be7-4fc1-4536-9b67-064d044474f5.jpg',
+      './AMC IMAGES/Residential Properties/fad0549d-1746-4a5f-a44a-a6bae2a72269.jpg',
+      './AMC IMAGES/Residential Properties/ffb49fc1-2f4c-4ac8-9b71-b80c1050ba73.jpg',
+    ],
+  },
+  {
+    id: 'apartments',
+    title: 'Apartments & Communities',
+    icon: 'fa-building-user',
+    propertiesBadge: '40+ Properties',
+    description: 'Apartment complexes, gated communities, high-rise buildings',
+    coverImage: './AMC IMAGES/Apartments & Communities/1_ap.jpg',
+    images: [
+      './AMC IMAGES/Apartments & Communities/1_ap.jpg',
+      './AMC IMAGES/Apartments & Communities/2_ap.jpg',
+      './AMC IMAGES/Apartments & Communities/3_ap.jpg',
+      './AMC IMAGES/Apartments & Communities/4_ap.jpg',
+      './AMC IMAGES/Apartments & Communities/0411169e-b0cc-4587-9520-e0fb707c74d2.jpg',
+      './AMC IMAGES/Apartments & Communities/115e10f7-0aab-4f87-8960-8a5ae54c05c4.jpg',
+      './AMC IMAGES/Apartments & Communities/1980a987-57de-43bd-b2a7-18ec9648c46f.jpg',
+      './AMC IMAGES/Apartments & Communities/1ae0f282-06ac-4eb6-8634-091ce37c8e71.jpg',
+      './AMC IMAGES/Apartments & Communities/1d800257-2d4c-4914-af28-fc4f7a5f1ab8.jpg',
+      './AMC IMAGES/Apartments & Communities/20d967b2-ee22-4ef1-82a2-67ec6af00abb.jpg',
+      './AMC IMAGES/Apartments & Communities/2ea296a5-858d-456f-a7e0-b93b24e7d764.jpg',
+      './AMC IMAGES/Apartments & Communities/2fec06bd-6b9e-456e-a08e-773f54e87abf.jpg',
+      './AMC IMAGES/Apartments & Communities/335eba99-43f9-470e-bdc4-0b599248a030.jpg',
+      './AMC IMAGES/Apartments & Communities/387cc7f5-5ddd-43d3-9414-2a61f33d2481.jpg',
+      './AMC IMAGES/Apartments & Communities/3b53b048-633f-4b34-9500-5b6783efa60a.jpg',
+      './AMC IMAGES/Apartments & Communities/42c8b1fc-8a39-4c38-beea-4cb9029a1d70.jpg',
+      './AMC IMAGES/Apartments & Communities/68c282f3-9bd7-46d8-9002-df842609f754.jpg',
+      './AMC IMAGES/Apartments & Communities/8444a645-372e-4cb6-8250-5f32c736c3e0.jpg',
+      './AMC IMAGES/Apartments & Communities/8458ea9f-9f56-4576-889d-b9fdec3a0b77.jpg',
+      './AMC IMAGES/Apartments & Communities/87180f2c-0b49-4892-831b-021acb00138d.jpg',
+      './AMC IMAGES/Apartments & Communities/8c895ad5-b192-483f-aa0f-b263b1060e3d.jpg',
+      './AMC IMAGES/Apartments & Communities/8e0cf16b-0dd9-4f71-a0d2-827fdd9fa233.jpg',
+      './AMC IMAGES/Apartments & Communities/915f5f84-146e-4b72-84b8-c7e37c1e9f28.jpg',
+      './AMC IMAGES/Apartments & Communities/92461ef0-1a7c-4d09-91d8-1255a8dd9d6d.jpg',
+      './AMC IMAGES/Apartments & Communities/9966e35c-c94d-48bf-836a-0a52064d8bd2.jpg',
+      './AMC IMAGES/Apartments & Communities/a43cdeea-c901-47f9-be2e-47293b994e99.jpg',
+      './AMC IMAGES/Apartments & Communities/a6794df2-2ca9-4eea-a332-00955a41b942.jpg',
+      './AMC IMAGES/Apartments & Communities/b1ca2b33-04ed-4e2a-8f93-153b6941714f.jpg',
+      './AMC IMAGES/Apartments & Communities/b7b5559f-07a9-472b-a579-9fa9e01649dc.jpg',
+      './AMC IMAGES/Apartments & Communities/bb2bd759-260f-47b9-b766-6acd6ae283d5.jpg',
+      './AMC IMAGES/Apartments & Communities/d96fb5ef-1ac7-4688-aa1a-9688a63e036f.jpg',
+      './AMC IMAGES/Apartments & Communities/da23398a-b74b-4024-ac37-cbf584b380a2.jpg',
+      './AMC IMAGES/Apartments & Communities/de283ece-1919-42ac-9629-17097ce158d2.jpg',
+      './AMC IMAGES/Apartments & Communities/dfe999be-d616-4fb4-8478-9ad3be15ce35.jpg',
+      './AMC IMAGES/Apartments & Communities/e30afb2d-91d4-4ca5-af07-7f9316d10cda.jpg',
+      './AMC IMAGES/Apartments & Communities/e682d4d8-87fc-4ce5-a582-28a5d86177ee.jpg',
+      './AMC IMAGES/Apartments & Communities/ea2392ca-ad98-4aed-9a77-e1e8ccb027e1.jpg',
+      './AMC IMAGES/Apartments & Communities/f402b71b-1730-4cc9-ab5f-87a3c83ec530.jpg',
+      './AMC IMAGES/Apartments & Communities/f612babd-b51e-4618-8c75-98248c45f7a6.jpg',
+      './AMC IMAGES/Apartments & Communities/faca2569-8cd4-4806-85f6-d9f677ceab3f.jpg',
+      './AMC IMAGES/Apartments & Communities/fffb99a1-774f-4e49-a0b9-15dbedc39107.jpg',
+    ],
+  },
+];
+
 export default function ServiceDetail({ serviceKey, fallbackToHome }) {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [selectedPoster, setSelectedPoster] = useState(null);
+  const [selectedCategoryKey, setSelectedCategoryKey] = useState(null);
+  const [lightboxPhotoIndex, setLightboxPhotoIndex] = useState(null);
+
   const srv = SERVICES_DATA[serviceKey];
+
+  const activeCategory = portfolioCategories.find((cat) => cat.id === selectedCategoryKey);
+  const activePhotos = activeCategory ? activeCategory.images : [];
+
+  const handlePrevPhoto = (e) => {
+    e.stopPropagation();
+    if (lightboxPhotoIndex !== null && activePhotos.length > 0) {
+      setLightboxPhotoIndex((prev) => (prev === 0 ? activePhotos.length - 1 : prev - 1));
+    }
+  };
+
+  const handleNextPhoto = (e) => {
+    e.stopPropagation();
+    if (lightboxPhotoIndex !== null && activePhotos.length > 0) {
+      setLightboxPhotoIndex((prev) => (prev === activePhotos.length - 1 ? 0 : prev + 1));
+    }
+  };
+
   
   // Local scroll-reveal observer to guarantee transitions play when switching services
   useEffect(() => {
@@ -352,12 +526,25 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
             <div className="max-w-7xl mx-auto">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
                 <div className="scroll-reveal-left lg:sticky lg:top-24">
-                  <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-brand-gold/30 group">
+                  <div 
+                    className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-brand-gold/30 group cursor-pointer"
+                    onClick={() => setSelectedPoster({
+                      image: './amc.jpeg',
+                      title: 'Comprehensive Maintenance',
+                      tag: 'AMC Services',
+                      desc: 'Regular inspections and preventive care for optimal performance.'
+                    })}
+                  >
                     <img loading="lazy"
-                      src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1200&q=80"
+                      src="./amc.jpeg"
                       alt="AMC Services"
                       className="w-full h-[450px] lg:h-[550px] object-cover group-hover:scale-105 transition-transform duration-700"
                     />
+                    <div className="absolute inset-0 bg-brand-navy/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition duration-300 z-20 pointer-events-none">
+                      <span className="bg-brand-navy/90 text-brand-gold border border-brand-gold/30 rounded-xl px-4 py-2 text-xs font-bold shadow-lg pointer-events-auto">
+                        <i className="fa-solid fa-magnifying-glass-plus mr-1"></i> View Full Image
+                      </span>
+                    </div>
                     <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/60 via-transparent to-transparent" />
                     
                     {/* Floating badge */}
@@ -423,8 +610,112 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
               </div>
             </div>
           </section>
+
+          {/* ── LONG-TERM AMC RELATIONSHIPS / CLIENT PORTFOLIO SECTION ── */}
+          <section className="py-20 px-4 md:px-8 bg-white border-b border-slate-200 relative overflow-hidden">
+            {/* Subtle luxury backdrop pattern */}
+            <div className="absolute inset-0 bg-[radial-gradient(#0B2545_1px,transparent_1px)] [background-size:24px_24px] opacity-[0.03] pointer-events-none"></div>
+
+            <div className="max-w-7xl mx-auto relative z-10">
+              {/* Header */}
+              <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
+                <div className="flex items-center justify-center gap-3 text-brand-gold text-xs font-bold uppercase tracking-[0.25em]">
+                  <span className="h-px w-8 bg-brand-gold/60 inline-block"></span>
+                  <span>Long-Term AMC Relationships</span>
+                  <span className="h-px w-8 bg-brand-gold/60 inline-block"></span>
+                </div>
+                <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-brand-navy leading-tight">
+                  OUR AMC CLIENT PORTFOLIO
+                </h2>
+                <p className="text-slate-600 text-sm md:text-base font-medium">
+                  Maintaining elevators for businesses, hotels, homes and residential communities across Bengaluru.
+                </p>
+              </div>
+
+              {/* Description Highlight Card */}
+              <div className="bg-gradient-to-r from-brand-navy via-slate-800 to-brand-navy text-white rounded-2xl p-6 md:p-8 mb-12 border border-brand-gold/30 shadow-xl relative overflow-hidden">
+                <div className="absolute right-0 top-0 bottom-0 w-1/3 bg-[radial-gradient(ellipse_at_top_right,_rgba(212,175,55,0.15)_0%,_transparent_70%)] pointer-events-none"></div>
+                <div className="max-w-3xl space-y-2 relative z-10">
+                  <span className="text-brand-gold font-semibold text-xs uppercase tracking-widest flex items-center gap-2">
+                    <i className="fa-solid fa-shield-heart text-brand-gold"></i> Reliable Elevator Maintenance Across Diverse Properties
+                  </span>
+                  <p className="text-slate-200 text-xs md:text-sm leading-relaxed">
+                    We proudly maintain elevators for corporate, educational, hospitality, residential, and apartment properties. Our long-term AMC relationships reflect our commitment to reliable service and consistent maintenance.
+                  </p>
+                </div>
+              </div>
+
+              {/* 4 Category Cards Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {portfolioCategories.map((cat) => (
+                  <div
+                    key={cat.id}
+                    onClick={() => {
+                      setSelectedCategoryKey(cat.id);
+                      setLightboxPhotoIndex(null);
+                    }}
+                    className="group relative bg-slate-50 hover:bg-white rounded-2xl border border-slate-200 hover:border-brand-gold/60 transition-all duration-300 shadow-sm hover:shadow-xl cursor-pointer flex flex-col overflow-hidden card-hover"
+                  >
+                    {/* Cover Image Container */}
+                    <div className="relative h-56 w-full overflow-hidden bg-slate-900">
+                      <img
+                        src={cat.coverImage}
+                        alt={cat.title}
+                        loading="lazy"
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-90 group-hover:opacity-100"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/90 via-brand-navy/20 to-transparent"></div>
+                      
+                      {/* Photo Count Badge */}
+                      <div className="absolute top-3 right-3 bg-brand-navy/85 backdrop-blur-md border border-brand-gold/40 text-brand-gold text-[11px] font-bold px-3 py-1 rounded-full shadow-md flex items-center gap-1.5">
+                        <i className="fa-solid fa-images text-[10px]"></i>
+                        <span>{cat.images.length} Photos</span>
+                      </div>
+
+                      {/* Building Icon */}
+                      <div className="absolute bottom-3 left-4 w-10 h-10 rounded-xl bg-brand-gold text-brand-navy flex items-center justify-center shadow-lg font-bold text-lg">
+                        <i className={`fa-solid ${cat.icon}`}></i>
+                      </div>
+                    </div>
+
+                    {/* Card Content */}
+                    <div className="p-5 flex flex-col flex-grow justify-between space-y-4">
+                      <div className="space-y-2">
+                        <h3 className="font-serif font-bold text-lg text-brand-navy group-hover:text-brand-gold transition-colors duration-200">
+                          {cat.title}
+                        </h3>
+                        <p className="text-slate-500 text-xs leading-relaxed">
+                          {cat.description}
+                        </p>
+                      </div>
+
+                      <div className="pt-3 border-t border-slate-200/70 flex items-center justify-between">
+                        <span className="inline-block bg-brand-gold/10 border border-brand-gold/30 text-brand-navy text-[11px] font-semibold px-2.5 py-1 rounded-lg">
+                          ⚡ {cat.propertiesBadge}
+                        </span>
+                        <span className="text-brand-gold text-xs font-bold flex items-center gap-1 group-hover:translate-x-1 transition-transform duration-200">
+                          View Gallery <i className="fa-solid fa-arrow-right text-[10px]"></i>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Bottom Stat Highlight Badge */}
+              <div className="mt-14 text-center">
+                <div className="inline-flex items-center gap-3 bg-slate-900 text-white border-2 border-brand-gold px-6 py-3 rounded-full shadow-lg">
+                  <span className="w-2.5 h-2.5 rounded-full bg-brand-gold animate-ping"></span>
+                  <span className="font-mono text-xs md:text-sm font-bold tracking-widest text-brand-gold uppercase">
+                    100+ PROPERTIES • MONTHLY AMC SERVICE
+                  </span>
+                </div>
+              </div>
+            </div>
+          </section>
         </>
       )}
+
 
       {/* ── MODERNIZATION - Content Left, Image Right ── */}
       {serviceKey === 'modernization' && srv.services && (
@@ -458,12 +749,25 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
                 </div>
 
                 <div className="scroll-reveal-right lg:sticky lg:top-24">
-                  <div className="relative rounded-3xl overflow-hidden shadow-2xl group">
+                  <div 
+                    className="relative rounded-3xl overflow-hidden shadow-2xl group cursor-pointer"
+                    onClick={() => setSelectedPoster({
+                      image: './modernization.jpeg',
+                      title: 'Advanced Technology',
+                      tag: 'Modernization',
+                      desc: 'Modern components and systems for enhanced performance.'
+                    })}
+                  >
                     <img loading="lazy"
-                      src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1200&q=80"
+                      src="./modernization.jpeg"
                       alt="Modernization"
                       className="w-full h-[450px] lg:h-[550px] object-cover group-hover:scale-105 transition-transform duration-700"
                     />
+                    <div className="absolute inset-0 bg-brand-navy/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition duration-300 z-20 pointer-events-none">
+                      <span className="bg-brand-navy/90 text-brand-gold border border-brand-gold/30 rounded-xl px-4 py-2 text-xs font-bold shadow-lg pointer-events-auto">
+                        <i className="fa-solid fa-magnifying-glass-plus mr-1"></i> View Full Image
+                      </span>
+                    </div>
                     <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/80 via-transparent to-transparent" />
                     
                     {/* Floating badge */}
@@ -910,6 +1214,164 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
         </div>,
         document.body
       )}
+
+      {/* ── AMC PORTFOLIO GALLERY MODAL (NO REDIRECTION) ── */}
+      {selectedCategoryKey && createPortal(
+        <div
+          className="fixed inset-0 z-[9990] bg-brand-navy/80 backdrop-blur-md flex flex-col justify-between p-4 md:p-8 animate-fade-in overflow-y-auto"
+          onClick={() => {
+            setSelectedCategoryKey(null);
+            setLightboxPhotoIndex(null);
+          }}
+        >
+          <div
+            className="bg-white max-w-6xl w-full mx-auto rounded-2xl border border-slate-300 shadow-2xl flex flex-col my-auto max-h-[90vh] overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Header & Category Tabs */}
+            <div className="p-4 md:p-6 bg-slate-900 text-white flex flex-col gap-4 border-b border-brand-gold/30">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-brand-gold text-brand-navy flex items-center justify-center font-bold text-lg">
+                    <i className={`fa-solid ${activeCategory?.icon}`}></i>
+                  </div>
+                  <div>
+                    <span className="text-slate-400 text-[11px] font-medium tracking-wide block">
+                      Digitech AMC Portfolio • Real Client Installations in Bengaluru
+                    </span>
+                    <h3 className="font-serif text-xl md:text-2xl font-bold text-brand-gold">
+                      {activeCategory?.title}
+                    </h3>
+                    <p className="text-slate-400 text-xs">
+                      {activePhotos.length} Property Photos • {activeCategory?.propertiesBadge}
+                    </p>
+                  </div>
+                </div>
+
+                <button
+                  onClick={() => {
+                    setSelectedCategoryKey(null);
+                    setLightboxPhotoIndex(null);
+                  }}
+                  className="w-10 h-10 rounded-full bg-slate-800 hover:bg-brand-gold hover:text-brand-navy text-slate-300 flex items-center justify-center transition-colors duration-200"
+                >
+                  <i className="fa-solid fa-xmark text-lg"></i>
+                </button>
+              </div>
+
+              {/* Category Filter Tabs */}
+              <div className="flex flex-wrap gap-2 pt-2 border-t border-slate-800">
+                {portfolioCategories.map((cat) => (
+                  <button
+                    key={cat.id}
+                    onClick={() => {
+                      setSelectedCategoryKey(cat.id);
+                      setLightboxPhotoIndex(null);
+                    }}
+                    className={`px-4 py-2 rounded-xl text-xs font-bold transition-all duration-200 flex items-center gap-2 ${
+                      cat.id === selectedCategoryKey
+                        ? 'bg-brand-gold text-brand-navy shadow-md scale-105'
+                        : 'bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white'
+                    }`}
+                  >
+                    <i className={`fa-solid ${cat.icon}`}></i>
+                    <span>{cat.title}</span>
+                    <span className="opacity-75 font-mono">({cat.images.length})</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Modal Body: Responsive Image Grid */}
+            <div className="p-4 md:p-6 overflow-y-auto max-h-[65vh] bg-slate-100">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-4">
+                {activePhotos.map((imgSrc, index) => (
+                  <div
+                    key={index}
+                    onClick={() => setLightboxPhotoIndex(index)}
+                    className="group relative h-40 rounded-xl overflow-hidden cursor-pointer border border-slate-200 bg-slate-200 shadow-sm hover:shadow-lg hover:border-brand-gold transition-all duration-300"
+                  >
+                    <img
+                      src={imgSrc}
+                      alt={`AMC Property ${index + 1}`}
+                      loading="lazy"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-brand-navy/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <span className="w-8 h-8 rounded-full bg-brand-navy/90 text-brand-gold border border-brand-gold/40 flex items-center justify-center text-xs">
+                        <i className="fa-solid fa-expand"></i>
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>,
+        document.body
+      )}
+
+      {/* ── SINGLE PHOTO LIGHTBOX INSPECTOR (INSIDE GALLERY MODAL) ── */}
+      {lightboxPhotoIndex !== null && activePhotos[lightboxPhotoIndex] && createPortal(
+        <div
+          className="fixed inset-0 z-[9999] bg-black/95 backdrop-blur-xl flex flex-col items-center justify-between p-4 animate-fade-in"
+          onClick={() => setLightboxPhotoIndex(null)}
+        >
+          {/* Lightbox Header */}
+          <div className="w-full max-w-5xl flex items-center justify-between text-white py-2">
+            <div className="flex items-center gap-3">
+              <span className="bg-brand-gold/20 border border-brand-gold/40 text-brand-gold text-xs px-3 py-1 rounded-full font-bold">
+                {activeCategory?.title}
+              </span>
+              <span className="text-slate-400 text-xs font-mono">
+                Photo {lightboxPhotoIndex + 1} of {activePhotos.length}
+              </span>
+            </div>
+
+            <button
+              onClick={() => setLightboxPhotoIndex(null)}
+              className="text-white hover:text-brand-gold text-2xl transition duration-200 px-3 py-1"
+            >
+              <i className="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+
+          {/* Lightbox Main Image & Prev/Next Nav */}
+          <div
+            className="relative max-w-5xl w-full flex-grow flex items-center justify-center"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={handlePrevPhoto}
+              className="absolute left-2 md:left-4 z-10 w-12 h-12 rounded-full bg-brand-navy/80 border border-brand-gold/40 text-brand-gold flex items-center justify-center hover:bg-brand-gold hover:text-brand-navy transition duration-200 shadow-xl"
+              title="Previous Photo"
+            >
+              <i className="fa-solid fa-chevron-left text-lg"></i>
+            </button>
+
+            <img
+              src={activePhotos[lightboxPhotoIndex]}
+              alt={`AMC Property Photo ${lightboxPhotoIndex + 1}`}
+              className="max-h-[80vh] max-w-full object-contain rounded-xl border border-slate-800 shadow-2xl"
+            />
+
+            <button
+              onClick={handleNextPhoto}
+              className="absolute right-2 md:right-4 z-10 w-12 h-12 rounded-full bg-brand-navy/80 border border-brand-gold/40 text-brand-gold flex items-center justify-center hover:bg-brand-gold hover:text-brand-navy transition duration-200 shadow-xl"
+              title="Next Photo"
+            >
+              <i className="fa-solid fa-chevron-right text-lg"></i>
+            </button>
+          </div>
+
+          {/* Lightbox Footer */}
+          <div className="text-slate-400 text-xs py-2 text-center">
+            Use Left/Right controls or click outside to return to category grid.
+          </div>
+        </div>,
+        document.body
+      )}
     </div>
   );
 }
+

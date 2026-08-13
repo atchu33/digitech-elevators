@@ -614,9 +614,9 @@ export default function Home() {
                   {/* Image Side */}
                   <div className={`lg:col-span-5 relative h-64 lg:h-auto ${i % 2 === 0 ? '' : 'lg:col-start-8'}`}>
                     <div className="absolute inset-0 bg-gradient-to-br from-brand-navy via-slate-800 to-brand-navy">
-                      <div className="absolute inset-0 bg-cover bg-center opacity-40 group-hover:scale-110 transition-all duration-700"
+                      <div className="absolute inset-0 bg-cover bg-center opacity-80 group-hover:scale-110 transition-all duration-700"
                            style={{ backgroundImage:`url('${item.image}')` }} />
-                      <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/60 to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/40 to-transparent" />
 
                       {/* Floor lines overlay */}
                       <div className="absolute inset-0 pointer-events-none opacity-20">
@@ -881,6 +881,116 @@ export default function Home() {
             <a href="#/projects" className="inline-flex items-center gap-3 bg-white border-2 border-brand-navy hover:bg-brand-navy hover:text-white text-brand-navy font-bold px-8 py-4 rounded-2xl text-sm uppercase tracking-widest transition-all hover:gap-5 hover:shadow-2xl shadow-lg">
               View All Projects <i className="fa-solid fa-arrow-right" />
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════ CLIENT LOGOS ══════════════════════════ */}
+      <section className="relative py-28 px-4 md:px-8 bg-gradient-to-br from-brand-navy via-slate-900 to-brand-navy text-white overflow-hidden">
+        {/* Background pattern */}
+        <div className="absolute inset-0 opacity-5"
+             style={{
+               backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(212,175,55,0.4) 1px, transparent 0)',
+               backgroundSize: '40px 40px'
+             }} />
+        
+        <div className="max-w-7xl mx-auto relative z-10 space-y-16">
+          <div className="text-center max-w-3xl mx-auto space-y-4 scroll-reveal">
+            <h3 className="text-xs font-bold uppercase tracking-widest text-brand-gold flex items-center justify-center gap-3">
+              <span className="w-16 h-px bg-brand-gold" />
+              Trusted Partnerships
+              <span className="w-16 h-px bg-brand-gold" />
+            </h3>
+            <h2 className="font-serif text-4xl md:text-5xl font-bold leading-tight">
+              WHY BUILDERS &amp; CLIENTS<br />
+              TRUST <span className="text-brand-gold">DIGITECH ELEVATORS</span>
+            </h2>
+            <p className="text-slate-300 text-base">Proud to serve leading builders and prestigious projects across India</p>
+          </div>
+
+          {/* Scrolling Client Logos - Row 1 */}
+          <div className="relative overflow-hidden">
+            {/* Fade edges */}
+            <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-brand-navy to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-brand-navy to-transparent z-10 pointer-events-none" />
+            <div className="flex gap-6 animate-scroll-left" style={{ width: 'max-content' }}>
+              {[
+                { name: 'Sobha Projects',        logo: './logos/Sobha Projects.png' },
+                { name: 'Embassy Group',         logo: './logos/Embassy Group.png' },
+                { name: 'Brigade Group',         logo: './logos/brigade group.jpg' },
+                { name: 'Prestige Group',        logo: './logos/Prestige.png' },
+                { name: 'Jal Vayu Heights',      logo: './logos/Jal Vayu Heights.png' },
+                { name: 'Jal Vayu Towers',       logo: './logos/Jal Vayu Towers.png' },
+                { name: 'Kia India Pvt. Ltd.',   logo: './logos/Kia India Pvt. Ltd..jpeg' },
+                { name: 'Pro FX Tech India',     logo: './logos/Pro FX Tech India.png' },
+                { name: 'G-Corp Sky Garden',     logo: './logos/G CORP -Sky Garden.jpg' },
+                { name: 'Renaissance Projects',  logo: './logos/Renaissance Projects.png' },
+                { name: 'Soch Apparels',         logo: './logos/soch apparels pvt ltd.jpg' },
+              ].concat([
+                { name: 'Sobha Projects',        logo: './logos/Sobha Projects.png' },
+                { name: 'Embassy Group',         logo: './logos/Embassy Group.png' },
+                { name: 'Brigade Group',         logo: './logos/brigade group.jpg' },
+                { name: 'Prestige Group',        logo: './logos/Prestige.png' },
+                { name: 'Jal Vayu Heights',      logo: './logos/Jal Vayu Heights.png' },
+                { name: 'Jal Vayu Towers',       logo: './logos/Jal Vayu Towers.png' },
+                { name: 'Kia India Pvt. Ltd.',   logo: './logos/Kia India Pvt. Ltd..jpeg' },
+                { name: 'Pro FX Tech India',     logo: './logos/Pro FX Tech India.png' },
+                { name: 'G-Corp Sky Garden',     logo: './logos/G CORP -Sky Garden.jpg' },
+                { name: 'Renaissance Projects',  logo: './logos/Renaissance Projects.png' },
+                { name: 'Soch Apparels',         logo: './logos/soch apparels pvt ltd.jpg' },
+              ]).map((client, i) => (
+                <div key={i} className="flex-shrink-0 group bg-white rounded-2xl border-2 border-white/10 hover:border-brand-gold shadow-lg hover:shadow-brand-gold/20 hover:shadow-xl transition-all duration-300 overflow-hidden hover:scale-105 w-[180px] min-h-[120px] flex items-center justify-center p-4">
+                  <img
+                    src={client.logo}
+                    alt={client.name}
+                    className="max-h-[70px] max-w-[150px] w-auto h-auto object-contain group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                    onError={(e) => { e.target.style.display='none'; e.target.nextSibling.style.display='block'; }}
+                  />
+                  <span className="hidden text-brand-navy font-bold text-xs text-center leading-tight">{client.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Scrolling Client Logos - Row 2 (Reverse) */}
+          <div className="relative overflow-hidden">
+            <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-brand-navy to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-brand-navy to-transparent z-10 pointer-events-none" />
+            <div className="flex gap-6 animate-scroll-right" style={{ width: 'max-content' }}>
+              {[
+                { name: 'Aditya Group of Institutions',  logo: './logos/Aditya Group of Institutions.png' },
+                { name: 'Hoysala Projects',              logo: './logos/Hoysala Projects.png' },
+                { name: 'Casa Grande Royce',             logo: './logos/Casa Grande Royce.png' },
+                { name: 'Olive Groups',                  logo: './logos/Olive Groups.png' },
+                { name: 'Confident Canopus',             logo: './logos/Confident Canopus.webp' },
+                { name: 'MD Retail India',               logo: './logos/MD Retail India Pvt. Ltd..jpg' },
+                { name: 'Jus\'Trufs Chocolate',          logo: './logos/Jus\'Trufs Chocolate Shop & Cafe.jpg' },
+                { name: 'Akshaya Hospital',              logo: './logos/Akshaya Hospital.jpg' },
+                { name: 'Chaithanya Hospital',           logo: './logos/Chaithanya Hospital.jpg' },
+              ].concat([
+                { name: 'Aditya Group of Institutions',  logo: './logos/Aditya Group of Institutions.png' },
+                { name: 'Hoysala Projects',              logo: './logos/Hoysala Projects.png' },
+                { name: 'Casa Grande Royce',             logo: './logos/Casa Grande Royce.png' },
+                { name: 'Olive Groups',                  logo: './logos/Olive Groups.png' },
+                { name: 'Confident Canopus',             logo: './logos/Confident Canopus.webp' },
+                { name: 'MD Retail India',               logo: './logos/MD Retail India Pvt. Ltd..jpg' },
+                { name: 'Jus\'Trufs Chocolate',          logo: './logos/Jus\'Trufs Chocolate Shop & Cafe.jpg' },
+                { name: 'Akshaya Hospital',              logo: './logos/Akshaya Hospital.jpg' },
+                { name: 'Chaithanya Hospital',           logo: './logos/Chaithanya Hospital.jpg' },
+              ]).map((client, i) => (
+                <div key={i} className="flex-shrink-0 group bg-white rounded-2xl border-2 border-white/10 hover:border-brand-gold shadow-lg hover:shadow-brand-gold/20 hover:shadow-xl transition-all duration-300 overflow-hidden hover:scale-105 w-[180px] min-h-[120px] flex items-center justify-center p-4">
+                  <img
+                    src={client.logo}
+                    alt={client.name}
+                    className="max-h-[70px] max-w-[150px] w-auto h-auto object-contain group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                    onError={(e) => { e.target.style.display='none'; e.target.nextSibling.style.display='block'; }}
+                  />
+                  <span className="hidden text-brand-navy font-bold text-xs text-center leading-tight">{client.name}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

@@ -74,10 +74,10 @@ export const PRODUCTS_DATA = {
     },
     whyChoose: ['High Durability', 'Efficient Material Handling', 'Long Service Life'],
     gallery: [
+      { url: './lift image/GOODS LIFT/1_ goods lift.jpg', caption: 'Goods Lift' },
       { url: './goods4.png', caption: 'Industrial Goods Elevator' },
-      { url: './goods5.png', caption: 'Warehouse Freight Lift' },
-      { url: './lift image/GOODS LIFT/2.3_Space-Saving Compact Control Panel for Efficient Goods Lift Operation.jpeg', caption: 'Heavy Load Platform' },
-      { url: './lift image/GOODS LIFT/2.4_Heavy-Duty Goods Lift for Safe & Reliable Material Transportation.jpeg', caption: 'Commercial Goods Transport' },
+      { url: './lift image/GOODS LIFT/2.3_Space-Saving Compact Control Panel for Efficient Goods Lift Operation.jpeg', caption: 'Space-Saving Compact Control Panel for Efficient Goods Lift Operation' },
+      { url: './lift image/GOODS LIFT/2.4_Heavy-Duty Goods Lift for Safe & Reliable Material Transportation.jpeg', caption: 'Heavy-Duty Goods Lift for Safe & Reliable Material Transportation' },
     ]
   },
   home: {
@@ -121,10 +121,10 @@ export const PRODUCTS_DATA = {
     },
     whyChoose: ['Reliable Operation', 'Cost Effective', 'Long Service Life'],
     gallery: [
-      { url: './lift image/Hydraulic/2.1_Hydraulic Lift Shaft.jpeg', caption: 'Hydraulic Lift Mechanism' },
-      { url: './hydraulic5.png', caption: 'Low-Rise Building Lift' },
-      { url: './lift image/Hydraulic/2.3_Space-Saving Hydraulic Lift Cabin with Premium Stainless Steel (SS) Finish.png', caption: 'Hydraulic System Installation' },
-      { url: './lift image/Hydraulic/2.4_Hydraulic Platform Lift with Space-Saving Design.jpeg', caption: 'Commercial Hydraulic Elevator' },
+      { url: './lift image/Hydraulic/1_Hydraulic lift.png', caption: 'Hydraulic Lift' },
+      { url: './lift image/Hydraulic/2.1_Hydraulic Lift Shaft.jpeg', caption: 'Hydraulic Lift Shaft' },
+      { url: './lift image/Hydraulic/2.3_Space-Saving Hydraulic Lift Cabin with Premium Stainless Steel (SS) Finish.png', caption: 'Space-Saving Hydraulic Lift Cabin with Premium Stainless Steel (SS) Finish' },
+      { url: './lift image/Hydraulic/2.4_Hydraulic Platform Lift with Space-Saving Design.jpeg', caption: 'Hydraulic Platform Lift with Space-Saving Design' },
     ]
   },
   mrl: {
@@ -144,10 +144,10 @@ export const PRODUCTS_DATA = {
     },
     whyChoose: ['Saves Building Space', 'Reduced Construction Cost', 'Lower Energy Consumption', 'Modern Appearance', 'High Performance'],
     gallery: [
-      { url: './lift image/MRL Lift/2.1_Premium Center-Opening Gold Finish MRL Lift Door Design.png', caption: 'MRL Elevator Shaft Design' },
-      { url: './lift image/MRL Lift/2.2_Modern Stainless Steel MRL Elevator Cabin Interior Design.png', caption: 'Modern Apartment MRL Lift' },
-      { url: './lift image/MRL Lift/2.3_Designer False Ceiling with Integrated LED Lighting for MRL Lift Cabin.png', caption: 'Space-Saving MRL System' },
-      { url: './lift image/MRL Lift/2.4_Customized Machine Room-Less (MRL) Elevator Shaft Design.png', caption: 'Energy Efficient MRL Elevator' },
+      { url: './lift image/MRL Lift/2.1_Premium Center-Opening Gold Finish MRL Lift Door Design.png', caption: 'Premium Center-Opening Gold Finish MRL Lift Door Design' },
+      { url: './lift image/MRL Lift/2.2_Modern Stainless Steel MRL Elevator Cabin Interior Design.png', caption: 'Modern Stainless Steel MRL Elevator Cabin Interior Design' },
+      { url: './lift image/MRL Lift/2.3_Designer False Ceiling with Integrated LED Lighting for MRL Lift Cabin.png', caption: 'Designer False Ceiling with Integrated LED Lighting for MRL Lift Cabin' },
+      { url: './lift image/MRL Lift/2.4_Customized Machine Room-Less (MRL) Elevator Shaft Design.png', caption: 'Customized Machine Room-Less (MRL) Elevator Shaft Design' },
     ]
   },
   villa: {
@@ -192,10 +192,10 @@ export const PRODUCTS_DATA = {
     },
     whyChoose: ['Handles High Peak Traffic', 'Maximum System Up-Time', 'Low Energy Footprint'],
     gallery: [
+      { url: './lift image/Commercial/1_Commercial Lifts.png', caption: 'Commercial Lifts' },
       { url: './commercial4.png', caption: 'Corporate Office Elevator' },
-      { url: './commercial5.png', caption: 'Shopping Mall Lift System' },
-      { url: './lift image/Commercial/2.3_Elegant Elevator Cabin with Modern COP Touchscreen Control Panel.jpg', caption: 'High-Speed Commercial Lift' },
-      { url: './lift image/Commercial/2.4_Mirror-Finished Capsule Lift with Premium Modern Design.jpg', caption: 'Modern Commercial Tower' },
+      { url: './lift image/Commercial/2.3_Elegant Elevator Cabin with Modern COP Touchscreen Control Panel.jpg', caption: 'Elegant Elevator Cabin with Modern COP Touchscreen Control Panel' },
+      { url: './lift image/Commercial/2.4_Mirror-Finished Capsule Lift with Premium Modern Design.jpg', caption: 'Mirror-Finished Capsule Lift with Premium Modern Design' },
     ]
   },
   car: {
