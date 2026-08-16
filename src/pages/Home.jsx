@@ -45,7 +45,7 @@ function HeroParticles() {
     delay: `${(i * 0.7) % 6}s`,
     duration: `${6 + (i * 0.8) % 6}s`,
     opacity: 0.3 + (i % 4) * 0.1,
-    color: i % 3 === 0 ? 'rgba(212,175,55,0.7)' : i % 3 === 1 ? 'rgba(255,255,255,0.4)' : 'rgba(141,169,196,0.5)',
+    color: i % 3 === 0 ? 'rgba(23,105,194,0.7)' : i % 3 === 1 ? 'rgba(255,255,255,0.4)' : 'rgba(141,169,196,0.5)',
   }));
 
   return (
@@ -91,9 +91,9 @@ function ElevatorShaftVisual() {
                 className="absolute left-0 right-0 flex items-center"
                 style={{ top: `${8 + i * 14.5}%` }}
               >
-                <div className="w-1.5 h-px bg-brand-gold/25 ml-0.5" />
-                <div className="flex-1 h-px bg-brand-gold/10" />
-                <div className="w-1.5 h-px bg-brand-gold/25 mr-0.5" />
+                <div className="w-1.5 h-px bg-brand-blue/25 ml-0.5" />
+                <div className="flex-1 h-px bg-brand-blue/10" />
+                <div className="w-1.5 h-px bg-brand-blue/25 mr-0.5" />
               </div>
             ))}
             {/* The cabin */}
@@ -105,9 +105,9 @@ function ElevatorShaftVisual() {
         <div className="flex flex-col justify-between h-[225px] py-1">
           {floors.map((f, i) => (
             <div key={i} className="flex items-center gap-1">
-              <div className="w-2 md:w-4 h-px bg-brand-gold/30" />
+              <div className="w-2 md:w-4 h-px bg-white/30" />
               <span
-                className="text-[9px] md:text-[10px] font-mono font-bold text-brand-gold/60 floor-display"
+                className="text-[9px] md:text-[10px] font-mono font-bold text-white floor-display"
                 style={{ animationDelay: `${i * 0.2}s` }}
               >
                 {f}
@@ -129,7 +129,7 @@ function ElevatorShaftVisual() {
             className="flex items-center gap-2 bg-white/8 border border-white/10 rounded-lg px-2.5 py-1.5 lg:px-3 lg:py-2 animate-lift-ride whitespace-nowrap"
             style={{ animationDelay: `${0.4 + i * 0.2}s` }}
           >
-            <i className={`fa-solid ${item.icon} text-brand-gold text-xs shrink-0`} />
+            <i className={`fa-solid ${item.icon} text-brand-blue text-xs shrink-0`} />
             <span className="text-white/80 text-[9px] lg:text-[11px] font-medium">{item.label}</span>
           </div>
         ))}
@@ -273,7 +273,7 @@ export default function Home() {
           <div
             className="absolute inset-0 opacity-5"
             style={{
-              backgroundImage: 'linear-gradient(rgba(212,175,55,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(212,175,55,0.4) 1px, transparent 1px)',
+              backgroundImage: 'linear-gradient(rgba(23,105,194,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(23,105,194,0.4) 1px, transparent 1px)',
               backgroundSize: '60px 60px',
             }}
           />
@@ -294,7 +294,7 @@ export default function Home() {
           {/* Left — headline */}
           <div className={`lg:col-span-5 space-y-4 text-center lg:text-left transition-all duration-700 ${heroLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <span
-              className="inline-flex items-center gap-1.5 bg-brand-gold/20 border border-brand-gold/40 text-brand-gold px-3.5 py-1 rounded-full text-[10px] font-semibold uppercase tracking-widest animate-pulse-ring"
+              className="inline-flex items-center gap-1.5 bg-brand-blue/20 border border-brand-blue/40 text-white px-3.5 py-1 rounded-full text-[10px] font-semibold uppercase tracking-widest animate-pulse-ring"
               style={{ animationDelay: '0.8s' }}
             >
               <i className="fa-solid fa-award" /> Safe &bull; Reliable &bull; Innovative
@@ -303,7 +303,7 @@ export default function Home() {
               Reliable Elevator Solutions<br/>
               <span className="animate-gold-shimmer">for Modern Buildings</span>
             </h2>
-            <p className="text-brand-gold/90 font-semibold text-[11px] md:text-xs tracking-widest uppercase border-slate-700/60 lg:border-l-2 lg:pl-3 max-w-lg mx-auto lg:mx-0">
+            <p className="text-white font-semibold text-[11px] md:text-xs tracking-widest uppercase border-slate-700/60 lg:border-l-2 lg:pl-3 max-w-lg mx-auto lg:mx-0">
               Installation &bull; AMC &bull; Modernization &bull; Repair &bull; 24/7 Breakdown Support
             </p>
             <p className="text-slate-300 text-xs md:text-sm max-w-2xl leading-relaxed mx-auto lg:mx-0">
@@ -311,12 +311,12 @@ export default function Home() {
             </p>
             <div className="flex flex-wrap justify-center lg:justify-start gap-3 pt-2">
               <a href="#/quote"
-                 className="bg-brand-gold hover:bg-brand-gold-hover text-brand-navy font-bold px-5 py-2.5 rounded-lg shadow-lg transition-all hover:shadow-brand-gold/40 hover:shadow-xl hover:scale-105 flex items-center gap-1.5 text-xs btn-glow"
+                 className="bg-brand-blue hover:bg-brand-blue-dark text-white font-bold px-5 py-2.5 rounded-lg shadow-lg transition-all hover:shadow-brand-blue/40 hover:shadow-xl hover:scale-105 flex items-center gap-1.5 text-xs btn-glow"
                  style={{ animationDelay: '2s' }}>
                 <i className="fa-solid fa-calculator" /> Get a Free Quote
               </a>
               <a href="#/contact"
-                 className="border border-white/70 hover:border-brand-gold hover:text-brand-gold text-white font-semibold px-5 py-2.5 rounded-lg transition-all hover:scale-105 flex items-center gap-1.5 text-xs">
+                 className="border border-white/70 hover:border-brand-blue hover:text-brand-blue text-white font-semibold px-5 py-2.5 rounded-lg transition-all hover:scale-105 flex items-center gap-1.5 text-xs">
                 Contact Us
               </a>
               <a href="#enquiry-form"
@@ -340,13 +340,13 @@ export default function Home() {
             style={{ transitionDelay: '0.6s' }}
           >
             <h3 className="font-serif font-bold text-base mb-0.5 flex items-center gap-1.5">
-              <i className="fa-solid fa-circle-nodes text-brand-gold" /> Fast Project Estimate
+              <i className="fa-solid fa-circle-nodes text-brand-blue" /> Fast Project Estimate
             </h3>
             <p className="text-[11px] text-slate-300 mb-3">Fill in specifications for a custom layout quote.</p>
 
             {formSubmitted ? (
               <div className="text-center py-8 bg-slate-900/50 rounded-xl border border-slate-700 animate-zoom-in">
-                <i className="fa-solid fa-circle-check text-3xl text-brand-gold mb-2 animate-bounce block" />
+                <i className="fa-solid fa-circle-check text-3xl text-brand-blue mb-2 animate-bounce block" />
                 <h4 className="font-serif font-bold text-sm mb-0.5">Design Received</h4>
                 <p className="text-[11px] text-slate-350">We will call you within 15 minutes.</p>
               </div>
@@ -354,7 +354,7 @@ export default function Home() {
               <form onSubmit={handleFormSubmit} className="space-y-2.5">
                 <div>
                   <label className="block text-[10px] font-semibold text-slate-300 mb-0.5">Select Elevator Type</label>
-                  <select name="elevatorType" className="w-full bg-slate-950 border border-slate-600 rounded-lg p-2 text-xs text-white focus:outline-none focus:border-brand-gold transition-colors">
+                  <select name="elevatorType" className="w-full bg-slate-950 border border-slate-600 rounded-lg p-2 text-xs text-white focus:outline-none focus:border-brand-blue transition-colors">
                     <option>Passenger Elevator</option>
                     <option>Luxury Home Lift</option>
                     <option>Stretcher / Hospital Lift</option>
@@ -367,11 +367,11 @@ export default function Home() {
                   <div>
                     <label className="block text-[10px] font-semibold text-slate-300 mb-0.5">Floors (Stops)</label>
                     <input type="number" name="floors" min="2" max="40" defaultValue="4"
-                           className="w-full bg-slate-950 border border-slate-600 rounded-lg p-2 text-xs text-white focus:outline-none focus:border-brand-gold transition-colors" required />
+                           className="w-full bg-slate-950 border border-slate-600 rounded-lg p-2 text-xs text-white focus:outline-none focus:border-brand-blue transition-colors" required />
                   </div>
                   <div>
                     <label className="block text-[10px] font-semibold text-slate-300 mb-0.5">Capacity</label>
-                    <select name="capacity" defaultValue="8 Pax (544 kg)" className="w-full bg-slate-950 border border-slate-600 rounded-lg p-2 text-xs text-white focus:outline-none focus:border-brand-gold transition-colors">
+                    <select name="capacity" defaultValue="8 Pax (544 kg)" className="w-full bg-slate-950 border border-slate-600 rounded-lg p-2 text-xs text-white focus:outline-none focus:border-brand-blue transition-colors">
                       <option>4 Pax (320 kg)</option>
                       <option>6 Pax (408 kg)</option>
                       <option>8 Pax (544 kg)</option>
@@ -382,10 +382,10 @@ export default function Home() {
                 <div>
                   <label className="block text-[10px] font-semibold text-slate-300 mb-0.5">Mobile Number</label>
                   <input type="tel" name="mobile" placeholder="Mobile Number"
-                         className="w-full bg-slate-950 border border-slate-600 rounded-lg p-2 text-xs text-white placeholder-slate-550 focus:outline-none focus:border-brand-gold transition-colors" required />
+                         className="w-full bg-slate-950 border border-slate-600 rounded-lg p-2 text-xs text-white placeholder-slate-550 focus:outline-none focus:border-brand-blue transition-colors" required />
                 </div>
                 <button type="submit"
-                        className="w-full bg-brand-gold hover:bg-brand-gold-hover text-brand-navy font-bold py-2 rounded-lg text-xs uppercase tracking-widest transition-all hover:scale-[1.02] hover:shadow-lg">
+                        className="w-full bg-brand-blue hover:bg-brand-blue-dark text-white font-bold py-2 rounded-lg text-xs uppercase tracking-widest transition-all hover:scale-[1.02] hover:shadow-lg">
                   Calculate Design Layout
                 </button>
               </form>
@@ -394,7 +394,7 @@ export default function Home() {
         </div>
 
         {/* Animated bottom border */}
-        <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-brand-gold to-transparent animate-gold-shimmer z-20" />
+        <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-brand-blue to-transparent animate-gold-shimmer z-20" />
       </section>
 
       {/* ══════════════════════════ STATS STRIP ══════════════════════════ */}
@@ -402,7 +402,7 @@ export default function Home() {
         {/* Diagonal cut creates separation from hero */}
         <div className="absolute inset-0 opacity-5 pointer-events-none">
           {[20, 40, 60, 80].map(pos => (
-            <div key={pos} className="absolute top-0 bottom-0 w-px bg-brand-gold" style={{ left: `${pos}%` }} />
+            <div key={pos} className="absolute top-0 bottom-0 w-px bg-brand-blue" style={{ left: `${pos}%` }} />
           ))}
         </div>
         <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-4 xl:gap-6 text-center relative z-10 pt-8 md:pt-12">
@@ -419,10 +419,10 @@ export default function Home() {
               className="scroll-reveal space-y-2 md:space-y-3 group cursor-default"
               style={{ transitionDelay: `${i * 0.1}s` }}
             >
-              <div className="w-12 h-12 md:w-14 md:h-14 mx-auto bg-brand-gold/20 rounded-2xl flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-brand-navy transition-all duration-300 animate-bounce-soft shadow-lg" style={{ animationDelay: `${i * 0.3}s` }}>
+              <div className="w-12 h-12 md:w-14 md:h-14 mx-auto bg-brand-blue/20 rounded-2xl flex items-center justify-center text-white group-hover:bg-brand-blue transition-all duration-300 animate-bounce-soft shadow-lg" style={{ animationDelay: `${i * 0.3}s` }}>
                 <i className={`fa-solid ${s.icon} text-lg md:text-xl`} />
               </div>
-              <p className="text-3xl md:text-4xl font-bold font-serif text-brand-gold floor-display animate-stat-glow" style={{ animationDelay: `${i * 0.2}s` }}>
+              <p className="text-3xl md:text-4xl font-bold font-serif text-white floor-display animate-stat-glow" style={{ animationDelay: `${i * 0.2}s` }}>
                 {s.val}
               </p>
               <p className="text-[10px] md:text-xs uppercase text-slate-300 font-semibold tracking-wide leading-tight">{s.label}</p>
@@ -436,17 +436,17 @@ export default function Home() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left — decorated gradient panel */}
           <div className="scroll-reveal-left relative order-2 lg:order-1">
-            <div className="absolute -top-6 -left-6 w-24 h-24 border-t-4 border-l-4 border-brand-gold -z-10 rounded-tl-3xl opacity-50" />
-            <div className="absolute -bottom-6 -right-6 w-24 h-24 border-b-4 border-r-4 border-brand-gold -z-10 rounded-br-3xl opacity-50" />
+            <div className="absolute -top-6 -left-6 w-24 h-24 border-t-4 border-l-4 border-brand-blue -z-10 rounded-tl-3xl opacity-50" />
+            <div className="absolute -bottom-6 -right-6 w-24 h-24 border-b-4 border-r-4 border-brand-blue -z-10 rounded-br-3xl opacity-50" />
             <div className="bg-gradient-to-br from-brand-navy via-slate-800 to-brand-navy rounded-3xl overflow-hidden shadow-2xl p-10 text-white space-y-6 relative">
               {/* Decorative overlay pattern */}
               <div className="absolute inset-0 opacity-5" style={{
-                backgroundImage: 'radial-gradient(circle, rgba(212,175,55,0.3) 1px, transparent 1px)',
+                backgroundImage: 'radial-gradient(circle, rgba(23,105,194,0.3) 1px, transparent 1px)',
                 backgroundSize: '20px 20px'
               }} />
               <div className="relative z-10">
                 <div className="flex items-center justify-between border-b border-slate-600/50 pb-5 mb-6">
-                  <span className="font-serif font-bold text-2xl text-brand-gold flex items-center gap-3">
+                  <span className="font-serif font-bold text-2xl text-brand-blue flex items-center gap-3">
                     <i className="fa-solid fa-certificate text-3xl animate-float" />
                     Quality Assured
                   </span>
@@ -462,10 +462,10 @@ export default function Home() {
                     </p>
                   ))}
                 </div>
-                <div className="bg-brand-gold/15 p-5 rounded-2xl border-2 border-brand-gold/30 flex gap-4 items-center scroll-reveal mt-8">
-                  <i className="fa-solid fa-screwdriver-wrench text-3xl text-brand-gold animate-spin-slow shrink-0" />
-                  <p className="text-sm text-brand-gold/95 leading-snug font-medium">
-                    All installations undergo a rigorous <strong className="text-brand-gold">safety inspection</strong> checklist before final commissioning.
+                <div className="bg-brand-blue/15 p-5 rounded-2xl border-2 border-brand-blue/30 flex gap-4 items-center scroll-reveal mt-8">
+                  <i className="fa-solid fa-screwdriver-wrench text-3xl text-brand-blue animate-spin-slow shrink-0" />
+                  <p className="text-sm text-brand-blue leading-snug font-medium">
+                    All installations undergo a rigorous <strong className="text-brand-blue">safety inspection</strong> checklist before final commissioning.
                   </p>
                 </div>
               </div>
@@ -475,22 +475,22 @@ export default function Home() {
           {/* Right — text content */}
           <div className="scroll-reveal-right space-y-5 order-1 lg:order-2">
             <div>
-              <h3 className="text-xs font-bold uppercase tracking-widest text-brand-gold mb-2 flex items-center gap-2">
-                <span className="w-12 h-px bg-brand-gold" />
+              <h3 className="text-xs font-bold uppercase tracking-widest text-brand-blue mb-2 flex items-center gap-2">
+                <span className="w-12 h-px bg-brand-blue" />
                 About Digitech
               </h3>
               <h2 className="font-serif text-3xl md:text-4xl font-bold text-brand-navy leading-tight">
-                Welcome to <span className="bg-gradient-to-r from-brand-navy to-brand-gold bg-clip-text text-transparent">Digitech Elevators</span>
+                Welcome to <span className="bg-gradient-to-r from-brand-navy to-brand-blue bg-clip-text text-transparent">Digitech Elevators</span>
               </h2>
             </div>
-            <div className="space-y-4 text-slate-600 text-sm leading-relaxed border-l-4 border-brand-gold/30 pl-6">
+            <div className="space-y-4 text-slate-600 text-sm leading-relaxed border-l-4 border-brand-blue/30 pl-6">
               <p>Digitech Elevators has been delivering reliable and innovative elevator solutions for over <strong className="text-brand-navy">27 years</strong>. We specialize in designing, installing, maintaining, and modernizing elevators for apartments, hospitals, commercial buildings, industries, villas, and educational institutions.</p>
               <p>Our team of experienced engineers and technicians ensures every elevator meets the highest standards of safety, performance, and comfort. We use advanced technology and quality components to provide long-lasting, efficient elevator systems.</p>
               <p>Whether you require a new installation or modernization of an existing lift, Digitech Elevators is committed to delivering dependable solutions tailored to your requirements.</p>
             </div>
             <div className="grid grid-cols-2 gap-6 pt-4">
-              <div className="scroll-reveal bg-slate-50 p-5 rounded-2xl border-l-4 border-brand-gold" style={{ transitionDelay: '0.2s' }}>
-                <div className="w-11 h-11 bg-brand-gold/10 rounded-xl flex items-center justify-center text-brand-gold mb-3">
+              <div className="scroll-reveal bg-slate-50 p-5 rounded-2xl border-l-4 border-brand-blue" style={{ transitionDelay: '0.2s' }}>
+                <div className="w-11 h-11 bg-brand-blue/10 rounded-xl flex items-center justify-center text-brand-blue mb-3">
                   <i className="fa-solid fa-bullseye text-xl" />
                 </div>
                 <h4 className="font-serif font-bold text-base text-brand-navy mb-2">Our Mission</h4>
@@ -518,17 +518,17 @@ export default function Home() {
           {/* Subtle geometric overlay */}
           <div className="absolute inset-0 opacity-5"
                style={{
-                 backgroundImage: 'linear-gradient(30deg, transparent 48%, rgba(212,175,55,0.3) 49%, rgba(212,175,55,0.3) 51%, transparent 52%)',
+                 backgroundImage: 'linear-gradient(30deg, transparent 48%, rgba(23,105,194,0.3) 49%, rgba(23,105,194,0.3) 51%, transparent 52%)',
                  backgroundSize: '80px 80px'
                }} />
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center max-w-2xl mx-auto space-y-4 mb-16 scroll-reveal">
-            <h3 className="text-xs font-bold uppercase tracking-widest text-brand-gold flex items-center justify-center gap-3">
-              <span className="w-12 h-px bg-brand-gold" />
+            <h3 className="text-xs font-bold uppercase tracking-widest text-brand-blue flex items-center justify-center gap-3">
+              <span className="w-12 h-px bg-brand-blue" />
               Expertise We Deliver
-              <span className="w-12 h-px bg-brand-gold" />
+              <span className="w-12 h-px bg-brand-blue" />
             </h3>
             <h2 className="font-serif text-4xl md:text-5xl font-bold text-white">Our Services</h2>
             <p className="text-slate-300 text-sm">Comprehensive elevator solutions tailored to your needs</p>
@@ -539,23 +539,23 @@ export default function Home() {
             {Object.entries(SERVICES_DATA).map(([key, item], i) => (
               <div
                 key={key}
-                className="scroll-reveal group relative bg-white/5 backdrop-blur-sm rounded-2xl border-2 border-white/10 hover:border-brand-gold transition-all duration-300 overflow-hidden"
+                className="scroll-reveal group relative bg-white/5 backdrop-blur-sm rounded-2xl border-2 border-white/10 hover:border-brand-blue transition-all duration-300 overflow-hidden"
                 style={{ transitionDelay: `${i * 0.08}s` }}
               >
                 {/* Content container */}
                 <div className="flex items-center gap-4 p-5 relative z-10">
                   {/* Left: Icon */}
                   <div className="shrink-0">
-                    <div className="w-16 h-16 bg-gradient-to-br from-brand-gold to-yellow-600 rounded-xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 relative shadow-lg">
+                    <div className="w-16 h-16 bg-gradient-to-br from-brand-blue to-brand-blue-dark rounded-xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 relative shadow-lg">
                       <i className={`fa-solid ${serviceIcons[key] || 'fa-elevator'} text-2xl text-white`} />
                       {/* Animated pulse ring */}
-                      <div className="absolute inset-0 rounded-xl border-2 border-brand-gold/0 group-hover:border-brand-gold group-hover:scale-125 transition-all duration-500"></div>
+                      <div className="absolute inset-0 rounded-xl border-2 border-brand-blue/0 group-hover:border-brand-blue group-hover:scale-125 transition-all duration-500"></div>
                     </div>
                   </div>
 
                   {/* Middle: Content */}
                   <div className="flex-1 min-w-0">
-                    <h4 className="font-serif font-bold text-lg text-white group-hover:text-brand-gold transition-colors mb-1">
+                    <h4 className="font-serif font-bold text-lg text-white group-hover:text-brand-blue-bright transition-colors mb-1">
                       {item.title}
                     </h4>
                     <p className="text-xs text-slate-300 leading-relaxed line-clamp-2">{item.desc}</p>
@@ -565,7 +565,7 @@ export default function Home() {
                   {['installation','amc','modernization','repair','licensing'].includes(key) && (
                     <a 
                       href={`#/services/${key}`}
-                      className="shrink-0 w-10 h-10 bg-white/10 hover:bg-brand-gold rounded-xl flex items-center justify-center text-white hover:text-brand-navy transition-all group-hover:scale-110"
+                      className="shrink-0 w-10 h-10 bg-white/10 hover:bg-brand-blue rounded-xl flex items-center justify-center text-white transition-all group-hover:scale-110"
                       onClick={(e) => e.stopPropagation()}
                     >
                       <i className="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform text-sm" />
@@ -574,10 +574,10 @@ export default function Home() {
                 </div>
 
                 {/* Decorative corner accent */}
-                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-brand-gold/10 to-transparent rounded-bl-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-brand-blue/10 to-transparent rounded-bl-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 
                 {/* Bottom glow effect */}
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-brand-gold to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-brand-blue to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
             ))}
           </div>
@@ -587,12 +587,12 @@ export default function Home() {
       {/* ══════════════════════════ PRODUCTS GRID ══════════════════════════ */}
       <section ref={productsRef} className="py-24 px-4 md:px-8 bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-50 relative overflow-clip">
         {/* Decorative circles */}
-        <div className="absolute top-20 right-[-10%] w-96 h-96 bg-brand-gold/5 rounded-full blur-3xl" />
+        <div className="absolute top-20 right-[-10%] w-96 h-96 bg-brand-blue/5 rounded-full blur-3xl" />
         <div className="absolute bottom-20 left-[-10%] w-96 h-96 bg-blue-500/5 rounded-full blur-3xl" />
         
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center max-w-2xl mx-auto space-y-4 mb-16 scroll-reveal">
-            <h3 className="text-xs font-bold uppercase tracking-widest text-brand-gold">Elevator Solutions</h3>
+            <h3 className="text-xs font-bold uppercase tracking-widest text-brand-blue">Elevator Solutions</h3>
             <h2 className="font-serif text-4xl md:text-5xl font-bold text-brand-navy leading-tight">
               Premium Lift Systems<br />
               <span className="text-3xl md:text-4xl text-slate-600">We Deliver</span>
@@ -604,7 +604,7 @@ export default function Home() {
             {Object.entries(PRODUCTS_DATA).map(([key, item], i) => (
               <div
                 key={key}
-                className={`scroll-reveal group lg:sticky bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-slate-200 hover:border-brand-gold`}
+                className={`scroll-reveal group lg:sticky bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-slate-200 hover:border-brand-blue`}
                 style={{
                   transitionDelay: `${i * 0.1}s`,
                   ...(typeof window !== 'undefined' && window.innerWidth >= 1024 ? { top: '100px', zIndex: i + 1 } : {})
@@ -632,10 +632,10 @@ export default function Home() {
                     <div className="space-y-5">
                       {/* Title */}
                       <div>
-                        <h4 className="font-serif font-bold text-2xl lg:text-3xl text-brand-navy group-hover:text-brand-gold transition-colors mb-2">
+                        <h4 className="font-serif font-bold text-2xl lg:text-3xl text-brand-navy group-hover:text-brand-blue-bright transition-colors mb-2">
                           {item.bannerTitle}
                         </h4>
-                        <p className="text-sm text-brand-gold font-semibold uppercase tracking-wider">
+                        <p className="text-sm text-brand-blue font-semibold uppercase tracking-wider">
                           {item.bannerSubtitle}
                         </p>
                       </div>
@@ -668,7 +668,7 @@ export default function Home() {
                       <div className="pt-4">
                         <a 
                           href={`#/products/${key}`}
-                          className="inline-flex items-center gap-3 bg-brand-navy hover:bg-brand-gold text-white hover:text-brand-navy font-bold px-6 py-3 rounded-xl transition-all hover:scale-105 shadow-lg text-sm group"
+                          className="inline-flex items-center gap-3 bg-brand-navy hover:bg-brand-blue text-white font-bold px-6 py-3 rounded-xl transition-all hover:scale-105 shadow-lg text-sm group"
                         >
                           View Full Specifications
                           <i className="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform" />
@@ -679,8 +679,8 @@ export default function Home() {
                 </div>
 
                 {/* Number badge */}
-                <div className="absolute top-6 right-6 w-12 h-12 bg-brand-gold/90 rounded-xl flex items-center justify-center shadow-lg z-10">
-                  <span className="text-brand-navy font-bold text-lg font-serif">{(i + 1).toString().padStart(2, '0')}</span>
+                <div className="absolute top-6 right-6 w-12 h-12 bg-brand-blue text-white rounded-xl flex items-center justify-center shadow-lg z-10">
+                  <span className="font-bold text-lg font-serif">{(i + 1).toString().padStart(2, '0')}</span>
                 </div>
               </div>
             ))}
@@ -697,16 +697,16 @@ export default function Home() {
         {/* Background pattern */}
         <div className="absolute inset-0 opacity-5"
              style={{
-               backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(212,175,55,0.4) 1px, transparent 0)',
+               backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(23,105,194,0.4) 1px, transparent 0)',
                backgroundSize: '40px 40px'
              }} />
 
         <div className="max-w-[1400px] mx-auto relative z-10 pt-12">
           <div className="text-center max-w-2xl mx-auto space-y-4 mb-20 scroll-reveal">
-            <h3 className="text-xs font-bold uppercase tracking-widest text-brand-gold flex items-center justify-center gap-3">
-              <span className="w-16 h-px bg-brand-gold" />
+            <h3 className="text-xs font-bold uppercase tracking-widest text-brand-blue flex items-center justify-center gap-3">
+              <span className="w-16 h-px bg-brand-blue" />
               Diverse Sector Expertise
-              <span className="w-16 h-px bg-brand-gold" />
+              <span className="w-16 h-px bg-brand-blue" />
             </h3>
             <h2 className="font-serif text-4xl md:text-5xl font-bold text-white">Industries We Serve</h2>
             <p className="text-slate-300 text-sm">Trusted by leading organizations across sectors</p>
@@ -722,35 +722,35 @@ export default function Home() {
             ].map((ind, i) => (
               <div
                 key={i}
-                className="scroll-reveal-scale bg-white/10 backdrop-blur-sm p-8 rounded-3xl border-2 border-white/20 hover:border-brand-gold hover:bg-white/20 text-center transition-all duration-300 group cursor-pointer flex flex-col items-center justify-center space-y-5"
+                className="scroll-reveal-scale bg-white/10 backdrop-blur-sm p-8 rounded-3xl border-2 border-white/20 hover:border-brand-blue hover:bg-white/20 text-center transition-all duration-300 group cursor-pointer flex flex-col items-center justify-center space-y-5"
                 style={{ transitionDelay: `${i * 0.1}s` }}
               >
-                <div className="w-18 h-18 bg-brand-gold/20 rounded-2xl flex items-center justify-center text-brand-gold text-3xl group-hover:bg-brand-gold group-hover:text-brand-navy transition-all duration-400 group-hover:scale-110 group-hover:rotate-12 shadow-lg">
+                <div className="w-18 h-18 bg-brand-blue/20 rounded-2xl flex items-center justify-center text-brand-blue text-3xl group-hover:bg-brand-blue group-hover:text-white transition-all duration-400 group-hover:scale-110 group-hover:rotate-12 shadow-lg">
                   <i className={`fa-solid ${ind.icon} group-hover:animate-lift-ride`} />
                 </div>
-                <h4 className="font-serif font-bold text-sm text-white leading-snug group-hover:text-brand-gold transition-colors">{ind.label}</h4>
+                <h4 className="font-serif font-bold text-sm text-white leading-snug group-hover:text-brand-blue-bright transition-colors">{ind.label}</h4>
               </div>
             ))}
           </div>
         </div>
 
         {/* Curved wave divider at bottom */}
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-amber-50"
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-[#EAF3FC]"
              style={{ clipPath: 'ellipse(100% 100% at 50% 100%)' }} />
       </section>
 
       {/* ══════════════════════════ WHY CHOOSE DIGITECH ══════════════════════════ */}
-      <section ref={whyRef} className="py-24 px-4 md:px-8 bg-amber-50 relative overflow-hidden">
+      <section ref={whyRef} className="py-24 px-4 md:px-8 bg-[#EAF3FC] relative overflow-hidden">
         {/* Decorative elements */}
-        <div className="absolute top-0 right-0 w-72 h-72 bg-brand-gold/5 rounded-full blur-3xl" />
+        <div className="absolute top-0 right-0 w-72 h-72 bg-brand-blue/5 rounded-full blur-3xl" />
         <div className="absolute bottom-0 left-0 w-72 h-72 bg-blue-500/5 rounded-full blur-3xl" />
         
         <div className="max-w-7xl mx-auto relative z-10 space-y-16">
           <div className="text-center max-w-3xl mx-auto space-y-4 scroll-reveal">
-            <h3 className="text-xs font-bold uppercase tracking-widest text-brand-gold">Our Commitment</h3>
+            <h3 className="text-xs font-bold uppercase tracking-widest text-brand-blue">Our Commitment</h3>
             <h2 className="font-serif text-4xl md:text-5xl font-bold text-brand-navy leading-tight">
               Why Choose<br />
-              <span className="bg-gradient-to-r from-brand-navy to-brand-gold bg-clip-text text-transparent">Digitech Elevators</span>
+              <span className="bg-gradient-to-r from-brand-navy to-brand-blue bg-clip-text text-transparent">Digitech Elevators</span>
             </h2>
             <p className="text-slate-600 text-sm">Eight reasons that make us the preferred choice for elevator solutions</p>
           </div>
@@ -758,7 +758,7 @@ export default function Home() {
           {/* Horizontal timeline/process layout */}
           <div className="relative">
             {/* Timeline line - hidden on mobile, visible on larger screens */}
-            <div className="hidden lg:block absolute top-20 left-0 right-0 h-1 bg-gradient-to-r from-brand-gold/20 via-brand-gold to-brand-gold/20" />
+            <div className="hidden lg:block absolute top-20 left-0 right-0 h-1 bg-gradient-to-r from-brand-blue/20 via-brand-blue to-brand-blue/20" />
             
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
               {[
@@ -777,19 +777,19 @@ export default function Home() {
                   style={{ transitionDelay: `${i * 0.08}s` }}
                 >
                   {/* Timeline dot */}
-                  <div className="hidden lg:flex absolute top-[4.5rem] left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-brand-gold rounded-full border-4 border-amber-50 z-10 group-hover:scale-150 transition-transform duration-300" />
+                  <div className="hidden lg:flex absolute top-[4.5rem] left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-brand-blue rounded-full border-4 border-[#EAF3FC] z-10 group-hover:scale-150 transition-transform duration-300" />
                   
                   {/* Card */}
-                  <div className="bg-white p-7 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-brand-gold relative overflow-hidden group-hover:-translate-y-2">
+                  <div className="bg-white p-7 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-brand-blue relative overflow-hidden group-hover:-translate-y-2">
                     {/* Number badge */}
-                    <div className="absolute top-3 right-3 w-12 h-12 bg-brand-gold/10 rounded-xl flex items-center justify-center">
-                      <span className="text-brand-gold/40 font-bold text-lg font-mono">{item.num}</span>
+                    <div className="absolute top-3 right-3 w-12 h-12 bg-brand-blue/10 rounded-xl flex items-center justify-center">
+                      <span className="text-brand-blue/40 font-bold text-lg font-mono">{item.num}</span>
                     </div>
                     
-                    <div className="w-14 h-14 bg-gradient-to-br from-brand-gold to-yellow-600 rounded-2xl flex items-center justify-center text-white text-2xl group-hover:rotate-12 group-hover:scale-110 transition-all duration-300 mb-5 shadow-lg">
+                    <div className="w-14 h-14 bg-gradient-to-br from-brand-blue to-brand-blue-dark rounded-2xl flex items-center justify-center text-white text-2xl group-hover:rotate-12 group-hover:scale-110 transition-all duration-300 mb-5 shadow-lg">
                       <i className={`fa-solid ${item.icon}`} />
                     </div>
-                    <h4 className="font-serif font-bold text-base text-brand-navy mb-3 group-hover:text-brand-gold transition-colors">{item.title}</h4>
+                    <h4 className="font-serif font-bold text-base text-brand-navy mb-3 group-hover:text-brand-blue-bright transition-colors">{item.title}</h4>
                     <p className="text-xs text-slate-600 leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
@@ -799,7 +799,7 @@ export default function Home() {
 
           {/* CTA button */}
           <div className="text-center scroll-reveal pt-8">
-            <a href="#/about" className="inline-flex items-center gap-3 bg-brand-navy hover:bg-brand-gold text-white hover:text-brand-navy font-bold px-8 py-4 rounded-2xl text-sm uppercase tracking-widest transition-all hover:scale-105 shadow-xl hover:shadow-2xl">
+            <a href="#/about" className="inline-flex items-center gap-3 bg-brand-navy hover:bg-brand-blue text-white font-bold px-8 py-4 rounded-2xl text-sm uppercase tracking-widest transition-all hover:scale-105 shadow-xl hover:shadow-2xl">
               Learn More About Us <i className="fa-solid fa-arrow-right" />
             </a>
           </div>
@@ -817,7 +817,7 @@ export default function Home() {
 
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center max-w-2xl mx-auto space-y-4 mb-20 scroll-reveal">
-            <h3 className="text-xs font-bold uppercase tracking-widest text-brand-gold flex items-center justify-center gap-3">
+            <h3 className="text-xs font-bold uppercase tracking-widest text-brand-blue flex items-center justify-center gap-3">
               <i className="fa-solid fa-briefcase" />
               Our Portfolio
             </h3>
@@ -828,7 +828,7 @@ export default function Home() {
             {PROJECTS_DATA.slice(0, 6).map((p, i) => (
               <div
                 key={i}
-                className="scroll-reveal bg-white rounded-3xl overflow-hidden shadow-lg border-2 border-slate-100 hover:border-brand-gold hover:shadow-2xl transition-all duration-500 group hover:translate-y-[-8px]"
+                className="scroll-reveal bg-white rounded-3xl overflow-hidden shadow-lg border-2 border-slate-100 hover:border-brand-blue hover:shadow-2xl transition-all duration-500 group hover:translate-y-[-8px]"
                 style={{ transitionDelay: `${i * 0.1}s` }}
               >
                 <div className="h-52 relative overflow-hidden">
@@ -840,12 +840,12 @@ export default function Home() {
                   {/* Animated floor lines */}
                   <div className="absolute inset-x-0 top-0 bottom-0 pointer-events-none">
                     {[20, 40, 60, 80].map(pct => (
-                      <div key={pct} className="absolute left-0 right-0 h-px bg-white/10 group-hover:bg-brand-gold/30 transition-colors" style={{ top: `${pct}%` }} />
+                      <div key={pct} className="absolute left-0 right-0 h-px bg-white/10 group-hover:bg-brand-blue/30 transition-colors" style={{ top: `${pct}%` }} />
                     ))}
                   </div>
                   <div className="absolute inset-0 flex flex-col justify-between p-6">
                     <div className="flex justify-end">
-                      <span className="bg-brand-gold text-brand-navy text-xs font-bold px-4 py-2 rounded-full uppercase tracking-wide shadow-lg">
+                      <span className="bg-brand-blue text-white text-xs font-bold px-4 py-2 rounded-full uppercase tracking-wide shadow-lg">
                         {p.category}
                       </span>
                     </div>
@@ -890,20 +890,20 @@ export default function Home() {
         {/* Background pattern */}
         <div className="absolute inset-0 opacity-5"
              style={{
-               backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(212,175,55,0.4) 1px, transparent 0)',
+               backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(23,105,194,0.4) 1px, transparent 0)',
                backgroundSize: '40px 40px'
              }} />
         
         <div className="max-w-7xl mx-auto relative z-10 space-y-16">
           <div className="text-center max-w-3xl mx-auto space-y-4 scroll-reveal">
-            <h3 className="text-xs font-bold uppercase tracking-widest text-brand-gold flex items-center justify-center gap-3">
-              <span className="w-16 h-px bg-brand-gold" />
+            <h3 className="text-xs font-bold uppercase tracking-widest text-brand-blue flex items-center justify-center gap-3">
+              <span className="w-16 h-px bg-brand-blue" />
               Trusted Partnerships
-              <span className="w-16 h-px bg-brand-gold" />
+              <span className="w-16 h-px bg-brand-blue" />
             </h3>
             <h2 className="font-serif text-4xl md:text-5xl font-bold leading-tight">
               WHY BUILDERS &amp; CLIENTS<br />
-              TRUST <span className="text-brand-gold">DIGITECH ELEVATORS</span>
+              TRUST <span className="text-brand-blue">DIGITECH ELEVATORS</span>
             </h2>
             <p className="text-slate-300 text-base">Proud to serve leading builders and prestigious projects across India</p>
           </div>
@@ -939,7 +939,7 @@ export default function Home() {
                 { name: 'Renaissance Projects',  logo: './logos/Renaissance Projects.png' },
                 { name: 'Soch Apparels',         logo: './logos/soch apparels pvt ltd.jpg' },
               ]).map((client, i) => (
-                <div key={i} className="flex-shrink-0 group bg-white rounded-2xl border-2 border-white/10 hover:border-brand-gold shadow-lg hover:shadow-brand-gold/20 hover:shadow-xl transition-all duration-300 overflow-hidden hover:scale-105 w-[180px] min-h-[120px] flex items-center justify-center p-4">
+                <div key={i} className="flex-shrink-0 group bg-white rounded-2xl border-2 border-white/10 hover:border-brand-blue shadow-lg hover:shadow-brand-blue/20 hover:shadow-xl transition-all duration-300 overflow-hidden hover:scale-105 w-[180px] min-h-[120px] flex items-center justify-center p-4">
                   <img
                     src={client.logo}
                     alt={client.name}
@@ -979,7 +979,7 @@ export default function Home() {
                 { name: 'Akshaya Hospital',              logo: './logos/Akshaya Hospital.jpg' },
                 { name: 'Chaithanya Hospital',           logo: './logos/Chaithanya Hospital.jpg' },
               ]).map((client, i) => (
-                <div key={i} className="flex-shrink-0 group bg-white rounded-2xl border-2 border-white/10 hover:border-brand-gold shadow-lg hover:shadow-brand-gold/20 hover:shadow-xl transition-all duration-300 overflow-hidden hover:scale-105 w-[180px] min-h-[120px] flex items-center justify-center p-4">
+                <div key={i} className="flex-shrink-0 group bg-white rounded-2xl border-2 border-white/10 hover:border-brand-blue shadow-lg hover:shadow-brand-blue/20 hover:shadow-xl transition-all duration-300 overflow-hidden hover:scale-105 w-[180px] min-h-[120px] flex items-center justify-center p-4">
                   <img
                     src={client.logo}
                     alt={client.name}
@@ -996,7 +996,7 @@ export default function Home() {
       </section>
 
       {/* ══════════════════════════ TESTIMONIALS ══════════════════════════ */}
-      <section ref={testiRef} className="relative py-32 px-4 md:px-8 bg-gradient-to-br from-brand-gold/90 via-yellow-600 to-brand-gold text-white overflow-hidden"
+      <section ref={testiRef} className="relative py-32 px-4 md:px-8 bg-gradient-to-br from-brand-navy via-brand-blue-dark to-brand-navy text-white overflow-hidden"
                style={{ clipPath: 'polygon(0 0, 100% 8%, 100% 100%, 0 92%)' }}>
         {/* Decorative pattern overlay */}
         <div className="absolute inset-0 opacity-10"
@@ -1007,27 +1007,27 @@ export default function Home() {
         
         <div className="max-w-5xl mx-auto text-center space-y-12 relative z-10">
           <div className="scroll-reveal space-y-4">
-            <h3 className="text-xs font-bold uppercase tracking-widest text-brand-navy/80 flex items-center justify-center gap-3">
+            <h3 className="text-xs font-bold uppercase tracking-widest text-brand-blue-light flex items-center justify-center gap-3">
               <i className="fa-solid fa-quote-left text-xl" />
               Client Feedback
               <i className="fa-solid fa-quote-right text-xl" />
             </h3>
-            <h2 className="font-serif text-4xl md:text-5xl font-bold text-brand-navy drop-shadow-sm">What Our Clients Say</h2>
-            <p className="text-brand-navy/80 text-sm font-medium">Real experiences from satisfied customers</p>
+            <h2 className="font-serif text-4xl md:text-5xl font-bold text-white drop-shadow-sm">What Our Clients Say</h2>
+            <p className="text-slate-300 text-sm font-medium">Real experiences from satisfied customers</p>
           </div>
 
           <div className="scroll-reveal-scale relative">
             {/* Navigation Arrows */}
             <button 
               onClick={() => setTestiIndex(p => (p === 0 ? TESTIMONIALS_DATA.length - 1 : p - 1))}
-              className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 bg-white/90 hover:bg-brand-gold text-brand-navy hover:text-white rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110"
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 bg-white/90 hover:bg-brand-blue text-brand-navy hover:text-white rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110"
               aria-label="Previous testimonial"
             >
               <i className="fa-solid fa-chevron-left" />
             </button>
             <button 
               onClick={() => setTestiIndex(p => (p + 1) % TESTIMONIALS_DATA.length)}
-              className="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 bg-white/90 hover:bg-brand-gold text-brand-navy hover:text-white rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110"
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 bg-white/90 hover:bg-brand-blue text-brand-navy hover:text-white rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110"
               aria-label="Next testimonial"
             >
               <i className="fa-solid fa-chevron-right" />
@@ -1041,8 +1041,8 @@ export default function Home() {
               
               {/* Main testimonial card */}
               <div className="relative bg-white/95 backdrop-blur-md p-8 md:p-14 rounded-3xl shadow-2xl min-h-[320px] flex items-center justify-center border-2 border-white">
-                <i className="fa-solid fa-quote-left absolute top-6 left-6 text-4xl md:text-6xl text-brand-gold/20 animate-float" />
-                <i className="fa-solid fa-quote-right absolute bottom-6 right-6 text-4xl md:text-6xl text-brand-gold/20 animate-float" style={{ animationDelay: '1s' }} />
+                <i className="fa-solid fa-quote-left absolute top-6 left-6 text-4xl md:text-6xl text-brand-blue/20 animate-float" />
+                <i className="fa-solid fa-quote-right absolute bottom-6 right-6 text-4xl md:text-6xl text-brand-blue/20 animate-float" style={{ animationDelay: '1s' }} />
                 
                 {(() => {
                   const currentTesti = TESTIMONIALS_DATA[testiIndex] || TESTIMONIALS_DATA[0];
@@ -1051,13 +1051,13 @@ export default function Home() {
                       <p className="text-slate-700 italic text-base md:text-lg leading-relaxed font-medium whitespace-pre-line max-h-[350px] overflow-y-auto px-2">
                         "{currentTesti.quote}"
                       </p>
-                      <div className="flex flex-col items-center pt-4 border-t-2 border-brand-gold/30">
-                        <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br from-brand-gold to-yellow-600 flex items-center justify-center text-white font-bold text-xl md:text-2xl mb-2 shadow-lg animate-pulse-ring">
+                      <div className="flex flex-col items-center pt-4 border-t-2 border-brand-blue/30">
+                        <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br from-brand-blue to-brand-blue-dark flex items-center justify-center text-white font-bold text-xl md:text-2xl mb-2 shadow-lg animate-pulse-ring">
                           {currentTesti.initial}
                         </div>
                         <h4 className="font-serif font-bold text-lg md:text-xl text-brand-navy">{currentTesti.author}</h4>
                         <p className="text-xs md:text-sm text-slate-500 flex items-center gap-2 mt-1">
-                          <i className="fa-solid fa-location-dot text-brand-gold" />
+                          <i className="fa-solid fa-location-dot text-brand-blue" />
                           {currentTesti.location}
                         </p>
                       </div>
@@ -1075,7 +1075,7 @@ export default function Home() {
                 key={i} 
                 onClick={() => setTestiIndex(i)}
                 aria-label={`View testimonial ${i + 1}`}
-                className={`rounded-full transition-all duration-300 shadow-lg hover:shadow-xl ${testiIndex === i ? 'bg-brand-navy w-8 md:w-10 h-3 md:h-4' : 'bg-white/60 hover:bg-white w-3 md:w-4 h-3 md:h-4 hover:w-6'}`} 
+                className={`rounded-full transition-all duration-300 shadow-lg hover:shadow-xl ${testiIndex === i ? 'bg-brand-blue w-8 md:w-10 h-3 md:h-4' : 'bg-white/60 hover:bg-white w-3 md:w-4 h-3 md:h-4 hover:w-6'}`} 
               />
             ))}
           </div>
@@ -1083,7 +1083,7 @@ export default function Home() {
           {/* Star rating display */}
           <div className="flex justify-center gap-2 text-3xl">
             {[...Array(5)].map((_, i) => (
-              <i key={i} className="fa-solid fa-star text-brand-navy/80 animate-bounce-soft" style={{ animationDelay: `${i * 0.1}s` }} />
+              <i key={i} className="fa-solid fa-star text-brand-blue animate-bounce-soft" style={{ animationDelay: `${i * 0.1}s` }} />
             ))}
           </div>
         </div>
@@ -1097,7 +1097,7 @@ export default function Home() {
           {[15, 35, 65, 85].map(pos => (
             <div
               key={pos}
-              className="absolute top-0 bottom-0 w-px bg-brand-gold"
+              className="absolute top-0 bottom-0 w-px bg-brand-blue"
               style={{
                 left: `${pos}%`,
                 animation: `shaftGlow ${2 + pos * 0.02}s ease-in-out infinite`,
@@ -1108,7 +1108,7 @@ export default function Home() {
         </div>
 
         {/* Decorative geometric elements */}
-        <div className="absolute top-1/4 right-[-5%] w-64 h-64 bg-brand-gold/5 rounded-full blur-3xl" />
+        <div className="absolute top-1/4 right-[-5%] w-64 h-64 bg-brand-blue/5 rounded-full blur-3xl" />
         <div className="absolute bottom-1/4 left-[-5%] w-64 h-64 bg-blue-500/5 rounded-full blur-3xl" />
 
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start relative z-10 pt-8">
@@ -1116,7 +1116,7 @@ export default function Home() {
           {/* Left — contact details */}
           <div className="lg:col-span-5 space-y-6 scroll-reveal-left">
             <div className="space-y-3">
-              <h3 className="text-xs font-bold uppercase tracking-widest text-brand-gold">
+              <h3 className="text-xs font-bold uppercase tracking-widest text-brand-blue">
                 Get In Touch
               </h3>
               <h2 className="font-serif text-3xl md:text-4xl font-bold leading-tight text-white">
@@ -1127,7 +1127,7 @@ export default function Home() {
             <div className="space-y-5">
               {/* Office Address */}
               <div className="flex gap-4">
-                <div className="w-12 h-12 bg-brand-gold/20 rounded-xl flex items-center justify-center text-brand-gold shrink-0">
+                <div className="w-12 h-12 bg-brand-blue/20 rounded-xl flex items-center justify-center text-brand-blue shrink-0">
                   <i className="fa-solid fa-location-dot text-xl" />
                 </div>
                 <div className="flex-1">
@@ -1138,7 +1138,7 @@ export default function Home() {
 
               {/* Phone Numbers */}
               <div className="flex gap-4">
-                <div className="w-12 h-12 bg-brand-gold/20 rounded-xl flex items-center justify-center text-brand-gold shrink-0">
+                <div className="w-12 h-12 bg-brand-blue/20 rounded-xl flex items-center justify-center text-brand-blue shrink-0">
                   <i className="fa-solid fa-phone text-xl" />
                 </div>
                 <div className="flex-1">
@@ -1149,7 +1149,7 @@ export default function Home() {
 
               {/* Email Address */}
               <div className="flex gap-4">
-                <div className="w-12 h-12 bg-brand-gold/20 rounded-xl flex items-center justify-center text-brand-gold shrink-0">
+                <div className="w-12 h-12 bg-brand-blue/20 rounded-xl flex items-center justify-center text-brand-blue shrink-0">
                   <i className="fa-solid fa-envelope text-xl" />
                 </div>
                 <div className="flex-1">
@@ -1169,7 +1169,7 @@ export default function Home() {
             </div>
 
             {/* Map iframe */}
-            <div className="w-full h-56 rounded-2xl border-2 border-slate-700 hover:border-brand-gold/50 overflow-hidden transition-all">
+            <div className="w-full h-56 rounded-2xl border-2 border-slate-700 hover:border-brand-blue/50 overflow-hidden transition-all">
               <iframe
                 title="Google Map Location"
                 src="https://maps.google.com/maps?q=61%20Third%20floor,%201st%20A%20main%20Road%20Bhuvaneshwari%20nagar,%20Vishwanath%20Naganahalli%20Main%20Rd,%20opp.%20Alphonsa%20Forane%20Church,%20RT%20Nagar,%20Bengaluru,%20Karnataka%20560032&t=&z=15&ie=UTF8&iwloc=&output=embed"
@@ -1183,9 +1183,9 @@ export default function Home() {
 
           {/* Right — enquiry form */}
           <div className="lg:col-span-7 scroll-reveal-right">
-            <div className="bg-white rounded-3xl p-8 md:p-10 text-slate-800 shadow-2xl border-4 border-brand-gold/20">
-              <h4 className="font-serif font-bold text-2xl text-brand-navy border-b-2 border-brand-gold pb-4 mb-6 flex items-center gap-3">
-                <i className="fa-solid fa-envelope-open-text text-brand-gold text-2xl animate-float" />
+            <div className="bg-white rounded-3xl p-8 md:p-10 text-slate-800 shadow-2xl border-4 border-brand-blue/20">
+              <h4 className="font-serif font-bold text-2xl text-brand-navy border-b-2 border-brand-blue pb-4 mb-6 flex items-center gap-3">
+                <i className="fa-solid fa-envelope-open-text text-brand-blue text-2xl animate-float" />
                 <span>Online Enquiry Form</span>
               </h4>
               {formSubmitted ? (
@@ -1202,7 +1202,7 @@ export default function Home() {
                     <div>
                       <label className="block text-xs font-bold text-slate-700 mb-1.5">Name *</label>
                       <input type="text" name="name" placeholder="Your Name"
-                             className="w-full border-2 border-slate-200 rounded-xl p-3 text-sm focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-all" required />
+                             className="w-full border-2 border-slate-200 rounded-xl p-3 text-sm focus:outline-none focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 transition-all" required />
                     </div>
                     <div>
                       <label className="block text-xs font-bold text-slate-700 mb-1.5">Company</label>
@@ -1214,12 +1214,12 @@ export default function Home() {
                     <div>
                       <label className="block text-xs font-bold text-slate-700 mb-1.5">Phone Number *</label>
                       <input type="tel" name="mobile" placeholder="Mobile Number"
-                             className="w-full border-2 border-slate-200 rounded-xl p-3 text-sm focus:outline-none focus:border-brand-gold transition-all" required />
+                             className="w-full border-2 border-slate-200 rounded-xl p-3 text-sm focus:outline-none focus:border-brand-blue transition-all" required />
                     </div>
                     <div>
                       <label className="block text-xs font-bold text-slate-700 mb-1.5">Email *</label>
                       <input type="email" name="email" placeholder="Email Address"
-                             className="w-full border-2 border-slate-200 rounded-xl p-3 text-sm focus:outline-none focus:border-brand-gold transition-all" required />
+                             className="w-full border-2 border-slate-200 rounded-xl p-3 text-sm focus:outline-none focus:border-brand-blue transition-all" required />
                     </div>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -1245,7 +1245,7 @@ export default function Home() {
                               className="w-full border-2 border-slate-200 rounded-xl p-3 text-sm focus:outline-none focus:border-brand-navy transition-all resize-none" />
                   </div>
                   <button type="submit"
-                          className="w-full bg-gradient-to-r from-brand-navy to-brand-gold hover:from-brand-gold hover:to-brand-navy text-white font-bold py-4 rounded-2xl text-sm uppercase tracking-widest transition-all hover:scale-[1.02] shadow-xl hover:shadow-2xl flex items-center justify-center gap-3">
+                          className="w-full bg-brand-blue hover:bg-brand-blue-dark text-white font-bold py-4 rounded-2xl text-sm uppercase tracking-widest transition-all hover:scale-[1.02] shadow-xl hover:shadow-2xl flex items-center justify-center gap-3">
                     <i className="fa-solid fa-paper-plane" />
                     Submit Enquiry
                   </button>

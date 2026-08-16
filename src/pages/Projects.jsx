@@ -35,9 +35,9 @@ export default function Projects() {
           Your browser does not support the video tag.
         </video>
         <div className="absolute inset-0 bg-brand-navy/70 z-[1]"></div>
-        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(ellipse_at_center,_#D4AF37_0%,_transparent_70%)] z-[2]"></div>
+        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(ellipse_at_center,_#1769C2_0%,_transparent_70%)] z-[2]"></div>
         <div className="max-w-4xl mx-auto space-y-4 relative z-10">
-          <span className="inline-block bg-brand-gold/20 border border-brand-gold/30 text-brand-gold px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest">Our Portfolio</span>
+          <span className="inline-block bg-brand-blue/20 border border-brand-blue/30 text-brand-blue px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest">Our Portfolio</span>
           <h2 className="font-serif text-4xl md:text-5xl font-bold">Gallery of Completed Projects</h2>
           <p className="text-slate-300 text-sm max-w-xl mx-auto">
             Explore 25 verified elevator installation projects delivered across Bangalore with precision & safety.
@@ -60,12 +60,12 @@ export default function Projects() {
                 onClick={() => setFilter(cat)}
                 className={`px-4 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all shadow-sm flex items-center gap-1.5 ${
                   filter === cat
-                    ? 'bg-brand-gold text-brand-navy shadow-lg scale-105'
-                    : 'bg-white border border-slate-200 text-slate-600 hover:border-brand-gold hover:text-brand-navy'
+                    ? 'bg-brand-blue text-white shadow-lg scale-105'
+                    : 'bg-white border border-slate-200 text-slate-600 hover:border-brand-blue hover:text-brand-blue'
                 }`}
               >
                 {cat === 'Featured Projects' ? '⭐ Featured Projects' : cat}
-                <span className={`text-[10px] font-bold rounded-full px-1.5 py-0.5 ${filter === cat ? 'bg-brand-navy/20 text-brand-navy' : 'bg-slate-100 text-slate-500'}`}>
+                <span className={`text-[10px] font-bold rounded-full px-1.5 py-0.5 ${filter === cat ? 'bg-white/20 text-white' : 'bg-slate-100 text-slate-500'}`}>
                   {count}
                 </span>
               </button>
@@ -78,7 +78,7 @@ export default function Projects() {
           {shown.map((p, i) => (
             <div
               key={i}
-              className="bg-white rounded-3xl overflow-hidden shadow-md border-2 border-slate-100 hover:border-brand-gold/60 hover:shadow-2xl transition-all duration-300 group flex flex-col justify-between"
+              className="bg-white rounded-3xl overflow-hidden shadow-md border-2 border-slate-100 hover:border-brand-blue/60 hover:shadow-2xl transition-all duration-300 group flex flex-col justify-between"
             >
               {/* Image or Graphic Container */}
               <div className="h-52 relative overflow-hidden bg-slate-900">
@@ -90,7 +90,7 @@ export default function Projects() {
                 ) : (
                   <div className="absolute inset-0 bg-gradient-to-br from-brand-navy via-slate-900 to-slate-800 flex items-center justify-center p-6 text-center">
                     <div className="space-y-2">
-                      <div className="w-12 h-12 rounded-2xl bg-brand-gold/20 border border-brand-gold/40 text-brand-gold flex items-center justify-center mx-auto text-xl">
+                      <div className="w-12 h-12 rounded-2xl bg-brand-blue/20 border border-brand-blue/40 text-brand-blue flex items-center justify-center mx-auto text-xl">
                         <i className="fa-solid fa-elevator" />
                       </div>
                       <span className="text-xs font-serif text-slate-300 block italic">Architectural Installation Spec</span>
@@ -101,11 +101,11 @@ export default function Projects() {
                 
                 {/* Badges on top */}
                 <div className="absolute top-4 left-4 right-4 flex items-center justify-between z-10">
-                  <span className="bg-brand-navy/90 border border-brand-gold/40 text-brand-gold text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider backdrop-blur-md">
+                  <span className="bg-brand-navy/90 border border-brand-blue/40 text-brand-blue text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider backdrop-blur-md">
                     {p.category}
                   </span>
                   {p.isFeatured && (
-                    <span className="bg-brand-gold text-brand-navy text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider shadow-md">
+                    <span className="bg-brand-blue text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider shadow-md">
                       ⭐ Featured
                     </span>
                   )}
@@ -122,7 +122,7 @@ export default function Projects() {
               <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
                 <div className="space-y-3 text-xs">
                   <div className="flex items-start gap-2.5 text-slate-600">
-                    <i className="fa-solid fa-location-dot text-brand-gold shrink-0 mt-0.5" />
+                    <i className="fa-solid fa-location-dot text-brand-blue shrink-0 mt-0.5" />
                     <span><strong className="text-slate-800">Location:</strong> {p.location}</span>
                   </div>
                   <div className="grid grid-cols-2 gap-2 pt-2 border-t border-slate-100">
@@ -154,7 +154,7 @@ export default function Projects() {
 
                 <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
                   <span>Year Installed</span>
-                  <span className="font-bold text-brand-navy bg-brand-gold/20 border border-brand-gold/30 px-3 py-1 rounded-full text-[11px]">
+                  <span className="font-bold text-brand-blue bg-brand-blue/20 border border-brand-blue/30 px-3 py-1 rounded-full text-[11px]">
                     {p.year}
                   </span>
                 </div>

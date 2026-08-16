@@ -38,7 +38,7 @@ export default function Gallery() {
         </video>
         <div className="absolute inset-0 bg-brand-navy/70 z-[1]"></div>
         <div className="max-w-4xl mx-auto space-y-4 relative z-10">
-          <h3 className="text-sm font-semibold uppercase tracking-wider text-brand-gold">Visual Showcase</h3>
+          <h3 className="text-sm font-semibold uppercase tracking-wider text-brand-blue">Visual Showcase</h3>
           <h2 className="font-serif text-3xl md:text-5xl font-bold">Media Gallery</h2>
         </div>
       </section>
@@ -50,7 +50,7 @@ export default function Gallery() {
             <button
               key={t.id}
               onClick={() => setActiveTab(t.id)}
-              className={`px-4 py-2 text-xs font-semibold uppercase tracking-wider transition ${activeTab === t.id ? 'border-b-2 border-brand-gold text-brand-gold font-bold' : 'text-slate-500 hover:text-brand-navy'}`}
+              className={`px-4 py-2 text-xs font-semibold uppercase tracking-wider transition ${activeTab === t.id ? 'border-b-2 border-brand-blue text-brand-blue font-bold' : 'text-slate-500 hover:text-brand-navy'}`}
             >
               {t.label}
             </button>
@@ -64,7 +64,7 @@ export default function Gallery() {
               <div className="h-56 bg-slate-900 relative overflow-hidden flex items-center justify-center">
                 <div className="absolute inset-0 bg-cover bg-center group-hover:scale-115 transition duration-500 opacity-60" style={{ backgroundImage: `url('${item.img}')` }}></div>
                 <div className="absolute inset-0 bg-brand-navy/20 group-hover:bg-brand-navy/40 transition duration-300"></div>
-                <div className="z-10 bg-brand-navy/60 text-brand-gold border border-brand-gold/30 rounded px-2 py-1 text-[10px] uppercase font-bold opacity-0 group-hover:opacity-100 transition duration-300">
+                <div className="z-10 bg-brand-navy/60 text-brand-blue border border-brand-blue/30 rounded px-2 py-1 text-[10px] uppercase font-bold opacity-0 group-hover:opacity-100 transition duration-300">
                   <i className="fa-solid fa-magnifying-glass-plus mr-1"></i> View Large
                 </div>
               </div>

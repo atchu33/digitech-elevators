@@ -60,10 +60,10 @@ export default function Faq() {
         />
         {/* Dark overlay & radial gradient overlay for premium lighting */}
         <div className="absolute inset-0 bg-brand-navy/70 z-[1]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(212,175,55,0.25)_0%,_transparent_70%)] z-[2]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(23,105,194,0.25)_0%,_transparent_70%)] z-[2]"></div>
 
         <div className="max-w-4xl mx-auto space-y-4 relative z-10">
-          <span className="inline-block bg-brand-gold/20 border border-brand-gold/30 text-brand-gold px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest animate-pulse-ring">
+          <span className="inline-block bg-brand-blue/20 border border-brand-blue/30 text-brand-blue px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest animate-pulse-ring">
             General Queries
           </span>
           <h2 className="font-serif text-4xl md:text-5xl font-bold animate-gold-shimmer">Frequently Asked Questions</h2>
@@ -76,7 +76,7 @@ export default function Faq() {
       {/* ── FAQ Accordion ── */}
       <section className="py-20 px-4 md:px-8 max-w-4xl mx-auto space-y-4">
         <div className="text-center mb-10 space-y-2 scroll-reveal">
-          <h3 className="text-xs font-semibold uppercase tracking-widest text-brand-gold animate-draw-line">Got Questions?</h3>
+          <h3 className="text-xs font-semibold uppercase tracking-widest text-brand-blue animate-draw-line">Got Questions?</h3>
           <h2 className="font-serif text-2xl md:text-3xl font-bold text-brand-navy">Helpful Answers</h2>
         </div>
 
@@ -87,7 +87,7 @@ export default function Faq() {
               <div
                 key={i}
                 className={`bg-white rounded-2xl border transition-all duration-300 shadow-sm overflow-hidden scroll-reveal ${
-                  isOpen ? 'border-brand-gold ring-1 ring-brand-gold/30' : 'border-slate-200 hover:border-brand-gold/50'
+                  isOpen ? 'border-brand-blue ring-1 ring-brand-blue/30' : 'border-slate-200 hover:border-brand-blue/50'
                 }`}
               >
                 <button
@@ -95,13 +95,13 @@ export default function Faq() {
                   onClick={() => setOpenIndex(isOpen ? null : i)}
                 >
                   <span className="font-serif font-bold text-brand-navy text-sm md:text-base flex items-center gap-3">
-                    <span className="w-7 h-7 bg-brand-gold/10 rounded-lg flex items-center justify-center text-brand-gold shrink-0">
+                    <span className="w-7 h-7 bg-brand-blue/10 rounded-lg flex items-center justify-center text-brand-blue shrink-0">
                       <i className="fa-solid fa-question text-xs"></i>
                     </span>
                     {faq.q}
                   </span>
                   <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all ${
-                    isOpen ? 'bg-brand-gold text-brand-navy rotate-180' : 'bg-slate-100 text-slate-500'
+                    isOpen ? 'bg-brand-blue text-white rotate-180' : 'bg-slate-100 text-slate-500'
                   }`}>
                     <i className="fa-solid fa-chevron-down text-xs"></i>
                   </div>
@@ -125,7 +125,7 @@ export default function Faq() {
       <section className="py-20 px-4 md:px-8 bg-white border-t border-slate-200">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <div className="space-y-2">
-            <span className="inline-block bg-brand-gold/10 border border-brand-gold/30 text-brand-gold px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider">
+            <span className="inline-block bg-brand-blue/10 border border-brand-blue/30 text-brand-blue px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider">
               Safety First
             </span>
             <h2 className="font-serif text-2xl md:text-3xl font-bold text-brand-navy">Elevator Safety Guidelines</h2>
@@ -135,7 +135,7 @@ export default function Faq() {
           </div>
           <div className="flex justify-center">
             <div 
-              className="group relative cursor-pointer overflow-hidden rounded-2xl border border-slate-200 shadow-md max-w-md w-full bg-slate-50 hover:border-brand-gold transition duration-300"
+              className="group relative cursor-pointer overflow-hidden rounded-2xl border border-slate-200 shadow-md max-w-md w-full bg-slate-50 hover:border-brand-blue transition duration-300"
               onClick={() => setShowSafetyModal(true)}
             >
               <img loading="lazy" 
@@ -144,7 +144,7 @@ export default function Faq() {
                 className="w-full h-auto object-cover group-hover:scale-105 transition duration-500"
               />
               <div className="absolute inset-0 bg-brand-navy/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition duration-300">
-                <span className="bg-brand-navy/90 text-brand-gold border border-brand-gold/30 rounded-xl px-4 py-2 text-xs font-bold shadow-lg">
+                <span className="bg-brand-navy/90 text-brand-blue border border-brand-blue/30 rounded-xl px-4 py-2 text-xs font-bold shadow-lg">
                   <i className="fa-solid fa-magnifying-glass-plus mr-1"></i> View Full Poster
                 </span>
               </div>
@@ -159,7 +159,7 @@ export default function Faq() {
           className="fixed inset-0 z-[9999] bg-brand-navy/60 backdrop-blur-xl flex items-center justify-center p-4 animate-fade-in"
           onClick={() => setShowSafetyModal(false)}
         >
-          <div className="absolute top-4 right-4 text-white text-3xl cursor-pointer hover:text-brand-gold transition duration-200">
+          <div className="absolute top-4 right-4 text-white text-3xl cursor-pointer hover:text-brand-blue-bright transition duration-200">
             <i className="fa-solid fa-xmark"></i>
           </div>
           <div 
@@ -177,11 +177,11 @@ export default function Faq() {
       )}
 
       {/* ── Call to Action ── */}
-      <section className="bg-gradient-to-br from-brand-navy via-slate-800 to-brand-navy text-white py-16 px-4 text-center border-t-4 border-brand-gold relative overflow-hidden">
+      <section className="bg-gradient-to-br from-brand-navy via-slate-800 to-brand-navy text-white py-16 px-4 text-center border-t-4 border-brand-blue relative overflow-hidden">
         {/* Vertical lines */}
         <div className="absolute inset-0 opacity-5 pointer-events-none">
           {[20, 50, 80].map(pos => (
-            <div key={pos} className="absolute top-0 bottom-0 w-px bg-brand-gold" style={{ left: `${pos}%`, animation: 'shaftGlow 3s infinite' }} />
+            <div key={pos} className="absolute top-0 bottom-0 w-px bg-brand-blue" style={{ left: `${pos}%`, animation: 'shaftGlow 3s infinite' }} />
           ))}
         </div>
         <div className="max-w-3xl mx-auto space-y-6 relative z-10 scroll-reveal-scale">
@@ -190,7 +190,7 @@ export default function Faq() {
             Our technical support coordinators are available to address queries regarding elevator engineering, space specifications, pricing parameters, or AMC renewals.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <a href="#/contact" className="bg-brand-gold hover:bg-brand-gold-hover text-brand-navy font-bold px-7 py-3 rounded-xl text-xs uppercase tracking-widest transition shadow-lg hover:scale-105 btn-glow">
+            <a href="#/contact" className="bg-brand-blue hover:bg-brand-blue-dark text-white font-bold px-7 py-3 rounded-xl text-xs uppercase tracking-widest transition shadow-lg hover:scale-105 btn-glow">
               Contact Us
             </a>
             <a href="https://wa.me/919845071406" target="_blank" rel="noopener noreferrer" className="bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold px-7 py-3 rounded-xl text-xs uppercase tracking-widest flex items-center gap-2 transition shadow-lg hover:scale-105 btn-glow">

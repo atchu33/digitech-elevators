@@ -326,7 +326,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
   return (
     <div className="animate-fade-in">
       {/* ── Hero Banner ── */}
-      <section className="relative bg-brand-navy text-white overflow-hidden border-b-4 border-brand-gold" style={{minHeight:'400px'}}>
+      <section className="relative bg-brand-navy text-white overflow-hidden border-b-4 border-brand-blue" style={{minHeight:'400px'}}>
 
         {/* Background layers */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_50%,_#1a2744_0%,_#080f1e_70%)]" />
@@ -334,15 +334,15 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
           className="absolute inset-0 bg-cover bg-center opacity-15"
           style={{ backgroundImage: `url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1920&q=80')`, mixBlendMode: 'luminosity' }}
         />
-        <div className="absolute inset-0 opacity-25 bg-[radial-gradient(ellipse_at_75%_50%,_#D4AF37_0%,_transparent_55%)]" />
+        <div className="absolute inset-0 opacity-25 bg-[radial-gradient(ellipse_at_75%_50%,_#1769C2_0%,_transparent_55%)]" />
 
         {/* Animated elevator shaft lines */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {[6, 12, 88, 94].map((pos, i) => (
-            <div key={i} className="absolute top-0 bottom-0" style={{left:`${pos}%`, width:'1px', background:'rgba(212,175,55,0.12)'}} />
+            <div key={i} className="absolute top-0 bottom-0" style={{left:`${pos}%`, width:'1px', background:'rgba(23,105,194,0.12)'}} />
           ))}
-          <div className="absolute left-0 right-0" style={{height:'1px', background:'linear-gradient(90deg,transparent,rgba(212,175,55,0.35),transparent)', animation:'heroSweep 4s ease-in-out infinite', top:'35%'}} />
-          <div className="absolute left-0 right-0" style={{height:'1px', background:'linear-gradient(90deg,transparent,rgba(212,175,55,0.2),transparent)', animation:'heroSweep 4s ease-in-out 2s infinite', top:'70%'}} />
+          <div className="absolute left-0 right-0" style={{height:'1px', background:'linear-gradient(90deg,transparent,rgba(23,105,194,0.35),transparent)', animation:'heroSweep 4s ease-in-out infinite', top:'35%'}} />
+          <div className="absolute left-0 right-0" style={{height:'1px', background:'linear-gradient(90deg,transparent,rgba(23,105,194,0.2),transparent)', animation:'heroSweep 4s ease-in-out 2s infinite', top:'70%'}} />
         </div>
 
         {/* ── SINGLE-COLUMN LAYOUT ── */}
@@ -353,11 +353,11 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
 
             {/* Eyebrow */}
             <div className="flex items-center justify-center gap-3 w-full">
-              <div className="w-8 h-0.5 bg-brand-gold rounded-full" />
-              <span className="text-brand-gold text-xs font-bold uppercase tracking-[0.25em]">
+              <div className="w-8 h-0.5 bg-brand-blue rounded-full" />
+              <span className="text-brand-blue text-xs font-bold uppercase tracking-[0.25em]">
                 Our Services
               </span>
-              <div className="w-8 h-0.5 bg-brand-gold rounded-full" />
+              <div className="w-8 h-0.5 bg-brand-blue rounded-full" />
             </div>
 
             {/* Title & desc */}
@@ -379,8 +379,8 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
                 { value: '100%', label: 'Guaranteed' },
                 { value: '27+', label: 'Years Exp.' },
               ].map((stat, i) => (
-                <div key={i} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-4 text-center hover:border-brand-gold/40 hover:bg-white/10 transition-all duration-300">
-                  <div className="text-2xl font-bold text-brand-gold font-serif">{stat.value}</div>
+                <div key={i} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-4 text-center hover:border-brand-blue/40 hover:bg-white/10 transition-all duration-300">
+                  <div className="text-2xl font-bold text-brand-blue font-serif">{stat.value}</div>
                   <div className="text-[10px] text-slate-400 uppercase tracking-wider mt-1">{stat.label}</div>
                 </div>
               ))}
@@ -392,7 +392,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
         </div>
 
         {/* Bottom gold accent */}
-        <div className="absolute bottom-0 left-0 right-0 h-px" style={{background:'linear-gradient(90deg,transparent,rgba(212,175,55,0.7),transparent)'}} />
+        <div className="absolute bottom-0 left-0 right-0 h-px" style={{background:'linear-gradient(90deg,transparent,rgba(23,105,194,0.7),transparent)'}} />
       </section>
 
 
@@ -401,7 +401,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
         <section className="py-20 px-4 md:px-8 bg-white">
           <div className="max-w-7xl mx-auto space-y-12">
             <div className="text-center scroll-reveal">
-              <h3 className="text-xs font-bold uppercase tracking-widest text-brand-gold mb-3">
+              <h3 className="text-xs font-bold uppercase tracking-widest text-brand-blue mb-3">
                 Step by Step
               </h3>
               <h2 className="font-serif text-4xl md:text-5xl font-bold text-brand-navy">
@@ -412,9 +412,9 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 scroll-reveal-container">
               {srv.process.map((p, i) => (
                 <div key={i} className="relative scroll-reveal">
-                  <div className="bg-gradient-to-br from-slate-50 to-white p-8 rounded-2xl shadow-lg border-2 border-slate-100 hover:border-brand-gold transition-all hover:shadow-2xl">
+                  <div className="bg-gradient-to-br from-slate-50 to-white p-8 rounded-2xl shadow-lg border-2 border-slate-100 hover:border-brand-blue transition-all hover:shadow-2xl">
                     <div className="flex items-start gap-5">
-                      <div className="w-14 h-14 bg-brand-gold rounded-2xl flex items-center justify-center text-brand-navy font-bold text-xl shrink-0 shadow-lg">
+                      <div className="w-14 h-14 bg-brand-blue rounded-2xl flex items-center justify-center text-white font-bold text-xl shrink-0 shadow-lg">
                         {i+1}
                       </div>
                       <div className="flex-1">
@@ -449,14 +449,14 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
 
       {/* ── INSTALLATION GALLERY & POSTERS SHOWCASE ── */}
       {serviceKey === 'installation' && (
-        <section className="py-24 px-4 md:px-8 bg-slate-900 text-white relative overflow-hidden border-t-4 border-brand-gold">
+        <section className="py-24 px-4 md:px-8 bg-slate-900 text-white relative overflow-hidden border-t-4 border-brand-blue">
           {/* Subtle glowing radial background */}
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(212,175,55,0.15)_0%,_transparent_70%)] pointer-events-none" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(23,105,194,0.15)_0%,_transparent_70%)] pointer-events-none" />
 
           <div className="max-w-7xl mx-auto space-y-14 relative z-10">
             <div className="text-center space-y-3 scroll-reveal">
-              <span className="inline-flex items-center gap-2 bg-brand-gold/20 border border-brand-gold/40 text-brand-gold text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest">
-                <i className="fa-solid fa-layer-group text-brand-gold" />
+              <span className="inline-flex items-center gap-2 bg-brand-blue/20 border border-brand-blue/40 text-brand-blue text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest">
+                <i className="fa-solid fa-layer-group text-brand-blue" />
                 Visual Showcase & Standards
               </span>
               <h2 className="font-serif text-3xl md:text-5xl font-bold text-white drop-shadow-md">
@@ -472,7 +472,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
               {INSTALLATION_POSTERS.map((poster, i) => (
                 <div
                   key={i}
-                  className="group relative bg-slate-800/80 rounded-3xl overflow-hidden border border-slate-700 hover:border-brand-gold/80 shadow-xl hover:shadow-2xl hover:shadow-brand-gold/10 transition-all duration-500 cursor-pointer flex flex-col scroll-reveal"
+                  className="group relative bg-slate-800/80 rounded-3xl overflow-hidden border border-slate-700 hover:border-brand-blue/80 shadow-xl hover:shadow-2xl hover:shadow-brand-blue/10 transition-all duration-500 cursor-pointer flex flex-col scroll-reveal"
                   onClick={() => setSelectedPoster(poster)}
                 >
                   {/* Poster Image Container */}
@@ -486,12 +486,12 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/30 to-transparent opacity-80 group-hover:opacity-60 transition-opacity" />
 
                     {/* Category Tag */}
-                    <div className="absolute top-4 left-4 bg-brand-navy/90 border border-brand-gold/40 text-brand-gold text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider backdrop-blur-md shadow-md">
+                    <div className="absolute top-4 left-4 bg-brand-navy/90 border border-brand-blue/40 text-brand-blue text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider backdrop-blur-md shadow-md">
                       {poster.tag}
                     </div>
 
                     {/* Expand / View Badge */}
-                    <div className="absolute top-4 right-4 w-9 h-9 rounded-full bg-brand-gold/90 text-brand-navy flex items-center justify-center shadow-lg transform group-hover:scale-110 group-hover:bg-brand-gold transition-all duration-300">
+                    <div className="absolute top-4 right-4 w-9 h-9 rounded-full bg-brand-blue text-white flex items-center justify-center shadow-lg transform group-hover:scale-110 group-hover:bg-brand-blue-dark transition-all duration-300">
                       <i className="fa-solid fa-magnifying-glass-plus text-xs" />
                     </div>
                   </div>
@@ -499,7 +499,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
                   {/* Content Container */}
                   <div className="p-6 flex-1 flex flex-col justify-between space-y-3 bg-slate-900/90 backdrop-blur-md">
                     <div>
-                      <h3 className="font-serif font-bold text-lg text-white group-hover:text-brand-gold transition-colors duration-300 leading-snug mb-2">
+                      <h3 className="font-serif font-bold text-lg text-white group-hover:text-brand-blue-bright transition-colors duration-300 leading-snug mb-2">
                         {poster.title}
                       </h3>
                       <p className="text-slate-300 text-xs leading-relaxed">
@@ -507,7 +507,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
                       </p>
                     </div>
 
-                    <div className="pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-brand-gold font-semibold">
+                    <div className="pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-brand-blue font-semibold">
                       <span>Click to view full poster</span>
                       <i className="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-1 transition-transform" />
                     </div>
@@ -527,7 +527,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
                 <div className="scroll-reveal-left lg:sticky lg:top-24">
                   <div 
-                    className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-brand-gold/30 group cursor-pointer"
+                    className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-brand-blue/30 group cursor-pointer"
                     onClick={() => setSelectedPoster({
                       image: './amc.jpeg',
                       title: 'Comprehensive Maintenance',
@@ -541,14 +541,14 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
                       className="w-full h-[450px] lg:h-[550px] object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-brand-navy/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition duration-300 z-20 pointer-events-none">
-                      <span className="bg-brand-navy/90 text-brand-gold border border-brand-gold/30 rounded-xl px-4 py-2 text-xs font-bold shadow-lg pointer-events-auto">
+                      <span className="bg-brand-navy/90 text-brand-blue border border-brand-blue/30 rounded-xl px-4 py-2 text-xs font-bold shadow-lg pointer-events-auto">
                         <i className="fa-solid fa-magnifying-glass-plus mr-1"></i> View Full Image
                       </span>
                     </div>
                     <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/60 via-transparent to-transparent" />
                     
                     {/* Floating badge */}
-                    <div className="absolute top-6 left-6 bg-brand-gold text-brand-navy px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider shadow-lg animate-bounce-soft">
+                    <div className="absolute top-6 left-6 bg-brand-blue text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider shadow-lg animate-bounce-soft">
                       24/7 Support
                     </div>
                     
@@ -562,7 +562,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
 
                 <div className="space-y-8 scroll-reveal-right">
                   <div>
-                    <h3 className="text-xs font-bold uppercase tracking-widest text-brand-gold mb-3">
+                    <h3 className="text-xs font-bold uppercase tracking-widest text-brand-blue mb-3">
                       Comprehensive Coverage
                     </h3>
                     <h2 className="font-serif text-4xl font-bold mb-4 text-brand-navy">
@@ -572,7 +572,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
                   
                   <div className="space-y-3">
                     {srv.included.map((item, i) => (
-                      <div key={i} className="flex items-center gap-4 bg-slate-50 p-4 rounded-xl border-2 border-slate-100 hover:border-brand-gold transition-all">
+                      <div key={i} className="flex items-center gap-4 bg-slate-50 p-4 rounded-xl border-2 border-slate-100 hover:border-brand-blue transition-all">
                         <i className="fa-solid fa-circle-check text-green-500 shrink-0 text-lg" />
                         <span className="text-sm font-semibold text-slate-700">{item}</span>
                       </div>
@@ -586,7 +586,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
           <section className="py-20 px-4 md:px-8 bg-gradient-to-br from-brand-navy via-slate-900 to-brand-navy">
             <div className="max-w-7xl mx-auto space-y-12">
               <div className="text-center scroll-reveal">
-                <h3 className="text-xs font-bold uppercase tracking-widest text-brand-gold mb-3">
+                <h3 className="text-xs font-bold uppercase tracking-widest text-brand-blue mb-3">
                   Choose Your Plan
                 </h3>
                 <h2 className="font-serif text-4xl font-bold text-white">
@@ -596,13 +596,13 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 scroll-reveal-container">
                 {srv.plans.map((p, i) => (
-                  <div key={i} className="bg-white p-10 rounded-3xl shadow-2xl border-2 border-white/10 hover:border-brand-gold transition-all scroll-reveal hover:translate-y-[-8px]">
-                    <div className="w-16 h-16 bg-brand-gold/10 rounded-2xl flex items-center justify-center text-brand-gold text-3xl mb-6">
+                  <div key={i} className="bg-white p-10 rounded-3xl shadow-2xl border-2 border-white/10 hover:border-brand-blue transition-all scroll-reveal hover:translate-y-[-8px]">
+                    <div className="w-16 h-16 bg-brand-blue/10 rounded-2xl flex items-center justify-center text-brand-blue text-3xl mb-6">
                       <i className="fa-solid fa-handshake" />
                     </div>
                     <h4 className="font-serif font-bold text-2xl text-brand-navy mb-4">{p.name}</h4>
                     <p className="text-sm text-slate-600 leading-relaxed mb-8">{p.desc}</p>
-                    <a href="#/quote" className="block text-center bg-brand-navy hover:bg-slate-800 text-white text-sm font-bold py-4 rounded-xl uppercase tracking-wider transition">
+                    <a href="#/quote" className="block text-center bg-brand-blue hover:bg-brand-blue-dark text-white text-sm font-bold py-4 rounded-xl uppercase tracking-wider transition">
                       Inquire Plan
                     </a>
                   </div>
@@ -619,10 +619,10 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
             <div className="max-w-7xl mx-auto relative z-10">
               {/* Header */}
               <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
-                <div className="flex items-center justify-center gap-3 text-brand-gold text-xs font-bold uppercase tracking-[0.25em]">
-                  <span className="h-px w-8 bg-brand-gold/60 inline-block"></span>
+                <div className="flex items-center justify-center gap-3 text-brand-blue text-xs font-bold uppercase tracking-[0.25em]">
+                  <span className="h-px w-8 bg-brand-blue/60 inline-block"></span>
                   <span>Long-Term AMC Relationships</span>
-                  <span className="h-px w-8 bg-brand-gold/60 inline-block"></span>
+                  <span className="h-px w-8 bg-brand-blue/60 inline-block"></span>
                 </div>
                 <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-brand-navy leading-tight">
                   OUR AMC CLIENT PORTFOLIO
@@ -633,11 +633,11 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
               </div>
 
               {/* Description Highlight Card */}
-              <div className="bg-gradient-to-r from-brand-navy via-slate-800 to-brand-navy text-white rounded-2xl p-6 md:p-8 mb-12 border border-brand-gold/30 shadow-xl relative overflow-hidden">
-                <div className="absolute right-0 top-0 bottom-0 w-1/3 bg-[radial-gradient(ellipse_at_top_right,_rgba(212,175,55,0.15)_0%,_transparent_70%)] pointer-events-none"></div>
+              <div className="bg-gradient-to-r from-brand-navy via-slate-800 to-brand-navy text-white rounded-2xl p-6 md:p-8 mb-12 border border-brand-blue/30 shadow-xl relative overflow-hidden">
+                <div className="absolute right-0 top-0 bottom-0 w-1/3 bg-[radial-gradient(ellipse_at_top_right,_rgba(23,105,194,0.15)_0%,_transparent_70%)] pointer-events-none"></div>
                 <div className="max-w-3xl space-y-2 relative z-10">
-                  <span className="text-brand-gold font-semibold text-xs uppercase tracking-widest flex items-center gap-2">
-                    <i className="fa-solid fa-shield-heart text-brand-gold"></i> Reliable Elevator Maintenance Across Diverse Properties
+                  <span className="text-brand-blue font-semibold text-xs uppercase tracking-widest flex items-center gap-2">
+                    <i className="fa-solid fa-shield-heart text-brand-blue"></i> Reliable Elevator Maintenance Across Diverse Properties
                   </span>
                   <p className="text-slate-200 text-xs md:text-sm leading-relaxed">
                     We proudly maintain elevators for corporate, educational, hospitality, residential, and apartment properties. Our long-term AMC relationships reflect our commitment to reliable service and consistent maintenance.
@@ -654,7 +654,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
                       setSelectedCategoryKey(cat.id);
                       setLightboxPhotoIndex(null);
                     }}
-                    className="group relative bg-slate-50 hover:bg-white rounded-2xl border border-slate-200 hover:border-brand-gold/60 transition-all duration-300 shadow-sm hover:shadow-xl cursor-pointer flex flex-col overflow-hidden card-hover"
+                    className="group relative bg-slate-50 hover:bg-white rounded-2xl border border-slate-200 hover:border-brand-blue/60 transition-all duration-300 shadow-sm hover:shadow-xl cursor-pointer flex flex-col overflow-hidden card-hover"
                   >
                     {/* Cover Image Container */}
                     <div className="relative h-56 w-full overflow-hidden bg-slate-900">
@@ -667,13 +667,13 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
                       <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/90 via-brand-navy/20 to-transparent"></div>
                       
                       {/* Photo Count Badge */}
-                      <div className="absolute top-3 right-3 bg-brand-navy/85 backdrop-blur-md border border-brand-gold/40 text-brand-gold text-[11px] font-bold px-3 py-1 rounded-full shadow-md flex items-center gap-1.5">
+                      <div className="absolute top-3 right-3 bg-brand-navy/85 backdrop-blur-md border border-brand-blue/40 text-brand-blue text-[11px] font-bold px-3 py-1 rounded-full shadow-md flex items-center gap-1.5">
                         <i className="fa-solid fa-images text-[10px]"></i>
                         <span>{cat.images.length} Photos</span>
                       </div>
 
                       {/* Building Icon */}
-                      <div className="absolute bottom-3 left-4 w-10 h-10 rounded-xl bg-brand-gold text-brand-navy flex items-center justify-center shadow-lg font-bold text-lg">
+                      <div className="absolute bottom-3 left-4 w-10 h-10 rounded-xl bg-brand-blue text-white flex items-center justify-center shadow-lg font-bold text-lg">
                         <i className={`fa-solid ${cat.icon}`}></i>
                       </div>
                     </div>
@@ -681,7 +681,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
                     {/* Card Content */}
                     <div className="p-5 flex flex-col flex-grow justify-between space-y-4">
                       <div className="space-y-2">
-                        <h3 className="font-serif font-bold text-lg text-brand-navy group-hover:text-brand-gold transition-colors duration-200">
+                        <h3 className="font-serif font-bold text-lg text-brand-navy group-hover:text-brand-blue-bright transition-colors duration-200">
                           {cat.title}
                         </h3>
                         <p className="text-slate-500 text-xs leading-relaxed">
@@ -690,10 +690,10 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
                       </div>
 
                       <div className="pt-3 border-t border-slate-200/70 flex items-center justify-between">
-                        <span className="inline-block bg-brand-gold/10 border border-brand-gold/30 text-brand-navy text-[11px] font-semibold px-2.5 py-1 rounded-lg">
+                        <span className="inline-block bg-brand-blue/10 border border-brand-blue/30 text-brand-navy text-[11px] font-semibold px-2.5 py-1 rounded-lg">
                           ⚡ {cat.propertiesBadge}
                         </span>
-                        <span className="text-brand-gold text-xs font-bold flex items-center gap-1 group-hover:translate-x-1 transition-transform duration-200">
+                        <span className="text-brand-blue text-xs font-bold flex items-center gap-1 group-hover:translate-x-1 transition-transform duration-200">
                           View Gallery <i className="fa-solid fa-arrow-right text-[10px]"></i>
                         </span>
                       </div>
@@ -704,9 +704,9 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
 
               {/* Bottom Stat Highlight Badge */}
               <div className="mt-14 text-center">
-                <div className="inline-flex items-center gap-3 bg-slate-900 text-white border-2 border-brand-gold px-6 py-3 rounded-full shadow-lg">
-                  <span className="w-2.5 h-2.5 rounded-full bg-brand-gold animate-ping"></span>
-                  <span className="font-mono text-xs md:text-sm font-bold tracking-widest text-brand-gold uppercase">
+                <div className="inline-flex items-center gap-3 bg-slate-900 text-white border-2 border-brand-blue px-6 py-3 rounded-full shadow-lg">
+                  <span className="w-2.5 h-2.5 rounded-full bg-brand-blue animate-ping"></span>
+                  <span className="font-mono text-xs md:text-sm font-bold tracking-widest text-brand-blue uppercase">
                     100+ PROPERTIES • MONTHLY AMC SERVICE
                   </span>
                 </div>
@@ -725,7 +725,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
                 <div className="space-y-8 scroll-reveal-left">
                   <div>
-                    <h3 className="text-xs font-bold uppercase tracking-widest text-brand-gold mb-3">
+                    <h3 className="text-xs font-bold uppercase tracking-widest text-brand-blue mb-3">
                       Upgrade Solutions
                     </h3>
                     <h2 className="font-serif text-4xl font-bold text-brand-navy mb-4">
@@ -737,8 +737,8 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
                     {srv.services.map((item, i) => {
                       const icon = SERVICE_ICONS[item] || 'fa-screwdriver-wrench';
                       return (
-                        <div key={i} className="flex items-center gap-4 bg-slate-50 p-5 rounded-xl border-2 border-slate-100 hover:border-brand-gold transition-all">
-                          <div className="w-12 h-12 rounded-xl bg-brand-navy/5 flex items-center justify-center text-brand-gold shrink-0">
+                        <div key={i} className="flex items-center gap-4 bg-slate-50 p-5 rounded-xl border-2 border-slate-100 hover:border-brand-blue transition-all">
+                          <div className="w-12 h-12 rounded-xl bg-brand-navy/5 flex items-center justify-center text-brand-blue shrink-0">
                             <i className={`fa-solid ${icon} text-lg`} />
                           </div>
                           <span className="text-sm font-bold text-brand-navy">{item}</span>
@@ -764,14 +764,14 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
                       className="w-full h-[450px] lg:h-[550px] object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-brand-navy/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition duration-300 z-20 pointer-events-none">
-                      <span className="bg-brand-navy/90 text-brand-gold border border-brand-gold/30 rounded-xl px-4 py-2 text-xs font-bold shadow-lg pointer-events-auto">
+                      <span className="bg-brand-navy/90 text-brand-blue border border-brand-blue/30 rounded-xl px-4 py-2 text-xs font-bold shadow-lg pointer-events-auto">
                         <i className="fa-solid fa-magnifying-glass-plus mr-1"></i> View Full Image
                       </span>
                     </div>
                     <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/80 via-transparent to-transparent" />
                     
                     {/* Floating badge */}
-                    <div className="absolute top-6 right-6 bg-brand-gold text-brand-navy px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider shadow-lg animate-bounce-soft">
+                    <div className="absolute top-6 right-6 bg-brand-blue text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider shadow-lg animate-bounce-soft">
                       Premium Service
                     </div>
                     
@@ -789,7 +789,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
           <section className="py-20 px-4 md:px-8 bg-gradient-to-br from-brand-navy via-slate-900 to-brand-navy">
             <div className="max-w-7xl mx-auto space-y-12">
               <div className="text-center scroll-reveal">
-                <h3 className="text-xs font-bold uppercase tracking-widest text-brand-gold mb-3">
+                <h3 className="text-xs font-bold uppercase tracking-widest text-brand-blue mb-3">
                   Why Upgrade
                 </h3>
                 <h2 className="font-serif text-4xl font-bold text-white">
@@ -802,8 +802,8 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
                   const icon = BENEFIT_ICONS[b] || 'fa-circle-check';
                   const detail = BENEFIT_DETAILS[b] || '';
                   return (
-                    <div key={i} className="bg-white p-8 rounded-2xl shadow-xl border-2 border-white/10 hover:border-brand-gold transition-all scroll-reveal hover:translate-y-[-4px]">
-                      <div className="w-14 h-14 bg-brand-gold/10 rounded-2xl flex items-center justify-center text-brand-gold text-2xl mb-5">
+                    <div key={i} className="bg-white p-8 rounded-2xl shadow-xl border-2 border-white/10 hover:border-brand-blue transition-all scroll-reveal hover:translate-y-[-4px]">
+                      <div className="w-14 h-14 bg-brand-blue/10 rounded-2xl flex items-center justify-center text-brand-blue text-2xl mb-5">
                         <i className={`fa-solid ${icon}`} />
                       </div>
                       <h4 className="font-serif font-bold text-xl text-brand-navy mb-3">{b}</h4>
@@ -823,7 +823,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
           <section className="py-20 px-4 md:px-8 bg-white">
             <div className="max-w-7xl mx-auto space-y-12">
               <div className="text-center scroll-reveal">
-                <h3 className="text-xs font-bold uppercase tracking-widest text-brand-gold mb-3">
+                <h3 className="text-xs font-bold uppercase tracking-widest text-brand-blue mb-3">
                   Expert Solutions
                 </h3>
                 <h2 className="font-serif text-4xl font-bold text-brand-navy">
@@ -833,9 +833,9 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 scroll-reveal-container">
                 {srv.services.map((item, i) => (
-                  <div key={i} className="bg-slate-50 p-6 rounded-2xl border-2 border-slate-100 hover:border-brand-gold transition-all scroll-reveal">
+                  <div key={i} className="bg-slate-50 p-6 rounded-2xl border-2 border-slate-100 hover:border-brand-blue transition-all scroll-reveal">
                     <div className="flex items-center gap-4">
-                      <i className="fa-solid fa-screwdriver text-brand-gold text-xl shrink-0" />
+                      <i className="fa-solid fa-screwdriver text-brand-blue text-xl shrink-0" />
                       <span className="text-sm font-semibold text-slate-700">{item}</span>
                     </div>
                   </div>
@@ -879,7 +879,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
           <section className="py-20 px-4 md:px-8 bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-50">
             <div className="max-w-7xl mx-auto space-y-12">
               <div className="text-center scroll-reveal">
-                <h3 className="text-xs font-bold uppercase tracking-widest text-brand-gold mb-3">
+                <h3 className="text-xs font-bold uppercase tracking-widest text-brand-blue mb-3">
                   Our Services
                 </h3>
                 <h2 className="font-serif text-4xl font-bold text-brand-navy">
@@ -891,11 +891,11 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
                 {srv.services.map((service, i) => {
                   const detail = srv.serviceDetails[service] || '';
                   return (
-                    <div key={i} className="bg-white p-8 rounded-2xl border-2 border-slate-200 hover:border-brand-gold transition-all scroll-reveal hover:translate-y-[-4px] shadow-xl group">
-                      <div className="w-14 h-14 bg-brand-gold/10 rounded-2xl flex items-center justify-center text-brand-gold text-2xl mb-5 group-hover:bg-brand-gold group-hover:text-brand-navy transition-all duration-300">
+                    <div key={i} className="bg-white p-8 rounded-2xl border-2 border-slate-200 hover:border-brand-blue transition-all scroll-reveal hover:translate-y-[-4px] shadow-xl group">
+                      <div className="w-14 h-14 bg-brand-blue/10 rounded-2xl flex items-center justify-center text-brand-blue text-2xl mb-5 group-hover:bg-brand-blue group-hover:text-white transition-all duration-300">
                         <i className="fa-solid fa-file-lines" />
                       </div>
-                      <h4 className="font-serif font-bold text-xl text-brand-navy mb-3 group-hover:text-brand-gold transition-colors">{service}</h4>
+                      <h4 className="font-serif font-bold text-xl text-brand-navy mb-3 group-hover:text-brand-blue-bright transition-colors">{service}</h4>
                       <p className="text-sm text-slate-600 leading-relaxed">{detail}</p>
                     </div>
                   );
@@ -908,7 +908,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
           <section className="py-20 px-4 md:px-8 bg-gradient-to-br from-brand-navy via-slate-900 to-brand-navy">
             <div className="max-w-7xl mx-auto space-y-12">
               <div className="text-center scroll-reveal">
-                <h3 className="text-xs font-bold uppercase tracking-widest text-brand-gold mb-3">
+                <h3 className="text-xs font-bold uppercase tracking-widest text-brand-blue mb-3">
                   Why Choose Us
                 </h3>
                 <h2 className="font-serif text-4xl font-bold text-white">
@@ -919,10 +919,10 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 scroll-reveal-container">
                 {srv.whyChoose.map((reason, i) => (
                   <div key={i} className="bg-white p-6 rounded-2xl shadow-xl transition-all scroll-reveal hover:translate-y-[-4px] group hover:shadow-2xl">
-                    <div className="w-12 h-12 bg-brand-gold/10 rounded-xl flex items-center justify-center text-brand-gold text-xl mb-4 group-hover:bg-brand-gold group-hover:text-brand-navy transition-all duration-300">
+                    <div className="w-12 h-12 bg-brand-blue/10 rounded-xl flex items-center justify-center text-brand-blue text-xl mb-4 group-hover:bg-brand-blue group-hover:text-white transition-all duration-300">
                       <i className="fa-solid fa-circle-check" />
                     </div>
-                    <h4 className="font-serif font-bold text-base text-brand-navy group-hover:text-brand-gold transition-colors">{reason}</h4>
+                    <h4 className="font-serif font-bold text-base text-brand-navy group-hover:text-brand-blue-bright transition-colors">{reason}</h4>
                   </div>
                 ))}
               </div>
@@ -933,7 +933,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
           <section className="py-20 px-4 md:px-8 bg-white">
             <div className="max-w-7xl mx-auto space-y-12">
               <div className="text-center scroll-reveal">
-                <h3 className="text-xs font-bold uppercase tracking-widest text-brand-gold mb-3">
+                <h3 className="text-xs font-bold uppercase tracking-widest text-brand-blue mb-3">
                   Who We Serve
                 </h3>
                 <h2 className="font-serif text-4xl font-bold text-brand-navy">
@@ -943,8 +943,8 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 scroll-reveal-container">
                 {srv.industries.map((industry, i) => (
-                  <div key={i} className="bg-gradient-to-br from-slate-50 to-white p-6 rounded-2xl text-center border-2 border-slate-200 hover:border-brand-gold transition-all scroll-reveal hover:shadow-lg group">
-                    <span className="text-sm font-bold text-brand-navy group-hover:text-brand-gold transition-colors">{industry}</span>
+                  <div key={i} className="bg-gradient-to-br from-slate-50 to-white p-6 rounded-2xl text-center border-2 border-slate-200 hover:border-brand-blue transition-all scroll-reveal hover:shadow-lg group">
+                    <span className="text-sm font-bold text-brand-navy group-hover:text-brand-blue-bright transition-colors">{industry}</span>
                   </div>
                 ))}
               </div>
@@ -955,7 +955,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
           <section className="py-20 px-4 md:px-8 bg-gradient-to-br from-brand-navy via-slate-900 to-brand-navy">
             <div className="max-w-4xl mx-auto space-y-12">
               <div className="text-center scroll-reveal">
-                <h3 className="text-xs font-bold uppercase tracking-widest text-brand-gold mb-3">
+                <h3 className="text-xs font-bold uppercase tracking-widest text-brand-blue mb-3">
                   Common Questions
                 </h3>
                 <h2 className="font-serif text-4xl font-bold text-white">
@@ -965,10 +965,10 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
 
               <div className="space-y-4 scroll-reveal-container">
                 {srv.faqs.map((faq, i) => (
-                  <details key={i} className="bg-white p-6 rounded-2xl border-2 border-white/10 hover:border-brand-gold transition-all scroll-reveal group">
-                    <summary className="font-serif font-bold text-lg text-brand-navy cursor-pointer flex items-center justify-between group-hover:text-brand-gold transition-colors">
+                  <details key={i} className="bg-white p-6 rounded-2xl border-2 border-white/10 hover:border-brand-blue transition-all scroll-reveal group">
+                    <summary className="font-serif font-bold text-lg text-brand-navy cursor-pointer flex items-center justify-between group-hover:text-brand-blue-bright transition-colors">
                       {faq.question}
-                      <i className="fa-solid fa-chevron-down text-brand-gold group-open:rotate-180 transition-transform" />
+                      <i className="fa-solid fa-chevron-down text-brand-blue group-open:rotate-180 transition-transform" />
                     </summary>
                     <p className="text-sm text-slate-600 leading-relaxed mt-4 pt-4 border-t border-slate-200">
                       {faq.answer}
@@ -990,12 +990,12 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
             {/* Animated vertical lines */}
             <div className="absolute inset-0 opacity-10 pointer-events-none">
               {[20, 50, 80].map(pos => (
-                <div key={pos} className="absolute top-0 bottom-0 w-px bg-brand-gold animate-pulse" style={{ left: `${pos}%` }} />
+                <div key={pos} className="absolute top-0 bottom-0 w-px bg-brand-blue animate-pulse" style={{ left: `${pos}%` }} />
               ))}
             </div>
             
             <div className="max-w-4xl mx-auto relative z-10 text-center space-y-6">
-              <div className="w-20 h-20 bg-brand-gold/20 rounded-full flex items-center justify-center text-brand-gold text-4xl mx-auto mb-6 animate-bounce-soft">
+              <div className="w-20 h-20 bg-brand-blue/20 rounded-full flex items-center justify-center text-brand-blue text-4xl mx-auto mb-6 animate-bounce-soft">
                 <i className="fa-solid fa-file-contract" />
               </div>
               <h2 className="font-serif text-4xl md:text-5xl font-bold text-white">
@@ -1005,7 +1005,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
                 Our experts are ready to help you with documentation, inspections, and statutory compliance. Contact Digitech Elevators today for professional Licensing & Renewal Services.
               </p>
               <div className="flex flex-wrap justify-center gap-4 pt-6">
-                <a href="#contact-form" className="bg-brand-gold hover:bg-yellow-600 text-brand-navy font-bold px-8 py-4 rounded-2xl text-sm uppercase tracking-wider transition-all hover:scale-105 shadow-2xl">
+                <a href="#contact-form" className="bg-brand-blue hover:bg-brand-blue-dark text-white font-bold px-8 py-4 rounded-2xl text-sm uppercase tracking-wider transition-all hover:scale-105 shadow-2xl">
                   <i className="fa-solid fa-phone mr-2" />
                   Contact Us Now
                 </a>
@@ -1025,7 +1025,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 scroll-reveal-left">
               <div>
-                <h3 className="text-xs font-bold uppercase tracking-widest text-brand-gold mb-3">
+                <h3 className="text-xs font-bold uppercase tracking-widest text-brand-blue mb-3">
                   Get Started
                 </h3>
                 <h2 className="font-serif text-4xl font-bold text-brand-navy mb-4">
@@ -1038,7 +1038,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
               
               <div className="space-y-4 pt-4">
                 <div className="flex items-center gap-4 bg-white p-5 rounded-xl shadow-md">
-                  <div className="w-12 h-12 bg-brand-gold/10 rounded-xl flex items-center justify-center text-brand-gold text-xl">
+                  <div className="w-12 h-12 bg-brand-blue/10 rounded-xl flex items-center justify-center text-brand-blue text-xl">
                     <i className="fa-solid fa-phone" />
                   </div>
                   <div>
@@ -1085,7 +1085,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
                         type="text"
                         name="name" 
                         placeholder="Enter your name" 
-                        className="w-full border-2 border-slate-200 rounded-xl p-4 text-sm focus:outline-none focus:border-brand-gold transition" 
+                        className="w-full border-2 border-slate-200 rounded-xl p-4 text-sm focus:outline-none focus:border-brand-blue transition" 
                         required 
                       />
                     </div>
@@ -1095,7 +1095,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
                         type="tel"
                         name="mobile" 
                         placeholder="Enter mobile number" 
-                        className="w-full border-2 border-slate-200 rounded-xl p-4 text-sm focus:outline-none focus:border-brand-gold transition" 
+                        className="w-full border-2 border-slate-200 rounded-xl p-4 text-sm focus:outline-none focus:border-brand-blue transition" 
                         required 
                       />
                     </div>
@@ -1105,12 +1105,12 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
                         rows="4"
                         name="message" 
                         placeholder="Describe your building parameters..." 
-                        className="w-full border-2 border-slate-200 rounded-xl p-4 text-sm focus:outline-none focus:border-brand-gold transition"
+                        className="w-full border-2 border-slate-200 rounded-xl p-4 text-sm focus:outline-none focus:border-brand-blue transition"
                       />
                     </div>
                     <button 
                       type="submit" 
-                      className="w-full bg-brand-navy hover:bg-slate-800 text-white font-bold py-4 rounded-xl text-sm uppercase tracking-widest transition shadow-lg hover:shadow-2xl hover:scale-105">
+                      className="w-full bg-brand-blue hover:bg-brand-blue-dark text-white font-bold py-4 rounded-xl text-sm uppercase tracking-widest transition shadow-lg hover:shadow-2xl hover:scale-105">
                       Send Inquiry
                     </button>
                   </form>
@@ -1131,7 +1131,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
         
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           {[20, 50, 80].map(pos => (
-            <div key={pos} className="absolute top-0 bottom-0 w-px bg-brand-gold animate-pulse" style={{ left: `${pos}%` }} />
+            <div key={pos} className="absolute top-0 bottom-0 w-px bg-brand-blue animate-pulse" style={{ left: `${pos}%` }} />
           ))}
         </div>
 
@@ -1143,7 +1143,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
             Contact us for expert elevator services and discover professional solutions for your building
           </p>
           <div className="flex flex-wrap justify-center gap-4 pt-4">
-            <a href="#/quote" className="bg-brand-gold hover:bg-yellow-600 text-brand-navy font-bold px-8 py-4 rounded-2xl text-sm uppercase tracking-wider transition-all hover:scale-105 shadow-2xl">
+            <a href="#/quote" className="bg-brand-blue hover:bg-brand-blue-dark text-white font-bold px-8 py-4 rounded-2xl text-sm uppercase tracking-wider transition-all hover:scale-105 shadow-2xl">
               <i className="fa-solid fa-calculator mr-2" />
               Free Quote
             </a>
@@ -1162,14 +1162,14 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
           onClick={() => setSelectedPoster(null)}
         >
           <button
-            className="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/10 hover:bg-brand-gold text-white hover:text-brand-navy border border-white/20 flex items-center justify-center text-xl transition-all duration-300 shadow-2xl"
+            className="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/10 hover:bg-brand-blue text-white hover:text-white border border-white/20 flex items-center justify-center text-xl transition-all duration-300 shadow-2xl"
             onClick={() => setSelectedPoster(null)}
           >
             <i className="fa-solid fa-xmark" />
           </button>
           
           <div 
-            className="max-w-4xl max-h-[90vh] w-full bg-slate-900 rounded-3xl border-2 border-brand-gold/40 shadow-2xl overflow-hidden flex flex-col md:flex-row"
+            className="max-w-4xl max-h-[90vh] w-full bg-slate-900 rounded-3xl border-2 border-brand-blue/40 shadow-2xl overflow-hidden flex flex-col md:flex-row"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="md:w-3/5 bg-black flex items-center justify-center p-4">
@@ -1183,7 +1183,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
 
             <div className="md:w-2/5 p-8 flex flex-col justify-between text-white space-y-6 bg-slate-900 border-t md:border-t-0 md:border-l border-slate-800">
               <div className="space-y-4">
-                <span className="inline-block bg-brand-gold/20 border border-brand-gold/40 text-brand-gold text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                <span className="inline-block bg-brand-blue/20 border border-brand-blue/40 text-brand-blue text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
                   {selectedPoster.tag}
                 </span>
                 <h3 className="font-serif font-bold text-2xl text-white leading-tight">
@@ -1198,7 +1198,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
                 <a
                   href="#/quote"
                   onClick={() => setSelectedPoster(null)}
-                  className="block text-center bg-brand-gold hover:bg-brand-gold-hover text-brand-navy font-bold py-3.5 px-6 rounded-xl text-xs uppercase tracking-widest transition-all hover:scale-105 shadow-lg btn-glow"
+                  className="block text-center bg-brand-blue hover:bg-brand-blue-dark text-white font-bold py-3.5 px-6 rounded-xl text-xs uppercase tracking-widest transition-all hover:scale-105 shadow-lg btn-glow"
                 >
                   Request Installation Quote
                 </a>
@@ -1229,17 +1229,17 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header & Category Tabs */}
-            <div className="p-4 md:p-6 bg-slate-900 text-white flex flex-col gap-4 border-b border-brand-gold/30">
+            <div className="p-4 md:p-6 bg-slate-900 text-white flex flex-col gap-4 border-b border-brand-blue/30">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-brand-gold text-brand-navy flex items-center justify-center font-bold text-lg">
+                  <div className="w-10 h-10 rounded-xl bg-brand-blue text-white flex items-center justify-center font-bold text-lg">
                     <i className={`fa-solid ${activeCategory?.icon}`}></i>
                   </div>
                   <div>
                     <span className="text-slate-400 text-[11px] font-medium tracking-wide block">
                       Digitech AMC Portfolio • Real Client Installations in Bengaluru
                     </span>
-                    <h3 className="font-serif text-xl md:text-2xl font-bold text-brand-gold">
+                    <h3 className="font-serif text-xl md:text-2xl font-bold text-brand-blue">
                       {activeCategory?.title}
                     </h3>
                     <p className="text-slate-400 text-xs">
@@ -1253,7 +1253,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
                     setSelectedCategoryKey(null);
                     setLightboxPhotoIndex(null);
                   }}
-                  className="w-10 h-10 rounded-full bg-slate-800 hover:bg-brand-gold hover:text-brand-navy text-slate-300 flex items-center justify-center transition-colors duration-200"
+                  className="w-10 h-10 rounded-full bg-slate-800 hover:bg-brand-blue hover:text-white text-slate-300 flex items-center justify-center transition-colors duration-200"
                 >
                   <i className="fa-solid fa-xmark text-lg"></i>
                 </button>
@@ -1270,7 +1270,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
                     }}
                     className={`px-4 py-2 rounded-xl text-xs font-bold transition-all duration-200 flex items-center gap-2 ${
                       cat.id === selectedCategoryKey
-                        ? 'bg-brand-gold text-brand-navy shadow-md scale-105'
+                        ? 'bg-brand-blue text-white shadow-md scale-105'
                         : 'bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white'
                     }`}
                   >
@@ -1289,7 +1289,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
                   <div
                     key={index}
                     onClick={() => setLightboxPhotoIndex(index)}
-                    className="group relative h-40 rounded-xl overflow-hidden cursor-pointer border border-slate-200 bg-slate-200 shadow-sm hover:shadow-lg hover:border-brand-gold transition-all duration-300"
+                    className="group relative h-40 rounded-xl overflow-hidden cursor-pointer border border-slate-200 bg-slate-200 shadow-sm hover:shadow-lg hover:border-brand-blue transition-all duration-300"
                   >
                     <img
                       src={imgSrc}
@@ -1298,7 +1298,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-brand-navy/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                      <span className="w-8 h-8 rounded-full bg-brand-navy/90 text-brand-gold border border-brand-gold/40 flex items-center justify-center text-xs">
+                      <span className="w-8 h-8 rounded-full bg-brand-navy/90 text-brand-blue border border-brand-blue/40 flex items-center justify-center text-xs">
                         <i className="fa-solid fa-expand"></i>
                       </span>
                     </div>
@@ -1320,7 +1320,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
           {/* Lightbox Header */}
           <div className="w-full max-w-5xl flex items-center justify-between text-white py-2">
             <div className="flex items-center gap-3">
-              <span className="bg-brand-gold/20 border border-brand-gold/40 text-brand-gold text-xs px-3 py-1 rounded-full font-bold">
+              <span className="bg-brand-blue/20 border border-brand-blue/40 text-brand-blue text-xs px-3 py-1 rounded-full font-bold">
                 {activeCategory?.title}
               </span>
               <span className="text-slate-400 text-xs font-mono">
@@ -1330,7 +1330,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
 
             <button
               onClick={() => setLightboxPhotoIndex(null)}
-              className="text-white hover:text-brand-gold text-2xl transition duration-200 px-3 py-1"
+              className="text-white hover:text-brand-blue text-2xl transition duration-200 px-3 py-1"
             >
               <i className="fa-solid fa-xmark"></i>
             </button>
@@ -1343,7 +1343,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
           >
             <button
               onClick={handlePrevPhoto}
-              className="absolute left-2 md:left-4 z-10 w-12 h-12 rounded-full bg-brand-navy/80 border border-brand-gold/40 text-brand-gold flex items-center justify-center hover:bg-brand-gold hover:text-brand-navy transition duration-200 shadow-xl"
+              className="absolute left-2 md:left-4 z-10 w-12 h-12 rounded-full bg-brand-navy/80 border border-brand-blue/40 text-brand-blue flex items-center justify-center hover:bg-brand-blue hover:text-white transition duration-200 shadow-xl"
               title="Previous Photo"
             >
               <i className="fa-solid fa-chevron-left text-lg"></i>
@@ -1357,7 +1357,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
 
             <button
               onClick={handleNextPhoto}
-              className="absolute right-2 md:right-4 z-10 w-12 h-12 rounded-full bg-brand-navy/80 border border-brand-gold/40 text-brand-gold flex items-center justify-center hover:bg-brand-gold hover:text-brand-navy transition duration-200 shadow-xl"
+              className="absolute right-2 md:right-4 z-10 w-12 h-12 rounded-full bg-brand-navy/80 border border-brand-blue/40 text-brand-blue flex items-center justify-center hover:bg-brand-blue hover:text-white transition duration-200 shadow-xl"
               title="Next Photo"
             >
               <i className="fa-solid fa-chevron-right text-lg"></i>
@@ -1374,4 +1374,3 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
     </div>
   );
 }
-

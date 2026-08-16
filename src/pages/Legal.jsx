@@ -14,9 +14,9 @@ export default function Legal({ type = 'privacy' }) {
     <div className="animate-fade-in bg-slate-50 min-h-screen">
       {/* Hero Banner */}
       <section className="relative bg-brand-navy text-white py-16 px-4 text-center overflow-hidden hero-gradient">
-        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(ellipse_at_center,_#D4AF37_0%,_transparent_70%)]"></div>
+        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(ellipse_at_center,_#1769C2_0%,_transparent_70%)]"></div>
         <div className="max-w-4xl mx-auto space-y-4 relative z-10">
-          <span className="inline-block bg-brand-gold/20 border border-brand-gold/30 text-brand-gold px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest">
+          <span className="inline-block bg-brand-blue/20 border border-brand-blue/30 text-brand-blue px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest">
             Legal Information
           </span>
           <h2 className="font-serif text-4xl md:text-5xl font-bold">Legal & Compliance</h2>
@@ -40,7 +40,7 @@ export default function Legal({ type = 'privacy' }) {
                     : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
                 }`}
               >
-                <i className={`fa-solid ${sec.icon} text-xs ${activeSection === sec.id ? 'text-brand-gold' : ''}`}></i>
+                <i className={`fa-solid ${sec.icon} text-xs ${activeSection === sec.id ? 'text-brand-blue' : ''}`}></i>
                 {sec.title}
               </button>
             ))}
@@ -56,8 +56,8 @@ export default function Legal({ type = 'privacy' }) {
           {activeSection === 'privacy' && (
             <div className="space-y-6 animate-fade-in">
               <div className="flex items-center gap-3 pb-4 border-b border-slate-200">
-                <div className="w-12 h-12 bg-brand-gold/10 rounded-xl flex items-center justify-center">
-                  <i className="fa-solid fa-shield-halved text-brand-gold text-xl"></i>
+                <div className="w-12 h-12 bg-brand-blue/10 rounded-xl flex items-center justify-center">
+                  <i className="fa-solid fa-shield-halved text-brand-blue text-xl"></i>
                 </div>
                 <div>
                   <h3 className="font-serif text-2xl font-bold text-brand-navy">Privacy Policy</h3>
@@ -117,7 +117,7 @@ export default function Legal({ type = 'privacy' }) {
                   <h4 className="font-bold text-brand-navy mb-2 text-base">5. Contact for Privacy Concerns</h4>
                   <p>
                     For any privacy-related questions or to exercise your rights, contact us at:{' '}
-                    <a href="mailto:privacy@digitechelevators.com" className="text-brand-gold hover:underline font-semibold">
+                    <a href="mailto:privacy@digitechelevators.com" className="text-brand-blue hover:underline font-semibold">
                       privacy@digitechelevators.com
                     </a>
                   </p>
@@ -130,8 +130,8 @@ export default function Legal({ type = 'privacy' }) {
           {activeSection === 'terms' && (
             <div className="space-y-6 animate-fade-in">
               <div className="flex items-center gap-3 pb-4 border-b border-slate-200">
-                <div className="w-12 h-12 bg-brand-gold/10 rounded-xl flex items-center justify-center">
-                  <i className="fa-solid fa-file-contract text-brand-gold text-xl"></i>
+                <div className="w-12 h-12 bg-brand-blue/10 rounded-xl flex items-center justify-center">
+                  <i className="fa-solid fa-file-contract text-brand-blue text-xl"></i>
                 </div>
                 <div>
                   <h3 className="font-serif text-2xl font-bold text-brand-navy">Terms of Service</h3>
@@ -213,8 +213,8 @@ export default function Legal({ type = 'privacy' }) {
           {activeSection === 'disclaimer' && (
             <div className="space-y-6 animate-fade-in">
               <div className="flex items-center gap-3 pb-4 border-b border-slate-200">
-                <div className="w-12 h-12 bg-brand-gold/10 rounded-xl flex items-center justify-center">
-                  <i className="fa-solid fa-triangle-exclamation text-brand-gold text-xl"></i>
+                <div className="w-12 h-12 bg-brand-blue/10 rounded-xl flex items-center justify-center">
+                  <i className="fa-solid fa-triangle-exclamation text-brand-blue text-xl"></i>
                 </div>
                 <div>
                   <h3 className="font-serif text-2xl font-bold text-brand-navy">Disclaimer</h3>
@@ -266,12 +266,12 @@ export default function Legal({ type = 'privacy' }) {
                   </p>
                 </div>
 
-                <div className="bg-yellow-50 border-l-4 border-yellow-500 p-5 rounded-r-xl">
+                <div className="bg-brand-blue/10 border-l-4 border-brand-blue p-5 rounded-r-xl">
                   <div className="flex gap-3">
-                    <i className="fa-solid fa-exclamation-triangle text-yellow-600 text-xl shrink-0 mt-0.5"></i>
+                    <i className="fa-solid fa-triangle-exclamation text-brand-blue text-xl shrink-0 mt-0.5"></i>
                     <div>
-                      <h5 className="font-bold text-yellow-900 mb-1">Important Safety Notice</h5>
-                      <p className="text-xs text-yellow-800 leading-relaxed">
+                      <h5 className="font-bold text-brand-navy mb-1">Important Safety Notice</h5>
+                      <p className="text-xs text-slate-700 leading-relaxed">
                         Elevator installation, maintenance, and repair should only be performed by certified technicians. 
                         Unauthorized repairs or modifications void warranties and may violate safety regulations.
                       </p>
@@ -286,8 +286,8 @@ export default function Legal({ type = 'privacy' }) {
           {activeSection === 'compliance' && (
             <div className="space-y-6 animate-fade-in">
               <div className="flex items-center gap-3 pb-4 border-b border-slate-200">
-                <div className="w-12 h-12 bg-brand-gold/10 rounded-xl flex items-center justify-center">
-                  <i className="fa-solid fa-certificate text-brand-gold text-xl"></i>
+                <div className="w-12 h-12 bg-brand-blue/10 rounded-xl flex items-center justify-center">
+                  <i className="fa-solid fa-certificate text-brand-blue text-xl"></i>
                 </div>
                 <div>
                   <h3 className="font-serif text-2xl font-bold text-brand-navy">Safety Compliance</h3>
@@ -373,7 +373,7 @@ export default function Legal({ type = 'privacy' }) {
           <div className="mt-10 pt-8 border-t border-slate-200">
             <div className="bg-slate-50 rounded-xl p-6 space-y-4">
               <h4 className="font-serif font-bold text-lg text-brand-navy flex items-center gap-2">
-                <i className="fa-solid fa-headset text-brand-gold"></i>
+                <i className="fa-solid fa-headset text-brand-blue"></i>
                 Need Assistance?
               </h4>
               <p className="text-sm text-slate-600 leading-relaxed">
@@ -384,7 +384,7 @@ export default function Legal({ type = 'privacy' }) {
                 <a href="#/contact" className="inline-flex items-center gap-2 bg-brand-navy hover:bg-slate-800 text-white px-5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition">
                   <i className="fa-solid fa-envelope"></i> Contact Us
                 </a>
-                <a href="tel:+919845071406" className="inline-flex items-center gap-2 bg-brand-gold hover:bg-brand-gold-hover text-brand-navy px-5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition">
+                <a href="tel:+919845071406" className="inline-flex items-center gap-2 bg-brand-blue hover:bg-brand-blue-dark text-white px-5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition">
                   <i className="fa-solid fa-phone"></i> +91 98450 71406
                 </a>
               </div>
@@ -394,10 +394,10 @@ export default function Legal({ type = 'privacy' }) {
       </section>
 
       {/* Footer CTA */}
-      <section className="bg-gradient-to-br from-brand-navy via-slate-800 to-brand-navy text-white py-12 px-4 text-center border-t-4 border-brand-gold relative overflow-hidden">
+      <section className="bg-gradient-to-br from-brand-navy via-slate-800 to-brand-navy text-white py-12 px-4 text-center border-t-4 border-brand-blue relative overflow-hidden">
         <div className="absolute inset-0 opacity-5 pointer-events-none">
           {[25, 50, 75].map(pos => (
-            <div key={pos} className="absolute top-0 bottom-0 w-px bg-brand-gold" style={{ left: `${pos}%`, animation: 'shaftGlow 3s infinite' }} />
+            <div key={pos} className="absolute top-0 bottom-0 w-px bg-brand-blue" style={{ left: `${pos}%`, animation: 'shaftGlow 3s infinite' }} />
           ))}
         </div>
         <div className="max-w-3xl mx-auto space-y-4 relative z-10">
@@ -405,7 +405,7 @@ export default function Legal({ type = 'privacy' }) {
           <p className="text-slate-300 text-sm">
             We're committed to transparency and compliance. Reach out to our team for clarification.
           </p>
-          <a href="#/contact" className="inline-block bg-brand-gold hover:bg-brand-gold-hover text-brand-navy font-bold px-8 py-3 rounded-xl text-xs uppercase tracking-widest transition shadow-lg hover:scale-105 btn-glow mt-2">
+          <a href="#/contact" className="inline-block bg-brand-blue hover:bg-brand-blue-dark text-white font-bold px-8 py-3 rounded-xl text-xs uppercase tracking-widest transition shadow-lg hover:scale-105 btn-glow mt-2">
             Get in Touch
           </a>
         </div>
