@@ -41,23 +41,23 @@ export default function Navbar({ currentHash }) {
   return (
     <header className={`sticky top-0 z-50 bg-white transition-shadow duration-300 ${scrolled ? 'shadow-2xl' : 'shadow-md'}`}>
       {/* ── Top Info Bar ── */}
-      <div className="bg-brand-navy text-xs py-2 border-b border-slate-700">
-        <div className="max-w-[1600px] mx-auto px-4 md:px-8 flex flex-wrap justify-between items-center gap-2">
-          <div className="flex items-center gap-5 text-slate-300 font-semibold">
-            <span className="flex items-center gap-1.5">
-              <i className="fa-solid fa-shield-halved text-brand-blue text-sm"></i> Grade-A Safety Standards
+      <div className="bg-brand-navy text-[11px] sm:text-xs py-1.5 sm:py-2 border-b border-slate-700">
+        <div className="max-w-[1600px] mx-auto px-3 sm:px-4 md:px-8 flex justify-between items-center gap-2 whitespace-nowrap">
+          <div className="flex items-center gap-3 sm:gap-5 text-slate-300 font-semibold shrink-0">
+            <span className="flex items-center gap-1 sm:gap-1.5">
+              <i className="fa-solid fa-shield-halved text-brand-blue text-xs sm:text-sm"></i> Grade-A Safety Standards
             </span>
             <span className="hidden sm:flex items-center gap-1.5">
-              <i className="fa-solid fa-gears text-brand-blue text-sm"></i> Premium Engineering Solutions
+              <i className="fa-solid fa-gears text-brand-blue text-xs sm:text-sm"></i> Premium Engineering Solutions
             </span>
           </div>
-          <div className="flex items-center gap-5 text-slate-300 font-semibold">
-            <a href="tel:+919845071406" className="transition flex items-center gap-1.5 animate-color-blink">
-              <i className="fa-solid fa-phone text-sm"></i> 24/7: +91 98450 71406
+          <div className="flex items-center gap-3 sm:gap-5 text-slate-300 font-semibold shrink-0">
+            <a href="tel:+919845071406" className="transition flex items-center gap-1 sm:gap-1.5 animate-color-blink">
+              <i className="fa-solid fa-phone text-xs sm:text-sm"></i> 24/7: +91 98450 71406
             </a>
             <a href="https://wa.me/919845071406" target="_blank" rel="noopener noreferrer"
                className="hidden md:flex transition items-center gap-1.5 animate-color-blink">
-              <i className="fa-brands fa-whatsapp text-sm"></i> WhatsApp
+              <i className="fa-brands fa-whatsapp text-xs sm:text-sm"></i> WhatsApp
             </a>
           </div>
         </div>

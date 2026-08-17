@@ -49,7 +49,7 @@ export default function Quote() {
       {/* ── Banner ── */}
       <section className="bg-brand-navy text-white py-16 px-4 text-center hero-gradient relative">
         <div className="max-w-4xl mx-auto space-y-4">
-          <span className="inline-block bg-brand-blue/20 border border-brand-blue/30 text-brand-blue px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest animate-pulse-ring">
+          <span className="inline-block bg-brand-blue/30 border border-brand-blue/50 text-white px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest animate-pulse-ring">
             Free Consultation
           </span>
           <h2 className="font-serif text-3xl md:text-5xl font-bold">Request a Free Quote</h2>

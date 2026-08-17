@@ -2,37 +2,44 @@ import React, { useState, useEffect, useRef } from 'react';
 import { PRODUCTS_DATA, SERVICES_DATA, PROJECTS_DATA, TESTIMONIALS_DATA } from '../data/siteData';
 
 /* ── Scroll-reveal hook ── */
-function useScrollReveal(threshold = 0.15) {
+function useScrollReveal() {
   const ref = useRef(null);
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          el.querySelectorAll('.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right, .scroll-reveal-scale')
-            .forEach((child, i) => {
-              setTimeout(() => {
-                child.classList.add('revealed');
-                child.setAttribute('data-revealed', 'true');
-              }, i * 120);
-            });
-          // also reveal the container itself if it has scroll-reveal class
-          if (el.classList.contains('scroll-reveal') ||
-              el.classList.contains('scroll-reveal-left') ||
-              el.classList.contains('scroll-reveal-right') ||
-              el.classList.contains('scroll-reveal-scale')) {
-            el.classList.add('revealed');
-            el.setAttribute('data-revealed', 'true');
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const target = entry.target;
+            target.classList.add('revealed');
+            target.setAttribute('data-revealed', 'true');
+            observer.unobserve(target);
           }
-          observer.unobserve(el);
-        }
+        });
       },
-      { threshold }
+      { threshold: 0.02, rootMargin: '0px 0px 80px 0px' }
     );
-    observer.observe(el);
+
+    // If container itself has a reveal class, observe it
+    if (
+      el.classList.contains('scroll-reveal') ||
+      el.classList.contains('scroll-reveal-left') ||
+      el.classList.contains('scroll-reveal-right') ||
+      el.classList.contains('scroll-reveal-scale')
+    ) {
+      observer.observe(el);
+    }
+
+    // Observe all child elements with reveal classes individually
+    const children = el.querySelectorAll(
+      '.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right, .scroll-reveal-scale'
+    );
+    children.forEach((child) => observer.observe(child));
+
     return () => observer.disconnect();
-  }, [threshold]);
+  }, []);
   return ref;
 }
 
@@ -147,15 +154,40 @@ export default function Home() {
   const [statsAnimated, setStatsAnimated] = useState(false);
   const [heroLoaded,    setHeroLoaded]   = useState(false);
 
-  const statsRef    = useScrollReveal(0.3);
-  const aboutRef    = useScrollReveal(0.15);
-  const servicesRef = useScrollReveal(0.1);
-  const productsRef = useScrollReveal(0.1);
-  const industryRef = useScrollReveal(0.15);
-  const whyRef      = useScrollReveal(0.1);
-  const projectsRef = useScrollReveal(0.1);
-  const testiRef    = useScrollReveal(0.2);
-  const contactRef  = useScrollReveal(0.1);
+  const statsRef    = useScrollReveal();
+  const aboutRef    = useScrollReveal();
+  const servicesRef = useScrollReveal();
+  const productsRef = useScrollReveal();
+  const industryRef = useScrollReveal();
+  const whyRef      = useScrollReveal();
+  const projectsRef = useScrollReveal();
+  const clientRef   = useScrollReveal();
+  const testiRef    = useScrollReveal();
+  const contactRef  = useScrollReveal();
+
+  // Page-wide fallback observer to guarantee all scroll-reveal targets animate
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            el.classList.add('revealed');
+            el.setAttribute('data-revealed', 'true');
+            observer.unobserve(el);
+          }
+        });
+      },
+      { threshold: 0.02, rootMargin: '0px 0px 80px 0px' }
+    );
+
+    const targets = document.querySelectorAll(
+      '.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right, .scroll-reveal-scale'
+    );
+    targets.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
 
   /* ── Hero entrance ── */
   useEffect(() => {
@@ -183,7 +215,7 @@ export default function Home() {
           }, 30);
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.05, rootMargin: '0px 0px 50px 0px' }
     );
     observer.observe(el);
     return () => observer.disconnect();
@@ -725,8 +757,8 @@ export default function Home() {
                 className="scroll-reveal-scale bg-white/10 backdrop-blur-sm p-8 rounded-3xl border-2 border-white/20 hover:border-brand-blue hover:bg-white/20 text-center transition-all duration-300 group cursor-pointer flex flex-col items-center justify-center space-y-5"
                 style={{ transitionDelay: `${i * 0.1}s` }}
               >
-                <div className="w-18 h-18 bg-brand-blue/20 rounded-2xl flex items-center justify-center text-brand-blue text-3xl group-hover:bg-brand-blue group-hover:text-white transition-all duration-400 group-hover:scale-110 group-hover:rotate-12 shadow-lg">
-                  <i className={`fa-solid ${ind.icon} group-hover:animate-lift-ride`} />
+                <div className="w-18 h-18 bg-brand-blue/40 border border-white/20 rounded-2xl flex items-center justify-center text-white text-3xl group-hover:bg-brand-blue transition-all duration-400 group-hover:scale-110 group-hover:rotate-12 shadow-lg">
+                  <i className={`fa-solid ${ind.icon} text-white group-hover:animate-lift-ride`} />
                 </div>
                 <h4 className="font-serif font-bold text-sm text-white leading-snug group-hover:text-brand-blue-bright transition-colors">{ind.label}</h4>
               </div>
@@ -886,7 +918,7 @@ export default function Home() {
       </section>
 
       {/* ══════════════════════════ CLIENT LOGOS ══════════════════════════ */}
-      <section className="relative py-28 px-4 md:px-8 bg-gradient-to-br from-brand-navy via-slate-900 to-brand-navy text-white overflow-hidden">
+      <section ref={clientRef} className="relative py-28 px-4 md:px-8 bg-gradient-to-br from-brand-navy via-slate-900 to-brand-navy text-white overflow-hidden">
         {/* Background pattern */}
         <div className="absolute inset-0 opacity-5"
              style={{
@@ -911,8 +943,8 @@ export default function Home() {
           {/* Scrolling Client Logos - Row 1 */}
           <div className="relative overflow-hidden">
             {/* Fade edges */}
-            <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-brand-navy to-transparent z-10 pointer-events-none" />
-            <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-brand-navy to-transparent z-10 pointer-events-none" />
+            <div className="absolute left-0 top-0 bottom-0 w-6 sm:w-12 md:w-24 bg-gradient-to-r from-brand-navy/40 md:from-brand-navy to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-6 sm:w-12 md:w-24 bg-gradient-to-l from-brand-navy/40 md:from-brand-navy to-transparent z-10 pointer-events-none" />
             <div className="flex gap-6 animate-scroll-left" style={{ width: 'max-content' }}>
               {[
                 { name: 'Sobha Projects',        logo: './logos/Sobha Projects.png' },
@@ -955,8 +987,8 @@ export default function Home() {
 
           {/* Scrolling Client Logos - Row 2 (Reverse) */}
           <div className="relative overflow-hidden">
-            <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-brand-navy to-transparent z-10 pointer-events-none" />
-            <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-brand-navy to-transparent z-10 pointer-events-none" />
+            <div className="absolute left-0 top-0 bottom-0 w-6 sm:w-12 md:w-24 bg-gradient-to-r from-brand-navy/40 md:from-brand-navy to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-6 sm:w-12 md:w-24 bg-gradient-to-l from-brand-navy/40 md:from-brand-navy to-transparent z-10 pointer-events-none" />
             <div className="flex gap-6 animate-scroll-right" style={{ width: 'max-content' }}>
               {[
                 { name: 'Aditya Group of Institutions',  logo: './logos/Aditya Group of Institutions.png' },

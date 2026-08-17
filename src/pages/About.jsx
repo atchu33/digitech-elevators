@@ -1,6 +1,53 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 export default function About() {
+  useEffect(() => {
+    const targets = document.querySelectorAll(
+      '.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right, .scroll-reveal-scale, .scroll-reveal-container'
+    );
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            if (el.classList.contains('scroll-reveal-container')) {
+              const children = el.querySelectorAll('.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right, .scroll-reveal-scale');
+              children.forEach((child, i) => {
+                setTimeout(() => {
+                  child.classList.add('revealed');
+                  child.setAttribute('data-revealed', 'true');
+                }, i * 60);
+              });
+              el.classList.add('revealed');
+              el.setAttribute('data-revealed', 'true');
+            } else {
+              el.classList.add('revealed');
+              el.setAttribute('data-revealed', 'true');
+            }
+            observer.unobserve(el);
+          }
+        });
+      },
+      { threshold: 0.01, rootMargin: '0px 0px 100px 0px' }
+    );
+
+    targets.forEach((el) => observer.observe(el));
+
+    // Safety fallback for mobile: guarantee all sections are revealed after 1.5s
+    const safetyTimer = setTimeout(() => {
+      targets.forEach((el) => {
+        el.classList.add('revealed');
+        el.setAttribute('data-revealed', 'true');
+      });
+    }, 1500);
+
+    return () => {
+      observer.disconnect();
+      clearTimeout(safetyTimer);
+    };
+  }, []);
+
   return (
     <div className="animate-fade-in">
       {/* ── Banner with Image ── */}
@@ -18,7 +65,7 @@ export default function About() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(23,105,194,0.2)_0%,_transparent_70%)] z-[2]"></div>
         
         <div className="max-w-4xl mx-auto space-y-6 relative z-10">
-          <span className="inline-block bg-brand-blue/20 border-2 border-brand-blue/40 text-brand-blue px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest animate-pulse-ring">Our Legacy Since 1999</span>
+          <span className="inline-block bg-brand-blue/30 border-2 border-brand-blue/50 text-white px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest animate-pulse-ring">Our Legacy Since 1999</span>
           <h2 className="font-serif text-5xl md:text-6xl font-bold animate-gold-shimmer leading-tight">About Digitech<br />Elevators</h2>
           <p className="text-slate-300 text-base max-w-2xl mx-auto">Building trust through innovation, safety, and excellence</p>
         </div>
@@ -300,8 +347,8 @@ export default function About() {
           {/* Scrolling Client Logos - Row 1 */}
           <div className="relative overflow-hidden">
             {/* Fade edges */}
-            <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-brand-navy to-transparent z-10 pointer-events-none" />
-            <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-brand-navy to-transparent z-10 pointer-events-none" />
+            <div className="absolute left-0 top-0 bottom-0 w-6 sm:w-12 md:w-24 bg-gradient-to-r from-brand-navy/40 md:from-brand-navy to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-6 sm:w-12 md:w-24 bg-gradient-to-l from-brand-navy/40 md:from-brand-navy to-transparent z-10 pointer-events-none" />
             <div className="flex gap-6 animate-scroll-left" style={{ width: 'max-content' }}>
               {[
                 { name: 'Sobha Projects',        logo: './logos/Sobha Projects.png' },
@@ -344,8 +391,8 @@ export default function About() {
 
           {/* Scrolling Client Logos - Row 2 (Reverse) */}
           <div className="relative overflow-hidden">
-            <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-brand-navy to-transparent z-10 pointer-events-none" />
-            <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-brand-navy to-transparent z-10 pointer-events-none" />
+            <div className="absolute left-0 top-0 bottom-0 w-6 sm:w-12 md:w-24 bg-gradient-to-r from-brand-navy/40 md:from-brand-navy to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-6 sm:w-12 md:w-24 bg-gradient-to-l from-brand-navy/40 md:from-brand-navy to-transparent z-10 pointer-events-none" />
             <div className="flex gap-6 animate-scroll-right" style={{ width: 'max-content' }}>
               {[
                 { name: 'Aditya Group of Institutions',  logo: './logos/Aditya Group of Institutions.png' },

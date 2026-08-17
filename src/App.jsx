@@ -65,8 +65,12 @@ export default function App() {
 
   // Global Scroll-Reveal Intersection Observer
   useEffect(() => {
-    const timer = setTimeout(() => {
-      const observer = new IntersectionObserver(
+    let observer = null;
+
+    const attachObserver = () => {
+      if (observer) observer.disconnect();
+
+      observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
@@ -78,7 +82,7 @@ export default function App() {
                   setTimeout(() => {
                     child.classList.add('revealed');
                     child.setAttribute('data-revealed', 'true');
-                  }, i * 120);
+                  }, i * 60);
                 });
                 el.classList.add('revealed');
                 el.setAttribute('data-revealed', 'true');
@@ -91,27 +95,44 @@ export default function App() {
             }
           });
         },
-        { threshold: 0.08, rootMargin: '0px 0px -20px 0px' }
+        { threshold: 0.01, rootMargin: '0px 0px 100px 0px' }
       );
 
-      // Select all reveal elements and containers
       const targets = document.querySelectorAll(
         '.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right, .scroll-reveal-scale, .scroll-reveal-container'
       );
 
       targets.forEach((el) => {
-        // Skip individual observation if the element is nested within a scroll-reveal-container
         const parentContainer = el.parentElement ? el.parentElement.closest('.scroll-reveal-container') : null;
         if (parentContainer && el !== parentContainer) {
           return;
         }
         observer.observe(el);
       });
+    };
 
-      return () => observer.disconnect();
-    }, 200); // 200ms delay to let the DOM settle after page route transitions
+    // Staggered attachment to catch lazy-loaded route chunk rendering
+    const t1 = setTimeout(attachObserver, 50);
+    const t2 = setTimeout(attachObserver, 300);
+    const t3 = setTimeout(attachObserver, 800);
 
-    return () => clearTimeout(timer);
+    // Ultimate fallback for mobile: reveal all unrevealed targets after 2s
+    const t4 = setTimeout(() => {
+      document.querySelectorAll(
+        '.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right, .scroll-reveal-scale'
+      ).forEach((el) => {
+        el.classList.add('revealed');
+        el.setAttribute('data-revealed', 'true');
+      });
+    }, 2000);
+
+    return () => {
+      clearTimeout(t1);
+      clearTimeout(t2);
+      clearTimeout(t3);
+      clearTimeout(t4);
+      if (observer) observer.disconnect();
+    };
   }, [currentHash]);
 
   // View Router Parser

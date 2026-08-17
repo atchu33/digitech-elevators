@@ -63,8 +63,8 @@ export default function Faq() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(23,105,194,0.25)_0%,_transparent_70%)] z-[2]"></div>
 
         <div className="max-w-4xl mx-auto space-y-4 relative z-10">
-          <span className="inline-block bg-brand-blue/20 border border-brand-blue/30 text-brand-blue px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest animate-pulse-ring">
-            General Queries
+          <span className="inline-block bg-brand-blue/30 border border-brand-blue/50 text-white px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest animate-pulse-ring">
+            Help Center
           </span>
           <h2 className="font-serif text-4xl md:text-5xl font-bold animate-gold-shimmer">Frequently Asked Questions</h2>
           <p className="text-slate-300 text-sm max-w-xl mx-auto leading-relaxed">
