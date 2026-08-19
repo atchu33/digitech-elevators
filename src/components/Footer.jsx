@@ -1,4 +1,5 @@
 import React from 'react';
+import VisitorCounter from './VisitorCounter';
 
 export default function Footer() {
   const services = [
@@ -95,8 +96,7 @@ export default function Footer() {
               </li>
             ))}
           </ul>
-
-          </div>
+        </div>
 
         {/* ─── Contact Info ─── */}
         <div>
@@ -142,8 +142,12 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-slate-800">
-        <div className="max-w-7xl mx-auto px-6 md:px-8 py-4 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-slate-600">
-          <p>&copy; {new Date().getFullYear()} <span className="text-slate-400 font-semibold">Digitech Elevators</span>. All Rights Reserved.</p>
+        <div className="max-w-7xl mx-auto px-6 md:px-8 py-5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+          <div className="flex flex-col sm:flex-row items-center gap-3 text-center sm:text-left">
+            <p>&copy; {new Date().getFullYear()} <span className="text-slate-400 font-semibold">Digitech Elevators</span>. All Rights Reserved.</p>
+            <span className="hidden sm:inline text-slate-700">|</span>
+            <VisitorCounter />
+          </div>
           <div className="flex items-center">
             <span className="text-slate-500 font-medium">Designed &amp; Developed by</span>
             <img loading="lazy" 
@@ -163,3 +167,4 @@ export default function Footer() {
     </footer>
   );
 }
+
