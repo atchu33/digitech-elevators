@@ -644,18 +644,10 @@ export default function Home() {
               >
                 <div className={`grid grid-cols-1 lg:grid-cols-12 gap-0 ${i % 2 === 0 ? '' : 'lg:grid-flow-dense'}`}>
                   {/* Image Side */}
-                  <div className={`lg:col-span-5 relative h-64 lg:h-auto ${i % 2 === 0 ? '' : 'lg:col-start-8'}`}>
-                    <div className="absolute inset-0 bg-gradient-to-br from-brand-navy via-slate-800 to-brand-navy">
-                      <div className="absolute inset-0 bg-cover bg-center opacity-80 group-hover:scale-110 transition-all duration-700"
+                  <div className={`lg:col-span-5 relative h-64 lg:h-auto overflow-hidden ${i % 2 === 0 ? '' : 'lg:col-start-8'}`}>
+                    <div className="absolute inset-0">
+                      <div className="w-full h-full bg-cover bg-center group-hover:scale-110 transition-all duration-700"
                            style={{ backgroundImage:`url('${item.image}')` }} />
-                      <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/40 to-transparent" />
-
-                      {/* Floor lines overlay */}
-                      <div className="absolute inset-0 pointer-events-none opacity-20">
-                        {[20,40,60,80].map(p => (
-                          <div key={p} className="absolute left-0 right-0 h-px bg-white/20" style={{ top: `${p}%` }} />
-                        ))}
-                      </div>
                     </div>
                   </div>
 

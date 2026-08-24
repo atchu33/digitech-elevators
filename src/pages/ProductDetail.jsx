@@ -400,7 +400,6 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
                   alt="Building Applications"
                   className="w-full h-[500px] object-cover"
                 />
-                <div className="absolute inset-0 bg-brand-blue/20" />
               </div>
             </div>
 

@@ -84,7 +84,7 @@ export default function Projects() {
               <div className="h-52 relative overflow-hidden bg-slate-900">
                 {!p.noImage && p.image ? (
                   <div
-                    className="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-700 opacity-90"
+                    className="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-700"
                     style={{ backgroundImage: `url('${p.image}')` }}
                   />
                 ) : (
@@ -97,7 +97,6 @@ export default function Projects() {
                     </div>
                   </div>
                 )}
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/50 via-brand-navy/10 to-transparent" />
                 
                 {/* Badges on top */}
                 <div className="absolute top-4 left-4 right-4 flex items-center justify-between z-10">
@@ -112,7 +111,7 @@ export default function Projects() {
                 </div>
 
                 <div className="absolute bottom-4 left-5 right-5 z-10">
-                  <h4 className="font-serif font-bold text-lg text-white leading-tight drop-shadow-md">
+                  <h4 className="font-serif font-bold text-lg text-white leading-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
                     {p.name}
                   </h4>
                 </div>

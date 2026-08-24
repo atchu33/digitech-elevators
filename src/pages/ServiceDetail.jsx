@@ -481,9 +481,8 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
                       loading="lazy"
                       src={poster.image}
                       alt={poster.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/30 to-transparent opacity-80 group-hover:opacity-60 transition-opacity" />
 
                     {/* Category Tag */}
                     <div className="absolute top-4 left-4 bg-brand-navy/90 border border-brand-blue/40 text-brand-blue text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider backdrop-blur-md shadow-md">
