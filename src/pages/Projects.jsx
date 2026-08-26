@@ -100,7 +100,7 @@ export default function Projects() {
                 
                 {/* Badges on top */}
                 <div className="absolute top-4 left-4 right-4 flex items-center justify-between z-10">
-                  <span className="bg-brand-navy/90 border border-brand-blue/40 text-brand-blue text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider backdrop-blur-md">
+                  <span className="bg-brand-navy/90 border border-brand-blue/40 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider backdrop-blur-md">
                     {p.category}
                   </span>
                   {p.isFeatured && (
