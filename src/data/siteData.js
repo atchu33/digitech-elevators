@@ -22,10 +22,10 @@ export const PRODUCTS_DATA = {
     },
     whyChoose: ['Premium Quality Components', 'Safe & Reliable', 'Low Maintenance', 'Customized Design', 'Professional Installation'],
     gallery: [
-      { url: './passenger3.png', caption: 'Modern Passenger Cabin Interior' },
-      { url: './passenger4.png', caption: 'Stainless Steel Cabin Finish' },
-      { url: './passenger5.png', caption: 'Commercial Building Installation' },
-      { url: './passenger6.png', caption: 'Apartment Elevator System' },
+      { url: './lift image/Passenger/2.1_Advanced Touchscreen Control Panel.png', caption: 'Advanced Touchscreen Control Panel' },
+      { url: './lift image/Passenger/2.2_Premium Door Finish.png', caption: 'Premium Door Finish' },
+      { url: './lift image/Passenger/2.3_Elegant LED Ceiling Design.jpeg', caption: 'Elegant LED Ceiling Design' },
+      { url: './lift image/Passenger/2.4_Automatic Centre Opening Door.png', caption: 'Automatic Centre Opening Door' },
     ]
   },
   hospital: {
@@ -74,10 +74,10 @@ export const PRODUCTS_DATA = {
     },
     whyChoose: ['High Durability', 'Efficient Material Handling', 'Long Service Life'],
     gallery: [
+      { url: './lift image/GOODS LIFT/1_ goods lift.jpg', caption: 'Goods Lift' },
       { url: './goods4.png', caption: 'Industrial Goods Elevator' },
-      { url: './goods5.png', caption: 'Warehouse Freight Lift' },
-      { url: './goods6.png', caption: 'Heavy Load Platform' },
-      { url: './goods7.png', caption: 'Commercial Goods Transport' },
+      { url: './lift image/GOODS LIFT/2.3_Space-Saving Compact Control Panel for Efficient Goods Lift Operation.jpeg', caption: 'Space-Saving Compact Control Panel for Efficient Goods Lift Operation' },
+      { url: './lift image/GOODS LIFT/2.4_Heavy-Duty Goods Lift for Safe & Reliable Material Transportation.jpeg', caption: 'Heavy-Duty Goods Lift for Safe & Reliable Material Transportation' },
     ]
   },
   home: {
@@ -87,7 +87,7 @@ export const PRODUCTS_DATA = {
     icon: 'fa-house-chimney',
     image: './home_lift.png',
     desc: 'Digitech Home Elevators provide a stylish, compact, and safe mobility solution for villas, duplex homes, and private residences, enhancing convenience and accessibility.',
-    apps: ['Villas', 'Duplex Houses', 'Bungalows', 'Private Homes'],
+    apps: ['Villas', 'Duplex Houses', 'Apartments', 'Private Homes'],
     features: ['Compact Design', 'Quiet Operation', 'Elegant Interiors', 'Automatic Doors', 'Energy Efficient', 'Low Power Consumption', 'Space Saving'],
     caps: ['2 Passenger', '4 Passenger', '6 Passenger'],
     specs: {
@@ -98,10 +98,10 @@ export const PRODUCTS_DATA = {
     },
     whyChoose: ['Luxury Appearance', 'Easy Installation', 'Safe Operation', 'Adds Property Value'],
     gallery: [
-      { url: './homelift4.png', caption: 'Luxury Villa Interior' },
-      { url: './homelift5.png', caption: 'Home Elevator Glass Cabin' },
-      { url: './homelift6.png', caption: 'Residential Lift Installation' },
-      { url: './homelift7.png', caption: 'Premium Home Mobility' },
+      { url: './lift image/home/2.1_Smart Landing Panel with Premium Finish.png', caption: 'Smart Landing Panel with Premium Finish' },
+      { url: './lift image/home/2.2_Luxury Cabin Designed for Everyday Comfort.png', caption: 'Luxury Cabin Designed for Everyday Comfort' },
+      { url: './lift image/home/2.3_Elegant Exterior with Modern Engineering.png', caption: 'Elegant Exterior with Modern Engineering' },
+      { url: './lift image/home/2.4_Modern Ceiling Design.png', caption: 'Modern Ceiling Design' },
     ]
   },
   hydraulic: {
@@ -121,10 +121,10 @@ export const PRODUCTS_DATA = {
     },
     whyChoose: ['Reliable Operation', 'Cost Effective', 'Long Service Life'],
     gallery: [
-      { url: './hydraulic4.png', caption: 'Hydraulic Lift Mechanism' },
-      { url: './hydraulic5.png', caption: 'Low-Rise Building Lift' },
-      { url: './hydraulic7.png', caption: 'Hydraulic System Installation' },
-      { url: './hydraulic6.png', caption: 'Commercial Hydraulic Elevator' },
+      { url: './lift image/Hydraulic/1_Hydraulic lift.png', caption: 'Hydraulic Lift' },
+      { url: './lift image/Hydraulic/2.1_Hydraulic Lift Shaft.jpeg', caption: 'Hydraulic Lift Shaft' },
+      { url: './lift image/Hydraulic/2.3_Space-Saving Hydraulic Lift Cabin with Premium Stainless Steel (SS) Finish.png', caption: 'Space-Saving Hydraulic Lift Cabin with Premium Stainless Steel (SS) Finish' },
+      { url: './lift image/Hydraulic/2.4_Hydraulic Platform Lift with Space-Saving Design.jpeg', caption: 'Hydraulic Platform Lift with Space-Saving Design' },
     ]
   },
   mrl: {
@@ -144,10 +144,10 @@ export const PRODUCTS_DATA = {
     },
     whyChoose: ['Saves Building Space', 'Reduced Construction Cost', 'Lower Energy Consumption', 'Modern Appearance', 'High Performance'],
     gallery: [
-      { url: './mrl4.png', caption: 'MRL Elevator Shaft Design' },
-      { url: './mrl5.png', caption: 'Modern Apartment MRL Lift' },
-      { url: './mrl6.png', caption: 'Space-Saving MRL System' },
-      { url: './mrl7.png', caption: 'Energy Efficient MRL Elevator' },
+      { url: './lift image/MRL Lift/2.1_Premium Center-Opening Gold Finish MRL Lift Door Design.png', caption: 'Premium Center-Opening Gold Finish MRL Lift Door Design' },
+      { url: './lift image/MRL Lift/2.2_Modern Stainless Steel MRL Elevator Cabin Interior Design.png', caption: 'Modern Stainless Steel MRL Elevator Cabin Interior Design' },
+      { url: './lift image/MRL Lift/2.3_Designer False Ceiling with Integrated LED Lighting for MRL Lift Cabin.png', caption: 'Designer False Ceiling with Integrated LED Lighting for MRL Lift Cabin' },
+      { url: './lift image/MRL Lift/2.4_Customized Machine Room-Less (MRL) Elevator Shaft Design.png', caption: 'Customized Machine Room-Less (MRL) Elevator Shaft Design' },
     ]
   },
   villa: {
@@ -168,10 +168,10 @@ export const PRODUCTS_DATA = {
     },
     whyChoose: ['Elegant Visual Appeal', 'Space-Saving Shaft Design', 'Whisper Quiet Operation'],
     gallery: [
-      { url: './villa4.png', caption: 'Villa Luxury Cabin' },
-      { url: './villa5.png', caption: 'Panoramic Glass Villa Lift' },
-      { url: './villa6.png', caption: 'High-End Residential Elevator' },
-      { url: './villa7.png', caption: 'Custom Wood Cabin Finish' },
+      { url: './lift image/Villa/2.1_Elegant external call panel with premium finish..jpeg', caption: 'Elegant External Call Panel with Premium Finish' },
+      { url: './lift image/Villa/2.2_Elegant Exterior with Automatic Door & Landing Panel.png', caption: 'Elegant Exterior with Automatic Door & Landing Panel' },
+      { url: './lift image/Villa/2.3_Premium ultra-thin touchscreen Car Operating Panel (COP)..jpeg', caption: 'Premium Ultra-Thin Touchscreen Car Operating Panel' },
+      { url: './lift image/Villa/2.4_Complete cabin interior with premium finishes and modern design..jpg', caption: 'Complete Cabin Interior with Premium Finishes and Modern Design' },
     ]
   },
   commercial: {
@@ -192,10 +192,10 @@ export const PRODUCTS_DATA = {
     },
     whyChoose: ['Handles High Peak Traffic', 'Maximum System Up-Time', 'Low Energy Footprint'],
     gallery: [
+      { url: './lift image/Commercial/1_Commercial Lifts.png', caption: 'Commercial Lifts' },
       { url: './commercial4.png', caption: 'Corporate Office Elevator' },
-      { url: './commercial5.png', caption: 'Shopping Mall Lift System' },
-      { url: './commercial6.png', caption: 'High-Speed Commercial Lift' },
-      { url: './commercial7.png', caption: 'Modern Commercial Tower' },
+      { url: './lift image/Commercial/2.3_Elegant Elevator Cabin with Modern COP Touchscreen Control Panel.jpg', caption: 'Elegant Elevator Cabin with Modern COP Touchscreen Control Panel' },
+      { url: './lift image/Commercial/2.4_Mirror-Finished Capsule Lift with Premium Modern Design.jpg', caption: 'Mirror-Finished Capsule Lift with Premium Modern Design' },
     ]
   },
   car: {
@@ -691,7 +691,7 @@ export const PROJECTS_DATA = [
     door: 'Automatic Centre Opening Doors',
     system: 'Digitech MRL',
     year: '2025',
-    image: './assets/image/21_Renaissance Jagruti.jpg'
+    image: './assets/image/21_Renaissance Jagriti.jpg'
   },
 
   // ── Healthcare & Institutions ──

@@ -1,4 +1,5 @@
 import React from 'react';
+import VisitorCounter from './VisitorCounter';
 
 export default function Footer() {
   const services = [
@@ -20,7 +21,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-brand-navy text-slate-400 border-t-4 border-brand-gold">
+    <footer className="bg-brand-navy text-slate-400 border-t-4 border-brand-blue">
 
       {/* Main Footer */}
       <div className="max-w-7xl mx-auto px-6 md:px-8 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
@@ -37,7 +38,7 @@ export default function Footer() {
             </div>
             <div>
               <h2 className="font-serif font-bold text-lg text-white tracking-tight leading-none">
-                DIGITECH <span className="text-brand-gold">ELEVATORS</span>
+                DIGITECH <span className="text-brand-blue">ELEVATORS</span>
               </h2>
               <p className="text-[9px] uppercase tracking-[0.18em] text-slate-500 mt-0.5">
                 Safe &bull; Reliable &bull; Innovative
@@ -54,7 +55,7 @@ export default function Footer() {
               href="https://www.instagram.com/digitech.elevators/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="w-9 h-9 bg-slate-800 hover:bg-brand-gold rounded-lg flex items-center justify-center text-white hover:text-brand-navy transition-all cursor-pointer text-sm border border-slate-700 hover:border-brand-gold"
+              className="w-9 h-9 bg-slate-800 hover:bg-brand-blue rounded-lg flex items-center justify-center text-white transition-all cursor-pointer text-sm border border-slate-700 hover:border-brand-blue"
             >
               <i className="fa-brands fa-instagram"></i>
             </a>
@@ -62,7 +63,7 @@ export default function Footer() {
               href="https://wa.me/919845071406" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="w-9 h-9 bg-slate-800 hover:bg-brand-gold rounded-lg flex items-center justify-center text-white hover:text-brand-navy transition-all cursor-pointer text-sm border border-slate-700 hover:border-brand-gold"
+              className="w-9 h-9 bg-slate-800 hover:bg-brand-blue rounded-lg flex items-center justify-center text-white transition-all cursor-pointer text-sm border border-slate-700 hover:border-brand-blue"
             >
               <i className="fa-brands fa-whatsapp"></i>
             </a>
@@ -75,8 +76,8 @@ export default function Footer() {
           <ul className="space-y-3">
             {quickLinks.map(([href, label]) => (
               <li key={href}>
-                <a href={href} className="flex items-center gap-2 text-sm hover:text-brand-gold transition">
-                  <i className="fa-solid fa-angle-right text-brand-gold text-[10px]"></i> {label}
+                <a href={href} className="flex items-center gap-2 text-sm hover:text-brand-blue-bright transition">
+                  <i className="fa-solid fa-angle-right text-brand-blue text-[10px]"></i> {label}
                 </a>
               </li>
             ))}
@@ -89,21 +90,20 @@ export default function Footer() {
           <ul className="space-y-3">
             {services.map(([key, icon, label]) => (
               <li key={key}>
-                <a href={`#/services/${key}`} className="flex items-center gap-2 text-sm hover:text-brand-gold transition">
-                  <i className="fa-solid fa-angle-right text-brand-gold text-[10px]"></i> {label}
+                <a href={`#/services/${key}`} className="flex items-center gap-2 text-sm hover:text-brand-blue-bright transition">
+                  <i className="fa-solid fa-angle-right text-brand-blue text-[10px]"></i> {label}
                 </a>
               </li>
             ))}
           </ul>
-
-          </div>
+        </div>
 
         {/* ─── Contact Info ─── */}
         <div>
           <h3 className="font-serif font-bold text-white text-sm border-b border-slate-700 pb-2.5 mb-5">Contact Info</h3>
           <div className="space-y-4">
             <div className="flex gap-3">
-              <div className="w-9 h-9 bg-brand-gold/10 rounded-lg flex items-center justify-center text-brand-gold shrink-0 border border-brand-gold/20">
+              <div className="w-9 h-9 bg-brand-blue/10 rounded-lg flex items-center justify-center text-brand-blue shrink-0 border border-brand-blue/20">
                 <i className="fa-solid fa-location-dot text-sm"></i>
               </div>
               <p className="text-sm leading-relaxed mt-0.5">
@@ -112,21 +112,21 @@ export default function Footer() {
             </div>
 
             <div className="flex gap-3">
-              <div className="w-9 h-9 bg-brand-gold/10 rounded-lg flex items-center justify-center text-brand-gold shrink-0 border border-brand-gold/20">
+              <div className="w-9 h-9 bg-brand-blue/10 rounded-lg flex items-center justify-center text-brand-blue shrink-0 border border-brand-blue/20">
                 <i className="fa-solid fa-phone text-sm"></i>
               </div>
               <div className="mt-0.5">
-                <a href="tel:+919845071406" className="block text-sm hover:text-brand-gold transition">+91 98450 71406</a>
-                <a href="tel:+917625080504" className="block text-sm hover:text-brand-gold transition mt-0.5">+91 76250 80504</a>
+                <a href="tel:+919845071406" className="block text-sm hover:text-brand-blue-bright transition">+91 98450 71406</a>
+                <a href="tel:+917625080504" className="block text-sm hover:text-brand-blue-bright transition mt-0.5">+91 76250 80504</a>
               </div>
             </div>
 
             <div className="flex gap-3">
-              <div className="w-9 h-9 bg-brand-gold/10 rounded-lg flex items-center justify-center text-brand-gold shrink-0 border border-brand-gold/20">
+              <div className="w-9 h-9 bg-brand-blue/10 rounded-lg flex items-center justify-center text-brand-blue shrink-0 border border-brand-blue/20">
                 <i className="fa-solid fa-envelope text-sm"></i>
               </div>
               <a href="mailto:digitech.elevators@gmail.com"
-                 className="text-sm hover:text-brand-gold transition break-all mt-1.5">
+                 className="text-sm hover:text-brand-blue-bright transition break-all mt-1.5">
                 digitech.elevators@gmail.com
               </a>
             </div>
@@ -142,8 +142,12 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-slate-800">
-        <div className="max-w-7xl mx-auto px-6 md:px-8 py-4 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-slate-600">
-          <p>&copy; {new Date().getFullYear()} <span className="text-slate-400 font-semibold">Digitech Elevators</span>. All Rights Reserved.</p>
+        <div className="max-w-7xl mx-auto px-6 md:px-8 py-5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+          <div className="flex flex-col sm:flex-row items-center gap-3 text-center sm:text-left">
+            <p>&copy; {new Date().getFullYear()} <span className="text-slate-400 font-semibold">Digitech Elevators</span>. All Rights Reserved.</p>
+            <span className="hidden sm:inline text-slate-700">|</span>
+            <VisitorCounter />
+          </div>
           <div className="flex items-center">
             <span className="text-slate-500 font-medium">Designed &amp; Developed by</span>
             <img loading="lazy" 
@@ -154,12 +158,13 @@ export default function Footer() {
             />
           </div>
           <div className="flex gap-4">
-            <a href="#/legal/privacy" className="hover:text-brand-gold transition">Privacy Policy</a>
+            <a href="#/legal/privacy" className="hover:text-brand-blue-bright transition">Privacy Policy</a>
             <span className="text-slate-700">|</span>
-            <a href="#/legal/terms"   className="hover:text-brand-gold transition">Terms &amp; Conditions</a>
+            <a href="#/legal/terms"   className="hover:text-brand-blue-bright transition">Terms &amp; Conditions</a>
           </div>
         </div>
       </div>
     </footer>
   );
 }
+

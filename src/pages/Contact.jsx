@@ -43,21 +43,21 @@ export default function Contact() {
         />
         {/* Dark overlay & radial gradient overlay for premium lighting */}
         <div className="absolute inset-0 bg-brand-navy/70 z-[1]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(212,175,55,0.25)_0%,_transparent_70%)] z-[2]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(23,105,194,0.25)_0%,_transparent_70%)] z-[2]"></div>
         
         <div className="max-w-4xl mx-auto space-y-4 relative z-10">
-          <span className="inline-block bg-brand-gold/20 border border-brand-gold/30 text-brand-gold px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest animate-pulse-ring">Get In Touch</span>
+          <span className="inline-block bg-brand-blue/30 border border-brand-blue/50 text-white px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest animate-pulse-ring">Get In Touch</span>
           <h2 className="font-serif text-4xl md:text-5xl font-bold animate-gold-shimmer">Contact Our Office</h2>
         </div>
       </section>
 
 
       {/* ── Contact Section ── */}
-      <section className="bg-gradient-to-br from-brand-navy via-slate-800 to-brand-navy text-white py-20 px-4 md:px-8 border-t-4 border-brand-gold relative overflow-hidden">
+      <section className="bg-gradient-to-br from-brand-navy via-slate-800 to-brand-navy text-white py-20 px-4 md:px-8 border-t-4 border-brand-blue relative overflow-hidden">
         {/* Faint animated lines */}
         <div className="absolute inset-0 opacity-5 pointer-events-none">
           {[20, 40, 60, 80].map(pos => (
-            <div key={pos} className="absolute top-0 bottom-0 w-px bg-brand-gold" style={{ left: `${pos}%`, animation: 'shaftGlow 2.5s infinite' }} />
+            <div key={pos} className="absolute top-0 bottom-0 w-px bg-brand-blue" style={{ left: `${pos}%`, animation: 'shaftGlow 2.5s infinite' }} />
           ))}
         </div>
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start relative z-10">
@@ -65,13 +65,13 @@ export default function Contact() {
           {/* Left — contact details */}
           <div className="lg:col-span-5 space-y-8 scroll-reveal-left">
             <div>
-              <h3 className="text-sm font-semibold uppercase tracking-widest text-brand-gold mb-2">Get In Touch</h3>
+              <h3 className="text-sm font-semibold uppercase tracking-widest text-brand-blue mb-2">Get In Touch</h3>
               <h2 className="font-serif text-3xl md:text-4xl font-bold">Contact Us</h2>
             </div>
 
             <div className="space-y-5 text-sm text-slate-300 scroll-reveal-container">
               <div className="flex gap-4 scroll-reveal">
-                <div className="w-10 h-10 bg-brand-gold/10 rounded-lg flex items-center justify-center text-brand-gold shrink-0 border border-brand-gold/20 hover:scale-110 transition-all duration-300">
+                <div className="w-10 h-10 bg-brand-blue/10 rounded-lg flex items-center justify-center text-brand-blue shrink-0 border border-brand-blue/20 hover:scale-110 transition-all duration-300">
                   <i className="fa-solid fa-location-dot"></i>
                 </div>
                 <div>
@@ -80,7 +80,7 @@ export default function Contact() {
                 </div>
               </div>
               <div className="flex gap-4 scroll-reveal">
-                <div className="w-10 h-10 bg-brand-gold/10 rounded-lg flex items-center justify-center text-brand-gold shrink-0 border border-brand-gold/20 hover:scale-110 transition-all duration-300">
+                <div className="w-10 h-10 bg-brand-blue/10 rounded-lg flex items-center justify-center text-brand-blue shrink-0 border border-brand-blue/20 hover:scale-110 transition-all duration-300">
                   <i className="fa-solid fa-phone"></i>
                 </div>
                 <div>
@@ -89,7 +89,7 @@ export default function Contact() {
                 </div>
               </div>
               <div className="flex gap-4 scroll-reveal">
-                <div className="w-10 h-10 bg-brand-gold/10 rounded-lg flex items-center justify-center text-brand-gold shrink-0 border border-brand-gold/20 hover:scale-110 transition-all duration-300">
+                <div className="w-10 h-10 bg-brand-blue/10 rounded-lg flex items-center justify-center text-brand-blue shrink-0 border border-brand-blue/20 hover:scale-110 transition-all duration-300">
                   <i className="fa-solid fa-phone-volume"></i>
                 </div>
                 <div>
@@ -98,7 +98,7 @@ export default function Contact() {
                 </div>
               </div>
               <div className="flex gap-4 scroll-reveal">
-                <div className="w-10 h-10 bg-brand-gold/10 rounded-lg flex items-center justify-center text-brand-gold shrink-0 border border-brand-gold/20 hover:scale-110 transition-all duration-300">
+                <div className="w-10 h-10 bg-brand-blue/10 rounded-lg flex items-center justify-center text-brand-blue shrink-0 border border-brand-blue/20 hover:scale-110 transition-all duration-300">
                   <i className="fa-solid fa-envelope"></i>
                 </div>
                 <div>
@@ -107,7 +107,7 @@ export default function Contact() {
                 </div>
               </div>
               <div className="flex gap-4 scroll-reveal">
-                <div className="w-10 h-10 bg-brand-gold/10 rounded-lg flex items-center justify-center text-brand-gold shrink-0 border border-brand-gold/20 hover:scale-110 transition-all duration-300">
+                <div className="w-10 h-10 bg-brand-blue/10 rounded-lg flex items-center justify-center text-brand-blue shrink-0 border border-brand-blue/20 hover:scale-110 transition-all duration-300">
                   <i className="fa-brands fa-instagram"></i>
                 </div>
                 <div>
@@ -116,7 +116,7 @@ export default function Contact() {
                 </div>
               </div>
               <div className="flex gap-4 scroll-reveal">
-                <div className="w-10 h-10 bg-brand-gold/10 rounded-lg flex items-center justify-center text-brand-gold shrink-0 border border-brand-gold/20 hover:scale-110 transition-all duration-300">
+                <div className="w-10 h-10 bg-brand-blue/10 rounded-lg flex items-center justify-center text-brand-blue shrink-0 border border-brand-blue/20 hover:scale-110 transition-all duration-300">
                   <i className="fa-solid fa-clock"></i>
                 </div>
                 <div>
@@ -152,7 +152,7 @@ export default function Contact() {
           {/* Right — contact form */}
           <div className="lg:col-span-7 bg-white rounded-2xl p-8 md:p-10 text-slate-800 shadow-2xl scroll-reveal-right">
             <h4 className="font-serif font-bold text-2xl text-brand-navy border-b border-slate-200 pb-3 mb-6 flex items-center gap-2">
-              <i className="fa-solid fa-envelope-open-text text-brand-gold animate-float"></i> Online Enquiry Form
+              <i className="fa-solid fa-envelope-open-text text-brand-blue animate-float"></i> Online Enquiry Form
             </h4>
             {formSubmitted ? (
               <div className="text-center py-14 animate-zoom-in">
@@ -209,7 +209,7 @@ export default function Contact() {
                     className="w-full border border-slate-200 rounded-lg p-3 text-xs focus:outline-none focus:border-brand-navy transition-all duration-200 resize-none"></textarea>
                 </div>
                 <button type="submit"
-                  className="w-full bg-brand-navy hover:bg-slate-800 text-white font-bold py-3.5 rounded-xl text-xs uppercase tracking-widest transition-all hover:scale-[1.01] shadow-lg hover:shadow-xl btn-glow">
+                  className="w-full bg-brand-blue hover:bg-brand-blue-dark text-white font-bold py-3.5 rounded-xl text-xs uppercase tracking-widest transition-all hover:scale-[1.01] shadow-lg hover:shadow-xl btn-glow">
                   Submit Enquiry
                 </button>
               </form>

@@ -19,6 +19,7 @@ const APP_ICONS = {
   'Logistics Facilities': 'fa-truck-moving',
   'Villas': 'fa-house-laptop',
   'Duplex Houses': 'fa-home',
+  'Apartments': 'fa-building',
   'Bungalows': 'fa-campground',
   'Private Homes': 'fa-house'
 };
@@ -125,47 +126,148 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
 
   return (
     <div className="animate-fade-in">
-      {/* ── Premium Full-Bleed Banner ── */}
-      <section className="relative bg-brand-navy text-white overflow-hidden hero-gradient border-b-4 border-brand-gold min-h-[320px] lg:min-h-[380px]">
-        {/* Full-width background image */}
-        <div className="absolute inset-0 group">
-          <img loading="lazy"
-            src={prod.image}
-            alt={prod.title}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-          />
+      {/* ── Premium Hero Banner ── */}
+      <section className="relative bg-brand-navy text-white overflow-hidden border-b-4 border-brand-blue" style={{minHeight: '400px'}}>
+
+        {/* Dark layered background */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_50%,_#1a2744_0%,_#080f1e_70%)]" />
+        <div className="absolute inset-0 opacity-25 bg-[radial-gradient(ellipse_at_75%_50%,_#1769C2_0%,_transparent_55%)]" />
+
+        {/* Animated vertical elevator shaft lines */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {[6, 12, 88, 94].map((pos, i) => (
+            <div key={i} className="absolute top-0 bottom-0" style={{left: `${pos}%`, width:'1px', background:'rgba(23,105,194,0.12)'}} />
+          ))}
+          {/* Animated horizontal sweep — elevator cable */}
+          <div className="absolute left-0 right-0" style={{height:'1px', background:'linear-gradient(90deg,transparent,rgba(23,105,194,0.35),transparent)', animation:'heroSweep 4s ease-in-out infinite', top:'40%'}} />
+          <div className="absolute left-0 right-0" style={{height:'1px', background:'linear-gradient(90deg,transparent,rgba(23,105,194,0.2),transparent)', animation:'heroSweep 4s ease-in-out 1.5s infinite', top:'65%'}} />
         </div>
 
-        {/* Left dark overlay for text legibility */}
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/85 to-brand-navy/30"></div>
+        {/* ── TWO-COLUMN LAYOUT ── */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-0" style={{minHeight:'400px'}}>
 
-        {/* Subtle radial glow */}
-        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(ellipse_at_center,_#D4AF37_0%,_transparent_70%)]"></div>
+          {/* LEFT: Text Content */}
+          <div className="flex flex-col justify-center py-8 lg:py-10 space-y-4 lg:pr-10">
 
-        {/* Text Content — left side only */}
-        <div className="relative z-10 flex items-center px-4 md:px-8 lg:pl-12 xl:pl-16 py-12 md:py-16 min-h-[320px] lg:min-h-[380px]">
-          <div className="max-w-xl space-y-6 text-left">
-            <span className="inline-block bg-brand-gold/20 border border-brand-gold/30 text-brand-gold px-4 py-1.5 rounded-full text-sm font-semibold uppercase tracking-widest animate-fade-simple">
-              Premium range
-            </span>
+            {/* Eyebrow */}
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-0.5 bg-brand-blue rounded-full" />
+              <span className="text-brand-blue text-xs font-bold uppercase tracking-[0.25em]">
+                Premium Range
+              </span>
+            </div>
+
+            {/* Title */}
             <div className="space-y-4">
-              <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold leading-tight animate-slide-left">
+              <h1 className="font-serif text-4xl md:text-5xl xl:text-6xl font-bold leading-tight animate-slide-left">
                 {prod.bannerTitle}
-              </h2>
-              <p className="text-brand-gold font-bold text-xl md:text-xl tracking-wider uppercase flex items-center gap-2 animate-slide-right">
-                <i className="fa-solid fa-circle-check text-lg"></i> {prod.bannerSubtitle}
-              </p>
+              </h1>
+            </div>
+
+            {/* Subtitle badge */}
+            <div className="inline-flex items-center gap-2 bg-brand-blue/15 border border-brand-blue/30 px-4 py-2 rounded-full self-start">
+              <i className="fa-solid fa-circle-check text-brand-blue text-sm" />
+              <span className="text-brand-blue font-bold text-sm uppercase tracking-wider">{prod.bannerSubtitle}</span>
+            </div>
+
+            {/* Stats row */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              {[
+                { value: prod.caps.length + '+', label: 'Capacities' },
+                { value: prod.features.length + '+', label: 'Features' },
+                { value: '27+', label: 'Years Exp.' },
+              ].map((stat, i) => (
+                <div key={i} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-4 text-center hover:border-brand-blue/40 hover:bg-white/10 transition-all duration-300">
+                  <div className="text-2xl font-bold text-brand-blue font-serif">{stat.value}</div>
+                  <div className="text-[10px] text-slate-400 uppercase tracking-wider mt-1">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+
+            {/* CTA buttons */}
+            <div className="flex flex-wrap gap-3">
+              <a href="#inquiry-form" className="inline-flex items-center gap-2 bg-brand-blue hover:bg-brand-blue-dark text-white font-bold px-6 py-3 rounded-xl text-sm uppercase tracking-wider transition-all hover:scale-105 shadow-lg">
+                <i className="fa-solid fa-envelope" /> Get a Quote
+              </a>
+              <a href="#/contact" className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/40 text-white font-bold px-6 py-3 rounded-xl text-sm uppercase tracking-wider transition-all">
+                <i className="fa-solid fa-phone" /> Call Us
+              </a>
+            </div>
+          </div>
+
+          {/* RIGHT: Elevator Visual */}
+          <div className="hidden lg:flex items-center justify-center py-6 pl-4 relative">
+            <div className="relative w-full" style={{maxWidth:'420px'}}>
+
+              {/* Shaft rails */}
+              <div className="absolute left-3 top-0 bottom-0 w-1 rounded-full" style={{background:'linear-gradient(180deg,rgba(23,105,194,0.6),rgba(23,105,194,0.15),rgba(23,105,194,0.6))'}} />
+              <div className="absolute right-3 top-0 bottom-0 w-1 rounded-full" style={{background:'linear-gradient(180deg,rgba(23,105,194,0.6),rgba(23,105,194,0.15),rgba(23,105,194,0.6))'}} />
+
+              {/* Floor indicator — top */}
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 bg-brand-navy border-2 px-4 py-2 rounded-lg shadow-xl" style={{borderColor:'rgba(23,105,194,0.5)'}}>
+                <i className="fa-solid fa-elevator text-brand-blue text-sm" />
+                <span className="text-brand-blue font-bold text-sm font-mono tracking-widest">▲ TOP FLOOR</span>
+                <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+              </div>
+
+              {/* Main cabin image with door-open effect */}
+              <div className="relative mx-8 rounded-2xl overflow-hidden border-2 group"
+                style={{borderColor:'rgba(23,105,194,0.35)', boxShadow:'0 0 50px rgba(23,105,194,0.15),0 25px 50px rgba(0,0,0,0.6)'}}>
+
+                {/* Sliding door halves */}
+                <div className="absolute inset-0 z-10 flex pointer-events-none overflow-hidden">
+                  <div className="h-full bg-brand-navy/90" style={{width:'50%', animation:'doorLeft 1.4s cubic-bezier(0.4,0,0.2,1) 0.4s forwards', transform:'translateX(0)'}} />
+                  <div className="h-full bg-brand-navy/90" style={{width:'50%', animation:'doorRight 1.4s cubic-bezier(0.4,0,0.2,1) 0.4s forwards', transform:'translateX(0)'}} />
+                </div>
+
+                <img
+                  loading="lazy"
+                  src={prod.image}
+                  alt={prod.title}
+                  className="w-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  style={{height:'280px'}}
+                />
+                <div className="absolute inset-0 pointer-events-none" style={{background:'linear-gradient(to top,rgba(8,15,30,0.75),transparent 55%)'}} />
+
+                {/* Caption bar */}
+                <div className="absolute bottom-0 left-0 right-0 p-4 z-20">
+                  <div className="backdrop-blur-md rounded-xl p-3 flex items-center justify-between" style={{background:'rgba(255,255,255,0.08)', border:'1px solid rgba(255,255,255,0.15)'}}>
+                    <div>
+                      <div className="text-white font-bold text-sm">{prod.title}</div>
+                      <div className="text-brand-blue text-xs flex items-center gap-1 mt-0.5">
+                        <i className="fa-solid fa-shield-halved text-[10px]" /> Certified Safety
+                      </div>
+                    </div>
+                    <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{background:'rgba(23,105,194,0.2)', border:'1px solid rgba(23,105,194,0.4)'}}>
+                      <i className={`fa-solid ${prod.icon} text-brand-blue`} />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Floating badges */}
+              <div className="absolute -left-8 top-1/4 backdrop-blur-md rounded-xl px-3 py-2 text-xs font-bold text-white shadow-xl"
+                style={{background:'rgba(255,255,255,0.1)',border:'1px solid rgba(255,255,255,0.2)',animation:'floatBadge 3s ease-in-out infinite'}}>
+                <i className="fa-solid fa-bolt text-brand-blue mr-1.5" />
+                Energy Efficient
+              </div>
+              <div className="absolute -right-8 top-1/2 backdrop-blur-md rounded-xl px-3 py-2 text-xs font-bold text-white shadow-xl"
+                style={{background:'rgba(255,255,255,0.1)',border:'1px solid rgba(255,255,255,0.2)',animation:'floatBadge 3s ease-in-out 1s infinite'}}>
+                <i className="fa-solid fa-certificate text-brand-blue mr-1.5" />
+                ISO Certified
+              </div>
+
+              {/* Floor indicator — bottom */}
+              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 bg-brand-navy border-2 px-4 py-2 rounded-lg shadow-xl" style={{borderColor:'rgba(23,105,194,0.5)'}}>
+                <i className="fa-solid fa-arrow-down text-brand-blue text-xs" />
+                <span className="text-slate-400 font-mono text-xs tracking-widest">GROUND</span>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Bottom badge */}
-        <div className="absolute bottom-4 right-4 md:right-8 inline-flex items-center gap-4 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-3 rounded-lg text-sm z-10 whitespace-nowrap">
-          <span className="font-bold text-white uppercase tracking-wider whitespace-nowrap">{prod.title}</span>
-          <span className="text-brand-gold font-bold flex items-center gap-2 whitespace-nowrap">
-            <i className="fa-solid fa-shield-halved text-sm"></i> Certified Safety
-          </span>
-        </div>
+        {/* Bottom gold accent */}
+        <div className="absolute bottom-0 left-0 right-0 h-px" style={{background:'linear-gradient(90deg,transparent,rgba(23,105,194,0.7),transparent)'}} />
       </section>
 
       {/* ── PRODUCT SHOWCASE - Large Image Section ── */}
@@ -174,18 +276,18 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Large Product Image */}
             <div className="scroll-reveal-left">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-brand-gold/30 group">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-brand-blue/30 group">
                 <img loading="lazy"
                   src={
-                    productKey === 'commercial' ? './commercial1.png' :
-                    productKey === 'home' ? './homelift2.png' :
-                    productKey === 'villa' ? './villa1.png' :
+                    productKey === 'commercial' ? './lift image/Commercial/1_Commercial Lifts.png' :
+                    productKey === 'home' ? './lift image/home/1_Home lift.png' :
+                    productKey === 'villa' ? './lift image/Villa/1_Villa Lift.png' :
                     productKey === 'hospital' ? './hospital1.png' :
-                    productKey === 'goods' ? './goods1.png' :
-                    productKey === 'hydraulic' ? './hydraulic1.png' :
+                    productKey === 'goods' ? './lift image/GOODS LIFT/1_ goods lift.jpg' :
+                    productKey === 'hydraulic' ? './lift image/Hydraulic/1_Hydraulic lift.png' :
                     productKey === 'mrl' ? './mrl1.png' :
                     productKey === 'car' ? './car1.png' :
-                    './passenger%20elevator.jpg'
+                    './lift image/Passenger/1_Passenger Elevators.png'
                   }
                   alt={prod.title}
                   className="w-full h-[500px] object-cover group-hover:scale-105 transition-transform duration-700"
@@ -193,7 +295,7 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/60 via-transparent to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-md p-6 rounded-2xl">
                   <h3 className="font-serif font-bold text-2xl text-brand-navy mb-2">{prod.title}</h3>
-                  <p className="text-brand-gold font-bold uppercase text-sm tracking-wider flex items-center gap-2">
+                  <p className="text-brand-blue font-bold uppercase text-sm tracking-wider flex items-center gap-2">
                     <i className="fa-solid fa-shield-halved" />
                     Certified Safety Standards
                   </p>
@@ -204,8 +306,8 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
             {/* Content */}
             <div className="space-y-6 scroll-reveal-right">
               <div>
-                <h3 className="text-xs font-bold uppercase tracking-widest text-brand-gold mb-3 flex items-center gap-3">
-                  <span className="w-16 h-px bg-brand-gold" />
+                <h3 className="text-xs font-bold uppercase tracking-widest text-brand-blue mb-3 flex items-center gap-3">
+                  <span className="w-16 h-px bg-brand-blue" />
                   Overview
                 </h3>
                 <h2 className="font-serif text-4xl font-bold text-brand-navy mb-4">
@@ -217,9 +319,9 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
               </p>
               
               {/* Quick Stats */}
-              <div className="grid grid-cols-2 gap-4 pt-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
                 <div className="bg-white p-5 rounded-2xl shadow-lg border-2 border-slate-100">
-                  <div className="text-3xl font-bold text-brand-gold font-serif mb-1">
+                  <div className="text-3xl font-bold text-brand-blue font-serif mb-1">
                     {prod.caps.length}+
                   </div>
                   <div className="text-xs text-slate-600 uppercase tracking-wider font-semibold">
@@ -227,7 +329,7 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
                   </div>
                 </div>
                 <div className="bg-white p-5 rounded-2xl shadow-lg border-2 border-slate-100">
-                  <div className="text-3xl font-bold text-brand-gold font-serif mb-1">
+                  <div className="text-3xl font-bold text-brand-blue font-serif mb-1">
                     {prod.features.length}+
                   </div>
                   <div className="text-xs text-slate-600 uppercase tracking-wider font-semibold">
@@ -245,7 +347,7 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
         <section className="py-20 px-4 md:px-8 bg-white">
           <div className="max-w-7xl mx-auto space-y-12">
             <div className="text-center space-y-4 scroll-reveal">
-              <h3 className="text-xs font-bold uppercase tracking-widest text-brand-gold">Visual Showcase</h3>
+              <h3 className="text-xs font-bold uppercase tracking-widest text-brand-blue">Visual Showcase</h3>
               <h2 className="font-serif text-4xl md:text-5xl font-bold text-brand-navy">
                 {prod.bannerTitle} Gallery
               </h2>
@@ -262,8 +364,8 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
                     alt={img.caption}
                     className={`w-full h-full ${img.url.includes('villa4.png') ? 'object-cover object-left' : 'object-cover'} group-hover:scale-110 transition-transform duration-700`}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/95 via-brand-navy/30 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute inset-0 flex items-end p-6 translate-y-0 md:translate-y-4 opacity-100 md:opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-100 transition-all duration-500 ease-out">
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/95 via-brand-navy/30 to-transparent opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 flex items-end p-6 opacity-100 transition-all duration-500 ease-out">
                     <div>
                       <p className="text-white font-serif font-bold text-sm mb-2">{img.caption}</p>
                     </div>
@@ -284,13 +386,13 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <img loading="lazy"
                   src={
-                    productKey === 'passenger' ? './passenger1.png' :
-                    productKey === 'home' ? './homelift3.png' :
-                    productKey === 'villa' ? './villa2.png' :
+                    productKey === 'passenger' ? './lift image/Passenger/3.png' :
+                    productKey === 'home' ? './3_Perfect For Suitability & Applications.png' :
+                    productKey === 'villa' ? './lift image/Villa/3.png' :
                     productKey === 'hospital' ? './hospital1.png' :
-                    productKey === 'goods' ? './goods2.png' :
-                    productKey === 'hydraulic' ? './hydraulic2.png' :
-                    productKey === 'mrl' ? './mrl2.png' :
+                    productKey === 'goods' ? './lift image/GOODS LIFT/3.jpg' :
+                    productKey === 'hydraulic' ? './lift image/Hydraulic/3.png' :
+                    productKey === 'mrl' ? './lift image/MRL Lift/3 (2).png' :
                     productKey === 'commercial' ? './commercial3.png' :
                     productKey === 'car' ? './car2.png' :
                     'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80'
@@ -298,14 +400,13 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
                   alt="Building Applications"
                   className="w-full h-[500px] object-cover"
                 />
-                <div className="absolute inset-0 bg-brand-gold/20" />
               </div>
             </div>
 
             {/* Content */}
             <div className="space-y-8 scroll-reveal-right order-1 lg:order-2">
               <div>
-                <h3 className="text-xs font-bold uppercase tracking-widest text-brand-gold mb-3">
+                <h3 className="text-xs font-bold uppercase tracking-widest text-brand-blue mb-3">
                   Perfect For
                 </h3>
                 <h2 className="font-serif text-4xl font-bold mb-4">
@@ -313,15 +414,15 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
                 </h2>
               </div>
               
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {prod.apps.map((a, i) => {
                   const icon = APP_ICONS[a] || 'fa-building';
                   return (
-                    <div key={i} className="group bg-white/10 backdrop-blur-md p-5 rounded-2xl border border-white/20 hover:border-brand-gold/50 flex items-center gap-4 hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-lg hover:shadow-brand-gold/10">
-                      <div className="w-12 h-12 bg-brand-gold/20 rounded-xl flex items-center justify-center text-brand-gold text-xl shrink-0 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
+                    <div key={i} className="group bg-white/10 backdrop-blur-md p-5 rounded-2xl border border-white/20 hover:border-brand-blue/50 flex items-center gap-4 hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-lg hover:shadow-brand-blue/10">
+                      <div className="w-12 h-12 bg-brand-blue/20 rounded-xl flex items-center justify-center text-brand-blue text-xl shrink-0 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
                         <i className={`fa-solid ${icon}`} />
                       </div>
-                      <span className="text-sm font-bold transition-colors group-hover:text-brand-gold">{a}</span>
+                      <span className="text-sm font-bold transition-colors group-hover:text-brand-blue-bright">{a}</span>
                     </div>
                   );
                 })}
@@ -338,7 +439,7 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
             {/* Content */}
             <div className="space-y-8 scroll-reveal-left">
               <div>
-                <h3 className="text-xs font-bold uppercase tracking-widest text-brand-gold mb-3">
+                <h3 className="text-xs font-bold uppercase tracking-widest text-brand-blue mb-3">
                   Advanced Technology
                 </h3>
                 <h2 className="font-serif text-4xl font-bold text-brand-navy mb-4">
@@ -348,7 +449,7 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
               
               <div className="space-y-3">
                 {prod.features.map((f, i) => (
-                  <div key={i} className="group flex items-center gap-4 bg-slate-50 p-4 rounded-xl border-2 border-slate-100 hover:border-brand-gold hover:bg-slate-100/50 hover:pl-6 hover:shadow-md transition-all duration-300">
+                  <div key={i} className="group flex items-center gap-4 bg-slate-50 p-4 rounded-xl border-2 border-slate-100 hover:border-brand-blue hover:bg-slate-100/50 hover:pl-6 hover:shadow-md transition-all duration-300">
                     <div className="w-8 h-8 rounded-lg bg-green-500/10 flex items-center justify-center text-green-600 shrink-0 group-hover:scale-110 group-hover:bg-green-500 group-hover:text-white transition-all duration-300">
                       <i className="fa-solid fa-circle-check" />
                     </div>
@@ -358,27 +459,59 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
               </div>
             </div>
 
-            {/* Image */}
+            {/* Image / Video */}
             <div className="scroll-reveal-right">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-                <img loading="lazy"
-                  src={
-                    productKey === 'commercial' ? './commercial2.png' :
-                    productKey === 'home' ? './homelift1.png' :
-                    productKey === 'passenger' ? './passenger2.png' :
-                    productKey === 'villa' ? './villa3.png' :
-                    productKey === 'hospital' ? './hospital3.png' :
-                    productKey === 'goods' ? './goodss3.png' :
-                    productKey === 'hydraulic' ? './hydraulic3.png' :
-                    productKey === 'mrl' ? './mrl3.png' :
-                    productKey === 'car' ? './car3.png' :
-                    prod.image
-                  }
-                  alt="Features"
-                  className="w-full h-[600px] object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/80 via-transparent to-transparent" />
-                <div className="absolute bottom-6 left-6 right-6">
+                {productKey === 'villa' ? (
+                  <video
+                    src="./lift image/Villa/4_Advanced Technology.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-[600px] object-cover"
+                  />
+                ) : (
+                  <div
+                    className="relative cursor-zoom-in group"
+                    onClick={() => setLightbox({
+                      url: productKey === 'commercial' ? './commercial2.png' :
+                           productKey === 'home' ? './lift image/home/4_Home Advanced Technology.png' :
+                           productKey === 'passenger' ? './lift image/Passenger/4.png' :
+                           productKey === 'hospital' ? './hospital3.png' :
+                           productKey === 'goods' ? './goodss3.png' :
+                           productKey === 'hydraulic' ? './lift image/Hydraulic/4.png' :
+                           productKey === 'mrl' ? './lift image/MRL Lift/4.png' :
+                           productKey === 'car' ? './car3.png' :
+                           prod.image,
+                      caption: 'Advanced Technology'
+                    })}
+                  >
+                    <img loading="lazy"
+                      src={
+                        productKey === 'commercial' ? './commercial2.png' :
+                        productKey === 'home' ? './lift image/home/4_Home Advanced Technology.png' :
+                        productKey === 'passenger' ? './lift image/Passenger/4.png' :
+                        productKey === 'hospital' ? './hospital3.png' :
+                        productKey === 'goods' ? './goodss3.png' :
+                        productKey === 'hydraulic' ? './lift image/Hydraulic/4.png' :
+                        productKey === 'mrl' ? './lift image/MRL Lift/4.png' :
+                        productKey === 'car' ? './car3.png' :
+                        prod.image
+                      }
+                      alt="Features"
+                      className="w-full h-[600px] object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    {/* Zoom hint */}
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                      <div className="bg-black/50 backdrop-blur-sm text-white rounded-full w-14 h-14 flex items-center justify-center text-xl shadow-lg">
+                        <i className="fa-solid fa-magnifying-glass-plus" />
+                      </div>
+                    </div>
+                  </div>
+                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/80 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute bottom-6 left-6 right-6 z-10 pointer-events-none">
                   <div className="bg-white/95 backdrop-blur-md p-6 rounded-2xl">
                     <h4 className="font-serif font-bold text-xl text-brand-navy mb-2">Premium Components</h4>
                     <p className="text-sm text-slate-600">Built with advanced technology and premium materials for superior performance</p>
@@ -391,10 +524,10 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
       </section>
 
       {/* ── CAPACITIES - Full Width with Background ── */}
-      <section className="py-20 px-4 md:px-8 bg-gradient-to-br from-amber-50 via-white to-slate-50">
+      <section className="py-20 px-4 md:px-8 bg-gradient-to-br from-[#EAF3FC] via-white to-slate-50">
         <div className="max-w-7xl mx-auto text-center space-y-12">
           <div className="scroll-reveal">
-            <h3 className="text-xs font-bold uppercase tracking-widest text-brand-gold mb-3">
+            <h3 className="text-xs font-bold uppercase tracking-widest text-brand-blue mb-3">
               Flexible Options
             </h3>
             <h2 className="font-serif text-4xl font-bold text-brand-navy">
@@ -404,9 +537,9 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
           
           <div className="flex flex-wrap justify-center gap-4 scroll-reveal-container">
             {prod.caps.map((c, i) => (
-              <div key={i} className="group bg-white p-6 rounded-2xl shadow-lg border-2 border-slate-100 hover:border-brand-gold hover:shadow-brand-gold/15 hover:shadow-2xl transition-all duration-300 scroll-reveal hover:translate-y-[-6px] hover:scale-105">
+              <div key={i} className="group bg-white p-6 rounded-2xl shadow-lg border-2 border-slate-100 hover:border-brand-blue hover:shadow-brand-blue/15 hover:shadow-2xl transition-all duration-300 scroll-reveal hover:translate-y-[-6px] hover:scale-105">
                 <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 bg-brand-navy rounded-xl flex items-center justify-center text-brand-gold text-2xl group-hover:bg-brand-gold group-hover:text-brand-navy group-hover:rotate-12 transition-all duration-500">
+                  <div className="w-14 h-14 bg-brand-navy rounded-xl flex items-center justify-center text-brand-blue text-2xl group-hover:bg-brand-blue group-hover:text-white group-hover:rotate-12 transition-all duration-500">
                     <i className="fa-solid fa-weight-scale" />
                   </div>
                   <div className="text-left">
@@ -431,10 +564,10 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
         
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center text-white space-y-4 mb-12 scroll-reveal">
-            <h3 className="text-xs font-bold uppercase tracking-widest text-brand-gold flex items-center justify-center gap-3">
-              <span className="w-12 h-px bg-brand-gold"></span>
+            <h3 className="text-xs font-bold uppercase tracking-widest text-brand-blue flex items-center justify-center gap-3">
+              <span className="w-12 h-px bg-brand-blue"></span>
               Excellence Guaranteed
-              <span className="w-12 h-px bg-brand-gold"></span>
+              <span className="w-12 h-px bg-brand-blue"></span>
             </h3>
             <h2 className="font-serif text-4xl md:text-5xl font-bold">
               Why Choose Digitech for {prod.title}
@@ -458,27 +591,27 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
               return (
                 <div 
                   key={i} 
-                  className="group relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-md border-2 border-white/20 rounded-2xl p-8 hover:border-brand-gold hover:from-brand-gold/10 hover:to-brand-gold/5 transition-all duration-500 scroll-reveal hover:scale-105 hover:shadow-2xl overflow-hidden"
+                  className="group relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-md border-2 border-white/20 rounded-2xl p-8 hover:border-brand-blue hover:from-brand-blue/10 hover:to-brand-blue/5 transition-all duration-500 scroll-reveal hover:scale-105 hover:shadow-2xl overflow-hidden"
                   style={{ transitionDelay: `${i * 0.1}s` }}
                 >
                   {/* Animated Background Circle */}
-                  <div className="absolute -top-10 -right-10 w-32 h-32 bg-brand-gold/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
+                  <div className="absolute -top-10 -right-10 w-32 h-32 bg-brand-blue/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
                   
                   {/* Number Badge */}
-                  <div className="absolute top-4 right-4 w-10 h-10 rounded-full border-2 border-brand-gold/30 flex items-center justify-center text-xs font-bold text-brand-gold bg-brand-gold/5 group-hover:rotate-12 transition-transform duration-500">
+                  <div className="absolute top-4 right-4 w-10 h-10 rounded-full border-2 border-brand-blue/30 flex items-center justify-center text-xs font-bold text-brand-blue bg-brand-blue/5 group-hover:rotate-12 transition-transform duration-500">
                     {`0${i + 1}`}
                   </div>
 
                   {/* Icon */}
                   <div className="relative mb-6">
-                    <div className="w-16 h-16 bg-brand-gold/20 backdrop-blur-sm rounded-2xl flex items-center justify-center text-brand-gold text-2xl group-hover:bg-brand-gold group-hover:text-brand-navy transition-all duration-500 group-hover:rotate-6 group-hover:scale-110 border-2 border-brand-gold/30">
+                    <div className="w-16 h-16 bg-brand-blue/20 backdrop-blur-sm rounded-2xl flex items-center justify-center text-brand-blue text-2xl group-hover:bg-brand-blue group-hover:text-white transition-all duration-500 group-hover:rotate-6 group-hover:scale-110 border-2 border-brand-blue/30">
                       <i className={`fa-solid ${icons[i % icons.length]}`}></i>
                     </div>
                   </div>
 
                   {/* Content */}
                   <div className="relative space-y-3">
-                    <h4 className="font-serif font-bold text-xl text-white group-hover:text-brand-gold transition-colors duration-300 leading-tight">
+                    <h4 className="font-serif font-bold text-xl text-white group-hover:text-brand-blue-bright transition-colors duration-300 leading-tight">
                       {w}
                     </h4>
                     <p className="text-sm text-slate-300 leading-relaxed">
@@ -487,7 +620,7 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
                   </div>
 
                   {/* Bottom Accent Line */}
-                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-brand-gold to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-brand-blue to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
               );
             })}
@@ -499,7 +632,7 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
       <section className="py-20 px-4 md:px-8 bg-white">
         <div className="max-w-7xl mx-auto space-y-12">
           <div className="text-center scroll-reveal">
-            <h3 className="text-xs font-bold uppercase tracking-widest text-brand-gold mb-3">
+            <h3 className="text-xs font-bold uppercase tracking-widest text-brand-blue mb-3">
               Technical Details
             </h3>
             <h2 className="font-serif text-4xl font-bold text-brand-navy">
@@ -509,8 +642,8 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 scroll-reveal-container">
             {Object.entries(prod.specs).map(([k, v], i) => (
-              <div key={k} className="bg-gradient-to-br from-brand-navy via-slate-800 to-brand-navy p-8 rounded-2xl shadow-xl text-white border-2 border-brand-gold/30 scroll-reveal">
-                <div className="text-brand-gold text-xs font-bold uppercase tracking-widest mb-3">{k}</div>
+              <div key={k} className="bg-gradient-to-br from-brand-navy via-slate-800 to-brand-navy p-8 rounded-2xl shadow-xl text-white border-2 border-brand-blue/30 scroll-reveal">
+                <div className="text-brand-blue text-xs font-bold uppercase tracking-widest mb-3">{k}</div>
                 <div className="text-lg font-semibold">{v}</div>
               </div>
             ))}
@@ -525,7 +658,7 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
             {/* Left Content */}
             <div className="space-y-6 scroll-reveal-left">
               <div>
-                <h3 className="text-xs font-bold uppercase tracking-widest text-brand-gold mb-3">
+                <h3 className="text-xs font-bold uppercase tracking-widest text-brand-blue mb-3">
                   Get Started Today
                 </h3>
                 <h2 className="font-serif text-4xl font-bold text-brand-navy mb-4">
@@ -571,7 +704,7 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
                         type="text"
                         name="name"
                         placeholder="Enter your name" 
-                        className="w-full border-2 border-slate-200 rounded-xl p-4 text-sm focus:outline-none focus:border-brand-gold transition" 
+                        className="w-full border-2 border-slate-200 rounded-xl p-4 text-sm focus:outline-none focus:border-brand-blue transition" 
                         required 
                       />
                     </div>
@@ -581,7 +714,7 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
                         type="tel"
                         name="mobile"
                         placeholder="Enter mobile number" 
-                        className="w-full border-2 border-slate-200 rounded-xl p-4 text-sm focus:outline-none focus:border-brand-gold transition" 
+                        className="w-full border-2 border-slate-200 rounded-xl p-4 text-sm focus:outline-none focus:border-brand-blue transition" 
                         required 
                       />
                     </div>
@@ -591,7 +724,7 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
                         type="email"
                         name="email"
                         placeholder="Enter email" 
-                        className="w-full border-2 border-slate-200 rounded-xl p-4 text-sm focus:outline-none focus:border-brand-gold transition" 
+                        className="w-full border-2 border-slate-200 rounded-xl p-4 text-sm focus:outline-none focus:border-brand-blue transition" 
                       />
                     </div>
                     <div>
@@ -600,17 +733,17 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
                         rows="3"
                         name="message"
                         placeholder="Any specific requirements?" 
-                        className="w-full border-2 border-slate-200 rounded-xl p-4 text-sm focus:outline-none focus:border-brand-gold transition resize-none" 
+                        className="w-full border-2 border-slate-200 rounded-xl p-4 text-sm focus:outline-none focus:border-brand-blue transition resize-none" 
                       />
                     </div>
                     <button 
                       type="submit" 
-                      className="w-full bg-brand-navy hover:bg-slate-800 text-white font-bold py-4 rounded-xl text-sm uppercase tracking-widest transition shadow-lg hover:shadow-2xl hover:scale-105">
+                      className="w-full bg-brand-blue hover:bg-brand-blue-dark text-white font-bold py-4 rounded-xl text-sm uppercase tracking-widest transition shadow-lg hover:shadow-2xl hover:scale-105">
                       Request Technical Layout
                     </button>
                     <a 
                       href="#/quote" 
-                      className="block text-center border-2 border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-navy font-bold py-4 rounded-xl text-sm uppercase tracking-widest transition">
+                      className="block text-center border-2 border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white font-bold py-4 rounded-xl text-sm uppercase tracking-widest transition">
                       Get Full Quote
                     </a>
                   </form>
@@ -632,7 +765,7 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
         {/* Animated elevator shaft lines */}
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           {[20, 50, 80].map(pos => (
-            <div key={pos} className="absolute top-0 bottom-0 w-px bg-brand-gold animate-pulse" style={{ left: `${pos}%` }} />
+            <div key={pos} className="absolute top-0 bottom-0 w-px bg-brand-blue animate-pulse" style={{ left: `${pos}%` }} />
           ))}
         </div>
 
@@ -644,7 +777,7 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
             Contact us for a consultation and discover the perfect elevator solution for your building
           </p>
           <div className="flex flex-wrap justify-center gap-4 pt-4">
-            <a href="#/quote" className="bg-brand-gold hover:bg-yellow-600 text-brand-navy font-bold px-8 py-4 rounded-2xl text-sm uppercase tracking-wider transition-all hover:scale-105 shadow-2xl">
+            <a href="#/quote" className="bg-brand-blue hover:bg-brand-blue-dark text-white font-bold px-8 py-4 rounded-2xl text-sm uppercase tracking-wider transition-all hover:scale-105 shadow-2xl">
               <i className="fa-solid fa-calculator mr-2" />
               Free Consultation
             </a>
@@ -655,6 +788,39 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
           </div>
         </div>
       </section>
+      {/* ── LIGHTBOX MODAL ── */}
+      {lightbox && (
+        <div
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/90 backdrop-blur-sm animate-fade-in"
+          onClick={() => setLightbox(null)}
+        >
+          <div
+            className="relative max-w-5xl w-full mx-4 animate-zoom-in"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close button */}
+            <button
+              onClick={() => setLightbox(null)}
+              className="absolute -top-12 right-0 text-white hover:text-brand-blue-bright transition-colors text-3xl w-10 h-10 flex items-center justify-center z-10"
+              aria-label="Close preview"
+            >
+              <i className="fa-solid fa-xmark" />
+            </button>
+            {/* Image */}
+            <img
+              src={lightbox.url}
+              alt={lightbox.caption}
+              className="w-full max-h-[85vh] object-contain rounded-2xl shadow-2xl"
+            />
+            {/* Caption */}
+            {lightbox.caption && (
+              <p className="text-center text-white/80 text-sm mt-4 font-semibold tracking-wide">{lightbox.caption}</p>
+            )}
+          </div>
+          {/* Click outside hint */}
+          <p className="absolute bottom-6 text-white/40 text-xs tracking-widest">Click anywhere outside to close</p>
+        </div>
+      )}
     </div>
   );
 }

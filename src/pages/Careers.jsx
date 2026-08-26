@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
-// NOTE: Get your free access key from https://web3forms.com/ and replace this placeholder.
-const WEB3FORMS_ACCESS_KEY = "YOUR_ACCESS_KEY_HERE";
+// FormSubmit recipient email - destination for resume submissions
+const RECIPIENT_EMAIL = import.meta.env.VITE_CONTACT_EMAIL || "digitech.elevators@gmail.com";
 
 export default function Careers() {
-  const [formSubmitted, setFormSubmitted] = useState(false);
+  const formRef = useRef(null);
+  const fileInputRef = useRef(null);
+  const [formSubmitted, setFormSubmitted] = useState(() => {
+    return window.location.href.includes('submitted=true');
+  });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [resumeFile, setResumeFile] = useState(null);
   const [validationError, setValidationError] = useState('');
@@ -15,6 +19,12 @@ export default function Careers() {
     email: '',
     message: ''
   });
+
+  useEffect(() => {
+    if (window.location.href.includes('submitted=true')) {
+      setFormSubmitted(true);
+    }
+  }, []);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -27,7 +37,10 @@ export default function Careers() {
   const handleFileChange = (e) => {
     setValidationError('');
     const file = e.target.files[0];
-    if (!file) return;
+    if (!file) {
+      setResumeFile(null);
+      return;
+    }
 
     // Check file extension
     const allowedExtensions = ['.pdf', '.doc', '.docx'];
@@ -37,7 +50,7 @@ export default function Careers() {
     if (!hasValidExtension) {
       setValidationError('Please upload a file in PDF, DOC, or DOCX format only.');
       setResumeFile(null);
-      e.target.value = ''; // Reset file input
+      if (fileInputRef.current) fileInputRef.current.value = '';
       return;
     }
 
@@ -46,50 +59,23 @@ export default function Careers() {
     if (file.size > maxSizeInBytes) {
       setValidationError('File is too large. Maximum file size is 5MB.');
       setResumeFile(null);
-      e.target.value = ''; // Reset file input
+      if (fileInputRef.current) fileInputRef.current.value = '';
       return;
     }
 
     setResumeFile(file);
   };
 
-  const handleFormSubmit = async (e) => {
-    e.preventDefault();
+  const handleFormSubmit = (e) => {
     if (!resumeFile) {
+      e.preventDefault();
       setValidationError('Please upload your resume.');
       return;
     }
-    
+
     setIsSubmitting(true);
     setValidationError('');
-
-    try {
-      const formDataToSend = new FormData();
-      formDataToSend.append("access_key", WEB3FORMS_ACCESS_KEY);
-      formDataToSend.append("subject", `New Job Application: ${formData.name}`);
-      formDataToSend.append("name", formData.name);
-      formDataToSend.append("phone", formData.phone);
-      formDataToSend.append("email", formData.email);
-      formDataToSend.append("message", formData.message);
-      formDataToSend.append("attachment", resumeFile);
-
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: formDataToSend
-      });
-
-      const data = await response.json();
-
-      if (data.success) {
-        setFormSubmitted(true);
-      } else {
-        setValidationError(data.message || "Failed to submit application. Please try again.");
-      }
-    } catch (error) {
-      setValidationError("An error occurred. Please check your internet connection and try again.");
-    } finally {
-      setIsSubmitting(false);
-    }
+    // Native form submit will now proceed and upload the file with multipart/form-data
   };
 
   return (
@@ -110,10 +96,10 @@ export default function Careers() {
         </video>
         {/* Dark overlay & radial gradient overlay for premium lighting */}
         <div className="absolute inset-0 bg-brand-navy/80 z-[1]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(212,175,55,0.25)_0%,_transparent_70%)] z-[2]"></div>
-        
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(23,105,194,0.25)_0%,_transparent_70%)] z-[2]"></div>
+
         <div className="max-w-4xl mx-auto space-y-4 relative z-10">
-          <span className="inline-block bg-brand-gold/20 border border-brand-gold/30 text-brand-gold px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest animate-pulse-ring">
+          <span className="inline-block bg-brand-blue/30 border border-brand-blue/50 text-white px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest animate-pulse-ring">
             Join Our Team
           </span>
           <h2 className="font-serif text-4xl md:text-5xl font-bold animate-gold-shimmer">
@@ -126,31 +112,66 @@ export default function Careers() {
       </section>
 
       {/* ── Application Form Section ── */}
-      <section className="bg-gradient-to-br from-brand-navy via-slate-800 to-brand-navy text-white py-16 px-4 md:px-8 border-t-4 border-brand-gold relative overflow-hidden flex justify-center">
+      <section className="bg-gradient-to-br from-brand-navy via-slate-800 to-brand-navy text-white py-16 px-4 md:px-8 border-t-4 border-brand-blue relative overflow-hidden flex justify-center">
         {/* Faint animated background lines */}
         <div className="absolute inset-0 opacity-5 pointer-events-none">
           {[25, 50, 75].map(pos => (
-            <div 
-              key={pos} 
-              className="absolute top-0 bottom-0 w-px bg-brand-gold" 
-              style={{ left: `${pos}%`, animation: 'shaftGlow 2.5s infinite' }} 
+            <div
+              key={pos}
+              className="absolute top-0 bottom-0 w-px bg-brand-blue"
+              style={{ left: `${pos}%`, animation: 'shaftGlow 2.5s infinite' }}
             />
           ))}
         </div>
 
         <div className="max-w-3xl w-full bg-white rounded-2xl p-8 md:p-10 text-slate-800 shadow-2xl relative z-10">
           <h4 className="font-serif font-bold text-2xl text-brand-navy border-b border-slate-200 pb-3 mb-6 flex items-center gap-2">
-            <i className="fa-solid fa-file-invoice text-brand-gold animate-float"></i> Apply Online
+            <i className="fa-solid fa-file-invoice text-brand-blue animate-float"></i> Apply Online
           </h4>
 
           {formSubmitted ? (
-            <div className="text-center py-16 animate-zoom-in">
-              <i className="fa-solid fa-circle-check text-6xl text-green-500 mb-5 animate-bounce block"></i>
-              <h4 className="font-serif font-bold text-2xl mb-2 text-brand-navy">Application Received!</h4>
-              <p className="text-sm text-slate-500">Thank you! Your application has been received.</p>
+            <div className="text-center py-16 animate-zoom-in space-y-4">
+              <i className="fa-solid fa-circle-check text-6xl text-green-500 mb-2 animate-bounce block"></i>
+              <h4 className="font-serif font-bold text-2xl mb-1 text-brand-navy">Application Received!</h4>
+              <p className="text-sm text-slate-500 max-w-md mx-auto">
+                Thank you! Your application and resume have been successfully submitted to our hiring team.
+              </p>
+              <div className="pt-4">
+                <button
+                  type="button"
+                  onClick={() => {
+                    if (window.history.replaceState) {
+                      window.history.replaceState(null, '', `${window.location.pathname}#/careers`);
+                    }
+                    setFormSubmitted(false);
+                    setResumeFile(null);
+                    setFormData({ name: '', phone: '', email: '', message: '' });
+                  }}
+                  className="bg-brand-blue hover:bg-brand-blue-dark text-white font-semibold px-6 py-2.5 rounded-lg text-xs tracking-wider transition-all shadow hover:shadow-md"
+                >
+                  Submit Another Application
+                </button>
+              </div>
             </div>
           ) : (
-            <form onSubmit={handleFormSubmit} className="space-y-6">
+            <form
+              ref={formRef}
+              action={`https://formsubmit.co/${RECIPIENT_EMAIL}`}
+              method="POST"
+              encType="multipart/form-data"
+              onSubmit={handleFormSubmit}
+              className="space-y-6"
+            >
+              {/* FormSubmit Configuration */}
+              <input
+                type="hidden"
+                name="_next"
+                value={`${typeof window !== 'undefined' ? window.location.origin + window.location.pathname : ''}#/careers?submitted=true`}
+              />
+              <input type="hidden" name="_subject" value={`New Job Application: ${formData.name || 'Candidate'}`} />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_captcha" value="false" />
+
               {validationError && (
                 <div className="bg-red-50 border border-red-200 text-red-700 text-xs px-4 py-3 rounded-lg flex items-center gap-2 animate-fade-simple">
                   <i className="fa-solid fa-triangle-exclamation"></i>
@@ -161,38 +182,38 @@ export default function Careers() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
                 <div>
                   <label className="block text-xs font-semibold text-slate-500 mb-1">Full Name *</label>
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
                     placeholder="Your Full Name"
-                    className="w-full border border-slate-200 rounded-lg p-3 text-xs focus:outline-none focus:border-brand-navy focus:ring-1 focus:ring-brand-navy/20 transition-all duration-200" 
-                    required 
+                    className="w-full border border-slate-200 rounded-lg p-3 text-xs focus:outline-none focus:border-brand-navy focus:ring-1 focus:ring-brand-navy/20 transition-all duration-200"
+                    required
                   />
                 </div>
                 <div>
                   <label className="block text-xs font-semibold text-slate-500 mb-1">Phone Number *</label>
-                  <input 
-                    type="tel" 
+                  <input
+                    type="tel"
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
                     placeholder="Your Phone Number"
-                    className="w-full border border-slate-200 rounded-lg p-3 text-xs focus:outline-none focus:border-brand-navy focus:ring-1 focus:ring-brand-navy/20 transition-all duration-200" 
-                    required 
+                    className="w-full border border-slate-200 rounded-lg p-3 text-xs focus:outline-none focus:border-brand-navy focus:ring-1 focus:ring-brand-navy/20 transition-all duration-200"
+                    required
                   />
                 </div>
                 <div>
                   <label className="block text-xs font-semibold text-slate-500 mb-1">Email Address *</label>
-                  <input 
-                    type="email" 
+                  <input
+                    type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
                     placeholder="Your Email Address"
-                    className="w-full border border-slate-200 rounded-lg p-3 text-xs focus:outline-none focus:border-brand-navy focus:ring-1 focus:ring-brand-navy/20 transition-all duration-200" 
-                    required 
+                    className="w-full border border-slate-200 rounded-lg p-3 text-xs focus:outline-none focus:border-brand-navy focus:ring-1 focus:ring-brand-navy/20 transition-all duration-200"
+                    required
                   />
                 </div>
               </div>
@@ -203,12 +224,14 @@ export default function Careers() {
                   <div className="space-y-1 text-center">
                     <i className="fa-solid fa-cloud-arrow-up text-3xl text-slate-400 mb-2 block"></i>
                     <div className="flex text-xs text-slate-650 justify-center">
-                      <label className="relative cursor-pointer bg-white rounded-md font-semibold text-brand-gold hover:text-brand-gold-hover focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-brand-navy">
+                      <label className="relative cursor-pointer bg-white rounded-md font-semibold text-brand-blue hover:text-brand-blue-dark focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-brand-navy">
                         <span>Upload a file</span>
-                        <input 
-                          type="file" 
+                        <input
+                          ref={fileInputRef}
+                          type="file"
+                          name="attachment"
                           accept=".pdf,.doc,.docx"
-                          className="sr-only" 
+                          className="sr-only"
                           onChange={handleFileChange}
                           required
                         />
@@ -220,12 +243,13 @@ export default function Careers() {
                       <div className="mt-2 text-xs text-slate-800 font-semibold bg-slate-100 px-3 py-1 rounded inline-flex items-center gap-1.5">
                         <i className="fa-solid fa-file-lines text-brand-navy"></i>
                         <span>{resumeFile.name}</span>
-                        <button 
-                          type="button" 
+                        <button
+                          type="button"
                           className="text-red-500 hover:text-red-700 font-bold ml-1"
                           onClick={() => {
                             setResumeFile(null);
                             setValidationError('');
+                            if (fileInputRef.current) fileInputRef.current.value = '';
                           }}
                         >
                           &times;
@@ -238,20 +262,22 @@ export default function Careers() {
 
               <div>
                 <label className="block text-xs font-semibold text-slate-500 mb-1">Cover Note / Message</label>
-                <textarea 
+                <textarea
                   name="message"
                   value={formData.message}
-                  onChange={handleInputChange}
-                  rows="4" 
+                  onChange={(e) => {
+                    handleInputChange({ target: { name: 'message', value: e.target.value } });
+                  }}
+                  rows="4"
                   placeholder="Tell us about yourself and why you'd like to join Digitech Elevators..."
                   className="w-full border border-slate-200 rounded-lg p-3 text-xs focus:outline-none focus:border-brand-navy focus:ring-1 focus:ring-brand-navy/20 transition-all duration-200 resize-none"
                 />
               </div>
 
-              <button 
+              <button
                 type="submit"
                 disabled={isSubmitting}
-                className={`w-full bg-brand-gold hover:bg-brand-gold-hover text-brand-navy font-bold py-3.5 rounded-xl text-xs uppercase tracking-widest transition-all hover:scale-[1.01] shadow-lg hover:shadow-xl btn-glow flex items-center justify-center gap-2 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+                className={`w-full bg-brand-blue hover:bg-brand-blue-dark text-white font-bold py-3.5 rounded-xl text-xs uppercase tracking-widest transition-all hover:scale-[1.01] shadow-lg hover:shadow-xl btn-glow flex items-center justify-center gap-2 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
               >
                 {isSubmitting ? (
                   <>
