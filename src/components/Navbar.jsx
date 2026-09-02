@@ -52,6 +52,9 @@ export default function Navbar({ currentHash }) {
             </span>
           </div>
           <div className="flex items-center gap-3 sm:gap-5 text-slate-300 font-semibold shrink-0">
+            <a href="mailto:sales@digitechelevator.com" className="hidden sm:flex transition items-center gap-1 sm:gap-1.5 animate-color-blink">
+              <i className="fa-solid fa-envelope text-xs sm:text-sm"></i> sales@digitechelevator.com
+            </a>
             <a href="tel:+919845071406" className="transition flex items-center gap-1 sm:gap-1.5 animate-color-blink">
               <i className="fa-solid fa-phone text-xs sm:text-sm"></i> 24/7: +91 98450 71406
             </a>
@@ -229,6 +232,18 @@ export default function Navbar({ currentHash }) {
           <a href="#/faq"      onClick={closeAllMenus} className="hover:text-brand-blue-bright transition py-1 border-b border-slate-800">FAQs</a>
           <a href="#/contact"  onClick={closeAllMenus} className="hover:text-brand-blue-bright transition py-1 border-b border-slate-800">Contact</a>
           <a href="#/careers"  onClick={closeAllMenus} className="hover:text-brand-blue-bright transition py-1 border-b border-slate-800">Careers</a>
+
+          <div className="pt-2 flex flex-col gap-2">
+            <a href="mailto:digitech.elevators@gmail.com" onClick={closeAllMenus} className="text-xs text-slate-300 hover:text-brand-blue-bright flex items-center gap-2 transition">
+              <i className="fa-solid fa-envelope text-brand-blue"></i> digitech.elevators@gmail.com
+            </a>
+            <a href="mailto:sales@digitechelevator.com" onClick={closeAllMenus} className="text-xs text-slate-300 hover:text-brand-blue-bright flex items-center gap-2 transition">
+              <i className="fa-solid fa-envelope text-brand-blue"></i> sales@digitechelevator.com
+            </a>
+            <a href="mailto:service@digitechelevator.com" onClick={closeAllMenus} className="text-xs text-slate-300 hover:text-brand-blue-bright flex items-center gap-2 transition">
+              <i className="fa-solid fa-envelope text-brand-blue"></i> service@digitechelevator.com
+            </a>
+          </div>
 
           <a href="#/quote" onClick={closeAllMenus}
              className="bg-brand-blue text-white font-bold text-center py-3 rounded-xl mt-2 uppercase tracking-wider text-xs shadow hover:bg-brand-blue-dark transition">

@@ -125,10 +125,17 @@ export default function Footer() {
               <div className="w-9 h-9 bg-brand-blue/10 rounded-lg flex items-center justify-center text-brand-blue shrink-0 border border-brand-blue/20">
                 <i className="fa-solid fa-envelope text-sm"></i>
               </div>
-              <a href="mailto:digitech.elevators@gmail.com"
-                 className="text-sm hover:text-brand-blue-bright transition break-all mt-1.5">
-                digitech.elevators@gmail.com
-              </a>
+              <div className="flex flex-col gap-1 text-sm break-all mt-0.5">
+                <a href="mailto:digitech.elevators@gmail.com" className="hover:text-brand-blue-bright transition">
+                  digitech.elevators@gmail.com
+                </a>
+                <a href="mailto:sales@digitechelevator.com" className="hover:text-brand-blue-bright transition">
+                  sales@digitechelevator.com
+                </a>
+                <a href="mailto:service@digitechelevator.com" className="hover:text-brand-blue-bright transition">
+                  service@digitechelevator.com
+                </a>
+              </div>
             </div>
 
             <a href="https://wa.me/919845071406?text=Hi%20Digitech%20Elevators"
