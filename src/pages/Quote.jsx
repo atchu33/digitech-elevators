@@ -98,10 +98,14 @@ export default function Quote() {
                 <i className="fa-solid fa-phone text-brand-blue w-4 text-center"></i> 
                 <a href="tel:+919845071406" className="hover:text-brand-blue-bright transition font-medium">+91 98450 71406</a>
               </p>
-              <p className="flex items-center gap-3">
-                <i className="fa-solid fa-envelope text-brand-blue w-4 text-center"></i> 
-                <a href="mailto:digitech.elevators@gmail.com" className="hover:text-brand-blue-bright transition font-medium">digitech.elevators@gmail.com</a>
-              </p>
+              <div className="flex items-start gap-3">
+                <i className="fa-solid fa-envelope text-brand-blue w-4 text-center mt-0.5"></i> 
+                <div className="flex flex-col gap-1">
+                  <a href="mailto:digitech.elevators@gmail.com" className="hover:text-brand-blue-bright transition font-medium">digitech.elevators@gmail.com</a>
+                  <a href="mailto:sales@digitechelevator.com" className="hover:text-brand-blue-bright transition font-medium">sales@digitechelevator.com</a>
+                  <a href="mailto:service@digitechelevator.com" className="hover:text-brand-blue-bright transition font-medium">service@digitechelevator.com</a>
+                </div>
+              </div>
               <p className="flex items-center gap-3">
                 <i className="fa-brands fa-whatsapp text-[#25D366] w-4 text-center text-sm"></i> 
                 <a href="https://wa.me/919845071406" className="hover:text-[#25D366] transition font-semibold">Chat on WhatsApp</a>

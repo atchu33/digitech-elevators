@@ -506,7 +506,7 @@ export const PROJECTS_DATA = [
     door: 'Automatic Centre Opening Doors',
     system: 'Digitech MRL',
     year: '2024',
-    noImage: true
+    image: './assets/image/08_Lumbini Apartment.jpg'
   },
   {
     id: 9,
@@ -590,7 +590,7 @@ export const PROJECTS_DATA = [
     door: 'Automatic Telescopic Opening Doors',
     system: 'Digitech MRL',
     year: '2025',
-    noImage: true
+    image: './assets/image/14_A R Kenneth Deepak Raj.jpg'
   },
   {
     id: 15,
@@ -604,7 +604,7 @@ export const PROJECTS_DATA = [
     door: 'Automatic Telescopic Opening Doors',
     system: 'Digitech MRL',
     year: '2026',
-    noImage: true
+    image: './assets/image/15_Usha Subramanya.jpg'
   },
 
   // ── Commercial Buildings ──
@@ -634,7 +634,7 @@ export const PROJECTS_DATA = [
     door: 'Automatic Centre Opening Doors',
     system: 'Digitech MRL',
     year: '2025',
-    noImage: true
+    image: './assets/image/17_Noah Enterprises.jpg'
   },
   {
     id: 18,

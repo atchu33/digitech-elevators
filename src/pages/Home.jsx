@@ -860,25 +860,16 @@ export default function Home() {
                     className="absolute inset-0 bg-cover bg-center scale-100 group-hover:scale-110 transition-transform duration-700"
                     style={{ backgroundImage: `url('${p.image}')` }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/60 to-transparent" />
-                  {/* Animated floor lines */}
-                  <div className="absolute inset-x-0 top-0 bottom-0 pointer-events-none">
-                    {[20, 40, 60, 80].map(pct => (
-                      <div key={pct} className="absolute left-0 right-0 h-px bg-white/10 group-hover:bg-brand-blue/30 transition-colors" style={{ top: `${pct}%` }} />
-                    ))}
-                  </div>
-                  <div className="absolute inset-0 flex flex-col justify-between p-6">
-                    <div className="flex justify-end">
-                      <span className="bg-brand-blue text-white text-xs font-bold px-4 py-2 rounded-full uppercase tracking-wide shadow-lg">
-                        {p.category}
-                      </span>
-                    </div>
-                    <div>
-                      <h4 className="font-serif font-bold text-xl text-white leading-tight drop-shadow-lg">{p.name}</h4>
-                    </div>
+                  <div className="absolute top-4 right-4 z-10">
+                    <span className="bg-brand-blue text-white text-xs font-bold px-3.5 py-1.5 rounded-full uppercase tracking-wide shadow-md">
+                      {p.category}
+                    </span>
                   </div>
                 </div>
-                <div className="p-7 space-y-5">
+                <div className="p-6 space-y-4">
+                  <h4 className="font-serif font-bold text-xl text-brand-navy leading-tight group-hover:text-brand-blue transition-colors">
+                    {p.name}
+                  </h4>
                   <div className="grid grid-cols-2 gap-4 text-xs">
                     <div className="bg-slate-50 p-3 rounded-xl">
                       <span className="text-slate-400 font-bold uppercase tracking-wider block mb-1">Location</span>
@@ -1176,9 +1167,11 @@ export default function Home() {
                 <div className="w-12 h-12 bg-brand-blue/20 rounded-xl flex items-center justify-center text-brand-blue shrink-0">
                   <i className="fa-solid fa-envelope text-xl" />
                 </div>
-                <div className="flex-1">
+                <div className="flex-1 space-y-1">
                   <p className="font-bold text-white text-sm uppercase tracking-wider mb-1">Email Address</p>
-                  <p className="text-slate-300 text-sm leading-relaxed">digitech.elevators@gmail.com</p>
+                  <a href="mailto:digitech.elevators@gmail.com" className="block text-slate-300 hover:text-brand-blue-bright text-sm transition">digitech.elevators@gmail.com</a>
+                  <a href="mailto:sales@digitechelevator.com" className="block text-slate-300 hover:text-brand-blue-bright text-sm transition">sales@digitechelevator.com</a>
+                  <a href="mailto:service@digitechelevator.com" className="block text-slate-300 hover:text-brand-blue-bright text-sm transition">service@digitechelevator.com</a>
                 </div>
               </div>
             </div>

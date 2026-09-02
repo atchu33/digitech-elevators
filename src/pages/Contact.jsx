@@ -101,9 +101,11 @@ export default function Contact() {
                 <div className="w-10 h-10 bg-brand-blue/10 rounded-lg flex items-center justify-center text-brand-blue shrink-0 border border-brand-blue/20 hover:scale-110 transition-all duration-300">
                   <i className="fa-solid fa-envelope"></i>
                 </div>
-                <div>
+                <div className="space-y-1">
                   <p className="font-semibold text-white text-xs uppercase tracking-wider mb-0.5">Email Address</p>
-                  <p className="text-slate-400 text-xs">digitech.elevators@gmail.com</p>
+                  <a href="mailto:digitech.elevators@gmail.com" className="block text-slate-400 hover:text-brand-blue-bright text-xs transition">digitech.elevators@gmail.com</a>
+                  <a href="mailto:sales@digitechelevator.com" className="block text-slate-400 hover:text-brand-blue-bright text-xs transition">sales@digitechelevator.com</a>
+                  <a href="mailto:service@digitechelevator.com" className="block text-slate-400 hover:text-brand-blue-bright text-xs transition">service@digitechelevator.com</a>
                 </div>
               </div>
               <div className="flex gap-4 scroll-reveal">
