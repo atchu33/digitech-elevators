@@ -41,15 +41,18 @@ export default function Navbar({ currentHash }) {
   return (
     <header className={`sticky top-0 z-50 bg-white transition-shadow duration-300 ${scrolled ? 'shadow-2xl' : 'shadow-md'}`}>
       {/* ── Top Info Bar ── */}
-      <div className="bg-brand-navy text-[11px] sm:text-xs py-1.5 sm:py-2 border-b border-slate-700">
+      <div className="bg-brand-navy text-[10px] sm:text-xs py-1.5 sm:py-2 border-b border-slate-700">
         <div className="max-w-[1600px] mx-auto px-3 sm:px-4 md:px-8 flex justify-between items-center gap-2 whitespace-nowrap">
           <div className="flex items-center gap-3 sm:gap-5 text-slate-300 font-semibold shrink-0">
-            <span className="flex items-center gap-1 sm:gap-1.5">
+            <span className="hidden sm:flex items-center gap-1 sm:gap-1.5">
               <i className="fa-solid fa-shield-halved text-brand-blue text-xs sm:text-sm"></i> Grade-A Safety Standards
             </span>
-            <span className="hidden sm:flex items-center gap-1.5">
+            <span className="hidden md:flex items-center gap-1.5">
               <i className="fa-solid fa-gears text-brand-blue text-xs sm:text-sm"></i> Premium Engineering Solutions
             </span>
+            <a href="mailto:sales@digitechelevator.com" className="flex sm:hidden transition items-center gap-1 animate-color-blink">
+              <i className="fa-solid fa-envelope text-brand-blue text-xs"></i> sales@digitechelevator.com
+            </a>
           </div>
           <div className="flex items-center gap-3 sm:gap-5 text-slate-300 font-semibold shrink-0">
             <a href="mailto:sales@digitechelevator.com" className="hidden sm:flex transition items-center gap-1 sm:gap-1.5 animate-color-blink">
