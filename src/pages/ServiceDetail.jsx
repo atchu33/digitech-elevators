@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { SERVICES_DATA } from '../data/siteData';
+import { getAssetUrl } from '../utils/router';
 
 const SERVICE_ICONS = {
   'Controller Replacement': 'fa-microchip',
@@ -479,7 +480,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
                   <div className="relative h-72 md:h-80 overflow-hidden bg-slate-950">
                     <img
                       loading="lazy"
-                      src={poster.image}
+                      src={getAssetUrl(poster.image)}
                       alt={poster.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />
@@ -535,7 +536,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
                     })}
                   >
                     <img loading="lazy"
-                      src="./amc.jpeg"
+                      src={getAssetUrl("./amc.jpeg")}
                       alt="AMC Services"
                       className="w-full h-[450px] lg:h-[550px] object-cover group-hover:scale-105 transition-transform duration-700"
                     />
@@ -658,7 +659,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
                     {/* Cover Image Container */}
                     <div className="relative h-56 w-full overflow-hidden bg-slate-900">
                       <img
-                        src={cat.coverImage}
+                        src={getAssetUrl(cat.coverImage)}
                         alt={cat.title}
                         loading="lazy"
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-90 group-hover:opacity-100"
@@ -758,7 +759,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
                     })}
                   >
                     <img loading="lazy"
-                      src="./modernization.jpeg"
+                      src={getAssetUrl("./modernization.jpeg")}
                       alt="Modernization"
                       className="w-full h-[450px] lg:h-[550px] object-cover group-hover:scale-105 transition-transform duration-700"
                     />
@@ -1174,7 +1175,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
             <div className="md:w-3/5 bg-black flex items-center justify-center p-4">
               <img
                 loading="lazy"
-                src={selectedPoster.image}
+                src={getAssetUrl(selectedPoster.image)}
                 alt={selectedPoster.title}
                 className="max-h-[75vh] w-full object-contain rounded-xl shadow-lg"
               />
@@ -1291,7 +1292,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
                     className="group relative h-40 rounded-xl overflow-hidden cursor-pointer border border-slate-200 bg-slate-200 shadow-sm hover:shadow-lg hover:border-brand-blue transition-all duration-300"
                   >
                     <img
-                      src={imgSrc}
+                      src={getAssetUrl(imgSrc)}
                       alt={`AMC Property ${index + 1}`}
                       loading="lazy"
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
@@ -1349,7 +1350,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
             </button>
 
             <img
-              src={activePhotos[lightboxPhotoIndex]}
+              src={getAssetUrl(activePhotos[lightboxPhotoIndex])}
               alt={`AMC Property Photo ${lightboxPhotoIndex + 1}`}
               className="max-h-[80vh] max-w-full object-contain rounded-xl border border-slate-800 shadow-2xl"
             />

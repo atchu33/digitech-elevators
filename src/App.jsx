@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, lazy, Suspense } from 'react';
 import './App.css';
+import { getRoutePath, navigate, getAssetUrl } from './utils/router';
 
 // Components
 import Navbar from './components/Navbar';
@@ -18,6 +19,7 @@ const Contact = lazy(() => import('./pages/Contact'));
 const Quote = lazy(() => import('./pages/Quote'));
 const Legal = lazy(() => import('./pages/Legal'));
 
+
 // Loader component for Suspense fallback
 const PageLoader = () => (
   <div className="flex flex-col items-center justify-center min-h-[60vh] py-20 space-y-4">
@@ -27,34 +29,67 @@ const PageLoader = () => (
 );
 
 export default function App() {
-  const [currentHash, setCurrentHash] = useState(window.location.hash || '#/home');
+  const [currentPath, setCurrentPath] = useState(getRoutePath());
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [pageLoading, setPageLoading] = useState(false);
   const [whatsappOpen, setWhatsappOpen] = useState(false);
   const waPopupRef = useRef(null);
 
-  // Routing Handler
+  // Routing Handler for history back/forward and programmatic navigation
   useEffect(() => {
-    const handleHashChange = () => {
+    const handleRouteChange = () => {
       setPageLoading(true);
       setTimeout(() => setPageLoading(false), 300);
-      const hash = window.location.hash || '#/home';
-      // Normalize empty hash or root to /home
-      const normalizedHash = (hash === '#' || hash === '#/') ? '#/home' : hash;
-      setCurrentHash(normalizedHash);
+      const newPath = getRoutePath();
+      setCurrentPath(newPath);
     };
 
-    window.addEventListener('hashchange', handleHashChange);
-    
-    // Set initial hash on mount
-    handleHashChange();
-    return () => window.removeEventListener('hashchange', handleHashChange);
+    window.addEventListener('popstate', handleRouteChange);
+    window.addEventListener('hashchange', handleRouteChange);
+
+    // Click listener to intercept internal relative link clicks
+    const handleLinkClick = (e) => {
+      const anchor = e.target.closest('a');
+      if (!anchor) return;
+      const href = anchor.getAttribute('href');
+      if (!href) return;
+
+      // Ignore external, email, tel, or fragment-only links (e.g. #contact-form)
+      if (
+        href.startsWith('http://') ||
+        href.startsWith('https://') ||
+        href.startsWith('mailto:') ||
+        href.startsWith('tel:') ||
+        (href.startsWith('#') && !href.startsWith('#/'))
+      ) {
+        return;
+      }
+
+      // Handle internal router links (e.g., /about, /projects, #/about)
+      e.preventDefault();
+      let targetPath = href;
+      if (targetPath.startsWith('#/')) {
+        targetPath = targetPath.replace('#', '');
+      }
+      navigate(targetPath);
+    };
+
+    document.addEventListener('click', handleLinkClick);
+
+    // Initial check
+    handleRouteChange();
+
+    return () => {
+      window.removeEventListener('popstate', handleRouteChange);
+      window.removeEventListener('hashchange', handleRouteChange);
+      document.removeEventListener('click', handleLinkClick);
+    };
   }, []);
 
   // Scroll to top after new route renders
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'auto' });
-  }, [currentHash]);
+  }, [currentPath]);
 
   // Scroll-to-top visibility
   useEffect(() => {
@@ -133,22 +168,22 @@ export default function App() {
       clearTimeout(t4);
       if (observer) observer.disconnect();
     };
-  }, [currentHash]);
+  }, [currentPath]);
 
   // View Router Parser
   const renderView = () => {
-    const cleanHash = currentHash.replace('#', '');
+    const route = currentPath;
 
-    if (cleanHash.startsWith('/products/')) {
-      const productKey = cleanHash.split('/products/')[1];
-      return <ProductDetail productKey={productKey} fallbackToHome={() => window.location.hash = '#/home'} />;
+    if (route.startsWith('/products/')) {
+      const productKey = route.split('/products/')[1];
+      return <ProductDetail productKey={productKey} fallbackToHome={() => navigate('/home')} />;
     }
-    if (cleanHash.startsWith('/services/')) {
-      const serviceKey = cleanHash.split('/services/')[1];
-      return <ServiceDetail serviceKey={serviceKey} fallbackToHome={() => window.location.hash = '#/home'} />;
+    if (route.startsWith('/services/')) {
+      const serviceKey = route.split('/services/')[1];
+      return <ServiceDetail serviceKey={serviceKey} fallbackToHome={() => navigate('/home')} />;
     }
 
-    switch (cleanHash) {
+    switch (route) {
       case '/':
       case '/home':
         return <Home />;
@@ -184,11 +219,11 @@ export default function App() {
       )}
 
       {/* Sticky Header Navigation */}
-      <Navbar currentHash={currentHash} />
+      <Navbar currentPath={currentPath} />
 
       {/* Main Dynamic View — animates in like elevator arriving at a new floor */}
       <main className="flex-grow">
-        <div key={currentHash} className="animate-page-up">
+        <div key={currentPath} className="animate-page-up">
           <Suspense fallback={<PageLoader />}>
             {renderView()}
           </Suspense>
@@ -223,7 +258,7 @@ export default function App() {
             <div className="bg-brand-navy px-4 py-3.5 flex items-center justify-between border-b border-brand-blue/20">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shrink-0 overflow-hidden border-2 border-brand-blue/50 shadow-md">
-                  <img src="./logo-removebg-preview.png" alt="Digitech" className="w-8 h-8 object-contain" />
+                  <img src={getAssetUrl('./logo-removebg-preview.png')} alt="Digitech" className="w-8 h-8 object-contain" />
                 </div>
                 <div>
                   <p className="font-serif font-bold text-sm leading-tight text-white">Digitech Elevators</p>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { createPortal } from 'react-dom';
+import { getAssetUrl } from '../utils/router';
 
 const plans = [
   {
@@ -83,7 +84,7 @@ export default function Amc() {
           preload="none"
           className="absolute inset-0 w-full h-full object-cover opacity-35 z-0"
         >
-          <source src="lift4.mp4" type="video/mp4" />
+          <source src={getAssetUrl("lift4.mp4")} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         {/* Dark overlay & radial gradient overlay for premium lighting */}
@@ -134,7 +135,7 @@ export default function Amc() {
                     ))}
                   </ul>
                   <a
-                    href="#/quote"
+                    href="/quote"
                     className={`block text-center font-bold py-3 rounded-xl text-xs uppercase tracking-widest transition mt-2 hover:scale-[1.02] ${plan.badge ? 'bg-brand-blue hover:bg-brand-blue-dark text-white shadow-lg btn-glow' : 'bg-brand-navy hover:bg-slate-800 text-white'}`}
                   >
                     Inquire This Plan
@@ -189,7 +190,7 @@ export default function Amc() {
                 onClick={() => setLightboxImage('./POSTER/WhatsApp Image 2026-08-05 at 16.58.11.jpeg')}
               >
                 <img loading="lazy" 
-                  src="./POSTER/WhatsApp Image 2026-08-05 at 16.58.11.jpeg" 
+                  src={getAssetUrl("./POSTER/WhatsApp Image 2026-08-05 at 16.58.11.jpeg")} 
                   alt="Why AMC Poster" 
                   className="w-full h-auto object-cover group-hover:scale-105 transition duration-500" 
                 />
@@ -218,7 +219,7 @@ export default function Amc() {
             onClick={(e) => e.stopPropagation()}
           >
             <img loading="lazy" 
-              src={lightboxImage} 
+              src={getAssetUrl(lightboxImage)} 
               alt="Poster Full Screen" 
               className="max-h-[80vh] object-contain rounded-lg border border-slate-800 shadow-2xl"
             />
@@ -239,10 +240,10 @@ export default function Amc() {
           <h2 className="font-serif text-2xl md:text-3xl font-bold">Ready to Protect Your Elevator?</h2>
           <p className="text-slate-300 text-sm">Sign up for an AMC plan today and ensure your elevators run safely, reliably, and efficiently year-round.</p>
           <div className="flex flex-wrap justify-center gap-4 pt-2">
-            <a href="#/quote" className="bg-brand-blue hover:bg-brand-blue-dark text-white font-bold px-8 py-3 rounded-xl text-xs uppercase tracking-widest transition shadow-lg hover:scale-105 btn-glow">
+            <a href="/quote" className="bg-brand-blue hover:bg-brand-blue-dark text-white font-bold px-8 py-3 rounded-xl text-xs uppercase tracking-widest transition shadow-lg hover:scale-105 btn-glow">
               Get a Free Quote
             </a>
-            <a href="#/contact" className="border border-white hover:border-brand-blue hover:text-brand-blue text-white font-bold px-8 py-3 rounded-xl text-xs uppercase tracking-widest transition hover:scale-105">
+            <a href="/contact" className="border border-white hover:border-brand-blue hover:text-brand-blue text-white font-bold px-8 py-3 rounded-xl text-xs uppercase tracking-widest transition hover:scale-105">
               Talk to Our Team
             </a>
           </div>
