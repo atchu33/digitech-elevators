@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { PRODUCTS_DATA } from '../data/siteData';
+import { getAssetUrl } from '../utils/router';
 
 const APP_ICONS = {
   'Apartments': 'fa-building',
@@ -189,7 +190,7 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
               <a href="#inquiry-form" className="inline-flex items-center gap-2 bg-brand-blue hover:bg-brand-blue-dark text-white font-bold px-6 py-3 rounded-xl text-sm uppercase tracking-wider transition-all hover:scale-105 shadow-lg">
                 <i className="fa-solid fa-envelope" /> Get a Quote
               </a>
-              <a href="#/contact" className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/40 text-white font-bold px-6 py-3 rounded-xl text-sm uppercase tracking-wider transition-all">
+              <a href="/contact" className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/40 text-white font-bold px-6 py-3 rounded-xl text-sm uppercase tracking-wider transition-all">
                 <i className="fa-solid fa-phone" /> Call Us
               </a>
             </div>
@@ -222,7 +223,7 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
 
                 <img
                   loading="lazy"
-                  src={prod.image}
+                  src={getAssetUrl(prod.image)}
                   alt={prod.title}
                   className="w-full object-cover group-hover:scale-105 transition-transform duration-700"
                   style={{height:'280px'}}
@@ -278,7 +279,7 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
             <div className="scroll-reveal-left">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-brand-blue/30 group">
                 <img loading="lazy"
-                  src={
+                  src={getAssetUrl(
                     productKey === 'commercial' ? './lift image/Commercial/1_Commercial Lifts.png' :
                     productKey === 'home' ? './lift image/home/1_Home lift.png' :
                     productKey === 'villa' ? './lift image/Villa/1_Villa Lift.png' :
@@ -288,7 +289,7 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
                     productKey === 'mrl' ? './mrl1.png' :
                     productKey === 'car' ? './car1.png' :
                     './lift image/Passenger/1_Passenger Elevators.png'
-                  }
+                  )}
                   alt={prod.title}
                   className="w-full h-[500px] object-cover group-hover:scale-105 transition-transform duration-700"
                 />
@@ -360,7 +361,7 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
                   className="relative rounded-2xl overflow-hidden shadow-xl group aspect-[3/4] scroll-reveal hover:translate-y-[-8px] transition-all duration-300 hover:shadow-2xl"
                 >
                   <img loading="lazy"
-                    src={img.url}
+                    src={getAssetUrl(img.url)}
                     alt={img.caption}
                     className={`w-full h-full ${img.url.includes('villa4.png') ? 'object-cover object-left' : 'object-cover'} group-hover:scale-110 transition-transform duration-700`}
                   />
@@ -385,7 +386,7 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
             <div className="scroll-reveal-left order-2 lg:order-1">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <img loading="lazy"
-                  src={
+                  src={getAssetUrl(
                     productKey === 'passenger' ? './lift image/Passenger/3.png' :
                     productKey === 'home' ? './3_Perfect For Suitability & Applications.png' :
                     productKey === 'villa' ? './lift image/Villa/3.png' :
@@ -396,7 +397,7 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
                     productKey === 'commercial' ? './commercial3.png' :
                     productKey === 'car' ? './car2.png' :
                     'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80'
-                  }
+                  )}
                   alt="Building Applications"
                   className="w-full h-[500px] object-cover"
                 />
@@ -464,7 +465,7 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 {productKey === 'villa' ? (
                   <video
-                    src="./lift image/Villa/4_Advanced Technology.mp4"
+                    src={getAssetUrl("./lift image/Villa/4_Advanced Technology.mp4")}
                     autoPlay
                     loop
                     muted
@@ -488,7 +489,7 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
                     })}
                   >
                     <img loading="lazy"
-                      src={
+                      src={getAssetUrl(
                         productKey === 'commercial' ? './commercial2.png' :
                         productKey === 'home' ? './lift image/home/4_Home Advanced Technology.png' :
                         productKey === 'passenger' ? './lift image/Passenger/4.png' :
@@ -498,7 +499,7 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
                         productKey === 'mrl' ? './lift image/MRL Lift/4.png' :
                         productKey === 'car' ? './car3.png' :
                         prod.image
-                      }
+                      )}
                       alt="Features"
                       className="w-full h-[600px] object-cover group-hover:scale-105 transition-transform duration-500"
                     />
@@ -742,7 +743,7 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
                       Request Technical Layout
                     </button>
                     <a 
-                      href="#/quote" 
+                      href="/quote" 
                       className="block text-center border-2 border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white font-bold py-4 rounded-xl text-sm uppercase tracking-widest transition">
                       Get Full Quote
                     </a>
@@ -777,11 +778,11 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
             Contact us for a consultation and discover the perfect elevator solution for your building
           </p>
           <div className="flex flex-wrap justify-center gap-4 pt-4">
-            <a href="#/quote" className="bg-brand-blue hover:bg-brand-blue-dark text-white font-bold px-8 py-4 rounded-2xl text-sm uppercase tracking-wider transition-all hover:scale-105 shadow-2xl">
+            <a href="/quote" className="bg-brand-blue hover:bg-brand-blue-dark text-white font-bold px-8 py-4 rounded-2xl text-sm uppercase tracking-wider transition-all hover:scale-105 shadow-2xl">
               <i className="fa-solid fa-calculator mr-2" />
               Free Consultation
             </a>
-            <a href="#/contact" className="bg-white hover:bg-slate-100 text-brand-navy font-bold px-8 py-4 rounded-2xl text-sm uppercase tracking-wider transition-all hover:scale-105">
+            <a href="/contact" className="bg-white hover:bg-slate-100 text-brand-navy font-bold px-8 py-4 rounded-2xl text-sm uppercase tracking-wider transition-all hover:scale-105">
               <i className="fa-solid fa-phone mr-2" />
               Contact Us
             </a>
@@ -808,7 +809,7 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
             </button>
             {/* Image */}
             <img
-              src={lightbox.url}
+              src={getAssetUrl(lightbox.url)}
               alt={lightbox.caption}
               className="w-full max-h-[85vh] object-contain rounded-2xl shadow-2xl"
             />

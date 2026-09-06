@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { getAssetUrl } from '../utils/router';
 
 export default function Contact() {
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -39,7 +40,7 @@ export default function Contact() {
         {/* Background Image */}
         <div 
           className="absolute inset-0 w-full h-full bg-cover bg-center opacity-35 z-0"
-          style={{ backgroundImage: 'url(./contact.jpg)' }}
+          style={{ backgroundImage: `url('${getAssetUrl('./contact.jpg')}')` }}
         />
         {/* Dark overlay & radial gradient overlay for premium lighting */}
         <div className="absolute inset-0 bg-brand-navy/70 z-[1]"></div>

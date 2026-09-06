@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { PROJECTS_DATA } from '../data/siteData';
+import { getAssetUrl } from '../utils/router';
 
 const categories = [
   'All Projects',
@@ -31,7 +32,7 @@ export default function Projects() {
           preload="none"
           className="absolute inset-0 w-full h-full object-cover opacity-35 z-0"
         >
-          <source src="lift5.mp4" type="video/mp4" />
+          <source src={getAssetUrl("lift5.mp4")} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className="absolute inset-0 bg-brand-navy/70 z-[1]"></div>
@@ -85,7 +86,7 @@ export default function Projects() {
                 {!p.noImage && p.image ? (
                   <div
                     className="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-700"
-                    style={{ backgroundImage: `url('${p.image}')` }}
+                    style={{ backgroundImage: `url('${getAssetUrl(p.image)}')` }}
                   />
                 ) : (
                   <div className="absolute inset-0 bg-gradient-to-br from-brand-navy via-slate-900 to-slate-800 flex items-center justify-center p-6 text-center">

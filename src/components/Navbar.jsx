@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { getLink, getAssetUrl } from '../utils/router';
 
-export default function Navbar({ currentHash }) {
+export default function Navbar({ currentPath = '/home' }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
@@ -14,23 +15,23 @@ export default function Navbar({ currentHash }) {
 
   const isActive = (route) => {
     // Special handling for home route
-    if (route === '/home') {
-      return (currentHash === '#/home' || currentHash === '#/' || currentHash === '#')
+    if (route === '/home' || route === '/') {
+      return (currentPath === '/home' || currentPath === '/' || !currentPath)
         ? 'text-brand-blue border-b-2 border-brand-blue pb-0.5'
         : 'border-b-2 border-transparent pb-0.5 hover:text-brand-blue-bright';
     }
-    // Exact match for single pages (about, projects, careers, amc, faq, contact)
-    const exactMatch = currentHash === `#${route}`;
+    // Exact match for single pages
+    const exactMatch = currentPath === route;
     return exactMatch
       ? 'text-brand-blue border-b-2 border-brand-blue pb-0.5'
       : 'border-b-2 border-transparent pb-0.5 hover:text-brand-blue-bright';
   };
 
   const isDropdownActive = (baseRoute) =>
-    currentHash.startsWith(baseRoute) ? 'text-brand-blue border-brand-blue' : 'text-slate-800 border-transparent';
+    currentPath.startsWith(baseRoute) ? 'text-brand-blue border-brand-blue' : 'text-slate-800 border-transparent';
 
   const isDropdownItemActive = (fullRoute) =>
-    currentHash === fullRoute ? 'bg-brand-blue/20 text-brand-blue font-bold' : '';
+    currentPath === fullRoute ? 'bg-brand-blue/20 text-brand-blue font-bold' : '';
 
   const closeAllMenus = () => {
     setMobileMenuOpen(false);
@@ -44,25 +45,25 @@ export default function Navbar({ currentHash }) {
       <div className="bg-brand-navy text-[10px] sm:text-xs py-1.5 sm:py-2 border-b border-slate-700">
         <div className="max-w-[1600px] mx-auto px-3 sm:px-4 md:px-8 flex justify-between items-center gap-2 whitespace-nowrap">
           <div className="flex items-center gap-3 sm:gap-5 text-slate-300 font-semibold shrink-0">
-            <span className="hidden sm:flex items-center gap-1 sm:gap-1.5">
+            <span className="flex max-sm:hidden items-center gap-1 sm:gap-1.5">
               <i className="fa-solid fa-shield-halved text-brand-blue text-xs sm:text-sm"></i> Grade-A Safety Standards
             </span>
-            <span className="hidden md:flex items-center gap-1.5">
+            <span className="flex max-md:hidden items-center gap-1.5">
               <i className="fa-solid fa-gears text-brand-blue text-xs sm:text-sm"></i> Premium Engineering Solutions
             </span>
-            <a href="mailto:sales@digitechelevator.com" className="flex sm:hidden transition items-center gap-1 animate-color-blink">
+            <a href="mailto:sales@digitechelevator.com" className="flex sm:hidden transition items-center gap-1 animate-color-blink hover:underline hover:text-brand-blue-bright cursor-pointer">
               <i className="fa-solid fa-envelope text-brand-blue text-xs"></i> sales@digitechelevator.com
             </a>
           </div>
           <div className="flex items-center gap-3 sm:gap-5 text-slate-300 font-semibold shrink-0">
-            <a href="mailto:sales@digitechelevator.com" className="hidden sm:flex transition items-center gap-1 sm:gap-1.5 animate-color-blink">
-              <i className="fa-solid fa-envelope text-xs sm:text-sm"></i> sales@digitechelevator.com
+            <a href="mailto:sales@digitechelevator.com" className="flex max-sm:hidden transition items-center gap-1 sm:gap-1.5 animate-color-blink hover:underline hover:text-brand-blue-bright cursor-pointer">
+              <i className="fa-solid fa-envelope text-brand-blue text-xs sm:text-sm"></i> sales@digitechelevator.com
             </a>
-            <a href="tel:+919845071406" className="transition flex items-center gap-1 sm:gap-1.5 animate-color-blink">
+            <a href="tel:+919845071406" className="flex transition items-center gap-1 sm:gap-1.5 animate-color-blink hover:underline hover:text-brand-blue-bright cursor-pointer">
               <i className="fa-solid fa-phone text-xs sm:text-sm"></i> 24/7: +91 98450 71406
             </a>
             <a href="https://wa.me/919845071406" target="_blank" rel="noopener noreferrer"
-               className="hidden md:flex transition items-center gap-1.5 animate-color-blink">
+               className="flex max-md:hidden transition items-center gap-1.5 animate-color-blink hover:underline hover:text-brand-blue-bright cursor-pointer">
               <i className="fa-brands fa-whatsapp text-xs sm:text-sm"></i> WhatsApp
             </a>
           </div>
@@ -73,10 +74,10 @@ export default function Navbar({ currentHash }) {
       <nav className="bg-white border-b border-slate-100">
         <div className="max-w-[1600px] mx-auto px-4 md:px-8 py-4 flex justify-between items-center gap-8">
         {/* Logo */}
-        <a href="#/home" className="flex items-center gap-3 shrink-0">
+        <a href={getLink('/home')} className="flex items-center gap-3 shrink-0">
           <div className="h-16 w-16 flex items-center justify-center">
             <img 
-              src="./logo-removebg-preview.png" 
+              src={getAssetUrl('./logo-removebg-preview.png')} 
               alt="Digitech Elevators Logo" 
               className="h-full w-full object-contain"
             />
@@ -93,12 +94,12 @@ export default function Navbar({ currentHash }) {
 
         {/* Desktop Links */}
         <div className="hidden lg:flex items-center gap-5 font-medium text-[13px] text-slate-800">
-          <a href="#/home"  className={`transition ${isActive('/home')}`}>Home</a>
-          <a href="#/about" className={`transition ${isActive('/about')}`}>About Us</a>
+          <a href={getLink('/home')}  className={`transition ${isActive('/home')}`}>Home</a>
+          <a href={getLink('/about')} className={`transition ${isActive('/about')}`}>About Us</a>
 
           {/* Products dropdown */}
           <div className="relative group">
-            <button className={`flex items-center gap-1 hover:text-brand-blue-bright transition border-b-2 pb-0.5 ${isDropdownActive('#/products')}`}>
+            <button className={`flex items-center gap-1 hover:text-brand-blue-bright transition border-b-2 pb-0.5 ${isDropdownActive('/products')}`}>
               Products <i className="fa-solid fa-chevron-down text-[9px] mt-0.5 group-hover:rotate-180 transition-transform duration-200"></i>
             </button>
             <div className="absolute left-0 top-full mt-2 w-56 bg-white text-slate-800 rounded-xl shadow-2xl border border-slate-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 translate-y-1 transition-all duration-200 z-50 overflow-hidden">
@@ -114,8 +115,8 @@ export default function Navbar({ currentHash }) {
                   ['fa-building',       'commercial', 'Commercial Lifts'],
                   ['fa-car',            'car',        'Car Lifts'],
                 ].map(([icon, key, label]) => (
-                  <a key={key} href={`#/products/${key}`}
-                     className={`flex items-center gap-2.5 px-4 py-2.5 hover:bg-brand-blue/10 hover:text-brand-blue transition text-sm font-medium ${isDropdownItemActive(`#/products/${key}`)}`}>
+                  <a key={key} href={getLink(`/products/${key}`)}
+                     className={`flex items-center gap-2.5 px-4 py-2.5 hover:bg-brand-blue/10 hover:text-brand-blue transition text-sm font-medium ${isDropdownItemActive(`/products/${key}`)}`}>
                     <i className={`fa-solid ${icon} text-brand-blue w-4 text-center`}></i> {label}
                   </a>
                 ))}
@@ -125,7 +126,7 @@ export default function Navbar({ currentHash }) {
 
           {/* Services dropdown */}
           <div className="relative group">
-            <button className={`flex items-center gap-1 hover:text-brand-blue-bright transition border-b-2 pb-0.5 ${isDropdownActive('#/services')}`}>
+            <button className={`flex items-center gap-1 hover:text-brand-blue-bright transition border-b-2 pb-0.5 ${isDropdownActive('/services')}`}>
               Services <i className="fa-solid fa-chevron-down text-[9px] mt-0.5 group-hover:rotate-180 transition-transform duration-200"></i>
             </button>
             <div className="absolute left-0 top-full mt-2 w-64 bg-white text-slate-800 rounded-xl shadow-2xl border border-slate-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 translate-y-1 transition-all duration-200 z-50 overflow-hidden">
@@ -137,8 +138,8 @@ export default function Navbar({ currentHash }) {
                   ['fa-screwdriver-wrench','repair',       'Repair & Breakdowns'],
                   ['fa-file-contract',    'licensing',     'Licensing & Renewals'],
                 ].map(([icon, key, label]) => (
-                  <a key={key} href={`#/services/${key}`}
-                     className={`flex items-center gap-2.5 px-4 py-2.5 hover:bg-brand-blue/10 hover:text-brand-blue transition text-sm font-medium ${isDropdownItemActive(`#/services/${key}`)}`}>
+                  <a key={key} href={getLink(`/services/${key}`)}
+                     className={`flex items-center gap-2.5 px-4 py-2.5 hover:bg-brand-blue/10 hover:text-brand-blue transition text-sm font-medium ${isDropdownItemActive(`/services/${key}`)}`}>
                     <i className={`fa-solid ${icon} text-brand-blue w-4 text-center`}></i> {label}
                   </a>
                 ))}
@@ -146,13 +147,13 @@ export default function Navbar({ currentHash }) {
             </div>
           </div>
 
-          <a href="#/projects" className={`transition ${isActive('/projects')}`}>Projects</a>
-          <a href="#/amc"      className={`transition ${isActive('/amc')}`}>AMC Plans</a>
-          <a href="#/faq"      className={`transition ${isActive('/faq')}`}>FAQs</a>
-          <a href="#/contact"  className={`transition ${isActive('/contact')}`}>Contact</a>
-          <a href="#/careers"  className={`transition ${isActive('/careers')}`}>Careers</a>
+          <a href={getLink('/projects')} className={`transition ${isActive('/projects')}`}>Projects</a>
+          <a href={getLink('/amc')}      className={`transition ${isActive('/amc')}`}>AMC Plans</a>
+          <a href={getLink('/faq')}      className={`transition ${isActive('/faq')}`}>FAQs</a>
+          <a href={getLink('/contact')}  className={`transition ${isActive('/contact')}`}>Contact</a>
+          <a href={getLink('/careers')}  className={`transition ${isActive('/careers')}`}>Careers</a>
 
-          <a href="#/quote"
+          <a href={getLink('/quote')}
              className="ml-2 bg-brand-blue hover:bg-brand-blue-dark text-white font-bold px-5 py-2.5 rounded-lg text-xs uppercase tracking-wider transition shadow hover:shadow-lg">
             Get a Quote
           </a>
@@ -169,8 +170,8 @@ export default function Navbar({ currentHash }) {
       {/* ── Mobile Drawer ── */}
       {mobileMenuOpen && (
         <div className="lg:hidden bg-brand-navy text-white border-t border-slate-700 py-6 px-6 flex flex-col gap-4 text-sm font-medium max-h-[80vh] overflow-y-auto shadow-2xl animate-fade-in">
-          <a href="#/home"     onClick={closeAllMenus} className="hover:text-brand-blue-bright transition py-1 border-b border-slate-800">Home</a>
-          <a href="#/about"    onClick={closeAllMenus} className="hover:text-brand-blue-bright transition py-1 border-b border-slate-800">About Us</a>
+          <a href={getLink('/home')}     onClick={closeAllMenus} className="hover:text-brand-blue-bright transition py-1 border-b border-slate-800">Home</a>
+          <a href={getLink('/about')}    onClick={closeAllMenus} className="hover:text-brand-blue-bright transition py-1 border-b border-slate-800">About Us</a>
 
           {/* Accordion Products */}
           <div className="border-b border-slate-800 pb-2">
@@ -194,7 +195,7 @@ export default function Navbar({ currentHash }) {
                   ['fa-building',       'commercial', 'Commercial Lifts'],
                   ['fa-car',            'car',        'Car Lifts'],
                 ].map(([icon, key, label]) => (
-                  <a key={key} href={`#/products/${key}`} onClick={closeAllMenus}
+                  <a key={key} href={getLink(`/products/${key}`)} onClick={closeAllMenus}
                      className="flex items-center gap-2 py-1 text-slate-350 hover:text-brand-blue-bright transition text-xs">
                     <i className={`fa-solid ${icon} text-brand-blue text-[10px] w-3 text-center`}></i> {label}
                   </a>
@@ -221,7 +222,7 @@ export default function Navbar({ currentHash }) {
                   ['fa-screwdriver-wrench','repair',       'Repair & Breakdowns'],
                   ['fa-file-contract',    'licensing',     'Licensing & Renewals'],
                 ].map(([icon, key, label]) => (
-                  <a key={key} href={`#/services/${key}`} onClick={closeAllMenus}
+                  <a key={key} href={getLink(`/services/${key}`)} onClick={closeAllMenus}
                      className="flex items-center gap-2 py-1 text-slate-350 hover:text-brand-blue-bright transition text-xs">
                     <i className={`fa-solid ${icon} text-brand-blue text-[10px] w-3 text-center`}></i> {label}
                   </a>
@@ -230,11 +231,11 @@ export default function Navbar({ currentHash }) {
             )}
           </div>
 
-          <a href="#/projects" onClick={closeAllMenus} className="hover:text-brand-blue-bright transition py-1 border-b border-slate-800">Projects</a>
-          <a href="#/amc"      onClick={closeAllMenus} className="hover:text-brand-blue-bright transition py-1 border-b border-slate-800">AMC Plans</a>
-          <a href="#/faq"      onClick={closeAllMenus} className="hover:text-brand-blue-bright transition py-1 border-b border-slate-800">FAQs</a>
-          <a href="#/contact"  onClick={closeAllMenus} className="hover:text-brand-blue-bright transition py-1 border-b border-slate-800">Contact</a>
-          <a href="#/careers"  onClick={closeAllMenus} className="hover:text-brand-blue-bright transition py-1 border-b border-slate-800">Careers</a>
+          <a href={getLink('/projects')} onClick={closeAllMenus} className="hover:text-brand-blue-bright transition py-1 border-b border-slate-800">Projects</a>
+          <a href={getLink('/amc')}      onClick={closeAllMenus} className="hover:text-brand-blue-bright transition py-1 border-b border-slate-800">AMC Plans</a>
+          <a href={getLink('/faq')}      onClick={closeAllMenus} className="hover:text-brand-blue-bright transition py-1 border-b border-slate-800">FAQs</a>
+          <a href={getLink('/contact')}  onClick={closeAllMenus} className="hover:text-brand-blue-bright transition py-1 border-b border-slate-800">Contact</a>
+          <a href={getLink('/careers')}  onClick={closeAllMenus} className="hover:text-brand-blue-bright transition py-1 border-b border-slate-800">Careers</a>
 
           <div className="pt-2 flex flex-col gap-2">
             <a href="mailto:digitech.elevators@gmail.com" onClick={closeAllMenus} className="text-xs text-slate-300 hover:text-brand-blue-bright flex items-center gap-2 transition">
@@ -248,7 +249,7 @@ export default function Navbar({ currentHash }) {
             </a>
           </div>
 
-          <a href="#/quote" onClick={closeAllMenus}
+          <a href={getLink('/quote')} onClick={closeAllMenus}
              className="bg-brand-blue text-white font-bold text-center py-3 rounded-xl mt-2 uppercase tracking-wider text-xs shadow hover:bg-brand-blue-dark transition">
             Get a Free Quote
           </a>
@@ -257,3 +258,4 @@ export default function Navbar({ currentHash }) {
     </header>
   );
 }
+

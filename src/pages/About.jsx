@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { getAssetUrl } from '../utils/router';
 
 export default function About() {
   useEffect(() => {
@@ -56,7 +57,7 @@ export default function About() {
         <div
           className="absolute inset-0 w-full h-full bg-cover bg-center opacity-45 z-0"
           style={{
-            backgroundImage: "url('/digitech-elevators/about_bg.png')",
+            backgroundImage: `url('${getAssetUrl('./about_bg.png')}')`,
             animation: 'floatUp 16s ease-in-out infinite',
           }}
         />
@@ -163,7 +164,7 @@ export default function About() {
                   playsInline
                   preload="none"
                 >
-                  <source src="./WhatsApp Video 2026-07-14 at 10.36.37.mp4" type="video/mp4" />
+                  <source src={getAssetUrl("./WhatsApp Video 2026-07-14 at 10.36.37.mp4")} type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
                 {/* Badge overlay */}
@@ -377,7 +378,7 @@ export default function About() {
               ]).map((client, i) => (
                 <div key={i} className="flex-shrink-0 group bg-white rounded-2xl border-2 border-white/10 hover:border-brand-blue shadow-lg hover:shadow-brand-blue/20 hover:shadow-xl transition-all duration-300 overflow-hidden hover:scale-105 w-[180px] min-h-[120px] flex items-center justify-center p-4">
                   <img
-                    src={client.logo}
+                    src={getAssetUrl(client.logo)}
                     alt={client.name}
                     className="max-h-[70px] max-w-[150px] w-auto h-auto object-contain group-hover:scale-105 transition-transform duration-300"
                     loading="lazy"
@@ -417,7 +418,7 @@ export default function About() {
               ]).map((client, i) => (
                 <div key={i} className="flex-shrink-0 group bg-white rounded-2xl border-2 border-white/10 hover:border-brand-blue shadow-lg hover:shadow-brand-blue/20 hover:shadow-xl transition-all duration-300 overflow-hidden hover:scale-105 w-[180px] min-h-[120px] flex items-center justify-center p-4">
                   <img
-                    src={client.logo}
+                    src={getAssetUrl(client.logo)}
                     alt={client.name}
                     className="max-h-[70px] max-w-[150px] w-auto h-auto object-contain group-hover:scale-105 transition-transform duration-300"
                     loading="lazy"

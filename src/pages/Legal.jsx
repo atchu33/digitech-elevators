@@ -381,7 +381,7 @@ export default function Legal({ type = 'privacy' }) {
                 please contact our support team.
               </p>
               <div className="flex flex-wrap gap-3">
-                <a href="#/contact" className="inline-flex items-center gap-2 bg-brand-navy hover:bg-slate-800 text-white px-5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition">
+                <a href="/contact" className="inline-flex items-center gap-2 bg-brand-navy hover:bg-slate-800 text-white px-5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition">
                   <i className="fa-solid fa-envelope"></i> Contact Us
                 </a>
                 <a href="tel:+919845071406" className="inline-flex items-center gap-2 bg-brand-blue hover:bg-brand-blue-dark text-white px-5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition">
@@ -405,7 +405,7 @@ export default function Legal({ type = 'privacy' }) {
           <p className="text-slate-300 text-sm">
             We're committed to transparency and compliance. Reach out to our team for clarification.
           </p>
-          <a href="#/contact" className="inline-block bg-brand-blue hover:bg-brand-blue-dark text-white font-bold px-8 py-3 rounded-xl text-xs uppercase tracking-widest transition shadow-lg hover:scale-105 btn-glow mt-2">
+          <a href="/contact" className="inline-block bg-brand-blue hover:bg-brand-blue-dark text-white font-bold px-8 py-3 rounded-xl text-xs uppercase tracking-widest transition shadow-lg hover:scale-105 btn-glow mt-2">
             Get in Touch
           </a>
         </div>

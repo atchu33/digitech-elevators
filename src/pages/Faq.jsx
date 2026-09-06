@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { createPortal } from 'react-dom';
+import { getAssetUrl } from '../utils/router';
 
 const faqs = [
   {
@@ -54,7 +55,7 @@ export default function Faq() {
       <section className="relative bg-brand-navy text-white py-24 px-4 text-center overflow-hidden">
         {/* Background Image */}
         <img loading="lazy"
-          src="faq_hero_bg.png"
+          src={getAssetUrl("faq_hero_bg.png")}
           alt="FAQ background"
           className="absolute inset-0 w-full h-full object-cover opacity-35 z-0"
         />
@@ -139,7 +140,7 @@ export default function Faq() {
               onClick={() => setShowSafetyModal(true)}
             >
               <img loading="lazy" 
-                src="./POSTER/SAFETY TIP.png" 
+                src={getAssetUrl("./POSTER/SAFETY TIP.png")} 
                 alt="Elevator Safety Guidelines Poster" 
                 className="w-full h-auto object-cover group-hover:scale-105 transition duration-500"
               />
@@ -167,7 +168,7 @@ export default function Faq() {
             onClick={(e) => e.stopPropagation()}
           >
             <img loading="lazy" 
-              src="./POSTER/SAFETY TIP.png" 
+              src={getAssetUrl("./POSTER/SAFETY TIP.png")} 
               alt="Safety Tips Poster Full" 
               className="max-h-[80vh] object-contain rounded-lg border border-slate-800 shadow-2xl"
             />

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { PRODUCTS_DATA, SERVICES_DATA, PROJECTS_DATA, TESTIMONIALS_DATA } from '../data/siteData';
+import { getAssetUrl } from '../utils/router';
 
 /* ── Scroll-reveal hook ── */
 function useScrollReveal() {
@@ -296,7 +297,7 @@ export default function Home() {
           <div
             className="absolute inset-0 w-full h-full bg-cover bg-center opacity-80"
             style={{
-              backgroundImage: "url('/digitech-elevators/hero_bg.png')",
+              backgroundImage: `url('${getAssetUrl('./hero_bg.png')}')`,
               animation: 'floatUp 12s ease-in-out infinite',
             }}
           />
@@ -342,12 +343,12 @@ export default function Home() {
               Digitech Elevators is a trusted provider of complete elevator solutions, specializing in the installation, modernization, maintenance, and repair of elevators for residential, commercial, industrial, and healthcare buildings.
             </p>
             <div className="flex flex-wrap justify-center lg:justify-start gap-3 pt-2">
-              <a href="#/quote"
+              <a href="/quote"
                  className="bg-brand-blue hover:bg-brand-blue-dark text-white font-bold px-5 py-2.5 rounded-lg shadow-lg transition-all hover:shadow-brand-blue/40 hover:shadow-xl hover:scale-105 flex items-center gap-1.5 text-xs btn-glow"
                  style={{ animationDelay: '2s' }}>
                 <i className="fa-solid fa-calculator" /> Get a Free Quote
               </a>
-              <a href="#/contact"
+              <a href="/contact"
                  className="border border-white/70 hover:border-brand-blue hover:text-brand-blue text-white font-semibold px-5 py-2.5 rounded-lg transition-all hover:scale-105 flex items-center gap-1.5 text-xs">
                 Contact Us
               </a>
@@ -596,7 +597,7 @@ export default function Home() {
                   {/* Right: Arrow */}
                   {['installation','amc','modernization','repair','licensing'].includes(key) && (
                     <a 
-                      href={`#/services/${key}`}
+                      href={`/services/${key}`}
                       className="shrink-0 w-10 h-10 bg-white/10 hover:bg-brand-blue rounded-xl flex items-center justify-center text-white transition-all group-hover:scale-110"
                       onClick={(e) => e.stopPropagation()}
                     >
@@ -647,7 +648,7 @@ export default function Home() {
                   <div className={`lg:col-span-5 relative h-64 lg:h-auto overflow-hidden ${i % 2 === 0 ? '' : 'lg:col-start-8'}`}>
                     <div className="absolute inset-0">
                       <div className="w-full h-full bg-cover bg-center group-hover:scale-110 transition-all duration-700"
-                           style={{ backgroundImage:`url('${item.image}')` }} />
+                           style={{ backgroundImage:`url('${getAssetUrl(item.image)}')` }} />
                     </div>
                   </div>
 
@@ -691,7 +692,7 @@ export default function Home() {
                       {/* CTA Button */}
                       <div className="pt-4">
                         <a 
-                          href={`#/products/${key}`}
+                          href={`/products/${key}`}
                           className="inline-flex items-center gap-3 bg-brand-navy hover:bg-brand-blue text-white font-bold px-6 py-3 rounded-xl transition-all hover:scale-105 shadow-lg text-sm group"
                         >
                           View Full Specifications
@@ -823,7 +824,7 @@ export default function Home() {
 
           {/* CTA button */}
           <div className="text-center scroll-reveal pt-8">
-            <a href="#/about" className="inline-flex items-center gap-3 bg-brand-navy hover:bg-brand-blue text-white font-bold px-8 py-4 rounded-2xl text-sm uppercase tracking-widest transition-all hover:scale-105 shadow-xl hover:shadow-2xl">
+            <a href="/about" className="inline-flex items-center gap-3 bg-brand-navy hover:bg-brand-blue text-white font-bold px-8 py-4 rounded-2xl text-sm uppercase tracking-widest transition-all hover:scale-105 shadow-xl hover:shadow-2xl">
               Learn More About Us <i className="fa-solid fa-arrow-right" />
             </a>
           </div>
@@ -858,7 +859,7 @@ export default function Home() {
                 <div className="h-52 relative overflow-hidden">
                   <div
                     className="absolute inset-0 bg-cover bg-center scale-100 group-hover:scale-110 transition-transform duration-700"
-                    style={{ backgroundImage: `url('${p.image}')` }}
+                    style={{ backgroundImage: `url('${getAssetUrl(p.image)}')` }}
                   />
                   <div className="absolute top-4 right-4 z-10">
                     <span className="bg-brand-blue text-white text-xs font-bold px-3.5 py-1.5 rounded-full uppercase tracking-wide shadow-md">
@@ -893,7 +894,7 @@ export default function Home() {
             ))}
           </div>
           <div className="text-center mt-16 scroll-reveal">
-            <a href="#/projects" className="inline-flex items-center gap-3 bg-white border-2 border-brand-navy hover:bg-brand-navy hover:text-white text-brand-navy font-bold px-8 py-4 rounded-2xl text-sm uppercase tracking-widest transition-all hover:gap-5 hover:shadow-2xl shadow-lg">
+            <a href="/projects" className="inline-flex items-center gap-3 bg-white border-2 border-brand-navy hover:bg-brand-navy hover:text-white text-brand-navy font-bold px-8 py-4 rounded-2xl text-sm uppercase tracking-widest transition-all hover:gap-5 hover:shadow-2xl shadow-lg">
               View All Projects <i className="fa-solid fa-arrow-right" />
             </a>
           </div>
@@ -956,7 +957,7 @@ export default function Home() {
               ]).map((client, i) => (
                 <div key={i} className="flex-shrink-0 group bg-white rounded-2xl border-2 border-white/10 hover:border-brand-blue shadow-lg hover:shadow-brand-blue/20 hover:shadow-xl transition-all duration-300 overflow-hidden hover:scale-105 w-[180px] min-h-[120px] flex items-center justify-center p-4">
                   <img
-                    src={client.logo}
+                    src={getAssetUrl(client.logo)}
                     alt={client.name}
                     className="max-h-[70px] max-w-[150px] w-auto h-auto object-contain group-hover:scale-105 transition-transform duration-300"
                     loading="lazy"
@@ -996,7 +997,7 @@ export default function Home() {
               ]).map((client, i) => (
                 <div key={i} className="flex-shrink-0 group bg-white rounded-2xl border-2 border-white/10 hover:border-brand-blue shadow-lg hover:shadow-brand-blue/20 hover:shadow-xl transition-all duration-300 overflow-hidden hover:scale-105 w-[180px] min-h-[120px] flex items-center justify-center p-4">
                   <img
-                    src={client.logo}
+                    src={getAssetUrl(client.logo)}
                     alt={client.name}
                     className="max-h-[70px] max-w-[150px] w-auto h-auto object-contain group-hover:scale-105 transition-transform duration-300"
                     loading="lazy"

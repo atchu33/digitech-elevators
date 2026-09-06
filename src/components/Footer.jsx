@@ -1,5 +1,6 @@
 import React from 'react';
 import VisitorCounter from './VisitorCounter';
+import { getLink, getAssetUrl } from '../utils/router';
 
 export default function Footer() {
   const services = [
@@ -11,13 +12,13 @@ export default function Footer() {
   ];
 
   const quickLinks = [
-    ['#/about',    'About Us'],
-    ['#/projects', 'Project Portfolio'],
-    ['#/careers',  'Careers'],
-    ['#/amc',      'AMC Plans'],
-    ['#/faq',      'FAQs'],
-    ['#/contact',  'Contact Us'],
-    ['#/quote',    'Get a Free Quote'],
+    ['/about',    'About Us'],
+    ['/projects', 'Project Portfolio'],
+    ['/careers',  'Careers'],
+    ['/amc',      'AMC Plans'],
+    ['/faq',      'FAQs'],
+    ['/contact',  'Contact Us'],
+    ['/quote',    'Get a Free Quote'],
   ];
 
   return (
@@ -28,14 +29,15 @@ export default function Footer() {
 
         {/* ─── Brand ─── */}
         <div className="space-y-5">
-          <a href="#/home" className="inline-flex items-center gap-3 group">
+          <a href={getLink('/home')} className="inline-flex items-center gap-3 group">
             <div className="w-14 h-14 bg-white rounded-lg flex items-center justify-center p-1.5 shadow-lg">
               <img loading="lazy" 
-                src="./logo-removebg-preview.png" 
+                src={getAssetUrl('./logo-removebg-preview.png')} 
                 alt="Digitech Elevators Logo" 
                 className="h-full w-full object-contain"
               />
             </div>
+
             <div>
               <h2 className="font-serif font-bold text-lg text-white tracking-tight leading-none">
                 DIGITECH <span className="text-brand-blue">ELEVATORS</span>
@@ -74,9 +76,9 @@ export default function Footer() {
         <div>
           <h3 className="font-serif font-bold text-white text-sm border-b border-slate-700 pb-2.5 mb-5">Quick Links</h3>
           <ul className="space-y-3">
-            {quickLinks.map(([href, label]) => (
-              <li key={href}>
-                <a href={href} className="flex items-center gap-2 text-sm hover:text-brand-blue-bright transition">
+            {quickLinks.map(([path, label]) => (
+              <li key={path}>
+                <a href={getLink(path)} className="flex items-center gap-2 text-sm hover:text-brand-blue-bright transition">
                   <i className="fa-solid fa-angle-right text-brand-blue text-[10px]"></i> {label}
                 </a>
               </li>
@@ -90,7 +92,7 @@ export default function Footer() {
           <ul className="space-y-3">
             {services.map(([key, icon, label]) => (
               <li key={key}>
-                <a href={`#/services/${key}`} className="flex items-center gap-2 text-sm hover:text-brand-blue-bright transition">
+                <a href={getLink(`/services/${key}`)} className="flex items-center gap-2 text-sm hover:text-brand-blue-bright transition">
                   <i className="fa-solid fa-angle-right text-brand-blue text-[10px]"></i> {label}
                 </a>
               </li>
@@ -158,20 +160,16 @@ export default function Footer() {
           <div className="flex items-center">
             <span className="text-slate-500 font-medium">Designed &amp; Developed by</span>
             <img loading="lazy" 
-              src="./vantageedge1.jpeg" 
+              src={getAssetUrl('./vantageedge1.jpeg')} 
               alt="Vantage Edge Solutions" 
               className="h-10 object-contain mix-blend-lighten -ml-1"
               style={{ filter: 'brightness(1.2) contrast(1.1)' }}
             />
-          </div>
-          <div className="flex gap-4">
-            <a href="#/legal/privacy" className="hover:text-brand-blue-bright transition">Privacy Policy</a>
-            <span className="text-slate-700">|</span>
-            <a href="#/legal/terms"   className="hover:text-brand-blue-bright transition">Terms &amp; Conditions</a>
           </div>
         </div>
       </div>
     </footer>
   );
 }
+
 

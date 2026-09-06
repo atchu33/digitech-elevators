@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { getAssetUrl } from '../utils/router';
 
 // FormSubmit recipient email - destination for resume submissions
 const RECIPIENT_EMAIL = import.meta.env.VITE_CONTACT_EMAIL || "digitech.elevators@gmail.com";
@@ -91,7 +92,7 @@ export default function Careers() {
           preload="none"
           className="absolute inset-0 w-full h-full object-cover opacity-35 z-0"
         >
-          <source src="lift2.mp4" type="video/mp4" />
+          <source src={getAssetUrl("lift2.mp4")} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         {/* Dark overlay & radial gradient overlay for premium lighting */}
@@ -141,7 +142,7 @@ export default function Careers() {
                   type="button"
                   onClick={() => {
                     if (window.history.replaceState) {
-                      window.history.replaceState(null, '', `${window.location.pathname}#/careers`);
+                      window.history.replaceState(null, '', '/careers');
                     }
                     setFormSubmitted(false);
                     setResumeFile(null);
@@ -166,7 +167,7 @@ export default function Careers() {
               <input
                 type="hidden"
                 name="_next"
-                value={`${typeof window !== 'undefined' ? window.location.origin + window.location.pathname : ''}#/careers?submitted=true`}
+                value={`${typeof window !== 'undefined' ? window.location.origin + window.location.pathname : ''}?submitted=true`}
               />
               <input type="hidden" name="_subject" value={`New Job Application: ${formData.name || 'Candidate'}`} />
               <input type="hidden" name="_template" value="table" />

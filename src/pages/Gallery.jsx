@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { GALLERY_DATA } from '../data/siteData';
+import { getAssetUrl } from '../utils/router';
 
 export default function Gallery() {
   const [activeTab, setActiveTab] = useState('all');
@@ -33,7 +34,7 @@ export default function Gallery() {
           preload="none"
           className="absolute inset-0 w-full h-full object-cover opacity-35 z-0"
         >
-          <source src="lift2.mp4" type="video/mp4" />
+          <source src={getAssetUrl("lift2.mp4")} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className="absolute inset-0 bg-brand-navy/70 z-[1]"></div>
@@ -62,7 +63,7 @@ export default function Gallery() {
           {getItems().map((item, i) => (
             <div key={i} className="group bg-white rounded-xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-md transition duration-300">
               <div className="h-56 bg-slate-900 relative overflow-hidden flex items-center justify-center">
-                <div className="absolute inset-0 bg-cover bg-center group-hover:scale-115 transition duration-500 opacity-60" style={{ backgroundImage: `url('${item.img}')` }}></div>
+                <div className="absolute inset-0 bg-cover bg-center group-hover:scale-115 transition duration-500 opacity-60" style={{ backgroundImage: `url('${getAssetUrl(item.img)}')` }}></div>
                 <div className="absolute inset-0 bg-brand-navy/20 group-hover:bg-brand-navy/40 transition duration-300"></div>
                 <div className="z-10 bg-brand-navy/60 text-brand-blue border border-brand-blue/30 rounded px-2 py-1 text-[10px] uppercase font-bold opacity-0 group-hover:opacity-100 transition duration-300">
                   <i className="fa-solid fa-magnifying-glass-plus mr-1"></i> View Large
