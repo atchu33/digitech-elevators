@@ -152,8 +152,8 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
 
             {/* Eyebrow */}
             <div className="flex items-center gap-3">
-              <div className="w-8 h-0.5 bg-brand-blue rounded-full" />
-              <span className="text-brand-blue text-xs font-bold uppercase tracking-[0.25em]">
+              <div className="w-8 h-0.5 bg-sky-400 rounded-full" />
+              <span className="text-sky-400 text-xs font-bold uppercase tracking-[0.25em]">
                 Premium Range
               </span>
             </div>
@@ -166,9 +166,9 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
             </div>
 
             {/* Subtitle badge */}
-            <div className="inline-flex items-center gap-2 bg-brand-blue/15 border border-brand-blue/30 px-4 py-2 rounded-full self-start">
-              <i className="fa-solid fa-circle-check text-brand-blue text-sm" />
-              <span className="text-brand-blue font-bold text-sm uppercase tracking-wider">{prod.bannerSubtitle}</span>
+            <div className="inline-flex items-center gap-2 bg-sky-500/15 border border-sky-400/30 px-4 py-2 rounded-full self-start">
+              <i className="fa-solid fa-circle-check text-sky-400 text-sm" />
+              <span className="text-sky-300 font-bold text-sm uppercase tracking-wider">{prod.bannerSubtitle}</span>
             </div>
 
             {/* Stats row */}
@@ -178,8 +178,8 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
                 { value: prod.features.length + '+', label: 'Features' },
                 { value: '27+', label: 'Years Exp.' },
               ].map((stat, i) => (
-                <div key={i} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-4 text-center hover:border-brand-blue/40 hover:bg-white/10 transition-all duration-300">
-                  <div className="text-2xl font-bold text-brand-blue font-serif">{stat.value}</div>
+                <div key={i} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-4 text-center hover:border-sky-400/40 hover:bg-white/10 transition-all duration-300">
+                  <div className="text-2xl font-bold text-sky-300 font-serif">{stat.value}</div>
                   <div className="text-[10px] text-slate-400 uppercase tracking-wider mt-1">{stat.label}</div>
                 </div>
               ))}
@@ -205,9 +205,9 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
               <div className="absolute right-3 top-0 bottom-0 w-1 rounded-full" style={{background:'linear-gradient(180deg,rgba(23,105,194,0.6),rgba(23,105,194,0.15),rgba(23,105,194,0.6))'}} />
 
               {/* Floor indicator — top */}
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 bg-brand-navy border-2 px-4 py-2 rounded-lg shadow-xl" style={{borderColor:'rgba(23,105,194,0.5)'}}>
-                <i className="fa-solid fa-elevator text-brand-blue text-sm" />
-                <span className="text-brand-blue font-bold text-sm font-mono tracking-widest">▲ TOP FLOOR</span>
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 bg-brand-navy border-2 px-4 py-2 rounded-lg shadow-xl" style={{borderColor:'rgba(56,189,248,0.5)'}}>
+                <i className="fa-solid fa-elevator text-sky-400 text-sm" />
+                <span className="text-sky-300 font-bold text-sm font-mono tracking-widest">▲ TOP FLOOR</span>
                 <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
               </div>
 
@@ -565,10 +565,10 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
         
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center text-white space-y-4 mb-12 scroll-reveal">
-            <h3 className="text-xs font-bold uppercase tracking-widest text-brand-blue flex items-center justify-center gap-3">
-              <span className="w-12 h-px bg-brand-blue"></span>
+            <h3 className="text-xs font-bold uppercase tracking-widest text-sky-400 flex items-center justify-center gap-3">
+              <span className="w-12 h-px bg-sky-400/60"></span>
               Excellence Guaranteed
-              <span className="w-12 h-px bg-brand-blue"></span>
+              <span className="w-12 h-px bg-sky-400/60"></span>
             </h3>
             <h2 className="font-serif text-4xl md:text-5xl font-bold">
               Why Choose Digitech for {prod.title}
@@ -592,20 +592,20 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
               return (
                 <div 
                   key={i} 
-                  className="group relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-md border-2 border-white/20 rounded-2xl p-8 hover:border-brand-blue hover:from-brand-blue/10 hover:to-brand-blue/5 transition-all duration-500 scroll-reveal hover:scale-105 hover:shadow-2xl overflow-hidden"
+                  className="group relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-md border-2 border-white/20 rounded-2xl p-8 hover:border-sky-400 hover:from-sky-500/10 hover:to-sky-500/5 transition-all duration-500 scroll-reveal hover:scale-105 hover:shadow-2xl overflow-hidden"
                   style={{ transitionDelay: `${i * 0.1}s` }}
                 >
                   {/* Animated Background Circle */}
-                  <div className="absolute -top-10 -right-10 w-32 h-32 bg-brand-blue/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
+                  <div className="absolute -top-10 -right-10 w-32 h-32 bg-sky-500/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
                   
                   {/* Number Badge */}
-                  <div className="absolute top-4 right-4 w-10 h-10 rounded-full border-2 border-brand-blue/30 flex items-center justify-center text-xs font-bold text-brand-blue bg-brand-blue/5 group-hover:rotate-12 transition-transform duration-500">
+                  <div className="absolute top-4 right-4 w-10 h-10 rounded-full border-2 border-sky-400/30 flex items-center justify-center text-xs font-bold text-sky-300 bg-sky-500/10 group-hover:rotate-12 transition-transform duration-500">
                     {`0${i + 1}`}
                   </div>
 
                   {/* Icon */}
                   <div className="relative mb-6">
-                    <div className="w-16 h-16 bg-brand-blue/20 backdrop-blur-sm rounded-2xl flex items-center justify-center text-brand-blue text-2xl group-hover:bg-brand-blue group-hover:text-white transition-all duration-500 group-hover:rotate-6 group-hover:scale-110 border-2 border-brand-blue/30">
+                    <div className="w-16 h-16 bg-sky-500/20 backdrop-blur-sm rounded-2xl flex items-center justify-center text-sky-300 text-2xl group-hover:bg-brand-blue group-hover:text-white transition-all duration-500 group-hover:rotate-6 group-hover:scale-110 border-2 border-sky-400/30">
                       <i className={`fa-solid ${icons[i % icons.length]}`}></i>
                     </div>
                   </div>
@@ -644,7 +644,7 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 scroll-reveal-container">
             {Object.entries(prod.specs).map(([k, v], i) => (
               <div key={k} className="bg-gradient-to-br from-brand-navy via-slate-800 to-brand-navy p-8 rounded-2xl shadow-xl text-white border-2 border-brand-blue/30 scroll-reveal">
-                <div className="text-brand-blue text-xs font-bold uppercase tracking-widest mb-3">{k}</div>
+                <div className="text-sky-300 text-xs font-bold uppercase tracking-widest mb-3">{k}</div>
                 <div className="text-lg font-semibold">{v}</div>
               </div>
             ))}

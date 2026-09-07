@@ -145,7 +145,7 @@ export default function Faq() {
                 className="w-full h-auto object-cover group-hover:scale-105 transition duration-500"
               />
               <div className="absolute inset-0 bg-brand-navy/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition duration-300">
-                <span className="bg-brand-navy/90 text-brand-blue border border-brand-blue/30 rounded-xl px-4 py-2 text-xs font-bold shadow-lg">
+                <span className="bg-brand-navy/90 text-sky-300 border border-sky-400/40 rounded-xl px-4 py-2 text-xs font-bold shadow-lg">
                   <i className="fa-solid fa-magnifying-glass-plus mr-1"></i> View Full Poster
                 </span>
               </div>

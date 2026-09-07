@@ -16,10 +16,10 @@ export default function Legal({ type = 'privacy' }) {
       <section className="relative bg-brand-navy text-white py-16 px-4 text-center overflow-hidden hero-gradient">
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(ellipse_at_center,_#1769C2_0%,_transparent_70%)]"></div>
         <div className="max-w-4xl mx-auto space-y-4 relative z-10">
-          <span className="inline-block bg-brand-blue/20 border border-brand-blue/30 text-brand-blue px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest">
+          <span className="inline-block bg-brand-blue/30 border border-brand-blue/50 text-white px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest animate-pulse-ring">
             Legal Information
           </span>
-          <h2 className="font-serif text-4xl md:text-5xl font-bold">Legal & Compliance</h2>
+          <h2 className="font-serif text-4xl md:text-5xl font-bold animate-gold-shimmer">Legal & Compliance</h2>
           <p className="text-slate-300 text-sm max-w-2xl mx-auto leading-relaxed">
             Our commitment to transparency, safety standards, and regulatory compliance in all elevator operations.
           </p>

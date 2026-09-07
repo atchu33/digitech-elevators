@@ -40,7 +40,7 @@ export default function Footer() {
 
             <div>
               <h2 className="font-serif font-bold text-lg text-white tracking-tight leading-none">
-                DIGITECH <span className="text-brand-blue">ELEVATORS</span>
+                DIGITECH <span className="text-sky-400">ELEVATORS</span>
               </h2>
               <p className="text-[9px] uppercase tracking-[0.18em] text-slate-500 mt-0.5">
                 Safe &bull; Reliable &bull; Innovative
@@ -79,7 +79,7 @@ export default function Footer() {
             {quickLinks.map(([path, label]) => (
               <li key={path}>
                 <a href={getLink(path)} className="flex items-center gap-2 text-sm hover:text-brand-blue-bright transition">
-                  <i className="fa-solid fa-angle-right text-brand-blue text-[10px]"></i> {label}
+                  <i className="fa-solid fa-angle-right text-sky-400 text-[10px]"></i> {label}
                 </a>
               </li>
             ))}
@@ -93,7 +93,7 @@ export default function Footer() {
             {services.map(([key, icon, label]) => (
               <li key={key}>
                 <a href={getLink(`/services/${key}`)} className="flex items-center gap-2 text-sm hover:text-brand-blue-bright transition">
-                  <i className="fa-solid fa-angle-right text-brand-blue text-[10px]"></i> {label}
+                  <i className="fa-solid fa-angle-right text-sky-400 text-[10px]"></i> {label}
                 </a>
               </li>
             ))}
@@ -105,7 +105,7 @@ export default function Footer() {
           <h3 className="font-serif font-bold text-white text-sm border-b border-slate-700 pb-2.5 mb-5">Contact Info</h3>
           <div className="space-y-4">
             <div className="flex gap-3">
-              <div className="w-9 h-9 bg-brand-blue/10 rounded-lg flex items-center justify-center text-brand-blue shrink-0 border border-brand-blue/20">
+              <div className="w-9 h-9 bg-sky-500/10 rounded-lg flex items-center justify-center text-sky-400 shrink-0 border border-sky-400/20">
                 <i className="fa-solid fa-location-dot text-sm"></i>
               </div>
               <p className="text-sm leading-relaxed mt-0.5">
@@ -114,7 +114,7 @@ export default function Footer() {
             </div>
 
             <div className="flex gap-3">
-              <div className="w-9 h-9 bg-brand-blue/10 rounded-lg flex items-center justify-center text-brand-blue shrink-0 border border-brand-blue/20">
+              <div className="w-9 h-9 bg-sky-500/10 rounded-lg flex items-center justify-center text-sky-400 shrink-0 border border-sky-400/20">
                 <i className="fa-solid fa-phone text-sm"></i>
               </div>
               <div className="mt-0.5">
@@ -124,7 +124,7 @@ export default function Footer() {
             </div>
 
             <div className="flex gap-3">
-              <div className="w-9 h-9 bg-brand-blue/10 rounded-lg flex items-center justify-center text-brand-blue shrink-0 border border-brand-blue/20">
+              <div className="w-9 h-9 bg-sky-500/10 rounded-lg flex items-center justify-center text-sky-400 shrink-0 border border-sky-400/20">
                 <i className="fa-solid fa-envelope text-sm"></i>
               </div>
               <div className="flex flex-col gap-1 text-sm break-all mt-0.5">

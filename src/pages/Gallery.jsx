@@ -24,7 +24,7 @@ export default function Gallery() {
 
   return (
     <div className="animate-fade-in">
-      <section className="bg-brand-navy text-white py-16 px-4 text-center hero-gradient relative overflow-hidden">
+      <section className="relative bg-brand-navy text-white py-24 px-4 text-center overflow-hidden">
         {/* Background Video */}
         <video
           autoPlay
@@ -37,10 +37,20 @@ export default function Gallery() {
           <source src={getAssetUrl("lift2.mp4")} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
+        {/* Dark overlay & radial gradient overlay for premium lighting */}
         <div className="absolute inset-0 bg-brand-navy/70 z-[1]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(23,105,194,0.25)_0%,_transparent_70%)] z-[2]"></div>
+
         <div className="max-w-4xl mx-auto space-y-4 relative z-10">
-          <h3 className="text-sm font-semibold uppercase tracking-wider text-brand-blue">Visual Showcase</h3>
-          <h2 className="font-serif text-3xl md:text-5xl font-bold">Media Gallery</h2>
+          <span className="inline-block bg-brand-blue/30 border border-brand-blue/50 text-white px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest animate-pulse-ring">
+            Visual Showcase
+          </span>
+          <h2 className="font-serif text-4xl md:text-5xl font-bold animate-gold-shimmer">
+            Media Gallery
+          </h2>
+          <p className="text-slate-300 text-sm max-w-xl mx-auto leading-relaxed">
+            Explore our elevators, machinery, cabin designs, and control installations in high resolution.
+          </p>
         </div>
       </section>
 
@@ -65,7 +75,7 @@ export default function Gallery() {
               <div className="h-56 bg-slate-900 relative overflow-hidden flex items-center justify-center">
                 <div className="absolute inset-0 bg-cover bg-center group-hover:scale-115 transition duration-500 opacity-60" style={{ backgroundImage: `url('${getAssetUrl(item.img)}')` }}></div>
                 <div className="absolute inset-0 bg-brand-navy/20 group-hover:bg-brand-navy/40 transition duration-300"></div>
-                <div className="z-10 bg-brand-navy/60 text-brand-blue border border-brand-blue/30 rounded px-2 py-1 text-[10px] uppercase font-bold opacity-0 group-hover:opacity-100 transition duration-300">
+                <div className="z-10 bg-brand-navy/80 text-sky-300 border border-sky-400/40 rounded px-2.5 py-1 text-[10px] uppercase font-bold opacity-0 group-hover:opacity-100 transition duration-300">
                   <i className="fa-solid fa-magnifying-glass-plus mr-1"></i> View Large
                 </div>
               </div>
