@@ -46,18 +46,18 @@ export default function Navbar({ currentPath = '/home' }) {
         <div className="max-w-[1600px] mx-auto px-3 sm:px-4 md:px-8 flex justify-between items-center gap-2 whitespace-nowrap">
           <div className="flex items-center gap-3 sm:gap-5 text-slate-300 font-semibold shrink-0">
             <span className="flex max-sm:hidden items-center gap-1 sm:gap-1.5">
-              <i className="fa-solid fa-shield-halved text-brand-blue text-xs sm:text-sm"></i> Grade-A Safety Standards
+              <i className="fa-solid fa-shield-halved text-sky-400 text-xs sm:text-sm"></i> Grade-A Safety Standards
             </span>
             <span className="flex max-md:hidden items-center gap-1.5">
-              <i className="fa-solid fa-gears text-brand-blue text-xs sm:text-sm"></i> Premium Engineering Solutions
+              <i className="fa-solid fa-gears text-sky-400 text-xs sm:text-sm"></i> Premium Engineering Solutions
             </span>
             <a href="mailto:sales@digitechelevator.com" className="flex sm:hidden transition items-center gap-1 animate-color-blink hover:underline hover:text-brand-blue-bright cursor-pointer">
-              <i className="fa-solid fa-envelope text-brand-blue text-xs"></i> sales@digitechelevator.com
+              <i className="fa-solid fa-envelope text-sky-400 text-xs"></i> sales@digitechelevator.com
             </a>
           </div>
           <div className="flex items-center gap-3 sm:gap-5 text-slate-300 font-semibold shrink-0">
             <a href="mailto:sales@digitechelevator.com" className="flex max-sm:hidden transition items-center gap-1 sm:gap-1.5 animate-color-blink hover:underline hover:text-brand-blue-bright cursor-pointer">
-              <i className="fa-solid fa-envelope text-brand-blue text-xs sm:text-sm"></i> sales@digitechelevator.com
+              <i className="fa-solid fa-envelope text-sky-400 text-xs sm:text-sm"></i> sales@digitechelevator.com
             </a>
             <a href="tel:+919845071406" className="flex transition items-center gap-1 sm:gap-1.5 animate-color-blink hover:underline hover:text-brand-blue-bright cursor-pointer">
               <i className="fa-solid fa-phone text-xs sm:text-sm"></i> 24/7: +91 98450 71406

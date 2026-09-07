@@ -354,11 +354,11 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
 
             {/* Eyebrow */}
             <div className="flex items-center justify-center gap-3 w-full">
-              <div className="w-8 h-0.5 bg-brand-blue rounded-full" />
-              <span className="text-brand-blue text-xs font-bold uppercase tracking-[0.25em]">
+              <div className="w-8 h-0.5 bg-sky-400 rounded-full" />
+              <span className="text-sky-400 text-xs font-bold uppercase tracking-[0.25em]">
                 Our Services
               </span>
-              <div className="w-8 h-0.5 bg-brand-blue rounded-full" />
+              <div className="w-8 h-0.5 bg-sky-400 rounded-full" />
             </div>
 
             {/* Title & desc */}
@@ -380,8 +380,8 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
                 { value: '100%', label: 'Guaranteed' },
                 { value: '27+', label: 'Years Exp.' },
               ].map((stat, i) => (
-                <div key={i} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-4 text-center hover:border-brand-blue/40 hover:bg-white/10 transition-all duration-300">
-                  <div className="text-2xl font-bold text-brand-blue font-serif">{stat.value}</div>
+                <div key={i} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-4 text-center hover:border-sky-400/40 hover:bg-white/10 transition-all duration-300">
+                  <div className="text-2xl font-bold text-sky-300 font-serif">{stat.value}</div>
                   <div className="text-[10px] text-slate-400 uppercase tracking-wider mt-1">{stat.label}</div>
                 </div>
               ))}
@@ -486,7 +486,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
                     />
 
                     {/* Category Tag */}
-                    <div className="absolute top-4 left-4 bg-brand-navy/90 border border-brand-blue/40 text-brand-blue text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider backdrop-blur-md shadow-md">
+                    <div className="absolute top-4 left-4 bg-brand-navy/90 border border-sky-400/40 text-sky-300 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider backdrop-blur-md shadow-md">
                       {poster.tag}
                     </div>
 
@@ -507,7 +507,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
                       </p>
                     </div>
 
-                    <div className="pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-brand-blue font-semibold">
+                    <div className="pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-sky-400 font-semibold">
                       <span>Click to view full poster</span>
                       <i className="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-1 transition-transform" />
                     </div>
@@ -541,7 +541,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
                       className="w-full h-[450px] lg:h-[550px] object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-brand-navy/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition duration-300 z-20 pointer-events-none">
-                      <span className="bg-brand-navy/90 text-brand-blue border border-brand-blue/30 rounded-xl px-4 py-2 text-xs font-bold shadow-lg pointer-events-auto">
+                      <span className="bg-brand-navy/90 text-sky-300 border border-sky-400/40 rounded-xl px-4 py-2 text-xs font-bold shadow-lg pointer-events-auto">
                         <i className="fa-solid fa-magnifying-glass-plus mr-1"></i> View Full Image
                       </span>
                     </div>
@@ -667,7 +667,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
                       <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/90 via-brand-navy/20 to-transparent"></div>
                       
                       {/* Photo Count Badge */}
-                      <div className="absolute top-3 right-3 bg-brand-navy/85 backdrop-blur-md border border-brand-blue/40 text-brand-blue text-[11px] font-bold px-3 py-1 rounded-full shadow-md flex items-center gap-1.5">
+                      <div className="absolute top-3 right-3 bg-brand-navy/85 backdrop-blur-md border border-sky-400/40 text-sky-300 text-[11px] font-bold px-3 py-1 rounded-full shadow-md flex items-center gap-1.5">
                         <i className="fa-solid fa-images text-[10px]"></i>
                         <span>{cat.images.length} Photos</span>
                       </div>
@@ -704,9 +704,9 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
 
               {/* Bottom Stat Highlight Badge */}
               <div className="mt-14 text-center">
-                <div className="inline-flex items-center gap-3 bg-slate-900 text-white border-2 border-brand-blue px-6 py-3 rounded-full shadow-lg">
-                  <span className="w-2.5 h-2.5 rounded-full bg-brand-blue animate-ping"></span>
-                  <span className="font-mono text-xs md:text-sm font-bold tracking-widest text-brand-blue uppercase">
+                <div className="inline-flex items-center gap-3 bg-slate-900 text-white border-2 border-sky-400 px-6 py-3 rounded-full shadow-lg">
+                  <span className="w-2.5 h-2.5 rounded-full bg-sky-400 animate-ping"></span>
+                  <span className="font-mono text-xs md:text-sm font-bold tracking-widest text-sky-300 uppercase">
                     100+ PROPERTIES • MONTHLY AMC SERVICE
                   </span>
                 </div>
@@ -764,7 +764,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
                       className="w-full h-[450px] lg:h-[550px] object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-brand-navy/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition duration-300 z-20 pointer-events-none">
-                      <span className="bg-brand-navy/90 text-brand-blue border border-brand-blue/30 rounded-xl px-4 py-2 text-xs font-bold shadow-lg pointer-events-auto">
+                      <span className="bg-brand-navy/90 text-sky-300 border border-sky-400/40 rounded-xl px-4 py-2 text-xs font-bold shadow-lg pointer-events-auto">
                         <i className="fa-solid fa-magnifying-glass-plus mr-1"></i> View Full Image
                       </span>
                     </div>
@@ -1298,7 +1298,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-brand-navy/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                      <span className="w-8 h-8 rounded-full bg-brand-navy/90 text-brand-blue border border-brand-blue/40 flex items-center justify-center text-xs">
+                      <span className="w-8 h-8 rounded-full bg-brand-navy/90 text-sky-300 border border-sky-400/40 flex items-center justify-center text-xs">
                         <i className="fa-solid fa-expand"></i>
                       </span>
                     </div>
@@ -1320,7 +1320,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
           {/* Lightbox Header */}
           <div className="w-full max-w-5xl flex items-center justify-between text-white py-2">
             <div className="flex items-center gap-3">
-              <span className="bg-brand-blue/20 border border-brand-blue/40 text-brand-blue text-xs px-3 py-1 rounded-full font-bold">
+              <span className="bg-sky-500/20 border border-sky-400/40 text-sky-300 text-xs px-3 py-1 rounded-full font-bold">
                 {activeCategory?.title}
               </span>
               <span className="text-slate-400 text-xs font-mono">
@@ -1330,7 +1330,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
 
             <button
               onClick={() => setLightboxPhotoIndex(null)}
-              className="text-white hover:text-brand-blue text-2xl transition duration-200 px-3 py-1"
+              className="text-white hover:text-sky-300 text-2xl transition duration-200 px-3 py-1"
             >
               <i className="fa-solid fa-xmark"></i>
             </button>
@@ -1343,7 +1343,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
           >
             <button
               onClick={handlePrevPhoto}
-              className="absolute left-2 md:left-4 z-10 w-12 h-12 rounded-full bg-brand-navy/80 border border-brand-blue/40 text-brand-blue flex items-center justify-center hover:bg-brand-blue hover:text-white transition duration-200 shadow-xl"
+              className="absolute left-2 md:left-4 z-10 w-12 h-12 rounded-full bg-brand-navy/80 border border-sky-400/40 text-sky-300 flex items-center justify-center hover:bg-brand-blue hover:text-white transition duration-200 shadow-xl"
               title="Previous Photo"
             >
               <i className="fa-solid fa-chevron-left text-lg"></i>
@@ -1357,7 +1357,7 @@ export default function ServiceDetail({ serviceKey, fallbackToHome }) {
 
             <button
               onClick={handleNextPhoto}
-              className="absolute right-2 md:right-4 z-10 w-12 h-12 rounded-full bg-brand-navy/80 border border-brand-blue/40 text-brand-blue flex items-center justify-center hover:bg-brand-blue hover:text-white transition duration-200 shadow-xl"
+              className="absolute right-2 md:right-4 z-10 w-12 h-12 rounded-full bg-brand-navy/80 border border-sky-400/40 text-sky-300 flex items-center justify-center hover:bg-brand-blue hover:text-white transition duration-200 shadow-xl"
               title="Next Photo"
             >
               <i className="fa-solid fa-chevron-right text-lg"></i>

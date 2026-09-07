@@ -52,7 +52,7 @@ export default function Quote() {
           <span className="inline-block bg-brand-blue/30 border border-brand-blue/50 text-white px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest animate-pulse-ring">
             Free Consultation
           </span>
-          <h2 className="font-serif text-3xl md:text-5xl font-bold">Request a Free Quote</h2>
+          <h2 className="font-serif text-3xl md:text-5xl font-bold animate-gold-shimmer">Request a Free Quote</h2>
           <p className="text-slate-300 text-sm max-w-xl mx-auto leading-relaxed">
             Fill in your project specifications below. Our technical experts and engineering team will design a custom proposal within 24 working hours.
           </p>
@@ -64,28 +64,28 @@ export default function Quote() {
         <div className="lg:col-span-4 space-y-8 scroll-reveal-left">
           <div className="bg-brand-navy text-white p-8 rounded-2xl space-y-6 shadow-xl border-b-4 border-brand-blue relative overflow-hidden">
             <div className="absolute top-0 right-0 w-24 h-24 bg-brand-blue/5 rounded-full -mr-5 -mt-5"></div>
-            <h3 className="font-serif font-bold text-xl text-brand-blue border-b border-slate-700 pb-3 flex items-center gap-2">
-              <i className="fa-solid fa-circle-question text-base text-brand-blue"></i> Why Request a Quote?
+            <h3 className="font-serif font-bold text-xl text-sky-300 border-b border-slate-700 pb-3 flex items-center gap-2">
+              <i className="fa-solid fa-circle-question text-base text-sky-400"></i> Why Request a Quote?
             </h3>
             <ul className="space-y-4 text-xs text-slate-300 scroll-reveal-container">
               <li className="flex gap-3 items-start scroll-reveal">
-                <i className="fa-solid fa-check text-brand-blue shrink-0 mt-0.5 animate-bounce-soft"></i> 
+                <i className="fa-solid fa-check text-sky-400 shrink-0 mt-0.5 animate-bounce-soft"></i> 
                 <span>Custom elevator design matching your layout specs</span>
               </li>
               <li className="flex gap-3 items-start scroll-reveal">
-                <i className="fa-solid fa-check text-brand-blue shrink-0 mt-0.5 animate-bounce-soft" style={{ animationDelay: '0.2s' }}></i> 
+                <i className="fa-solid fa-check text-sky-400 shrink-0 mt-0.5 animate-bounce-soft" style={{ animationDelay: '0.2s' }}></i> 
                 <span>Transparent quote estimates with zero hidden charges</span>
               </li>
               <li className="flex gap-3 items-start scroll-reveal">
-                <i className="fa-solid fa-check text-brand-blue shrink-0 mt-0.5 animate-bounce-soft" style={{ animationDelay: '0.4s' }}></i> 
+                <i className="fa-solid fa-check text-sky-400 shrink-0 mt-0.5 animate-bounce-soft" style={{ animationDelay: '0.4s' }}></i> 
                 <span>Professional engineering site audits included free</span>
               </li>
               <li className="flex gap-3 items-start scroll-reveal">
-                <i className="fa-solid fa-check text-brand-blue shrink-0 mt-0.5 animate-bounce-soft" style={{ animationDelay: '0.6s' }}></i> 
+                <i className="fa-solid fa-check text-sky-400 shrink-0 mt-0.5 animate-bounce-soft" style={{ animationDelay: '0.6s' }}></i> 
                 <span>Expert safety & energy efficiency recommendations</span>
               </li>
               <li className="flex gap-3 items-start scroll-reveal">
-                <i className="fa-solid fa-check text-brand-blue shrink-0 mt-0.5 animate-bounce-soft" style={{ animationDelay: '0.8s' }}></i> 
+                <i className="fa-solid fa-check text-sky-400 shrink-0 mt-0.5 animate-bounce-soft" style={{ animationDelay: '0.8s' }}></i> 
                 <span>Dedicated support advisor during execution</span>
               </li>
             </ul>

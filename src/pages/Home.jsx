@@ -349,7 +349,7 @@ export default function Home() {
                 <i className="fa-solid fa-calculator" /> Get a Free Quote
               </a>
               <a href="/contact"
-                 className="border border-white/70 hover:border-brand-blue hover:text-brand-blue text-white font-semibold px-5 py-2.5 rounded-lg transition-all hover:scale-105 flex items-center gap-1.5 text-xs">
+                 className="border border-white/70 hover:border-sky-400 hover:text-sky-300 text-white font-semibold px-5 py-2.5 rounded-lg transition-all hover:scale-105 flex items-center gap-1.5 text-xs">
                 Contact Us
               </a>
               <a href="#enquiry-form"
@@ -479,7 +479,7 @@ export default function Home() {
               }} />
               <div className="relative z-10">
                 <div className="flex items-center justify-between border-b border-slate-600/50 pb-5 mb-6">
-                  <span className="font-serif font-bold text-2xl text-brand-blue flex items-center gap-3">
+                  <span className="font-serif font-bold text-2xl text-sky-300 flex items-center gap-3">
                     <i className="fa-solid fa-certificate text-3xl animate-float" />
                     Quality Assured
                   </span>
@@ -495,10 +495,10 @@ export default function Home() {
                     </p>
                   ))}
                 </div>
-                <div className="bg-brand-blue/15 p-5 rounded-2xl border-2 border-brand-blue/30 flex gap-4 items-center scroll-reveal mt-8">
-                  <i className="fa-solid fa-screwdriver-wrench text-3xl text-brand-blue animate-spin-slow shrink-0" />
-                  <p className="text-sm text-brand-blue leading-snug font-medium">
-                    All installations undergo a rigorous <strong className="text-brand-blue">safety inspection</strong> checklist before final commissioning.
+                <div className="bg-sky-500/10 p-5 rounded-2xl border-2 border-sky-400/30 flex gap-4 items-center scroll-reveal mt-8">
+                  <i className="fa-solid fa-screwdriver-wrench text-3xl text-sky-400 animate-spin-slow shrink-0" />
+                  <p className="text-sm text-slate-200 leading-snug font-medium">
+                    All installations undergo a rigorous <strong className="text-sky-300">safety inspection</strong> checklist before final commissioning.
                   </p>
                 </div>
               </div>
@@ -728,10 +728,10 @@ export default function Home() {
 
         <div className="max-w-[1400px] mx-auto relative z-10 pt-12">
           <div className="text-center max-w-2xl mx-auto space-y-4 mb-20 scroll-reveal">
-            <h3 className="text-xs font-bold uppercase tracking-widest text-brand-blue flex items-center justify-center gap-3">
-              <span className="w-16 h-px bg-brand-blue" />
+            <h3 className="text-xs font-bold uppercase tracking-widest text-sky-400 flex items-center justify-center gap-3">
+              <span className="w-16 h-px bg-sky-400/60" />
               Diverse Sector Expertise
-              <span className="w-16 h-px bg-brand-blue" />
+              <span className="w-16 h-px bg-sky-400/60" />
             </h3>
             <h2 className="font-serif text-4xl md:text-5xl font-bold text-white">Industries We Serve</h2>
             <p className="text-slate-300 text-sm">Trusted by leading organizations across sectors</p>
@@ -1132,7 +1132,7 @@ export default function Home() {
           {/* Left — contact details */}
           <div className="lg:col-span-5 space-y-6 scroll-reveal-left">
             <div className="space-y-3">
-              <h3 className="text-xs font-bold uppercase tracking-widest text-brand-blue">
+              <h3 className="text-xs font-bold uppercase tracking-widest text-sky-400">
                 Get In Touch
               </h3>
               <h2 className="font-serif text-3xl md:text-4xl font-bold leading-tight text-white">
@@ -1143,7 +1143,7 @@ export default function Home() {
             <div className="space-y-5">
               {/* Office Address */}
               <div className="flex gap-4">
-                <div className="w-12 h-12 bg-brand-blue/20 rounded-xl flex items-center justify-center text-brand-blue shrink-0">
+                <div className="w-12 h-12 bg-sky-500/10 border border-sky-400/20 rounded-xl flex items-center justify-center text-sky-400 shrink-0">
                   <i className="fa-solid fa-location-dot text-xl" />
                 </div>
                 <div className="flex-1">
@@ -1154,7 +1154,7 @@ export default function Home() {
 
               {/* Phone Numbers */}
               <div className="flex gap-4">
-                <div className="w-12 h-12 bg-brand-blue/20 rounded-xl flex items-center justify-center text-brand-blue shrink-0">
+                <div className="w-12 h-12 bg-sky-500/10 border border-sky-400/20 rounded-xl flex items-center justify-center text-sky-400 shrink-0">
                   <i className="fa-solid fa-phone text-xl" />
                 </div>
                 <div className="flex-1">
@@ -1165,7 +1165,7 @@ export default function Home() {
 
               {/* Email Address */}
               <div className="flex gap-4">
-                <div className="w-12 h-12 bg-brand-blue/20 rounded-xl flex items-center justify-center text-brand-blue shrink-0">
+                <div className="w-12 h-12 bg-sky-500/10 border border-sky-400/20 rounded-xl flex items-center justify-center text-sky-400 shrink-0">
                   <i className="fa-solid fa-envelope text-xl" />
                 </div>
                 <div className="flex-1 space-y-1">

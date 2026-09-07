@@ -135,18 +135,18 @@ export default function About() {
         
         <div className="max-w-7xl mx-auto w-full relative z-10">
           <div className="text-center max-w-3xl mx-auto space-y-3 mb-10 scroll-reveal">
-            <h3 className="text-xs font-bold uppercase tracking-widest text-brand-blue flex items-center justify-center gap-3">
-              <span className="w-16 h-px bg-brand-blue" />
+            <h3 className="text-xs font-bold uppercase tracking-widest text-sky-400 flex items-center justify-center gap-3">
+              <span className="w-16 h-px bg-sky-400/60" />
               Our Purpose
-              <span className="w-16 h-px bg-brand-blue" />
+              <span className="w-16 h-px bg-sky-400/60" />
             </h3>
             <h2 className="font-serif text-3xl md:text-4xl font-bold">Mission & Vision</h2>
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
             {/* Mission Card */}
-            <div className="bg-white/10 backdrop-blur-md p-6 md:p-8 rounded-2xl border-2 border-white/20 space-y-4 hover:bg-white/15 hover:border-brand-blue/50 transition-all duration-300 scroll-reveal group">
-              <div className="w-14 h-14 bg-brand-blue/20 backdrop-blur-sm rounded-xl flex items-center justify-center text-brand-blue text-2xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 border-2 border-brand-blue/30">
+            <div className="bg-white/10 backdrop-blur-md p-6 md:p-8 rounded-2xl border-2 border-white/20 space-y-4 hover:bg-white/15 hover:border-sky-400/50 transition-all duration-300 scroll-reveal group">
+              <div className="w-14 h-14 bg-sky-500/20 backdrop-blur-sm rounded-xl flex items-center justify-center text-sky-300 text-2xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 border-2 border-sky-400/40">
                 <i className="fa-solid fa-bullseye"></i>
               </div>
               <h3 className="font-serif font-bold text-xl md:text-2xl text-white">Our Mission</h3>
@@ -168,15 +168,15 @@ export default function About() {
                   Your browser does not support the video tag.
                 </video>
                 {/* Badge overlay */}
-                <div className="absolute bottom-3 left-3 right-3 bg-brand-navy/90 backdrop-blur-sm px-3 py-2 rounded-lg border border-brand-blue/30 text-center">
-                  <p className="text-brand-blue font-bold text-xs md:text-sm">27+ Years of Excellence</p>
+                <div className="absolute bottom-3 left-3 right-3 bg-brand-navy/90 backdrop-blur-sm px-3 py-2 rounded-lg border border-sky-400/30 text-center">
+                  <p className="text-sky-300 font-bold text-xs md:text-sm">27+ Years of Excellence</p>
                 </div>
               </div>
             </div>
 
             {/* Vision Card */}
-            <div className="bg-white/10 backdrop-blur-md p-6 md:p-8 rounded-2xl border-2 border-white/20 space-y-4 hover:bg-white/15 hover:border-brand-blue/50 transition-all duration-300 scroll-reveal group">
-              <div className="w-14 h-14 bg-brand-blue/20 backdrop-blur-sm rounded-xl flex items-center justify-center text-brand-blue text-2xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 border-2 border-brand-blue/30">
+            <div className="bg-white/10 backdrop-blur-md p-6 md:p-8 rounded-2xl border-2 border-white/20 space-y-4 hover:bg-white/15 hover:border-sky-400/50 transition-all duration-300 scroll-reveal group">
+              <div className="w-14 h-14 bg-sky-500/20 backdrop-blur-sm rounded-xl flex items-center justify-center text-sky-300 text-2xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 border-2 border-sky-400/40">
                 <i className="fa-solid fa-eye"></i>
               </div>
               <h3 className="font-serif font-bold text-xl md:text-2xl text-white">Our Vision</h3>

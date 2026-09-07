@@ -22,7 +22,7 @@ export default function Projects() {
   return (
     <div className="animate-fade-in">
       {/* ── Banner ── */}
-      <section className="relative bg-brand-navy text-white py-16 px-4 text-center hero-gradient overflow-hidden">
+      <section className="relative bg-brand-navy text-white py-24 px-4 text-center overflow-hidden">
         {/* Background Video */}
         <video
           autoPlay
@@ -35,12 +35,18 @@ export default function Projects() {
           <source src={getAssetUrl("lift5.mp4")} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
+        {/* Dark overlay & radial gradient overlay for premium lighting */}
         <div className="absolute inset-0 bg-brand-navy/70 z-[1]"></div>
-        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(ellipse_at_center,_#1769C2_0%,_transparent_70%)] z-[2]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(23,105,194,0.25)_0%,_transparent_70%)] z-[2]"></div>
+
         <div className="max-w-4xl mx-auto space-y-4 relative z-10">
-          <span className="inline-block bg-brand-blue/20 border border-brand-blue/30 text-brand-blue px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest">Our Portfolio</span>
-          <h2 className="font-serif text-4xl md:text-5xl font-bold">Gallery of Completed Projects</h2>
-          <p className="text-slate-300 text-sm max-w-xl mx-auto">
+          <span className="inline-block bg-brand-blue/30 border border-brand-blue/50 text-white px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest animate-pulse-ring">
+            Our Portfolio
+          </span>
+          <h2 className="font-serif text-4xl md:text-5xl font-bold animate-gold-shimmer">
+            Gallery of Completed Projects
+          </h2>
+          <p className="text-slate-300 text-sm max-w-xl mx-auto leading-relaxed">
             Explore 25 verified elevator installation projects delivered across Bangalore with precision & safety.
           </p>
         </div>

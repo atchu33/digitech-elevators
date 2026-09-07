@@ -66,13 +66,13 @@ export default function Contact() {
           {/* Left — contact details */}
           <div className="lg:col-span-5 space-y-8 scroll-reveal-left">
             <div>
-              <h3 className="text-sm font-semibold uppercase tracking-widest text-brand-blue mb-2">Get In Touch</h3>
+              <h3 className="text-sm font-semibold uppercase tracking-widest text-sky-400 mb-2">Get In Touch</h3>
               <h2 className="font-serif text-3xl md:text-4xl font-bold">Contact Us</h2>
             </div>
 
             <div className="space-y-5 text-sm text-slate-300 scroll-reveal-container">
               <div className="flex gap-4 scroll-reveal">
-                <div className="w-10 h-10 bg-brand-blue/10 rounded-lg flex items-center justify-center text-brand-blue shrink-0 border border-brand-blue/20 hover:scale-110 transition-all duration-300">
+                <div className="w-10 h-10 bg-sky-500/10 rounded-lg flex items-center justify-center text-sky-400 shrink-0 border border-sky-400/20 hover:scale-110 transition-all duration-300">
                   <i className="fa-solid fa-location-dot"></i>
                 </div>
                 <div>
@@ -81,7 +81,7 @@ export default function Contact() {
                 </div>
               </div>
               <div className="flex gap-4 scroll-reveal">
-                <div className="w-10 h-10 bg-brand-blue/10 rounded-lg flex items-center justify-center text-brand-blue shrink-0 border border-brand-blue/20 hover:scale-110 transition-all duration-300">
+                <div className="w-10 h-10 bg-sky-500/10 rounded-lg flex items-center justify-center text-sky-400 shrink-0 border border-sky-400/20 hover:scale-110 transition-all duration-300">
                   <i className="fa-solid fa-phone"></i>
                 </div>
                 <div>
@@ -90,7 +90,7 @@ export default function Contact() {
                 </div>
               </div>
               <div className="flex gap-4 scroll-reveal">
-                <div className="w-10 h-10 bg-brand-blue/10 rounded-lg flex items-center justify-center text-brand-blue shrink-0 border border-brand-blue/20 hover:scale-110 transition-all duration-300">
+                <div className="w-10 h-10 bg-sky-500/10 rounded-lg flex items-center justify-center text-sky-400 shrink-0 border border-sky-400/20 hover:scale-110 transition-all duration-300">
                   <i className="fa-solid fa-phone-volume"></i>
                 </div>
                 <div>
@@ -99,7 +99,7 @@ export default function Contact() {
                 </div>
               </div>
               <div className="flex gap-4 scroll-reveal">
-                <div className="w-10 h-10 bg-brand-blue/10 rounded-lg flex items-center justify-center text-brand-blue shrink-0 border border-brand-blue/20 hover:scale-110 transition-all duration-300">
+                <div className="w-10 h-10 bg-sky-500/10 rounded-lg flex items-center justify-center text-sky-400 shrink-0 border border-sky-400/20 hover:scale-110 transition-all duration-300">
                   <i className="fa-solid fa-envelope"></i>
                 </div>
                 <div className="space-y-1">
@@ -110,7 +110,7 @@ export default function Contact() {
                 </div>
               </div>
               <div className="flex gap-4 scroll-reveal">
-                <div className="w-10 h-10 bg-brand-blue/10 rounded-lg flex items-center justify-center text-brand-blue shrink-0 border border-brand-blue/20 hover:scale-110 transition-all duration-300">
+                <div className="w-10 h-10 bg-sky-500/10 rounded-lg flex items-center justify-center text-sky-400 shrink-0 border border-sky-400/20 hover:scale-110 transition-all duration-300">
                   <i className="fa-brands fa-instagram"></i>
                 </div>
                 <div>
@@ -119,7 +119,7 @@ export default function Contact() {
                 </div>
               </div>
               <div className="flex gap-4 scroll-reveal">
-                <div className="w-10 h-10 bg-brand-blue/10 rounded-lg flex items-center justify-center text-brand-blue shrink-0 border border-brand-blue/20 hover:scale-110 transition-all duration-300">
+                <div className="w-10 h-10 bg-sky-500/10 rounded-lg flex items-center justify-center text-sky-400 shrink-0 border border-sky-400/20 hover:scale-110 transition-all duration-300">
                   <i className="fa-solid fa-clock"></i>
                 </div>
                 <div>
