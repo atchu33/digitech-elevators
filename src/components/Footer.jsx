@@ -120,6 +120,7 @@ export default function Footer() {
               <div className="mt-0.5">
                 <a href="tel:+919845071406" className="block text-sm hover:text-brand-blue-bright transition">+91 98450 71406</a>
                 <a href="tel:+917625080504" className="block text-sm hover:text-brand-blue-bright transition mt-0.5">+91 76250 80504</a>
+                <a href="tel:+918722655355" className="block text-sm hover:text-brand-blue-bright transition mt-0.5">+91 87226 55355</a>
               </div>
             </div>
 

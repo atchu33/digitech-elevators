@@ -86,7 +86,12 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="font-semibold text-white text-xs uppercase tracking-wider mb-0.5">Office Phone</p>
-                  <p className="text-slate-400 text-xs">+91 98450 71406 / +91 76250 80504</p>
+                  <p className="text-slate-400 text-xs">
+                    <a href="tel:+919845071406" className="hover:text-brand-blue-bright transition">+91 98450 71406</a> / <a href="tel:+917625080504" className="hover:text-brand-blue-bright transition">+91 76250 80504</a>
+                  </p>
+                  <p className="text-slate-400 text-xs mt-1">
+                    <a href="tel:+918722655355" className="hover:text-brand-blue-bright transition">+91 87226 55355</a>
+                  </p>
                 </div>
               </div>
               <div className="flex gap-4 scroll-reveal">
@@ -95,7 +100,9 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="font-semibold text-white text-xs uppercase tracking-wider mb-0.5">Complaint Numbers</p>
-                  <p className="text-slate-400 text-xs">+91 98459 26155 / +91 94480 56354</p>
+                  <p className="text-slate-400 text-xs">
+                    <a href="tel:+919845926155" className="hover:text-brand-blue-bright transition">+91 98459 26155</a> / <a href="tel:+919448056354" className="hover:text-brand-blue-bright transition">+91 94480 56354</a>
+                  </p>
                 </div>
               </div>
               <div className="flex gap-4 scroll-reveal">
