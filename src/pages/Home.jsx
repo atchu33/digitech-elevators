@@ -1159,7 +1159,12 @@ export default function Home() {
                 </div>
                 <div className="flex-1">
                   <p className="font-bold text-white text-sm uppercase tracking-wider mb-1">Phone Numbers</p>
-                  <p className="text-slate-300 text-sm leading-relaxed">+91 98450 71406 / +91 76250 80504</p>
+                  <p className="text-slate-300 text-sm leading-relaxed">
+                    <a href="tel:+919845071406" className="hover:text-brand-blue-bright transition">+91 98450 71406</a> / <a href="tel:+917625080504" className="hover:text-brand-blue-bright transition">+91 76250 80504</a>
+                  </p>
+                  <p className="text-slate-300 text-sm leading-relaxed mt-0.5">
+                    <a href="tel:+918722655355" className="hover:text-brand-blue-bright transition">+91 87226 55355</a>
+                  </p>
                 </div>
               </div>
 
