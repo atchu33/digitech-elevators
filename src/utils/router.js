@@ -1,6 +1,17 @@
 // Helper functions for HTML5 History API Routing without '#'
 
 export function getBasePath() {
+  if (typeof window !== 'undefined') {
+    const hostname = window.location.hostname;
+    // If we're on github.io with repository subfolder, use that subfolder
+    if (hostname.endsWith('github.io') && window.location.pathname.startsWith('/digitech-elevators')) {
+      return '/digitech-elevators';
+    }
+    // If on custom domain (e.g. www.digitechelevator.com), localhost, or root deployment, basePath is empty
+    if (!hostname.endsWith('github.io') || !window.location.pathname.startsWith('/digitech-elevators')) {
+      return '';
+    }
+  }
   const base = import.meta.env.BASE_URL || '/';
   const cleanBase = base.endsWith('/') ? base.slice(0, -1) : base;
   return cleanBase;
@@ -9,6 +20,16 @@ export function getBasePath() {
 export function getRoutePath() {
   let pathname = window.location.pathname;
   const basePath = getBasePath();
+
+  // If redirect query route is present (e.g. ?/about from 404 redirect handler)
+  if (window.location.search && window.location.search.startsWith('?/')) {
+    const queryRoute = window.location.search.slice(1).split('&')[0].replace(/~and~/g, '&');
+    if (queryRoute) {
+      pathname = queryRoute;
+      const cleanUrl = (basePath + pathname).replace(/\/+/g, '/');
+      window.history.replaceState(null, '', cleanUrl + window.location.hash);
+    }
+  }
 
   // If legacy hash route is present (e.g. #/about), auto-migrate to clean path
   if (window.location.hash && window.location.hash.startsWith('#/')) {

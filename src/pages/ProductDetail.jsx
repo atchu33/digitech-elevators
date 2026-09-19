@@ -179,7 +179,7 @@ export default function ProductDetail({ productKey, fallbackToHome }) {
                 { value: '27+', label: 'Years Exp.' },
               ].map((stat, i) => (
                 <div key={i} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-4 text-center hover:border-sky-400/40 hover:bg-white/10 transition-all duration-300">
-                  <div className="text-2xl font-bold text-sky-300 font-serif">{stat.value}</div>
+                  <div className="text-2xl font-bold text-sky-300 font-sans">{stat.value}</div>
                   <div className="text-[10px] text-slate-400 uppercase tracking-wider mt-1">{stat.label}</div>
                 </div>
               ))}
