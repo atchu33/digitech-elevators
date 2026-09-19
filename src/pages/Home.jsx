@@ -455,7 +455,7 @@ export default function Home() {
               <div className="w-12 h-12 md:w-14 md:h-14 mx-auto bg-brand-blue/20 rounded-2xl flex items-center justify-center text-white group-hover:bg-brand-blue transition-all duration-300 animate-bounce-soft shadow-lg" style={{ animationDelay: `${i * 0.3}s` }}>
                 <i className={`fa-solid ${s.icon} text-lg md:text-xl`} />
               </div>
-              <p className="text-3xl md:text-4xl font-bold font-serif text-white floor-display animate-stat-glow" style={{ animationDelay: `${i * 0.2}s` }}>
+              <p className="text-3xl md:text-4xl font-extrabold font-sans text-white floor-display animate-stat-glow" style={{ animationDelay: `${i * 0.2}s` }}>
                 {s.val}
               </p>
               <p className="text-[10px] md:text-xs uppercase text-slate-300 font-semibold tracking-wide leading-tight">{s.label}</p>

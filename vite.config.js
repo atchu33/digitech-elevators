@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: '/digitech-elevators/',
+  base: process.env.DEPLOY_TARGET === 'gh-pages' ? '/digitech-elevators/' : '/',
   build: {
     target: 'es2022',
     cssCodeSplit: true,
