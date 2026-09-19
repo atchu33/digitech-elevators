@@ -164,7 +164,7 @@ export default function About() {
                   playsInline
                   preload="none"
                 >
-                  <source src={getAssetUrl("./WhatsApp Video 2026-07-14 at 10.36.37.mp4")} type="video/mp4" />
+                  <source src={getAssetUrl("./lift2.mp4")} type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
                 {/* Badge overlay */}
